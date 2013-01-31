@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+
+Name=wxMP3gain
+Comment=A free front-end for the MP3gain.
+Icon=wxmp3gain
+
+Categories=AudioVideo;Audio;
+
+Exec=wxmp3gain
+Terminal=false

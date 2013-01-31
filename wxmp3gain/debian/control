@@ -1,0 +1,12 @@
+Source: wxmp3gain
+Section: sound
+Priority: optional
+Maintainer: Cristiano Nunes <cfgnunes@gmail.com>
+Build-Depends: debhelper (>= 9), libwxgtk2.8-dev
+Standards-Version: 3.8.1
+Homepage: http://sourceforge.net/projects/wxmp3gain/
+
+Package: wxmp3gain
+Architecture: any
+Depends:  ${shlibs:Depends}, ${misc:Depends}, mp3gain (>= 1.5.1)
+Description: A free front-end for the MP3gain.
