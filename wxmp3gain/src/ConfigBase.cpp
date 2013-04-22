@@ -11,7 +11,7 @@ ConfigBase::ConfigBase(const wxString & appName)
 {
     config = new wxConfig(appName);
 
-    // If there is a setting, writes a new one with default values
+    // If there isn't a setting, writes a new one with default values
     if(!config->Exists(CONFIG_GENERAL_GROUP))
         setDefaultConfig();
 }
