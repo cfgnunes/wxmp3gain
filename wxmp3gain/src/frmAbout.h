@@ -16,11 +16,11 @@
 #include <wx/dialog.h>
 //*)
 
-class frmAbout: public wxDialog
+class frmAbout : public wxDialog
 {
 public:
 
-    frmAbout(wxWindow* parent,wxWindowID id=wxID_ANY,const wxPoint& pos=wxDefaultPosition,const wxSize& size=wxDefaultSize);
+    frmAbout(wxWindow* parent, wxWindowID id = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize);
     virtual ~frmAbout();
 
     //(*Declarations(frmAbout)

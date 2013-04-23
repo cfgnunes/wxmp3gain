@@ -7,6 +7,7 @@
 #define FRMMAIN_H
 
 #include "ConfigBase.h"
+#include "FileInfo.h"
 
 //(*Headers(frmMain)
 #include <wx/listctrl.h>
@@ -20,11 +21,11 @@
 #include <wx/statusbr.h>
 //*)
 
-class frmMain: public wxFrame
+class frmMain : public wxFrame
 {
 public:
 
-    frmMain(wxWindow* parent,wxWindowID id=wxID_ANY,const wxPoint& pos=wxDefaultPosition,const wxSize& size=wxDefaultSize);
+    frmMain(wxWindow* parent, wxWindowID id = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize);
     virtual ~frmMain();
 
     //(*Declarations(frmMain)
@@ -62,7 +63,7 @@ public:
     wxBoxSizer* boxNormalVolume;
     wxBoxSizer* boxConstantGain;
     wxBoxSizer* boxMain;
-    static void updateGainLabels(wxListCtrl* listFilesUpdate, ConfigBase* configBaseUpdate, wxHashTable* lstHashFilesUpdate, const double& dblNormalVolumeUpdate);
+    static void updateGainLabels(wxListCtrl* listFilesUpdate, ConfigBase* configBaseUpdate, ArrayOfFiles* lstFilesDataUpdate, const double& dblNormalVolumeUpdate);
 
 protected:
 
@@ -134,7 +135,7 @@ private:
     void updateDisabledControls();
     void loadResources();
     ConfigBase *configBase;
-    wxHashTable *lstHashFiles;
+    ArrayOfFiles *lstFilesData;
     double dblNormalVolume;
 
     DECLARE_EVENT_TABLE()

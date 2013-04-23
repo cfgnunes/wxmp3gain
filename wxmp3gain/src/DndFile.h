@@ -6,6 +6,7 @@
 #ifndef DNDFILE_H
 #define DNDFILE_H
 
+#include "FileInfo.h"
 #include "Global.h"
 #include <wx/tokenzr.h>
 #include <wx/dir.h>
@@ -16,17 +17,18 @@
 class DndFile : public wxFileDropTarget
 {
 public:
-    DndFile (wxListCtrl *owner);
+    DndFile(wxListCtrl *owner, ArrayOfFiles *lstFilesData);
     virtual ~DndFile();
     virtual bool OnDropFiles(wxCoord x, wxCoord y, const wxArrayString& filenames);
-    static void InsertFileList(wxListCtrl* m_owner, const wxArrayString& filenames);
-    static void InsertFileListDir(wxListCtrl* m_owner, const wxString& dirname);
+    void InsertFileList(const wxArrayString& filenames);
+    void InsertFileListDir(const wxString& dirname);
 
 protected:
 
 private:
-    static bool CheckValidExtension(const wxFileName& file);
+    bool CheckValidExtension(const wxFileName& file);
     wxListCtrl *m_owner;
+    ArrayOfFiles *lstFilesData;
 };
 
 #endif

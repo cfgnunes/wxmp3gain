@@ -23,11 +23,11 @@
 #include <wx/dialog.h>
 //*)
 
-class frmSettings: public wxDialog
+class frmSettings : public wxDialog
 {
 public:
 
-    frmSettings(wxWindow* parent, ConfigBase* configBase, wxWindowID id=wxID_ANY);
+    frmSettings(wxWindow* parent, ConfigBase* configBase, wxWindowID id = wxID_ANY);
     virtual ~frmSettings();
 
     //(*Declarations(frmSettings)

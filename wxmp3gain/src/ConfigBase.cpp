@@ -12,7 +12,7 @@ ConfigBase::ConfigBase(const wxString & appName)
     config = new wxConfig(appName);
 
     // If there isn't a setting, writes a new one with default values
-    if(!config->Exists(CONFIG_GENERAL_GROUP))
+    if (!config->Exists(CONFIG_GENERAL_GROUP))
         setDefaultConfig();
 }
 
@@ -61,11 +61,11 @@ wxString ConfigBase::getStringToolOptions()
     }
 
     // PreserveTimestamp
-    if(getPreserveTimeEnabled())
+    if (getPreserveTimeEnabled())
         toolOptions.append(wxT("-p "));
 
     // ForceInput
-    if(getForceInputEnabled())
+    if (getForceInputEnabled())
         toolOptions.append(wxT("-f "));
 
     toolOptions.Trim();
@@ -102,7 +102,7 @@ wxString ConfigBase::getStringToolOptionsGain()
     toolOptions.append(wxT("-c "));
 
     // Constant Gain
-    if(getConstantGainEnabled())
+    if (getConstantGainEnabled())
     {
         switch (getChannelGainMode())
         {
@@ -123,6 +123,7 @@ wxString ConfigBase::getStringToolOptionsGain()
 }
 
 //gets...
+
 wxString ConfigBase::getLastOpenDir()
 {
     wxString value = wxEmptyString;
@@ -208,6 +209,7 @@ bool ConfigBase::getForceInputEnabled()
 }
 
 //sets...
+
 void ConfigBase::setLastOpenDir(wxString value)
 {
     config->Write(CONFIG_SYSTEM_GROUP + CONFIG_STR_LastOpenDir, value);

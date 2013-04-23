@@ -63,8 +63,8 @@
 		<Linker>
 			<Add option="-mthreads" />
 		</Linker>
-		<Unit filename="src/AudioInfo.cpp" />
-		<Unit filename="src/AudioInfo.h" />
+		<Unit filename="src/FileInfo.cpp" />
+		<Unit filename="src/FileInfo.h" />
 		<Unit filename="src/ConfigBase.cpp" />
 		<Unit filename="src/ConfigBase.h" />
 		<Unit filename="src/Conversion.cpp" />
@@ -91,9 +91,9 @@
 			<wxsmith version="1">
 				<gui name="wxWidgets" src="wxMP3gainApp.cpp" main="wxMP3gainFrame" init_handlers="necessary" language="CPP" />
 				<resources>
-					<wxFrame wxs="wxsmith/frmMain.wxs" src="frmMain.cpp" hdr="frmMain.h" fwddecl="0" i18n="1" name="frmMain" language="CPP" />
-					<wxDialog wxs="wxsmith/frmSettings.wxs" src="frmSettings.cpp" hdr="frmSettings.h" fwddecl="0" i18n="1" name="frmSettings" language="CPP" />
-					<wxDialog wxs="wxsmith/frmAbout.wxs" src="frmAbout.cpp" hdr="frmAbout.h" fwddecl="0" i18n="1" name="frmAbout" language="CPP" />
+					<wxFrame wxs="wxsmith/frmMain.wxs" src="src/frmMain.cpp" hdr="src/frmMain.h" fwddecl="0" i18n="1" name="frmMain" language="CPP" />
+					<wxDialog wxs="wxsmith/frmSettings.wxs" src="src/frmSettings.cpp" hdr="src/frmSettings.h" fwddecl="0" i18n="1" name="frmSettings" language="CPP" />
+					<wxDialog wxs="wxsmith/frmAbout.wxs" src="src/frmAbout.cpp" hdr="src/frmAbout.h" fwddecl="0" i18n="1" name="frmAbout" language="CPP" />
 				</resources>
 			</wxsmith>
 		</Extensions>

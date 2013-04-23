@@ -10,7 +10,6 @@
 #include "Progress.h"
 #include "Conversion.h"
 #include "Global.h"
-#include "AudioInfo.h"
 #include "DndFile.h"
 
 //(*InternalHeaders(frmMain)
@@ -21,10 +20,8 @@
 #include <wx/string.h>
 //*)
 
-#include <wx/aboutdlg.h>
 #include <wx/filedlg.h>
 #include <wx/dirdlg.h>
-#include <wx/hash.h>
 
 //(*IdInit(frmMain)
 const long frmMain::ID_STATICTEXT1 = wxNewId();
@@ -64,12 +61,12 @@ const long frmMain::ID_MENUITEM12 = wxNewId();
 const long frmMain::ID_MENUITEM13 = wxNewId();
 //*)
 
-BEGIN_EVENT_TABLE(frmMain,wxFrame)
-    //(*EventTable(frmMain)
-    //*)
+BEGIN_EVENT_TABLE(frmMain, wxFrame)
+//(*EventTable(frmMain)
+//*)
 END_EVENT_TABLE()
 
-frmMain::frmMain(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize& size)
+frmMain::frmMain(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSize& size)
 {
     //(*Initialize(frmMain)
     wxMenuItem* MenuItem5;
@@ -89,26 +86,26 @@ frmMain::frmMain(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize&
     wxMenu* Menu5;
 
     Create(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("wxID_ANY"));
-    SetClientSize(wxSize(763,450));
-    Panel1 = new wxPanel(this, ID_PANEL1, wxPoint(8,16), wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL1"));
+    SetClientSize(wxSize(763, 450));
+    Panel1 = new wxPanel(this, ID_PANEL1, wxPoint(8, 16), wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL1"));
     BoxMain = new wxBoxSizer(wxVERTICAL);
     BoxNormalVolume = new wxBoxSizer(wxHORIZONTAL);
     StaticText1 = new wxStaticText(Panel1, ID_STATICTEXT1, _("Target \"Normal\" volume:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT1"));
-    BoxNormalVolume->Add(StaticText1, 0, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    BoxNormalVolume->Add(StaticText1, 0, wxALL | wxALIGN_CENTER_HORIZONTAL | wxALIGN_CENTER_VERTICAL, 5);
     txtNormalVolume = new wxTextCtrl(Panel1, ID_TEXTCTRL1, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL1"));
     txtNormalVolume->SetMaxLength(5);
-    BoxNormalVolume->Add(txtNormalVolume, 0, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    BoxNormalVolume->Add(txtNormalVolume, 0, wxALL | wxALIGN_CENTER_HORIZONTAL | wxALIGN_CENTER_VERTICAL, 5);
     StaticText2 = new wxStaticText(Panel1, ID_STATICTEXT2, _("dB. (Default 89.0 dB)"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT2"));
-    BoxNormalVolume->Add(StaticText2, 0, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    BoxMain->Add(BoxNormalVolume, 0, wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    BoxNormalVolume->Add(StaticText2, 0, wxALL | wxALIGN_CENTER_HORIZONTAL | wxALIGN_CENTER_VERTICAL, 5);
+    BoxMain->Add(BoxNormalVolume, 0, wxEXPAND | wxALIGN_CENTER_HORIZONTAL | wxALIGN_CENTER_VERTICAL, 5);
     BoxConstantGain = new wxBoxSizer(wxHORIZONTAL);
     StaticText3 = new wxStaticText(Panel1, ID_STATICTEXT3, _("Using constant gain: "), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT3"));
-    BoxConstantGain->Add(StaticText3, 0, wxTOP|wxBOTTOM|wxLEFT|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    BoxConstantGain->Add(StaticText3, 0, wxTOP | wxBOTTOM | wxLEFT | wxALIGN_CENTER_HORIZONTAL | wxALIGN_CENTER_VERTICAL, 5);
     lblConstantGain = new wxStaticText(Panel1, ID_STATICTEXT4, _("+0 (+00.0 dB)"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT4"));
-    BoxConstantGain->Add(lblConstantGain, 1, wxTOP|wxBOTTOM|wxRIGHT|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    BoxMain->Add(BoxConstantGain, 0, wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    BoxConstantGain->Add(lblConstantGain, 1, wxTOP | wxBOTTOM | wxRIGHT | wxEXPAND | wxALIGN_CENTER_HORIZONTAL | wxALIGN_CENTER_VERTICAL, 5);
+    BoxMain->Add(BoxConstantGain, 0, wxEXPAND | wxALIGN_CENTER_HORIZONTAL | wxALIGN_CENTER_VERTICAL, 5);
     lstFiles = new wxListCtrl(Panel1, ID_LISTCTRL2, wxDefaultPosition, wxDefaultSize, wxLC_REPORT, wxDefaultValidator, _T("ID_LISTCTRL2"));
-    BoxMain->Add(lstFiles, 1, wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    BoxMain->Add(lstFiles, 1, wxEXPAND | wxALIGN_CENTER_HORIZONTAL | wxALIGN_CENTER_VERTICAL, 5);
     Panel1->SetSizer(BoxMain);
     BoxMain->Fit(Panel1);
     BoxMain->SetSizeHints(Panel1);
@@ -158,22 +155,22 @@ frmMain::frmMain(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize&
     MenuBar1->Append(Menu5, _("&Help"));
     SetMenuBar(MenuBar1);
     StatusBar1 = new wxStatusBar(this, ID_STATUSBAR1, wxST_SIZEGRIP, _T("ID_STATUSBAR1"));
-    int __wxStatusBarWidths_1[2] = { -10, -10 };
-    int __wxStatusBarStyles_1[2] = { wxSB_NORMAL, wxSB_NORMAL };
-    StatusBar1->SetFieldsCount(2,__wxStatusBarWidths_1);
-    StatusBar1->SetStatusStyles(2,__wxStatusBarStyles_1);
+    int __wxStatusBarWidths_1[2] = {-10, -10};
+    int __wxStatusBarStyles_1[2] = {wxSB_NORMAL, wxSB_NORMAL};
+    StatusBar1->SetFieldsCount(2, __wxStatusBarWidths_1);
+    StatusBar1->SetStatusStyles(2, __wxStatusBarStyles_1);
     SetStatusBar(StatusBar1);
-    ToolBar1 = new wxToolBar(this, ID_TOOLBAR1, wxDefaultPosition, wxDefaultSize, wxTB_FLAT|wxTB_HORIZONTAL|wxTB_TEXT|wxNO_BORDER, _T("ID_TOOLBAR1"));
-    ToolBarItem1 = ToolBar1->AddTool(ID_TOOLBARITEM8, _("Add folder"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_QUESTION")),wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString);
-    ToolBarItem2 = ToolBar1->AddTool(ID_TOOLBARITEM1, _("Add files"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_QUESTION")),wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString);
-    ToolBarItem3 = ToolBar1->AddTool(ID_TOOLBARITEM2, _("Remove files"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_QUESTION")),wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString);
-    ToolBarItem4 = ToolBar1->AddTool(ID_TOOLBARITEM3, _("Clear files"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_QUESTION")),wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString);
+    ToolBar1 = new wxToolBar(this, ID_TOOLBAR1, wxDefaultPosition, wxDefaultSize, wxTB_FLAT | wxTB_HORIZONTAL | wxTB_TEXT | wxNO_BORDER, _T("ID_TOOLBAR1"));
+    ToolBarItem1 = ToolBar1->AddTool(ID_TOOLBARITEM8, _("Add folder"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_QUESTION")), wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString);
+    ToolBarItem2 = ToolBar1->AddTool(ID_TOOLBARITEM1, _("Add files"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_QUESTION")), wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString);
+    ToolBarItem3 = ToolBar1->AddTool(ID_TOOLBARITEM2, _("Remove files"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_QUESTION")), wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString);
+    ToolBarItem4 = ToolBar1->AddTool(ID_TOOLBARITEM3, _("Clear files"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_QUESTION")), wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString);
     ToolBar1->AddSeparator();
-    ToolBarItem5 = ToolBar1->AddTool(ID_TOOLBARITEM4, _("Analysis"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_QUESTION")),wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString);
-    ToolBarItem6 = ToolBar1->AddTool(ID_TOOLBARITEM5, _("Gain"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_QUESTION")),wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString);
+    ToolBarItem5 = ToolBar1->AddTool(ID_TOOLBARITEM4, _("Analysis"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_QUESTION")), wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString);
+    ToolBarItem6 = ToolBar1->AddTool(ID_TOOLBARITEM5, _("Gain"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_QUESTION")), wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString);
     ToolBar1->AddSeparator();
-    ToolBarItem7 = ToolBar1->AddTool(ID_TOOLBARITEM6, _("Settings"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_QUESTION")),wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString);
-    ToolBarItem8 = ToolBar1->AddTool(ID_TOOLBARITEM7, _("About"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_QUESTION")),wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString);
+    ToolBarItem7 = ToolBar1->AddTool(ID_TOOLBARITEM6, _("Settings"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_QUESTION")), wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString);
+    ToolBarItem8 = ToolBar1->AddTool(ID_TOOLBARITEM7, _("About"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_QUESTION")), wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString);
     ToolBar1->Realize();
     SetToolBar(ToolBar1);
     MenuItem18 = new wxMenuItem((&Menu1), ID_MENUITEM18, _("Add F&older"), wxEmptyString, wxITEM_NORMAL);
@@ -186,51 +183,51 @@ frmMain::frmMain(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize&
     Menu1.Append(MenuItem11);
     Center();
 
-    Connect(ID_LISTCTRL2,wxEVT_COMMAND_LIST_DELETE_ITEM,(wxObjectEventFunction)&frmMain::OnlstFilesDeleteItem);
-    Connect(ID_LISTCTRL2,wxEVT_COMMAND_LIST_ITEM_SELECTED,(wxObjectEventFunction)&frmMain::OnlstFilesClick);
-    Connect(ID_LISTCTRL2,wxEVT_COMMAND_LIST_ITEM_DESELECTED,(wxObjectEventFunction)&frmMain::OnlstFilesClick);
-    Connect(ID_LISTCTRL2,wxEVT_COMMAND_LIST_ITEM_RIGHT_CLICK,(wxObjectEventFunction)&frmMain::OnlstFilesItemRClick);
-    Connect(ID_LISTCTRL2,wxEVT_COMMAND_LIST_INSERT_ITEM,(wxObjectEventFunction)&frmMain::OnlstFilesInsertItem);
-    Connect(ID_MENUITEM17,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&frmMain::mnuAddDirectory);
-    Connect(ID_MENUITEM2,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&frmMain::mnuAddFiles);
-    Connect(ID_MENUITEM1,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&frmMain::mnuExit);
-    Connect(ID_MENUITEM3,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&frmMain::mnuRemoveFiles);
-    Connect(ID_MENUITEM4,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&frmMain::mnuClearList);
-    Connect(ID_MENUITEM6,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&frmMain::mnuSettings);
-    Connect(ID_MENUITEM14,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&frmMain::mnuScan);
-    Connect(ID_MENUITEM15,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&frmMain::mnuClearAnalysis);
-    Connect(ID_MENUITEM16,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&frmMain::mnuFix);
-    Connect(ID_MENUITEM7,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&frmMain::mnuUndoGain);
-    Connect(ID_MENUITEM8,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&frmMain::mnuRemoveTags);
-    Connect(ID_MENUITEM10,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&frmMain::mnuToolWebsite);
-    Connect(ID_MENUITEM11,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&frmMain::mnuWebsite);
-    Connect(ID_MENUITEM9,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&frmMain::mnuAbout);
-    Connect(ID_TOOLBARITEM8,wxEVT_COMMAND_TOOL_CLICKED,(wxObjectEventFunction)&frmMain::mnuAddDirectory);
-    Connect(ID_TOOLBARITEM1,wxEVT_COMMAND_TOOL_CLICKED,(wxObjectEventFunction)&frmMain::mnuAddFiles);
-    Connect(ID_TOOLBARITEM2,wxEVT_COMMAND_TOOL_CLICKED,(wxObjectEventFunction)&frmMain::mnuRemoveFiles);
-    Connect(ID_TOOLBARITEM3,wxEVT_COMMAND_TOOL_CLICKED,(wxObjectEventFunction)&frmMain::mnuClearList);
-    Connect(ID_TOOLBARITEM4,wxEVT_COMMAND_TOOL_CLICKED,(wxObjectEventFunction)&frmMain::mnuScan);
-    Connect(ID_TOOLBARITEM5,wxEVT_COMMAND_TOOL_CLICKED,(wxObjectEventFunction)&frmMain::mnuFix);
-    Connect(ID_TOOLBARITEM6,wxEVT_COMMAND_TOOL_CLICKED,(wxObjectEventFunction)&frmMain::mnuSettings);
-    Connect(ID_TOOLBARITEM7,wxEVT_COMMAND_TOOL_CLICKED,(wxObjectEventFunction)&frmMain::mnuAbout);
-    Connect(ID_MENUITEM18,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&frmMain::mnuAddDirectory);
-    Connect(ID_MENUITEM5,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&frmMain::mnuAddFiles);
-    Connect(ID_MENUITEM12,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&frmMain::mnuRemoveFiles);
-    Connect(ID_MENUITEM13,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&frmMain::mnuClearList);
+    Connect(ID_LISTCTRL2, wxEVT_COMMAND_LIST_DELETE_ITEM, (wxObjectEventFunction) & frmMain::OnlstFilesDeleteItem);
+    Connect(ID_LISTCTRL2, wxEVT_COMMAND_LIST_ITEM_SELECTED, (wxObjectEventFunction) & frmMain::OnlstFilesClick);
+    Connect(ID_LISTCTRL2, wxEVT_COMMAND_LIST_ITEM_DESELECTED, (wxObjectEventFunction) & frmMain::OnlstFilesClick);
+    Connect(ID_LISTCTRL2, wxEVT_COMMAND_LIST_ITEM_RIGHT_CLICK, (wxObjectEventFunction) & frmMain::OnlstFilesItemRClick);
+    Connect(ID_LISTCTRL2, wxEVT_COMMAND_LIST_INSERT_ITEM, (wxObjectEventFunction) & frmMain::OnlstFilesInsertItem);
+    Connect(ID_MENUITEM17, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuAddDirectory);
+    Connect(ID_MENUITEM2, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuAddFiles);
+    Connect(ID_MENUITEM1, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuExit);
+    Connect(ID_MENUITEM3, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuRemoveFiles);
+    Connect(ID_MENUITEM4, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuClearList);
+    Connect(ID_MENUITEM6, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuSettings);
+    Connect(ID_MENUITEM14, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuScan);
+    Connect(ID_MENUITEM15, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuClearAnalysis);
+    Connect(ID_MENUITEM16, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuFix);
+    Connect(ID_MENUITEM7, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuUndoGain);
+    Connect(ID_MENUITEM8, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuRemoveTags);
+    Connect(ID_MENUITEM10, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuToolWebsite);
+    Connect(ID_MENUITEM11, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuWebsite);
+    Connect(ID_MENUITEM9, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuAbout);
+    Connect(ID_TOOLBARITEM8, wxEVT_COMMAND_TOOL_CLICKED, (wxObjectEventFunction) & frmMain::mnuAddDirectory);
+    Connect(ID_TOOLBARITEM1, wxEVT_COMMAND_TOOL_CLICKED, (wxObjectEventFunction) & frmMain::mnuAddFiles);
+    Connect(ID_TOOLBARITEM2, wxEVT_COMMAND_TOOL_CLICKED, (wxObjectEventFunction) & frmMain::mnuRemoveFiles);
+    Connect(ID_TOOLBARITEM3, wxEVT_COMMAND_TOOL_CLICKED, (wxObjectEventFunction) & frmMain::mnuClearList);
+    Connect(ID_TOOLBARITEM4, wxEVT_COMMAND_TOOL_CLICKED, (wxObjectEventFunction) & frmMain::mnuScan);
+    Connect(ID_TOOLBARITEM5, wxEVT_COMMAND_TOOL_CLICKED, (wxObjectEventFunction) & frmMain::mnuFix);
+    Connect(ID_TOOLBARITEM6, wxEVT_COMMAND_TOOL_CLICKED, (wxObjectEventFunction) & frmMain::mnuSettings);
+    Connect(ID_TOOLBARITEM7, wxEVT_COMMAND_TOOL_CLICKED, (wxObjectEventFunction) & frmMain::mnuAbout);
+    Connect(ID_MENUITEM18, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuAddDirectory);
+    Connect(ID_MENUITEM5, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuAddFiles);
+    Connect(ID_MENUITEM12, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuRemoveFiles);
+    Connect(ID_MENUITEM13, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuClearList);
     //*)
 
     // If lost focus of txtNormalVolume
     txtNormalVolume->Connect(wxEVT_KILL_FOCUS, wxFocusEventHandler(frmMain::OntxtNormalVolumeTextKillFocus), NULL, this);
     txtNormalVolume->Connect(wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler(frmMain::OntxtNormalVolumeText), NULL, this);
 
+    // Aux list for wxListctrl
+    lstFilesData = new ArrayOfFiles();
+
     // Support Drag & Drop
-    lstFiles->SetDropTarget(new DndFile(lstFiles));
+    lstFiles->SetDropTarget(new DndFile(lstFiles, lstFilesData));
 
     // Configuration file
     configBase = new ConfigBase(APP_NAME);
-
-    // HashMap of wxListctrl
-    lstHashFiles = new wxHashTable(wxKEY_STRING);
 
     // Window title
     SetTitle(APP_NAME_WITH_VERSION);
@@ -260,7 +257,7 @@ frmMain::frmMain(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize&
     boxConstantGain = BoxConstantGain;
 
     // Box visible: Normal Volume OR Constant gain
-    if(configBase->getConstantGainEnabled())
+    if (configBase->getConstantGainEnabled())
         boxNormalVolume->Show(false);
     else
         boxConstantGain->Show(false);
@@ -280,7 +277,7 @@ frmMain::~frmMain()
 void frmMain::mnuAddFiles(wxCommandEvent& event)
 {
     wxArrayString files;
-    wxFileDialog FileDialog1(this, _("Select files"), wxEmptyString, wxEmptyString, APP_WILDCARD_EXT, wxFD_OPEN|wxFD_MULTIPLE);
+    wxFileDialog FileDialog1(this, _("Select files"), wxEmptyString, wxEmptyString, APP_WILDCARD_EXT, wxFD_OPEN | wxFD_MULTIPLE);
 
     // Read the last directory used
     FileDialog1.SetDirectory(configBase->getLastOpenDir());
@@ -291,7 +288,8 @@ void frmMain::mnuAddFiles(wxCommandEvent& event)
 
         // Get the file(s) the user selected
         FileDialog1.GetPaths(files);
-        DndFile::InsertFileList(lstFiles, files);
+        DndFile dndFile(lstFiles, lstFilesData);
+        dndFile.InsertFileList(files);
 
         // Remembers the last used directory
         configBase->setLastOpenDir(FileDialog1.GetDirectory());
@@ -308,7 +306,8 @@ void frmMain::mnuAddDirectory(wxCommandEvent& event)
     if (DirDialog1.ShowModal() == wxID_OK)
     {
         SetCursor(wxCURSOR_WAIT);
-        DndFile::InsertFileListDir(lstFiles, DirDialog1.GetPath());
+        DndFile dndFile(lstFiles, lstFilesData);
+        dndFile.InsertFileListDir(DirDialog1.GetPath());
 
         // Remembers the last used directory
         configBase->setLastOpenDir(DirDialog1.GetPath());
@@ -326,7 +325,7 @@ void frmMain::mnuClearList(wxCommandEvent& event)
 {
     // Deletes all items from the list
     lstFiles->DeleteAllItems();
-    lstHashFiles->Clear();
+    lstFilesData->Clear();
 
     updateDisabledControls();
 }
@@ -335,7 +334,7 @@ void frmMain::mnuRemoveFiles(wxCommandEvent& event)
 {
     int itemCount = lstFiles->GetSelectedItemCount();
     SetCursor(wxCURSOR_WAIT);
-    for (int i=0; i<itemCount; i++)
+    for (int i = 0; i < itemCount; i++)
     {
         lstFiles->DeleteItem(lstFiles->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED));
     }
@@ -348,14 +347,14 @@ void frmMain::mnuRemoveFiles(wxCommandEvent& event)
 void frmMain::mnuScan(wxCommandEvent& event)
 {
     // Displays the "Progress" window
-    Progress Dlg(0, configBase, lstFiles, lstHashFiles, dblNormalVolume, TOOL_ANALYSIS);
+    Progress Dlg(0, configBase, lstFiles, lstFilesData, dblNormalVolume, TOOL_ANALYSIS);
     Dlg.Execute();
 }
 
 void frmMain::mnuFix(wxCommandEvent& event)
 {
     // Displays the "Progress" window
-    Progress Dlg(0, configBase, lstFiles, lstHashFiles, dblNormalVolume, TOOL_GAIN);
+    Progress Dlg(0, configBase, lstFiles, lstFilesData, dblNormalVolume, TOOL_GAIN);
     Dlg.Execute();
 }
 
@@ -364,7 +363,7 @@ void frmMain::mnuUndoGain(wxCommandEvent& event)
     wxCommandEvent evt;
 
     // Displays the "Progress" window
-    Progress Dlg(0, configBase, lstFiles, lstHashFiles, dblNormalVolume, TOOL_UNDO);
+    Progress Dlg(0, configBase, lstFiles, lstFilesData, dblNormalVolume, TOOL_UNDO);
     Dlg.Execute();
 
     mnuClearAnalysis(evt);
@@ -375,7 +374,7 @@ void frmMain::mnuRemoveTags(wxCommandEvent& event)
     wxCommandEvent evt;
 
     // Displays the "Progress" window
-    Progress Dlg(0, configBase, lstFiles, lstHashFiles, dblNormalVolume, TOOL_DELETE_TAG);
+    Progress Dlg(0, configBase, lstFiles, lstFilesData, dblNormalVolume, TOOL_DELETE_TAG);
     Dlg.Execute();
 
     mnuClearAnalysis(evt);
@@ -427,7 +426,7 @@ void frmMain::mnuSettings(wxCommandEvent& event)
     Dlg.ShowModal();
 
     // Updates the box bar after closing the window "Settings"
-    if(configBase->getConstantGainEnabled())
+    if (configBase->getConstantGainEnabled())
     {
         boxNormalVolume->Show(false);
         boxConstantGain->Show(true);
@@ -440,16 +439,15 @@ void frmMain::mnuSettings(wxCommandEvent& event)
     }
     boxMain->Layout();
 
-    if(oldTagOptions != configBase->getTagOptions() || oldTagForceEnabled != configBase->getTagForceEnabled())
+    if (oldTagOptions != configBase->getTagOptions() || oldTagForceEnabled != configBase->getTagForceEnabled())
         mnuClearAnalysis(evt);
 
     // Updates after closing the window "Settings"
-    updateGainLabels(lstFiles, configBase, lstHashFiles, dblNormalVolume);
+    updateGainLabels(lstFiles, configBase, lstFilesData, dblNormalVolume);
     updateDisabledControls();
     updateStatusBar();
     updateTxtNormalVolumeDb();
 }
-
 
 void frmMain::updateStatusBar()
 {
@@ -460,7 +458,7 @@ void frmMain::updateStatusBar()
     wxExecute(configBase->getToolExecutable() + wxT(" -v"), inputString, inputErrorString, wxEXEC_NODISABLE);
 
     // Show the version of tool
-    if(!inputErrorString.IsEmpty())
+    if (!inputErrorString.IsEmpty())
         StatusBar1->SetStatusText(wxT("Using MP3gain version: ") + inputErrorString.Item(0).AfterLast(' '), 1);
     else
         StatusBar1->SetStatusText(wxT("MP3gain not found!"), 1);
@@ -505,28 +503,28 @@ void frmMain::loadResources()
 
 void frmMain::OntxtNormalVolumeText(wxCommandEvent& event)
 {
-    wxString strNormalVolume =  txtNormalVolume->GetLineText(0);
+    wxString strNormalVolume = txtNormalVolume->GetLineText(0);
     Conversion::convertDotComma(strNormalVolume);
     strNormalVolume.ToDouble(&dblNormalVolume);
 
-    if(dblNormalVolume < 75)
+    if (dblNormalVolume < 75)
         dblNormalVolume = 75.0;
-    else if(dblNormalVolume > 105)
+    else if (dblNormalVolume > 105)
         dblNormalVolume = 105.0;
 
-    updateGainLabels(lstFiles, configBase, lstHashFiles, dblNormalVolume);
+    updateGainLabels(lstFiles, configBase, lstFilesData, dblNormalVolume);
 }
 
 void frmMain::OntxtNormalVolumeTextKillFocus(wxFocusEvent& event)
 {
     // Save the NormalVolumeDb
-    configBase->setNormalVolumeDb((int)(float)(dblNormalVolume*10.0));
+    configBase->setNormalVolumeDb((int) (float) (dblNormalVolume * 10.0));
     updateTxtNormalVolumeDb();
 }
 
 void frmMain::updateTxtNormalVolumeDb()
 {
-    dblNormalVolume = (double)(configBase->getNormalVolumeDb()/10.0);
+    dblNormalVolume = (double) (configBase->getNormalVolumeDb() / 10.0);
     txtNormalVolume->Disconnect(wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler(frmMain::OntxtNormalVolumeText), NULL, this);
     txtNormalVolume->Clear();
     txtNormalVolume->WriteText(wxString::Format(wxT("%.1f"), dblNormalVolume));
@@ -535,48 +533,46 @@ void frmMain::updateTxtNormalVolumeDb()
 
 void frmMain::OnlstFilesInsertItem(wxListEvent& event)
 {
-    lstHashFiles->Put(lstFiles->GetItemText(event.GetIndex()), new AudioInfo(lstFiles->GetItemText(event.GetIndex())));
-    updateGainLabels(lstFiles, configBase, lstHashFiles, dblNormalVolume);
     updateDisabledControls();
 }
 
 void frmMain::OnlstFilesDeleteItem(wxListEvent& event)
 {
-    lstHashFiles->Delete(lstFiles->GetItemText(event.GetIndex()));
+    lstFilesData->Detach(event.GetIndex());
     updateDisabledControls();
 }
 
-void frmMain::updateGainLabels(wxListCtrl* listFilesUpdate, ConfigBase* configBaseUpdate, wxHashTable* lstHashFilesUpdate, const double& dblNormalVolumeUpdate)
+void frmMain::updateGainLabels(wxListCtrl* listFilesUpdate, ConfigBase* configBaseUpdate, ArrayOfFiles* lstFilesDataUpdate, const double& dblNormalVolumeUpdate)
 {
-    for (int i=0; i<listFilesUpdate->GetItemCount(); i++)
+    for (int i = 0; i < listFilesUpdate->GetItemCount(); i++)
     {
-        AudioInfo* audioInfo = (AudioInfo*)lstHashFilesUpdate->Get(listFilesUpdate->GetItemText(i));
+        FileInfo fileInfo = lstFilesDataUpdate->Item(i);
 
         // Update GainChange
-        if(configBaseUpdate->getConstantGainEnabled())
+        if (configBaseUpdate->getConstantGainEnabled())
         {
-            audioInfo->setGainChange(configBaseUpdate->getConstantGainValue());
+            fileInfo.setGainChange(configBaseUpdate->getConstantGainValue());
         }
         else
         {
-            double dblGainChange = (dblNormalVolumeUpdate-audioInfo->getVolume()) / (5.0 * log10(2.0));
+            double dblGainChange = (dblNormalVolumeUpdate - fileInfo.getVolume()) / (5.0 * log10(2.0));
             int intGainChange = Conversion::convertDoubleToIntGain(dblGainChange);
-            audioInfo->setGainChange(intGainChange);
+            fileInfo.setGainChange(intGainChange);
         }
 
         // Correct gain if has clipping
-        if(configBaseUpdate->getAutoLowerEnabled())
+        if (configBaseUpdate->getAutoLowerEnabled())
         {
-            int maxNoclipMp3Gain = Conversion::getMaxNoclipMp3Gain(audioInfo->getMaxPcmSample());
-            if(audioInfo->getGainChange() > maxNoclipMp3Gain)
-                audioInfo->setGainChange(maxNoclipMp3Gain);
+            int maxNoclipMp3Gain = Conversion::getMaxNoclipMp3Gain(fileInfo.getMaxPcmSample());
+            if (fileInfo.getGainChange() > maxNoclipMp3Gain)
+                fileInfo.setGainChange(maxNoclipMp3Gain);
         }
 
         // Update the list itens
-        if(audioInfo->isVolumeSet())
+        if (fileInfo.isVolumeSet())
         {
-            listFilesUpdate->SetItem(i, 4, wxString::Format(wxT("%i"), audioInfo->getGainChange()));
-            listFilesUpdate->SetItem(i, 3, wxString::Format(wxT("%.1f"), audioInfo->getGainChange() * (5.0 * log10(2.0))));
+            listFilesUpdate->SetItem(i, 4, wxString::Format(wxT("%i"), fileInfo.getGainChange()));
+            listFilesUpdate->SetItem(i, 3, wxString::Format(wxT("%.1f"), fileInfo.getGainChange() * (5.0 * log10(2.0))));
         }
         else
         {
@@ -588,10 +584,10 @@ void frmMain::updateGainLabels(wxListCtrl* listFilesUpdate, ConfigBase* configBa
 
 void frmMain::mnuClearAnalysis(wxCommandEvent& event)
 {
-    for (int i=0; i<lstFiles->GetItemCount(); i++)
+    for (int i = 0; i < lstFiles->GetItemCount(); i++)
     {
-        AudioInfo* audioInfo = (AudioInfo*)lstHashFiles->Get(lstFiles->GetItemText(i));
-        audioInfo->volumeReset();
+        FileInfo fileInfo = lstFilesData->Item(i);
+        fileInfo.volumeReset();
         lstFiles->SetItem(i, 1, wxT(""));
         lstFiles->SetItem(i, 2, wxT(""));
         lstFiles->SetItem(i, 3, wxT(""));
@@ -600,5 +596,4 @@ void frmMain::mnuClearAnalysis(wxCommandEvent& event)
         lstFiles->SetItemTextColour(i, *wxBLACK);
     }
 }
-
 
