@@ -546,7 +546,7 @@ void frmMain::updateGainLabels(wxListCtrl* listFilesUpdate, ConfigBase* configBa
 {
     for (int i = 0; i < listFilesUpdate->GetItemCount(); i++)
     {
-        FileInfo fileInfo = lstFilesDataUpdate->Item(i);
+        FileInfo& fileInfo = lstFilesDataUpdate->Item(i);
 
         // Update GainChange
         if (configBaseUpdate->getConstantGainEnabled())
@@ -586,7 +586,7 @@ void frmMain::mnuClearAnalysis(wxCommandEvent& event)
 {
     for (int i = 0; i < lstFiles->GetItemCount(); i++)
     {
-        FileInfo fileInfo = lstFilesData->Item(i);
+        FileInfo& fileInfo = lstFilesData->Item(i);
         fileInfo.volumeReset();
         lstFiles->SetItem(i, 1, wxT(""));
         lstFiles->SetItem(i, 2, wxT(""));

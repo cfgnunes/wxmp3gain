@@ -263,7 +263,6 @@ void frmSettings::saveValuesConfig()
 
     configBase->setTagForceEnabled(chkTagFORCE->GetValue());
 
-
     // Constant gain
     configBase->setConstantGainEnabled(chkConstantGain->GetValue());
     configBase->setConstantGainValue(sldConstantGain->GetValue());
