@@ -116,7 +116,7 @@ void Progress::ProcessFile(int fileIterator)
 
 void Progress::ProcessOutputString(int fileIterator)
 {
-    FileInfo fileInfo = lstFilesData->Item(fileIterator);
+    FileInfo& fileInfo = lstFilesData->Item(fileIterator);
     wxString tempString;
 
     if (!inputString.IsEmpty())
