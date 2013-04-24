@@ -49,7 +49,7 @@ void Progress::ProcessFile(int fileIterator)
 {
     wxString fullCommand = configBase->getToolExecutable() + wxT(" ") + configBase->getStringToolOptions() + wxT(" ") + configBase->getStringToolOptionsTag();
     wxString runCommand;
-    FileInfo fileInfo = lstFilesData->Item(fileIterator);
+    FileInfo& fileInfo = lstFilesData->Item(fileIterator);
     wxFileName filenameInput = fileInfo.getFileName();
 
     if (workType == TOOL_GAIN || workType == TOOL_ANALYSIS)
