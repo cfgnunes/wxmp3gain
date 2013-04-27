@@ -19,10 +19,14 @@ all:
 	@g++ $(CPPFLAGS) -c $(SRC_DIR)/*.cpp
 	@g++ -o $(APP_NAME) *.o $(LINKFLAGS)
 
+	@mkdir -p ./resource/msg/pt/
+	@msgfmt ./msg/pt.po -o ./resource/msg/pt/$(APP_NAME).mo
+
 clean:
 	@rm -f *.o *.depend *.layout
 	@rm -rf ./bin/
 	@rm -rf ./obj/
+	@rm -rf ./resource/msg/
 	@rm -f $(APP_NAME)
 
 install:

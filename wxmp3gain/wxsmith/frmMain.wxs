@@ -12,7 +12,7 @@
 					<object class="wxBoxSizer" variable="BoxNormalVolume" member="no">
 						<object class="sizeritem">
 							<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
-								<label>Target &quot;Normal&quot; volume:</label>
+								<label>Target normal volume:</label>
 							</object>
 							<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 							<border>5</border>
@@ -107,8 +107,7 @@
 			<object class="wxMenu" variable="Menu6" member="yes">
 				<label>&amp;Analysis</label>
 				<object class="wxMenuItem" name="ID_MENUITEM14" variable="MenuItem14" member="yes">
-					<label>Track Analysis</label>
-					<accel>Ctrl+T</accel>
+					<label>Analyze</label>
 					<handler function="mnuScan" entry="EVT_MENU" />
 				</object>
 				<object class="separator" />
@@ -120,8 +119,7 @@
 			<object class="wxMenu" variable="Menu7" member="yes">
 				<label>&amp;Gain</label>
 				<object class="wxMenuItem" name="ID_MENUITEM16" variable="MenuItem16" member="yes">
-					<label>Track Gain</label>
-					<accel>Ctrl+G</accel>
+					<label>Gain</label>
 					<handler function="mnuFix" entry="EVT_MENU" />
 				</object>
 				<object class="separator" />
@@ -182,7 +180,7 @@
 			</object>
 			<object class="separator" />
 			<object class="tool" name="ID_TOOLBARITEM4" variable="ToolBarItem5" member="yes">
-				<label>Analysis</label>
+				<label>Analyze</label>
 				<bitmap stock_id="wxART_QUESTION" />
 				<handler function="mnuScan" entry="EVT_TOOL" />
 			</object>
