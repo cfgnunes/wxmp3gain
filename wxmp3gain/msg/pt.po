@@ -122,7 +122,7 @@ msgstr "Arquivo de escrita:"
 
 #: frmSettings.cpp:98
 msgid "Force re-calculation (do not read tag info)"
-msgstr "Forçar o recálculo (não ler informações de tag)"
+msgstr "Forçar o recálculo (não ler tag de informação)"
 
 #: frmSettings.cpp:145
 msgid "Force to assume input is an MPEG 2 Layer III file"
@@ -245,7 +245,7 @@ msgstr "Leitura de Tags"
 
 #: frmMain.cpp:142
 msgid "Undo gain changes (based on stored tag info)\tCtrl+Z"
-msgstr "Desfazer alterações de ganho (com base na informação da tag armazenada)\tCtrl+Z"
+msgstr "Desfazer alterações de ganho (com base na tag de informação armazenada)\tCtrl+Z"
 
 #: frmSettings.cpp:90
 msgid "Use APEv2 tag for gain information (default)"
