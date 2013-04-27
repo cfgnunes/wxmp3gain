@@ -18,7 +18,7 @@
 										<orient>wxVERTICAL</orient>
 										<object class="sizeritem">
 											<object class="wxCheckBox" name="ID_CHECKBOX3" variable="chkAutoLower" member="yes">
-												<label>Automatically lower track gain to not clip audio</label>
+												<label>Automatically lower gain to not clip audio</label>
 											</object>
 											<flag>wxALL|wxALIGN_LEFT|wxALIGN_TOP</flag>
 											<border>2</border>
@@ -226,7 +226,7 @@
 										</object>
 										<object class="sizeritem">
 											<object class="wxCheckBox" name="ID_CHECKBOX5" variable="chkPreserveTime" member="yes">
-												<label>Preserve original file timestamp</label>
+												<label>Keep file timestamps</label>
 											</object>
 											<flag>wxALL|wxALIGN_LEFT|wxALIGN_TOP</flag>
 											<border>2</border>
