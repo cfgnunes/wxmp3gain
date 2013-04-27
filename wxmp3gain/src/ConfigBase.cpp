@@ -53,20 +53,20 @@ wxString ConfigBase::getStringToolOptions()
     switch (getFileWriting())
     {
     case 0:
-        toolOptions.append(wxT("-t "));
+        toolOptions.append(_T("-t "));
         break;
     case 1:
-        toolOptions.append(wxT("-T "));
+        toolOptions.append(_T("-T "));
         break;
     }
 
     // PreserveTimestamp
     if (getPreserveTimeEnabled())
-        toolOptions.append(wxT("-p "));
+        toolOptions.append(_T("-p "));
 
     // ForceInput
     if (getForceInputEnabled())
-        toolOptions.append(wxT("-f "));
+        toolOptions.append(_T("-f "));
 
     toolOptions.Trim();
     return toolOptions;
@@ -80,13 +80,13 @@ wxString ConfigBase::getStringToolOptionsTag()
     switch (getTagOptions())
     {
     case 0:
-        toolOptions.append(wxT("-s a "));
+        toolOptions.append(_T("-s a "));
         break;
     case 1:
-        toolOptions.append(wxT("-s i "));
+        toolOptions.append(_T("-s i "));
         break;
     case 2:
-        toolOptions.append(wxT("-s s "));
+        toolOptions.append(_T("-s s "));
         break;
     }
 
@@ -99,7 +99,7 @@ wxString ConfigBase::getStringToolOptionsGain()
     wxString toolOptions;
 
     // Ignore clipping warning when applying gain
-    toolOptions.append(wxT("-c "));
+    toolOptions.append(_T("-c "));
 
     // Constant Gain
     if (getConstantGainEnabled())
@@ -107,13 +107,13 @@ wxString ConfigBase::getStringToolOptionsGain()
         switch (getChannelGainMode())
         {
         case 0:
-            toolOptions.append(wxT("-g ") + wxString::Format(wxT("%i "), getConstantGainValue()));
+            toolOptions.append(_T("-g ") + wxString::Format(_T("%i "), getConstantGainValue()));
             break;
         case 1:
-            toolOptions.append(wxT("-l 0 ") + wxString::Format(wxT("%i "), getConstantGainValue()));
+            toolOptions.append(_T("-l 0 ") + wxString::Format(_T("%i "), getConstantGainValue()));
             break;
         case 2:
-            toolOptions.append(wxT("-l 1 ") + wxString::Format(wxT("%i "), getConstantGainValue()));
+            toolOptions.append(_T("-l 1 ") + wxString::Format(_T("%i "), getConstantGainValue()));
             break;
         }
     }

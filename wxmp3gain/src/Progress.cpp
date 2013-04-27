@@ -29,16 +29,16 @@ void Progress::Execute()
     int maxValue = listFiles->GetItemCount();
     bool cont = true;
 
-    wxProgressDialog dialog(wxT("Working progress"), wxT("Wait..."), maxValue, parent, wxPD_CAN_ABORT | wxPD_APP_MODAL | wxPD_ELAPSED_TIME | wxPD_ESTIMATED_TIME | wxPD_REMAINING_TIME);
-    dialog.Update(0, wxString::Format(wxT("Processed 0 files of %i."), maxValue));
+    wxProgressDialog dialog(_("Working progress"), _("Wait..."), maxValue, parent, wxPD_CAN_ABORT | wxPD_APP_MODAL | wxPD_ELAPSED_TIME | wxPD_ESTIMATED_TIME | wxPD_REMAINING_TIME);
+    dialog.Update(0, wxString::Format(_("Processed %i files of %i."), 0, maxValue));
     for (int i = 0; i < maxValue; i++)
     {
         ProcessFile(i);
 
-        cont = dialog.Update(i + 1, wxString::Format(wxT("Processed %i files of %i."), i + 1, maxValue));
+        cont = dialog.Update(i + 1, wxString::Format(_("Processed %i files of %i."), i + 1, maxValue));
         if (!cont)
         {
-            if (wxMessageBox(wxT("Do you want to stop process now?"), wxT("Question"), wxYES_NO | wxICON_QUESTION) == wxYES)
+            if (wxMessageBox(_("Do you want to stop process now?"), APP_NAME, wxYES_NO | wxICON_QUESTION) == wxYES)
                 break;
             dialog.Resume();
         }
@@ -47,7 +47,7 @@ void Progress::Execute()
 
 void Progress::ProcessFile(int fileIterator)
 {
-    wxString fullCommand = configBase->getToolExecutable() + wxT(" ") + configBase->getStringToolOptions() + wxT(" ") + configBase->getStringToolOptionsTag();
+    wxString fullCommand = configBase->getToolExecutable() + _T(" ") + configBase->getStringToolOptions() + _T(" ") + configBase->getStringToolOptionsTag();
     wxString runCommand;
     FileInfo& fileInfo = lstFilesData->Item(fileIterator);
     wxFileName filenameInput = fileInfo.getFileName();
@@ -57,18 +57,18 @@ void Progress::ProcessFile(int fileIterator)
         // Get old volume values (try read tag info first [if enabled tag read] )
         if (!fileInfo.isVolumeSet() && configBase->getTagOptions() != 2 && !configBase->getTagForceEnabled())
         {
-            runCommand = fullCommand + wxT(" -s c \"") + filenameInput.GetFullPath() + wxT("\"");
+            runCommand = fullCommand + _T(" -s c \"") + filenameInput.GetFullPath() + _T("\"");
             wxExecute(runCommand, inputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
             ProcessOutputString(fileIterator);
             if (fileInfo.isVolumeSet())
-                listFiles->SetItem(fileIterator, 5, wxT("yes"));
+                listFiles->SetItem(fileIterator, 5, _("yes"));
         }
         if (!fileInfo.isVolumeSet())
         {
-            runCommand = configBase->getToolExecutable() + wxT(" -s s \"") + filenameInput.GetFullPath() + wxT("\"");
+            runCommand = configBase->getToolExecutable() + _T(" -s s \"") + filenameInput.GetFullPath() + _T("\"");
             wxExecute(runCommand, inputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
             ProcessOutputString(fileIterator);
-            listFiles->SetItem(fileIterator, 5, wxT(""));
+            listFiles->SetItem(fileIterator, 5, _T(""));
         }
     }
 
@@ -77,24 +77,24 @@ void Progress::ProcessFile(int fileIterator)
     {
         // Execute Gain
         if (configBase->getConstantGainEnabled())
-            runCommand = fullCommand + wxT(" ") + configBase->getStringToolOptionsGain() + wxT(" \"") + filenameInput.GetFullPath() + wxT("\"");
+            runCommand = fullCommand + _T(" ") + configBase->getStringToolOptionsGain() + _T(" \"") + filenameInput.GetFullPath() + _T("\"");
         else
-            runCommand = fullCommand + wxT(" ") + configBase->getStringToolOptionsGain() + wxT(" -g ") + wxString::Format(wxT("%i "), fileInfo.getGainChange()) + wxT(" \"") + filenameInput.GetFullPath() + wxT("\"");
+            runCommand = fullCommand + _T(" ") + configBase->getStringToolOptionsGain() + _T(" -g ") + wxString::Format(_T("%i "), fileInfo.getGainChange()) + _T(" \"") + filenameInput.GetFullPath() + _T("\"");
 
         wxExecute(runCommand, inputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
         inputString.Clear();
 
         // Read file info after gain / Write tag gain (bug found on mp3gain linux)
-        runCommand = fullCommand + wxT(" \"") + filenameInput.GetFullPath() + wxT("\"");
+        runCommand = fullCommand + _T(" \"") + filenameInput.GetFullPath() + _T("\"");
         wxExecute(runCommand, inputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
         switch (configBase->getTagOptions())
         {
         case 0:
         case 1:
-            listFiles->SetItem(fileIterator, 5, wxT("yes"));
+            listFiles->SetItem(fileIterator, 5, _("yes"));
             break;
         case 2:
-            listFiles->SetItem(fileIterator, 5, wxT(""));
+            listFiles->SetItem(fileIterator, 5, _T(""));
             break;
         }
         // Updates the list
@@ -103,13 +103,13 @@ void Progress::ProcessFile(int fileIterator)
 
     if (workType == TOOL_UNDO)
     {
-        runCommand = fullCommand + wxT(" -u \"") + filenameInput.GetFullPath() + wxT("\"");
+        runCommand = fullCommand + _T(" -u \"") + filenameInput.GetFullPath() + _T("\"");
         wxExecute(runCommand, inputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
     }
 
     if (workType == TOOL_DELETE_TAG)
     {
-        runCommand = fullCommand + wxT(" -s d \"") + filenameInput.GetFullPath() + wxT("\"");
+        runCommand = fullCommand + _T(" -s d \"") + filenameInput.GetFullPath() + _T("\"");
         wxExecute(runCommand, inputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
     }
 }
@@ -125,7 +125,7 @@ void Progress::ProcessOutputString(int fileIterator)
         {
             tempString = inputString.Item(i);
 
-            if (tempString.Lower().Contains(wxT("track")) && tempString.Lower().Contains(wxT("db change")))
+            if (tempString.Lower().Contains(_T("track")) && tempString.Lower().Contains(_T("db change")))
             {
                 double dbGainValue;
                 double volume;
@@ -136,10 +136,10 @@ void Progress::ProcessOutputString(int fileIterator)
                 volume = DEFAULT_VALUE_NormalVolumeDb / 10 - dbGainValue;
 
                 fileInfo.setVolume(volume);
-                listFiles->SetItem(fileIterator, 1, wxString::Format(wxT("%.1f"), volume));
+                listFiles->SetItem(fileIterator, 1, wxString::Format(_T("%.1f"), volume));
             }
                 // Clipping means that some value in some frame of the song is greater than +/- 32767
-            else if (tempString.Lower().Contains(wxT("max pcm")))
+            else if (tempString.Lower().Contains(_T("max pcm")))
             {
                 double dblMaxPcmSample;
                 wxString valueString = tempString.AfterFirst(':').Trim();
@@ -149,12 +149,12 @@ void Progress::ProcessOutputString(int fileIterator)
 
                 if (dblMaxPcmSample > 32767)
                 {
-                    listFiles->SetItem(fileIterator, 2, wxT("Yes"));
+                    listFiles->SetItem(fileIterator, 2, _("yes"));
                     listFiles->SetItemTextColour(fileIterator, *wxRED);
                 }
                 else
                 {
-                    listFiles->SetItem(fileIterator, 2, wxT(""));
+                    listFiles->SetItem(fileIterator, 2, _T(""));
                     listFiles->SetItemTextColour(fileIterator, *wxBLACK);
                 }
                 frmMain::updateGainLabels(listFiles, configBase, lstFilesData, dblNormalVolume);

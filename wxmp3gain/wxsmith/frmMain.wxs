@@ -46,7 +46,7 @@
 						</object>
 						<object class="sizeritem">
 							<object class="wxStaticText" name="ID_STATICTEXT4" variable="lblConstantGain" member="yes">
-								<label>+0 (+00.0 dB)</label>
+								<label></label>
 							</object>
 							<flag>wxTOP|wxBOTTOM|wxRIGHT|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 							<border>5</border>
@@ -75,79 +75,79 @@
 			<object class="wxMenu" variable="Menu2" member="no">
 				<label>&amp;File</label>
 				<object class="wxMenuItem" name="ID_MENUITEM17" variable="MenuItem17" member="yes">
-					<label>Add F&amp;older</label>
+					<label>Add folder</label>
 					<handler function="mnuAddDirectory" entry="EVT_MENU" />
 				</object>
 				<object class="wxMenuItem" name="ID_MENUITEM2" variable="MenuItem2" member="no">
-					<label>&amp;Add Files</label>
+					<label>Add files</label>
 					<handler function="mnuAddFiles" entry="EVT_MENU" />
 				</object>
 				<object class="separator" />
 				<object class="wxMenuItem" name="ID_MENUITEM1" variable="MenuItem1" member="no">
-					<label>E&amp;xit</label>
+					<label>Exit</label>
 					<handler function="mnuExit" entry="EVT_MENU" />
 				</object>
 			</object>
 			<object class="wxMenu" variable="Menu3" member="no">
 				<label>&amp;Edit</label>
 				<object class="wxMenuItem" name="ID_MENUITEM3" variable="MenuItem3" member="no">
-					<label>&amp;Remove Files</label>
+					<label>Remove files</label>
 					<handler function="mnuRemoveFiles" entry="EVT_MENU" />
 				</object>
 				<object class="wxMenuItem" name="ID_MENUITEM4" variable="MenuItem4" member="no">
-					<label>&amp;Clear List</label>
+					<label>Clear list</label>
 					<handler function="mnuClearList" entry="EVT_MENU" />
 				</object>
 				<object class="separator" />
 				<object class="wxMenuItem" name="ID_MENUITEM6" variable="MenuItem6" member="no">
-					<label>&amp;Settings</label>
+					<label>Settings</label>
 					<handler function="mnuSettings" entry="EVT_MENU" />
 				</object>
 			</object>
 			<object class="wxMenu" variable="Menu6" member="yes">
 				<label>&amp;Analysis</label>
 				<object class="wxMenuItem" name="ID_MENUITEM14" variable="MenuItem14" member="yes">
-					<label>&amp;Track Analysis</label>
+					<label>Track Analysis</label>
 					<accel>Ctrl+T</accel>
 					<handler function="mnuScan" entry="EVT_MENU" />
 				</object>
 				<object class="separator" />
 				<object class="wxMenuItem" name="ID_MENUITEM15" variable="MenuItem15" member="yes">
-					<label>Clea&amp;r Analysis</label>
+					<label>Clear Analysis</label>
 					<handler function="mnuClearAnalysis" entry="EVT_MENU" />
 				</object>
 			</object>
 			<object class="wxMenu" variable="Menu7" member="yes">
 				<label>&amp;Gain</label>
 				<object class="wxMenuItem" name="ID_MENUITEM16" variable="MenuItem16" member="yes">
-					<label>Track &amp;Gain</label>
+					<label>Track Gain</label>
 					<accel>Ctrl+G</accel>
 					<handler function="mnuFix" entry="EVT_MENU" />
 				</object>
 				<object class="separator" />
 				<object class="wxMenuItem" name="ID_MENUITEM7" variable="MenuItem7" member="yes">
-					<label>&amp;Undo gain changes (based on stored tag info)</label>
+					<label>Undo gain changes (based on stored tag info)</label>
 					<accel>Ctrl+Z</accel>
 					<handler function="mnuUndoGain" entry="EVT_MENU" />
 				</object>
 				<object class="wxMenuItem" name="ID_MENUITEM8" variable="MenuItem8" member="yes">
-					<label>&amp;Delete stored tag info</label>
+					<label>Delete stored tag info</label>
 					<handler function="mnuRemoveTags" entry="EVT_MENU" />
 				</object>
 			</object>
 			<object class="wxMenu" variable="Menu5" member="no">
 				<label>&amp;Help</label>
 				<object class="wxMenuItem" name="ID_MENUITEM10" variable="MenuItem12" member="yes">
-					<label>&amp;MP3gain Website</label>
+					<label>MP3gain Website</label>
 					<handler function="mnuToolWebsite" entry="EVT_MENU" />
 				</object>
 				<object class="wxMenuItem" name="ID_MENUITEM11" variable="MenuItem13" member="yes">
-					<label>&amp;wxMP3gain Website</label>
+					<label>wxMP3gain Website</label>
 					<handler function="mnuWebsite" entry="EVT_MENU" />
 				</object>
 				<object class="separator" />
 				<object class="wxMenuItem" name="ID_MENUITEM9" variable="MenuItem9" member="no">
-					<label>&amp;About</label>
+					<label>About</label>
 					<handler function="mnuAbout" entry="EVT_MENU" />
 				</object>
 			</object>
@@ -176,7 +176,7 @@
 				<handler function="mnuRemoveFiles" entry="EVT_TOOL" />
 			</object>
 			<object class="tool" name="ID_TOOLBARITEM3" variable="ToolBarItem4" member="yes">
-				<label>Clear files</label>
+				<label>Clear list</label>
 				<bitmap stock_id="wxART_QUESTION" />
 				<handler function="mnuClearList" entry="EVT_TOOL" />
 			</object>
@@ -205,19 +205,19 @@
 		</object>
 		<object class="wxMenu" variable="Menu1" member="yes">
 			<object class="wxMenuItem" name="ID_MENUITEM18" variable="MenuItem18" member="yes">
-				<label>Add F&amp;older</label>
+				<label>Add folder</label>
 				<handler function="mnuAddDirectory" entry="EVT_MENU" />
 			</object>
 			<object class="wxMenuItem" name="ID_MENUITEM5" variable="MenuItem5" member="no">
-				<label>&amp;Add Files</label>
+				<label>Add files</label>
 				<handler function="mnuAddFiles" entry="EVT_MENU" />
 			</object>
 			<object class="wxMenuItem" name="ID_MENUITEM12" variable="MenuItem10" member="no">
-				<label>&amp;Remove files</label>
+				<label>Remove files</label>
 				<handler function="mnuRemoveFiles" entry="EVT_MENU" />
 			</object>
 			<object class="wxMenuItem" name="ID_MENUITEM13" variable="MenuItem11" member="no">
-				<label>&amp;Clear list</label>
+				<label>Clear list</label>
 				<handler function="mnuClearList" entry="EVT_MENU" />
 			</object>
 		</object>

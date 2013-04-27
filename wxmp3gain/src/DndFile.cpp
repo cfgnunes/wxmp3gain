@@ -61,7 +61,7 @@ void DndFile::InsertFileList(const wxArrayString& filenames)
                 // Workaround to force wxListCtrl update insert event (on Windows)
                 if (m_owner->GetItemCount() == 1)
                 {
-                    m_owner->InsertItem(1, wxT(""));
+                    m_owner->InsertItem(1, _T(""));
                     m_owner->DeleteItem(1);
                 }
             }
@@ -79,7 +79,7 @@ void DndFile::InsertFileListDir(const wxString& dirname)
 
 bool DndFile::CheckValidExtension(const wxFileName& file)
 {
-    wxStringTokenizer strToken(APP_OPEN_EXT, wxT(";"));
+    wxStringTokenizer strToken(APP_OPEN_EXT, _T(";"));
     while (strToken.HasMoreTokens())
     {
         wxString token = strToken.GetNextToken();

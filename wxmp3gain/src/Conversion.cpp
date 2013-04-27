@@ -10,7 +10,7 @@
 void Conversion::convertDotComma(wxString& str)
 {
     // Convert between DOT/COMMA if necessary [workaround to use .ToDouble]
-    if (wxString::Format(wxT("%.1f"), 1.1)[1] == ',')
+    if (wxString::Format(_T("%.1f"), 1.1)[1] == ',')
         str.Replace(_T("."), _T(","));
     else
         str.Replace(_T(","), _T("."));
