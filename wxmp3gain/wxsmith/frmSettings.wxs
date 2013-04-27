@@ -286,7 +286,6 @@
 		</object>
 		<object class="wxFileDialog" variable="FileDialog1" member="yes">
 			<message>Select file</message>
-			<default_file>mp3gain</default_file>
 			<style>wxFD_DEFAULT_STYLE|wxFD_OPEN</style>
 		</object>
 	</object>

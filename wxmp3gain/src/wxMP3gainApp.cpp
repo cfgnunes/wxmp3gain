@@ -27,6 +27,7 @@
  ************************************************************************/
 
 #include "wxMP3gainApp.h"
+#include "Global.h"
 
 //(*AppHeaders
 #include "frmMain.h"
@@ -37,6 +38,10 @@ IMPLEMENT_APP(wxMP3gainApp);
 
 bool wxMP3gainApp::OnInit()
 {
+    // Load language translation
+    m_locale = NULL;
+    selectLanguage(wxLANGUAGE_DEFAULT);
+
     //(*AppInitialize
     bool wxsOK = true;
     wxInitAllImageHandlers();
@@ -48,4 +53,12 @@ bool wxMP3gainApp::OnInit()
     }
     //*)
     return wxsOK;
+}
+
+void wxMP3gainApp::selectLanguage(int lang)
+{
+    delete m_locale;
+    m_locale = new wxLocale(lang);
+    m_locale->AddCatalogLookupPathPrefix(RESOURCE_DIR + _T("msg"));
+    m_locale->AddCatalog(_T("wxmp3gain"));
 }

@@ -12,6 +12,10 @@ class wxMP3gainApp : public wxApp
 {
 public:
     virtual bool OnInit();
+
+private:
+    void selectLanguage(int lang);
+    wxLocale* m_locale;
 };
 
 #endif
