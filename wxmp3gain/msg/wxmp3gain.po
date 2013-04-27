@@ -34,6 +34,10 @@ msgstr ""
 msgid "&Help"
 msgstr ""
 
+#: frmMain.cpp:98
+msgid "(Default 89.0 dB)"
+msgstr ""
+
 #: frmMain.cpp:153 frmMain.cpp:173
 msgid "About"
 msgstr ""
@@ -51,7 +55,7 @@ msgid "Analyze"
 msgstr ""
 
 #: frmSettings.cpp:74
-msgid "Automatically lower track gain to not clip audio"
+msgid "Automatically lower gain to not clip audio"
 msgstr ""
 
 #: frmSettings.cpp:162
@@ -63,7 +67,7 @@ msgid "Channel"
 msgstr ""
 
 #: frmMain.cpp:135
-msgid "Clear Analysis"
+msgid "Clear analysis"
 msgstr ""
 
 #: frmMain.cpp:125 frmMain.cpp:167 frmMain.cpp:182
@@ -150,6 +154,10 @@ msgstr ""
 msgid "General"
 msgstr ""
 
+#: frmSettings.cpp:142
+msgid "Keep file timestamps"
+msgstr ""
+
 #: frmMain.cpp:148
 msgid "MP3gain Website"
 msgstr ""
@@ -162,12 +170,12 @@ msgstr ""
 msgid "MP3gain not found!"
 msgstr ""
 
-#: frmSettings.cpp:160
-msgid "OK"
+#: frmMain.cpp:93
+msgid "Normal volume (dB):"
 msgstr ""
 
-#: frmSettings.cpp:142
-msgid "Preserve original file timestamp"
+#: frmSettings.cpp:160
+msgid "OK"
 msgstr ""
 
 #: Progress.cpp:33 Progress.cpp:38
@@ -219,10 +227,6 @@ msgstr ""
 msgid "Tags reading"
 msgstr ""
 
-#: frmMain.cpp:93
-msgid "Target normal volume:"
-msgstr ""
-
 #: frmMain.cpp:142
 msgid "Undo gain changes (based on stored tag info)\tCtrl+Z"
 msgstr ""
@@ -253,10 +257,6 @@ msgstr ""
 
 #: Progress.cpp:32
 msgid "Wait..."
-msgstr ""
-
-#: frmMain.cpp:98
-msgid "dB. (Default 89.0 dB)"
 msgstr ""
 
 #: frmSettings.cpp:139
