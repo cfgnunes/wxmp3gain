@@ -142,7 +142,7 @@ frmSettings::frmSettings(wxWindow* parent, ConfigBase* configBase, wxWindowID id
     chkPreserveTime = new wxCheckBox(Panel2, ID_CHECKBOX5, _("Keep file timestamps"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_CHECKBOX5"));
     chkPreserveTime->SetValue(false);
     StaticBoxSizer5->Add(chkPreserveTime, 0, wxALL|wxALIGN_LEFT|wxALIGN_TOP, 2);
-    chkForceInput = new wxCheckBox(Panel2, ID_CHECKBOX6, _("Force to assume input file is an MPEG 2 Layer III file"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_CHECKBOX6"));
+    chkForceInput = new wxCheckBox(Panel2, ID_CHECKBOX6, _("Force to assume input is an MPEG 2 Layer III file"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_CHECKBOX6"));
     chkForceInput->SetValue(false);
     StaticBoxSizer5->Add(chkForceInput, 0, wxALL|wxALIGN_LEFT|wxALIGN_TOP, 2);
     BoxSizer4->Add(StaticBoxSizer5, 0, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);

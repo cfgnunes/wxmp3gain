@@ -115,7 +115,7 @@ msgid "Force re-calculation (do not read tag info)"
 msgstr ""
 
 #: frmSettings.cpp:145
-msgid "Force to assume input file is an MPEG 2 Layer III file"
+msgid "Force to assume input is an MPEG 2 Layer III file"
 msgstr ""
 
 #: frmMain.cpp:475
@@ -273,4 +273,20 @@ msgstr ""
 
 #: Progress.cpp:64 Progress.cpp:94 Progress.cpp:152
 msgid "yes"
+msgstr ""
+
+#: Progress box
+msgid "Elapsed time : "
+msgstr ""
+
+msgid "Estimated time : "
+msgstr ""
+
+msgid "Remaining time : "
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "unknown"
 msgstr ""
