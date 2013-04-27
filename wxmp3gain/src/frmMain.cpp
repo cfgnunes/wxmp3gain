@@ -236,12 +236,12 @@ frmMain::frmMain(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSi
     loadResources();
 
     // Title List
-    lstFiles->InsertColumn(0, _("File"), wxLIST_FORMAT_LEFT, 400);
-    lstFiles->InsertColumn(1, _("Volume"), wxLIST_FORMAT_LEFT, 70);
-    lstFiles->InsertColumn(2, _("Clipping"), wxLIST_FORMAT_LEFT, 70);
-    lstFiles->InsertColumn(3, _("Gain (dB)"), wxLIST_FORMAT_LEFT, 70);
-    lstFiles->InsertColumn(4, _("Gain (mp3)"), wxLIST_FORMAT_LEFT, 70);
-    lstFiles->InsertColumn(5, _("Tag info"), wxLIST_FORMAT_LEFT, 70);
+    lstFiles->InsertColumn(0, _("File"), wxLIST_FORMAT_LEFT, 350);
+    lstFiles->InsertColumn(1, _("Volume"), wxLIST_FORMAT_LEFT, 80);
+    lstFiles->InsertColumn(2, _("Clipping"), wxLIST_FORMAT_LEFT, 80);
+    lstFiles->InsertColumn(3, _("Gain (dB)"), wxLIST_FORMAT_LEFT, 80);
+    lstFiles->InsertColumn(4, _("Gain (mp3)"), wxLIST_FORMAT_LEFT, 80);
+    lstFiles->InsertColumn(5, _("Tag info"), wxLIST_FORMAT_LEFT, 80);
 
     // Updates the status bar
     updateStatusBar();

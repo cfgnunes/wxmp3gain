@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: wxMP3val\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-26 19:09-0300\n"
-"PO-Revision-Date: 2013-04-27 14:14-0300\n"
+"PO-Revision-Date: 2013-04-27 14:36-0300\n"
 "Last-Translator: Cristiano Nunes <cfgnunes@gmail.com>\n"
 "Language-Team: \n"
 "Language: \n"
@@ -84,7 +84,7 @@ msgstr "Limpar lista"
 
 #: frmMain.cpp:241
 msgid "Clipping"
-msgstr "Clippong"
+msgstr "Clipping"
 
 #: frmSettings.cpp:107
 #: frmSettings.cpp:154
@@ -125,8 +125,8 @@ msgid "Force re-calculation (do not read tag info)"
 msgstr "Forçar o recálculo (não ler informações de tag)"
 
 #: frmSettings.cpp:145
-msgid "Force to assume input file is an MPEG 2 Layer III file"
-msgstr "Força para assumir que o arquivo de entrada é um arquivo MPEG 2 Layer III"
+msgid "Force to assume input is an MPEG 2 Layer III file"
+msgstr "Força para assumir que a entrada é um arquivo MPEG 2 Layer III"
 
 #: frmMain.cpp:475
 msgid "Free front-end for the MP3gain"
@@ -229,7 +229,7 @@ msgstr "Pular informações de tag armazenadas (não ler ou gravar tags)"
 
 #: frmMain.cpp:244
 msgid "Tag info"
-msgstr "Informação da tag"
+msgstr "Info tag"
 
 #: frmSettings.cpp:153
 msgid "Tags"
@@ -293,3 +293,18 @@ msgstr "Site do wxMP3gain"
 msgid "yes"
 msgstr "sim"
 
+#: Progress box
+msgid "Elapsed time : "
+msgstr "Tempo decorrido: "
+
+msgid "Estimated time : "
+msgstr "Tempo estimado: "
+
+msgid "Remaining time : "
+msgstr "Tempo restante: "
+
+msgid "Close"
+msgstr "Fechar"
+
+msgid "unknown"
+msgstr "desconhecido"

@@ -233,7 +233,7 @@
 										</object>
 										<object class="sizeritem">
 											<object class="wxCheckBox" name="ID_CHECKBOX6" variable="chkForceInput" member="yes">
-												<label>Force to assume input file is an MPEG 2 Layer III file</label>
+												<label>Force to assume input is an MPEG 2 Layer III file</label>
 											</object>
 											<flag>wxALL|wxALIGN_LEFT|wxALIGN_TOP</flag>
 											<border>2</border>
