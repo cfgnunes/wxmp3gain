@@ -72,8 +72,6 @@
 		<Unit filename="src/Global.h" />
 		<Unit filename="src/DndFile.cpp" />
 		<Unit filename="src/DndFile.h" />
-		<Unit filename="src/frmAbout.cpp" />
-		<Unit filename="src/frmAbout.h" />
 		<Unit filename="src/frmMain.cpp" />
 		<Unit filename="src/frmMain.h" />
 		<Unit filename="src/Progress.cpp" />
@@ -93,7 +91,6 @@
 				<resources>
 					<wxFrame wxs="wxsmith/frmMain.wxs" src="src/frmMain.cpp" hdr="src/frmMain.h" fwddecl="0" i18n="1" name="frmMain" language="CPP" />
 					<wxDialog wxs="wxsmith/frmSettings.wxs" src="src/frmSettings.cpp" hdr="src/frmSettings.h" fwddecl="0" i18n="1" name="frmSettings" language="CPP" />
-					<wxDialog wxs="wxsmith/frmAbout.wxs" src="src/frmAbout.cpp" hdr="src/frmAbout.h" fwddecl="0" i18n="1" name="frmAbout" language="CPP" />
 				</resources>
 			</wxsmith>
 		</Extensions>

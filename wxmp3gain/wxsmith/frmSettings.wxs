@@ -38,7 +38,6 @@
 										</object>
 										<object class="sizeritem">
 											<object class="wxButton" name="ID_BUTTON5" variable="btnToolExecutable" member="yes">
-												<label>...</label>
 												<size>22,22</size>
 												<handler function="OnbtnToolExecutableClick" entry="EVT_BUTTON" />
 											</object>
@@ -145,7 +144,7 @@
 												</object>
 												<object class="sizeritem">
 													<object class="wxStaticText" name="ID_STATICTEXT1" variable="lblConstantGain" member="yes">
-														<label>+0 (+00.0 dB)</label>
+														<label></label>
 													</object>
 													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 													<border>5</border>
@@ -255,7 +254,7 @@
 				<object class="wxBoxSizer" variable="BoxSizer10" member="no">
 					<object class="sizeritem">
 						<object class="wxButton" name="ID_BUTTON1" variable="btnDefault" member="yes">
-							<label>Restore Defaults</label>
+							<label>Restore defaults</label>
 							<handler function="OnbtnDefaultClick" entry="EVT_BUTTON" />
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>

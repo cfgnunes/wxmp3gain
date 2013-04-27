@@ -9,18 +9,18 @@
 #include "ConfigBase.h"
 
 //(*Headers(frmSettings)
-#include <wx/notebook.h>
+#include <wx/checkbox.h>
+#include <wx/dialog.h>
 #include <wx/sizer.h>
+#include <wx/notebook.h>
+#include <wx/button.h>
+#include <wx/radiobut.h>
+#include <wx/filedlg.h>
+#include <wx/panel.h>
+#include <wx/slider.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
-#include <wx/checkbox.h>
-#include <wx/radiobut.h>
-#include <wx/slider.h>
-#include <wx/panel.h>
-#include <wx/filedlg.h>
 #include <wx/choice.h>
-#include <wx/button.h>
-#include <wx/dialog.h>
 //*)
 
 class frmSettings : public wxDialog
@@ -31,33 +31,33 @@ public:
     virtual ~frmSettings();
 
     //(*Declarations(frmSettings)
-    wxRadioButton* optLeftChannel;
-    wxButton* btnToolExecutable;
-    wxChoice* chcFileWriting;
-    wxNotebook* Notebook1;
-    wxRadioButton* optTagAPE;
-    wxRadioButton* optTagID3;
-    wxStaticText* StaticText2;
-    wxButton* btnCancel;
-    wxRadioButton* optTagSKIP;
-    wxCheckBox* chkAutoLower;
-    wxTextCtrl* txtToolExecutable;
-    wxRadioButton* optBothChannel;
-    wxPanel* Panel1;
-    wxCheckBox* chkConstantGain;
-    wxFileDialog* FileDialog1;
-    wxButton* btnOK;
-    wxPanel* Panel6;
-    wxPanel* Panel3;
-    wxRadioButton* optRightChannel;
-    wxStaticText* lblConstantGain;
-    wxSlider* sldConstantGain;
-    wxCheckBox* chkPreserveTime;
-    wxPanel* Panel2;
-    wxStaticText* StaticText4;
-    wxButton* btnDefault;
-    wxCheckBox* chkTagFORCE;
     wxCheckBox* chkForceInput;
+    wxPanel* Panel1;
+    wxPanel* Panel6;
+    wxStaticText* lblConstantGain;
+    wxChoice* chcFileWriting;
+    wxRadioButton* optTagSKIP;
+    wxCheckBox* chkTagFORCE;
+    wxCheckBox* chkPreserveTime;
+    wxRadioButton* optLeftChannel;
+    wxPanel* Panel2;
+    wxRadioButton* optRightChannel;
+    wxTextCtrl* txtToolExecutable;
+    wxFileDialog* FileDialog1;
+    wxPanel* Panel3;
+    wxSlider* sldConstantGain;
+    wxRadioButton* optTagID3;
+    wxRadioButton* optTagAPE;
+    wxStaticText* StaticText4;
+    wxStaticText* StaticText2;
+    wxRadioButton* optBothChannel;
+    wxNotebook* Notebook1;
+    wxButton* btnOK;
+    wxButton* btnCancel;
+    wxCheckBox* chkAutoLower;
+    wxCheckBox* chkConstantGain;
+    wxButton* btnDefault;
+    wxButton* btnToolExecutable;
     //*)
 
 protected:
@@ -107,6 +107,7 @@ private:
     void updateValueControls();
     void defaultValueControls();
     void saveValuesConfig();
+    void setLabelsControls();
 
     ConfigBase* configBase;
     DECLARE_EVENT_TABLE()

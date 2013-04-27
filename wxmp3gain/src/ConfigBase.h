@@ -10,35 +10,35 @@
 #include <wx/config.h>
 
 // Config Group Strings
-const wxString	CONFIG_SYSTEM_GROUP				= wxT("/System/");
-const wxString	CONFIG_GENERAL_GROUP			= wxT("/General/");
-const wxString	CONFIG_TAGS_GROUP		    	= wxT("/Tags/");
-const wxString	CONFIG_CTGAIN_GROUP		    	= wxT("/ConstantGain/");
-const wxString	CONFIG_FOPTIONS_GROUP	    	= wxT("/FileOptions/");
+const wxString	CONFIG_SYSTEM_GROUP				= _T("/System/");
+const wxString	CONFIG_GENERAL_GROUP			= _T("/General/");
+const wxString	CONFIG_TAGS_GROUP		    	= _T("/Tags/");
+const wxString	CONFIG_CTGAIN_GROUP		    	= _T("/ConstantGain/");
+const wxString	CONFIG_FOPTIONS_GROUP	    	= _T("/FileOptions/");
 
 // Config Strings
-const wxString	CONFIG_STR_LastOpenDir			= wxT("LastOpenDir");
-const wxString	CONFIG_STR_NormalVolumeDb	    = wxT("NormalVolumeDb");
+const wxString	CONFIG_STR_LastOpenDir			= _T("LastOpenDir");
+const wxString	CONFIG_STR_NormalVolumeDb	    = _T("NormalVolumeDb");
 
-const wxString	CONFIG_STR_ToolExecutable	    = wxT("ToolExecutable");
-const wxString	CONFIG_STR_AutoLowerEnabled		= wxT("AutoLowerEnabled");
+const wxString	CONFIG_STR_ToolExecutable	    = _T("ToolExecutable");
+const wxString	CONFIG_STR_AutoLowerEnabled		= _T("AutoLowerEnabled");
 
-const wxString	CONFIG_STR_TagOptions	        = wxT("TagOptions");
-const wxString	CONFIG_STR_TagForceEnabled      = wxT("TagForceEnabled");
+const wxString	CONFIG_STR_TagOptions	        = _T("TagOptions");
+const wxString	CONFIG_STR_TagForceEnabled      = _T("TagForceEnabled");
 
-const wxString	CONFIG_STR_ConstantGainEnabled  = wxT("ConstantGainEnabled");
-const wxString	CONFIG_STR_ConstantGainValue    = wxT("ConstantGainValue");
-const wxString	CONFIG_STR_ChannelGainMode      = wxT("ChannelGainMode");
+const wxString	CONFIG_STR_ConstantGainEnabled  = _T("ConstantGainEnabled");
+const wxString	CONFIG_STR_ConstantGainValue    = _T("ConstantGainValue");
+const wxString	CONFIG_STR_ChannelGainMode      = _T("ChannelGainMode");
 
-const wxString	CONFIG_STR_FileWriting			= wxT("FileWriting");
-const wxString	CONFIG_STR_PreserveTimeEnabled	= wxT("PreserveTimeEnabled");
-const wxString	CONFIG_STR_ForceInputEnabled	= wxT("ForceInputEnabled");
+const wxString	CONFIG_STR_FileWriting			= _T("FileWriting");
+const wxString	CONFIG_STR_PreserveTimeEnabled	= _T("PreserveTimeEnabled");
+const wxString	CONFIG_STR_ForceInputEnabled	= _T("ForceInputEnabled");
 
 // Default Values
 const wxString	DEFAULT_VALUE_LastOpenDir		    = wxEmptyString;
 const int   	DEFAULT_VALUE_NormalVolumeDb        = 890;
 
-const wxString	DEFAULT_VALUE_ToolExecutable        = wxT("mp3gain");
+const wxString	DEFAULT_VALUE_ToolExecutable        = _T("mp3gain");
 const bool  	DEFAULT_VALUE_AutoLowerEnabled  	= false;
 
 const int   	DEFAULT_VALUE_TagOptions            = 0;
