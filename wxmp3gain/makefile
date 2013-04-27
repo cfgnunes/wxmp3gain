@@ -20,7 +20,9 @@ all:
 	@g++ -o $(APP_NAME) *.o $(LINKFLAGS)
 
 	@mkdir -p ./resource/msg/pt/
+	@mkdir -p ./resource/msg/es/
 	@msgfmt ./msg/pt.po -o ./resource/msg/pt/$(APP_NAME).mo
+	@msgfmt ./msg/es.po -o ./resource/msg/es/$(APP_NAME).mo
 
 clean:
 	@rm -f *.o *.depend *.layout

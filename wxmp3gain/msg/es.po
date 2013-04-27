@@ -1,0 +1,294 @@
+# This file is part of the wxMP3gain and licensed under the GNU General Public License, version 3
+# Cristiano Nunes <cfgnunes@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: wxMP3val\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-26 19:09-0300\n"
+"PO-Revision-Date: 2013-04-29 06:30+0100\n"
+"Last-Translator: Cristiano Nunes <cfgnunes@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: frmMain.cpp:137
+msgid "&Analysis"
+msgstr "A&nálisis"
+
+#: frmMain.cpp:130
+msgid "&Edit"
+msgstr "&Editar"
+
+#: frmMain.cpp:121
+msgid "&File"
+msgstr "&Archivo"
+
+#: frmMain.cpp:146
+msgid "&Gain"
+msgstr "&Ganancia"
+
+#: frmMain.cpp:155
+msgid "&Help"
+msgstr "A&yuda"
+
+#: frmMain.cpp:98
+msgid "(Default 89.0 dB)"
+msgstr "(Por defecto 89.0 dB)"
+
+#: frmMain.cpp:153 frmMain.cpp:173
+msgid "About"
+msgstr "Acerca de..."
+
+#: frmMain.cpp:116 frmMain.cpp:165 frmMain.cpp:178
+msgid "Add files"
+msgstr "Añadir archivo(s)"
+
+#: frmMain.cpp:114 frmMain.cpp:164 frmMain.cpp:176
+msgid "Add folder"
+msgstr "Añadir carpeta"
+
+#: frmMain.cpp:132 frmMain.cpp:169
+msgid "Analyze"
+msgstr "Analizar"
+
+#: frmSettings.cpp:74
+msgid "Automatically lower gain to not clip audio"
+msgstr "Bajar ganancia automática para no cortar audio"
+
+#: frmSettings.cpp:162
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: frmSettings.cpp:120
+msgid "Channel"
+msgstr "Canal"
+
+#: frmMain.cpp:135
+msgid "Clear analysis"
+msgstr "Limpiar análisis"
+
+#: frmMain.cpp:125 frmMain.cpp:167 frmMain.cpp:182
+msgid "Clear list"
+msgstr "Limpiar lista"
+
+#: frmMain.cpp:241
+msgid "Clipping"
+msgstr "Recorte"
+
+#: frmSettings.cpp:107 frmSettings.cpp:154
+msgid "Constant gain"
+msgstr "Ganancia constante"
+
+#: frmSettings.cpp:112
+msgid "Constant gain:"
+msgstr "Ganancia constante:"
+
+#: frmMain.cpp:144
+msgid "Delete stored tag info"
+msgstr "Eliminar información de etiqueta almacenada"
+
+#: Progress.cpp:41
+msgid "Do you want to stop process now?"
+msgstr "¿Quiere detener el proceso ahora?"
+
+#: frmMain.cpp:119
+msgid "Exit"
+msgstr "Salir"
+
+#: frmMain.cpp:239
+msgid "File"
+msgstr "Archivo"
+
+#: frmSettings.cpp:133 frmSettings.cpp:155
+msgid "File options"
+msgstr "Opciones de archivo"
+
+#: frmSettings.cpp:135
+msgid "File writing:"
+msgstr "Escribiendo archivo:"
+
+#: frmSettings.cpp:98
+msgid "Force re-calculation (do not read tag info)"
+msgstr "Forzar recalculación (no leer información de la etiqueta)"
+
+#: frmSettings.cpp:145
+msgid "Force to assume input is an MPEG 2 Layer III file"
+msgstr "Forzar a asumir entrada que es un archivo de MPEG 2 Layer III"
+
+#: frmMain.cpp:475
+msgid "Free front-end for the MP3gain"
+msgstr "Front-end libre para MP3Gain"
+
+#: frmMain.cpp:139 frmMain.cpp:170
+msgid "Gain"
+msgstr "Ganancia"
+
+#: frmMain.cpp:242
+msgid "Gain (dB)"
+msgstr "Ganancia (dB)"
+
+#: frmMain.cpp:243
+msgid "Gain (mp3)"
+msgstr "Ganancia (mp3)"
+
+#: frmSettings.cpp:121
+msgid "Gain on both channels"
+msgstr "Ganancia en ambos canales"
+
+#: frmSettings.cpp:123
+msgid "Gain on left channel only (not for Joint Stereo mp3s)"
+msgstr "Ganancia en canal izquierdo (no para mp3s Estéreo Mixto)"
+
+#: frmSettings.cpp:125
+msgid "Gain on right channel only (not for Joint Stereo mp3s)"
+msgstr "Ganancia en canal derecho (no para mp3s Estéreo Mixto)"
+
+#: frmSettings.cpp:73
+msgid "Gain options"
+msgstr "Opciones de ganacia"
+
+#: frmSettings.cpp:152
+msgid "General"
+msgstr "General"
+
+#: frmSettings.cpp:142
+msgid "Keep file timestamps"
+msgstr "Mantener marcas de tiempo"
+
+#: frmMain.cpp:148
+msgid "MP3gain Website"
+msgstr "Sitio web de MP3Gain"
+
+#: frmSettings.cpp:78
+msgid "MP3gain executable"
+msgstr "Ejecutable de MP3Gain"
+
+#: frmMain.cpp:464
+msgid "MP3gain not found!"
+msgstr "MP3Gain no encontrado!"
+
+#: frmMain.cpp:93
+msgid "Normal volume (dB):"
+msgstr "Volumen normal (dB):"
+
+#: frmSettings.cpp:160
+msgid "OK"
+msgstr "Aceptar"
+
+#: Progress.cpp:33 Progress.cpp:38
+#, c-format
+msgid "Processed %i files of %i."
+msgstr "Procesado %i archivo(s) de %i."
+
+#: Progress.cpp:32
+msgid "Progress"
+msgstr "Progreso"
+
+#: frmMain.cpp:123 frmMain.cpp:166 frmMain.cpp:180
+msgid "Remove files"
+msgstr "Quitar archivo(s)"
+
+#: frmSettings.cpp:158
+msgid "Restore defaults"
+msgstr "Restaurar"
+
+#: frmMain.cpp:302
+msgid "Select directory"
+msgstr "Seleccionar directorio"
+
+#: frmMain.cpp:280 frmSettings.cpp:166
+msgid "Select file"
+msgstr "Seleccionar archivo(s)"
+
+#: frmMain.cpp:128 frmMain.cpp:172 frmSettings.cpp:68
+msgid "Settings"
+msgstr "Configuración"
+
+#: frmSettings.cpp:94
+msgid "Skip stored tag info (do not read or write tags)"
+msgstr "Saltar info de etiqueta almacenada (no leer ni escribir etiquetas)"
+
+#: frmMain.cpp:244
+msgid "Tag info"
+msgstr "Información de etiqueta"
+
+#: frmSettings.cpp:153
+msgid "Tags"
+msgstr "Etiquetas"
+
+#: frmSettings.cpp:89
+msgid "Tags options"
+msgstr "Opciones de etiquetas"
+
+#: frmSettings.cpp:97
+msgid "Tags reading"
+msgstr "Lectura de etiquetas"
+
+#: frmMain.cpp:142
+msgid "Undo gain changes (based on stored tag info)\tCtrl+Z"
+msgstr ""
+"Deshacer cambios de ganancia (base información de etiqueta almacenada)\tCtrl"
+"+Z"
+
+#: frmSettings.cpp:90
+msgid "Use APEv2 tag for gain information (default)"
+msgstr "Usar etiqueta APEv2 para información de ganancia (por defecto)"
+
+#: frmSettings.cpp:92
+msgid "Use ID3v2 tag for gain information"
+msgstr "Usar etiqueta ID3v2 para información de ganancia"
+
+#: frmSettings.cpp:108
+msgid "Use constant gain without doing any analysis"
+msgstr "Usar ganancia constante sin hacer ningún análisis"
+
+#: frmMain.cpp:462
+msgid "Using MP3gain version: "
+msgstr "Usando MP3gain versión: "
+
+#: frmMain.cpp:102
+msgid "Using constant gain: "
+msgstr "Usando ganancia constante: "
+
+#: frmMain.cpp:240
+msgid "Volume"
+msgstr "Volumen"
+
+#: Progress.cpp:32
+msgid "Wait..."
+msgstr "Espere..."
+
+#: frmSettings.cpp:139
+msgid "work on original file"
+msgstr "Trabajar en archivo original"
+
+#: frmSettings.cpp:138
+msgid "work on temp file"
+msgstr "Trabajar en archivo temporal"
+
+#: frmMain.cpp:150
+msgid "wxMP3gain Website"
+msgstr "Sitio web de wxMP3gain"
+
+#: Progress.cpp:64 Progress.cpp:94 Progress.cpp:152
+msgid "yes"
+msgstr "sí"
+
+#: Progress box
+msgid "Elapsed time : "
+msgstr "Tiempo transcurrido : "
+
+msgid "Estimated time : "
+msgstr "Tiempo estimado : "
+
+msgid "Remaining time : "
+msgstr "Tiempo restante : "
+
+msgid "Close"
+msgstr "Cerrar"
+
+msgid "unknown"
+msgstr "desconocido"

@@ -475,7 +475,6 @@ void frmMain::mnuAbout(wxCommandEvent& event)
     aboutInfo.SetDescription(_("Free front-end for the MP3gain"));
     aboutInfo.SetCopyright(APP_COPYRIGHT);
     aboutInfo.SetWebSite(APP_WEBSITE);
-    aboutInfo.AddDeveloper(APP_AUTHOR);
     wxAboutBox(aboutInfo);
 }
 
