@@ -475,6 +475,9 @@ void frmMain::mnuAbout(wxCommandEvent& event)
     aboutInfo.SetDescription(_("Free front-end for the MP3gain"));
     aboutInfo.SetCopyright(APP_COPYRIGHT);
     aboutInfo.SetWebSite(APP_WEBSITE);
+    aboutInfo.AddDeveloper(APP_AUTHOR);
+    aboutInfo.AddTranslator(APP_AUTHOR);
+    aboutInfo.AddTranslator(_T("Carlos Sánchez <carlos1994sanchez@gmail.com>"));
     wxAboutBox(aboutInfo);
 }
 
