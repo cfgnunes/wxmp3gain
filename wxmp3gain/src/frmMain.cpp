@@ -478,6 +478,7 @@ void frmMain::mnuAbout(wxCommandEvent& event)
     aboutInfo.AddDeveloper(APP_AUTHOR);
     aboutInfo.AddTranslator(APP_AUTHOR);
     aboutInfo.AddTranslator(_T("Carlos Sánchez <carlos1994sanchez@gmail.com>"));
+    aboutInfo.AddTranslator(_T("Sergey Basalaev <sbasalaev@gmail.com>"));
     wxAboutBox(aboutInfo);
 }
 
