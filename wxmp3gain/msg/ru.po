@@ -1,0 +1,295 @@
+# This file is part of the wxMP3gain and licensed under the GNU General Public License, version 3
+# Cristiano Nunes <cfgnunes@gmail.com>, 2013.
+# Sergey Basalaev <sbasalaev@gmail.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: wxMP3val\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-26 19:09-0300\n"
+"PO-Revision-Date: 2013-05-03 12:34+0600\n"
+"Last-Translator: Sergey Basalaev <sbasalaev@gmail.com>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: frmMain.cpp:137
+msgid "&Analysis"
+msgstr "&Анализ"
+
+#: frmMain.cpp:130
+msgid "&Edit"
+msgstr "&Правка"
+
+#: frmMain.cpp:121
+msgid "&File"
+msgstr "&Файл"
+
+#: frmMain.cpp:146
+msgid "&Gain"
+msgstr "&Нормализация"
+
+#: frmMain.cpp:155
+msgid "&Help"
+msgstr "&Справка"
+
+#: frmMain.cpp:98
+msgid "(Default 89.0 dB)"
+msgstr "(По умолчанию 89.0 дБ)"
+
+#: frmMain.cpp:153 frmMain.cpp:173
+msgid "About"
+msgstr "О программе"
+
+#: frmMain.cpp:116 frmMain.cpp:165 frmMain.cpp:178
+msgid "Add files"
+msgstr "Добавить файлы"
+
+#: frmMain.cpp:114 frmMain.cpp:164 frmMain.cpp:176
+msgid "Add folder"
+msgstr "Добавить папку"
+
+#: frmMain.cpp:132 frmMain.cpp:169
+msgid "Analyze"
+msgstr "Анализировать"
+
+#: frmSettings.cpp:74
+msgid "Automatically lower gain to not clip audio"
+msgstr "Автоматически снижать нормализацию"
+
+#: frmSettings.cpp:162
+msgid "Cancel"
+msgstr "Отмена"
+
+#: frmSettings.cpp:120
+msgid "Channel"
+msgstr "Канал"
+
+#: frmMain.cpp:135
+msgid "Clear analysis"
+msgstr "Очистить анализ"
+
+#: frmMain.cpp:125 frmMain.cpp:167 frmMain.cpp:182
+msgid "Clear list"
+msgstr "Очистить список"
+
+#: frmMain.cpp:241
+msgid "Clipping"
+msgstr "Обрезка"
+
+#: frmSettings.cpp:107 frmSettings.cpp:154
+msgid "Constant gain"
+msgstr "Постоянная нормализация"
+
+#: frmSettings.cpp:112
+msgid "Constant gain:"
+msgstr "Постоянная нормализация:"
+
+#: frmMain.cpp:144
+msgid "Delete stored tag info"
+msgstr "Удалить информацию о тегах"
+
+#: Progress.cpp:41
+msgid "Do you want to stop process now?"
+msgstr "Хотите остановить процесс сейчас?"
+
+#: frmMain.cpp:119
+msgid "Exit"
+msgstr "Выход"
+
+#: frmMain.cpp:239
+msgid "File"
+msgstr "Файл"
+
+#: frmSettings.cpp:133 frmSettings.cpp:155
+msgid "File options"
+msgstr "Опции файла"
+
+#: frmSettings.cpp:135
+msgid "File writing:"
+msgstr "Запись файла:"
+
+#: frmSettings.cpp:98
+msgid "Force re-calculation (do not read tag info)"
+msgstr "Принудительно пересчитать (не читая информацию о тегах)"
+
+#: frmSettings.cpp:145
+msgid "Force to assume input is an MPEG 2 Layer III file"
+msgstr "Принудительно полагать, что на входе файл MPEG 2 Layer III"
+
+#: frmMain.cpp:475
+msgid "Free front-end for the MP3gain"
+msgstr "Свободный интерфейс к MP3gain"
+
+#: frmMain.cpp:139 frmMain.cpp:170
+msgid "Gain"
+msgstr "Нормализация"
+
+#: frmMain.cpp:242
+msgid "Gain (dB)"
+msgstr "Нормализация (дБ)"
+
+#: frmMain.cpp:243
+msgid "Gain (mp3)"
+msgstr "Нормализация (mp3)"
+
+#: frmSettings.cpp:121
+msgid "Gain on both channels"
+msgstr "Нормализация на обоих каналах"
+
+#: frmSettings.cpp:123
+msgid "Gain on left channel only (not for Joint Stereo mp3s)"
+msgstr "Нормализация только левого канала (не для файлов mp3 Joint Stereo)"
+
+#: frmSettings.cpp:125
+msgid "Gain on right channel only (not for Joint Stereo mp3s)"
+msgstr "Нормализация только правого канала (не для файлов mp3 Joint Stereo)"
+
+#: frmSettings.cpp:73
+msgid "Gain options"
+msgstr "Опции нормализации"
+
+#: frmSettings.cpp:152
+msgid "General"
+msgstr "Общие"
+
+#: frmSettings.cpp:142
+msgid "Keep file timestamps"
+msgstr "Сохранять метки времени файлов"
+
+#: frmMain.cpp:148
+msgid "MP3gain Website"
+msgstr "Веб-сайт MP3gain"
+
+#: frmSettings.cpp:78
+msgid "MP3gain executable"
+msgstr "Исполняемый файл MP3gain"
+
+#: frmMain.cpp:464
+msgid "MP3gain not found!"
+msgstr "MP3gain не найден!"
+
+#: frmMain.cpp:93
+msgid "Normal volume (dB):"
+msgstr "Нормальная громкость (дБ):"
+
+#: frmSettings.cpp:160
+msgid "OK"
+msgstr "Ок"
+
+#: Progress.cpp:33 Progress.cpp:38
+#, c-format
+msgid "Processed %i files of %i."
+msgstr "Обработано %i файлов из %i."
+
+#: Progress.cpp:32
+msgid "Progress"
+msgstr "Прогресс"
+
+#: frmMain.cpp:123 frmMain.cpp:166 frmMain.cpp:180
+msgid "Remove files"
+msgstr "Удалить файлы"
+
+#: frmSettings.cpp:158
+msgid "Restore defaults"
+msgstr "Восстановить значения по умолчанию"
+
+#: frmMain.cpp:302
+msgid "Select directory"
+msgstr "Выбор директории"
+
+#: frmMain.cpp:280 frmSettings.cpp:166
+msgid "Select file"
+msgstr "Выбор файла"
+
+#: frmMain.cpp:128 frmMain.cpp:172 frmSettings.cpp:68
+msgid "Settings"
+msgstr "Настройки"
+
+#: frmSettings.cpp:94
+msgid "Skip stored tag info (do not read or write tags)"
+msgstr "Пропустить информацию о тегах (не читать и не записывать теги)"
+
+#: frmMain.cpp:244
+msgid "Tag info"
+msgstr "Информация о тегах"
+
+#: frmSettings.cpp:153
+msgid "Tags"
+msgstr "Теги"
+
+#: frmSettings.cpp:89
+msgid "Tags options"
+msgstr "Опции тегов"
+
+#: frmSettings.cpp:97
+msgid "Tags reading"
+msgstr "Чтение тегов"
+
+#: frmMain.cpp:142
+msgid "Undo gain changes (based on stored tag info)\tCtrl+Z"
+msgstr "Отменить изменения нормализации (по информации о тегах)\tCtrl+Z"
+
+#: frmSettings.cpp:90
+msgid "Use APEv2 tag for gain information (default)"
+msgstr "Использовать информацию тегов APEv2 (по умолчанию)"
+
+#: frmSettings.cpp:92
+msgid "Use ID3v2 tag for gain information"
+msgstr "Использовать теги ID3v2 для информации нормализации"
+
+#: frmSettings.cpp:108
+msgid "Use constant gain without doing any analysis"
+msgstr "Использовать постоянную нормализацию без какого-либо анализа"
+
+#: frmMain.cpp:462
+msgid "Using MP3gain version: "
+msgstr "Используется MP3gain версии:"
+
+#: frmMain.cpp:102
+msgid "Using constant gain: "
+msgstr "Используется постоянная нормализация:"
+
+#: frmMain.cpp:240
+msgid "Volume"
+msgstr "Громкость"
+
+#: Progress.cpp:32
+msgid "Wait..."
+msgstr "Ждите..."
+
+#: frmSettings.cpp:139
+msgid "work on original file"
+msgstr "работа над исходным файлом"
+
+#: frmSettings.cpp:138
+msgid "work on temp file"
+msgstr "работа над временным файлом"
+
+#: frmMain.cpp:150
+msgid "wxMP3gain Website"
+msgstr "Веб-сайт wxMP3gain"
+
+#: Progress.cpp:64 Progress.cpp:94 Progress.cpp:152
+msgid "yes"
+msgstr "да"
+
+#: Progress box
+msgid "Elapsed time : "
+msgstr "Затраченное время:"
+
+msgid "Estimated time : "
+msgstr "Ожидаемое время:"
+
+msgid "Remaining time : "
+msgstr "Оставшееся время:"
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "unknown"
+msgstr "неизвестно"
