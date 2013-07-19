@@ -60,8 +60,6 @@
 					<object class="wxListCtrl" name="ID_LISTCTRL2" variable="lstFiles" member="yes">
 						<style>wxLC_REPORT</style>
 						<handler function="OnlstFilesDeleteItem" entry="EVT_LIST_DELETE_ITEM" />
-						<handler function="OnlstFilesClick" entry="EVT_LIST_ITEM_SELECTED" />
-						<handler function="OnlstFilesClick" entry="EVT_LIST_ITEM_DESELECTED" />
 						<handler function="OnlstFilesItemRClick" entry="EVT_LIST_ITEM_RIGHT_CLICK" />
 						<handler function="OnlstFilesInsertItem" entry="EVT_LIST_INSERT_ITEM" />
 					</object>
@@ -151,9 +149,9 @@
 			</object>
 		</object>
 		<object class="wxStatusBar" name="ID_STATUSBAR1" variable="StatusBar1" member="yes">
-			<fields>2</fields>
-			<widths>-10,-10</widths>
-			<styles>wxSB_NORMAL,wxSB_NORMAL</styles>
+			<fields>3</fields>
+			<widths>-10,-10,-10</widths>
+			<styles>wxSB_NORMAL,wxSB_NORMAL,wxSB_NORMAL</styles>
 			<style>wxST_SIZEGRIP</style>
 		</object>
 		<object class="wxToolBar" name="ID_TOOLBAR1" variable="ToolBar1" member="yes">
@@ -218,6 +216,9 @@
 				<label>Clear list</label>
 				<handler function="mnuClearList" entry="EVT_MENU" />
 			</object>
+		</object>
+		<object class="wxTimer" name="ID_TIMER1" variable="Timer1" member="yes">
+			<handler function="OnTimer1Trigger" entry="EVT_TIMER" />
 		</object>
 	</object>
 </wxsmith>

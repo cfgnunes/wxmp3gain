@@ -1,5 +1,11 @@
 wxMP3gain - Changelog file
 
+Changelog v2.4.3 (2013-07-19)
+--------------
+- Fix adding duplicates files in list
+- Fix running on Windows XP
+- Added file counter in statusbar
+
 Changelog v2.4.2 (2013-05-03)
 --------------
 - Added Russian translation
