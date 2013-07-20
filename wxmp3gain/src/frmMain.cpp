@@ -217,6 +217,9 @@ frmMain::frmMain(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSi
     Connect(ID_TIMER1,wxEVT_TIMER,(wxObjectEventFunction)&frmMain::OnTimer1Trigger);
     //*)
 
+    // Disable status bar pane used to display menu and toolbar help
+    SetStatusBarPane(-1);
+
     // If lost focus of txtNormalVolume
     txtNormalVolume->Connect(wxEVT_KILL_FOCUS, wxFocusEventHandler(frmMain::OntxtNormalVolumeTextKillFocus), NULL, this);
     txtNormalVolume->Connect(wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler(frmMain::OntxtNormalVolumeText), NULL, this);
@@ -579,9 +582,9 @@ void frmMain::OnTimer1Trigger(wxTimerEvent& event)
 
         // Show the version of tool
         if (!exeInputErrorString.IsEmpty())
-            StatusBar1->SetStatusText(_("Using MP3gain version: ") + exeInputErrorString.Item(0).AfterLast(' '), 2);
+            StatusBar1->SetStatusText(_("Using MP3gain version: ") + exeInputErrorString.Item(0).AfterLast(' '), 0);
         else
-            StatusBar1->SetStatusText(_("MP3gain not found!"), 2);
+            StatusBar1->SetStatusText(_("MP3gain not found!"), 0);
     }
 
     // Show the number of files in list on statusbar
