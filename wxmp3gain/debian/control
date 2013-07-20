@@ -3,7 +3,7 @@ Section: sound
 Priority: optional
 Maintainer: Cristiano Nunes <cfgnunes@gmail.com>
 Build-Depends: debhelper (>= 9), libwxgtk2.8-dev
-Standards-Version: 3.9.3
+Standards-Version: 3.9.4
 Homepage: http://sourceforge.net/projects/wxmp3gain/
 
 Package: wxmp3gain
