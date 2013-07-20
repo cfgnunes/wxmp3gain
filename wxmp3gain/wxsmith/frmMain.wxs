@@ -60,6 +60,8 @@
 					<object class="wxListCtrl" name="ID_LISTCTRL2" variable="lstFiles" member="yes">
 						<style>wxLC_REPORT</style>
 						<handler function="OnlstFilesDeleteItem" entry="EVT_LIST_DELETE_ITEM" />
+						<handler function="OnlstFilesInsertItem" entry="EVT_LIST_ITEM_SELECTED" />
+						<handler function="OnlstFilesInsertItem" entry="EVT_LIST_ITEM_DESELECTED" />
 						<handler function="OnlstFilesItemRClick" entry="EVT_LIST_ITEM_RIGHT_CLICK" />
 						<handler function="OnlstFilesInsertItem" entry="EVT_LIST_INSERT_ITEM" />
 					</object>

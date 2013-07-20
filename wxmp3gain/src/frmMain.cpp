@@ -12,11 +12,11 @@
 #include "DndFile.h"
 
 //(*InternalHeaders(frmMain)
-#include <wx/artprov.h>
-#include <wx/bitmap.h>
-#include <wx/intl.h>
-#include <wx/image.h>
 #include <wx/string.h>
+#include <wx/intl.h>
+#include <wx/bitmap.h>
+#include <wx/image.h>
+#include <wx/artprov.h>
 //*)
 
 #include <wx/aboutdlg.h>
@@ -70,21 +70,21 @@ END_EVENT_TABLE()
 frmMain::frmMain(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSize& size)
 {
     //(*Initialize(frmMain)
-    wxMenuItem* MenuItem5;
     wxMenuItem* MenuItem2;
-    wxBoxSizer* BoxNormalVolume;
-    wxMenu* Menu3;
     wxMenuItem* MenuItem1;
-    wxMenuItem* MenuItem4;
-    wxMenuItem* MenuItem11;
-    wxMenuItem* MenuItem10;
-    wxBoxSizer* BoxMain;
-    wxMenuItem* MenuItem3;
-    wxBoxSizer* BoxConstantGain;
-    wxMenuItem* MenuItem6;
-    wxMenu* Menu2;
-    wxMenuItem* MenuItem9;
     wxMenu* Menu5;
+    wxMenu* Menu3;
+    wxBoxSizer* BoxConstantGain;
+    wxMenuItem* MenuItem3;
+    wxMenuItem* MenuItem9;
+    wxMenuItem* MenuItem11;
+    wxMenuItem* MenuItem5;
+    wxMenuItem* MenuItem10;
+    wxMenuItem* MenuItem6;
+    wxMenuItem* MenuItem4;
+    wxBoxSizer* BoxMain;
+    wxBoxSizer* BoxNormalVolume;
+    wxMenu* Menu2;
 
     Create(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("wxID_ANY"));
     SetClientSize(wxSize(763,450));
@@ -186,6 +186,8 @@ frmMain::frmMain(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSi
     Center();
 
     Connect(ID_LISTCTRL2,wxEVT_COMMAND_LIST_DELETE_ITEM,(wxObjectEventFunction)&frmMain::OnlstFilesDeleteItem);
+    Connect(ID_LISTCTRL2,wxEVT_COMMAND_LIST_ITEM_SELECTED,(wxObjectEventFunction)&frmMain::OnlstFilesInsertItem);
+    Connect(ID_LISTCTRL2,wxEVT_COMMAND_LIST_ITEM_DESELECTED,(wxObjectEventFunction)&frmMain::OnlstFilesInsertItem);
     Connect(ID_LISTCTRL2,wxEVT_COMMAND_LIST_ITEM_RIGHT_CLICK,(wxObjectEventFunction)&frmMain::OnlstFilesItemRClick);
     Connect(ID_LISTCTRL2,wxEVT_COMMAND_LIST_INSERT_ITEM,(wxObjectEventFunction)&frmMain::OnlstFilesInsertItem);
     Connect(ID_MENUITEM17,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&frmMain::mnuAddDirectory);
@@ -574,11 +576,8 @@ void frmMain::OnTimer1Trigger(wxTimerEvent& event)
         exeInputString.Clear();
         exeInputErrorString.Clear();
         exeTool = newExeTool;
-        if(wxFileName::FileExists(exeTool) || wxFileName::FileExists(exeTool + _T(".exe")))
-        {
-            // Execute external application
-            wxExecute(exeTool + _T(" -v"), exeInputString, exeInputErrorString, wxEXEC_NODISABLE);
-        }
+        // Execute external application
+        wxExecute(exeTool + _T(" -v"), exeInputString, exeInputErrorString, wxEXEC_NODISABLE);
 
         // Show the version of tool
         if (!exeInputErrorString.IsEmpty())
@@ -587,7 +586,7 @@ void frmMain::OnTimer1Trigger(wxTimerEvent& event)
             StatusBar1->SetStatusText(_("MP3gain not found!"), 0);
     }
 
-    // Show the number of files in list on statusbar
+    // Show the number of files in list on status bar
     StatusBar1->SetStatusText(wxString::Format(_T("%i "), lstFiles->GetItemCount()) + _("files"), 1);
 
     // Constant gain box

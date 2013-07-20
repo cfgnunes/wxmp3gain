@@ -10,16 +10,16 @@
 #include "FileInfo.h"
 
 //(*Headers(frmMain)
-#include <wx/listctrl.h>
-#include <wx/sizer.h>
-#include <wx/stattext.h>
-#include <wx/menu.h>
-#include <wx/textctrl.h>
 #include <wx/toolbar.h>
+#include <wx/sizer.h>
+#include <wx/listctrl.h>
+#include <wx/menu.h>
 #include <wx/panel.h>
-#include <wx/frame.h>
-#include <wx/timer.h>
 #include <wx/statusbr.h>
+#include <wx/frame.h>
+#include <wx/stattext.h>
+#include <wx/textctrl.h>
+#include <wx/timer.h>
 //*)
 
 class frmMain : public wxFrame
@@ -30,37 +30,37 @@ public:
     virtual ~frmMain();
 
     //(*Declarations(frmMain)
-    wxToolBarToolBase* ToolBarItem4;
-    wxMenuItem* MenuItem8;
-    wxToolBar* ToolBar1;
-    wxMenu Menu1;
-    wxMenuItem* MenuItem7;
-    wxToolBarToolBase* ToolBarItem3;
-    wxStaticText* StaticText2;
-    wxMenuItem* MenuItem14;
-    wxMenuItem* MenuItem15;
+    wxToolBarToolBase* ToolBarItem5;
     wxPanel* Panel1;
-    wxStaticText* StaticText1;
-    wxMenuItem* MenuItem17;
-    wxStaticText* StaticText3;
-    wxMenuItem* MenuItem13;
-    wxToolBarToolBase* ToolBarItem6;
-    wxMenuItem* MenuItem12;
-    wxToolBarToolBase* ToolBarItem1;
-    wxMenu* Menu7;
     wxStaticText* lblConstantGain;
     wxStatusBar* StatusBar1;
-    wxToolBarToolBase* ToolBarItem5;
-    wxTextCtrl* txtNormalVolume;
-    wxListCtrl* lstFiles;
-    wxToolBarToolBase* ToolBarItem8;
-    wxMenuBar* MenuBar1;
     wxMenuItem* MenuItem16;
+    wxMenuItem* MenuItem12;
+    wxToolBarToolBase* ToolBarItem6;
+    wxListCtrl* lstFiles;
     wxMenu* Menu6;
-    wxMenuItem* MenuItem18;
-    wxToolBarToolBase* ToolBarItem2;
+    wxMenuItem* MenuItem15;
+    wxStaticText* StaticText1;
     wxTimer Timer1;
     wxToolBarToolBase* ToolBarItem7;
+    wxToolBarToolBase* ToolBarItem2;
+    wxMenuItem* MenuItem17;
+    wxStaticText* StaticText3;
+    wxMenu* Menu7;
+    wxToolBar* ToolBar1;
+    wxToolBarToolBase* ToolBarItem4;
+    wxTextCtrl* txtNormalVolume;
+    wxToolBarToolBase* ToolBarItem1;
+    wxMenuBar* MenuBar1;
+    wxStaticText* StaticText2;
+    wxMenuItem* MenuItem18;
+    wxToolBarToolBase* ToolBarItem3;
+    wxMenuItem* MenuItem7;
+    wxMenuItem* MenuItem13;
+    wxToolBarToolBase* ToolBarItem8;
+    wxMenu Menu1;
+    wxMenuItem* MenuItem8;
+    wxMenuItem* MenuItem14;
     //*)
     wxBoxSizer* boxNormalVolume;
     wxBoxSizer* boxConstantGain;
@@ -115,7 +115,6 @@ private:
     void mnuExit(wxCommandEvent& event);
     void mnuClearList(wxCommandEvent& event);
     void mnuRemoveFiles(wxCommandEvent& event);
-    void OnlstFilesClick(wxListEvent& event);
     void OnlstFilesItemRClick(wxListEvent& event);
     void mnuAbout(wxCommandEvent& event);
     void mnuWebsite(wxCommandEvent& event);
