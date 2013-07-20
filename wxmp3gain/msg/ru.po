@@ -293,3 +293,6 @@ msgstr "Закрыть"
 
 msgid "unknown"
 msgstr "неизвестно"
+
+msgid "files"
+msgstr "файлы"
