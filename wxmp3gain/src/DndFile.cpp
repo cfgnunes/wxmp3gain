@@ -22,10 +22,11 @@ bool DndFile::OnDropFiles(wxCoord x, wxCoord y, const wxArrayString& filenames)
     // Check if is a directory or a file
     for (size_t n = 0; n < filenames.GetCount(); n++)
     {
-        if (wxFileName::DirExists(filenames[n]))
-            InsertFileListDir(filenames[n]);
+        wxString filename = filenames[n].Trim();
+        if (wxFileName::DirExists(filename))
+            InsertFileListDir(filename);
         else
-            files.Add(filenames[n]);
+            files.Add(filename);
     }
     InsertFileList(files);
 
