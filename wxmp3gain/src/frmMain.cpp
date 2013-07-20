@@ -156,7 +156,7 @@ frmMain::frmMain(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSi
     MenuBar1->Append(Menu5, _("&Help"));
     SetMenuBar(MenuBar1);
     StatusBar1 = new wxStatusBar(this, ID_STATUSBAR1, wxST_SIZEGRIP, _T("ID_STATUSBAR1"));
-    int __wxStatusBarWidths_1[3] = { -10, -10, -10 };
+    int __wxStatusBarWidths_1[3] = { -10, -5, -10 };
     int __wxStatusBarStyles_1[3] = { wxSB_NORMAL, wxSB_NORMAL, wxSB_NORMAL };
     StatusBar1->SetFieldsCount(3,__wxStatusBarWidths_1);
     StatusBar1->SetStatusStyles(3,__wxStatusBarStyles_1);
@@ -378,14 +378,6 @@ void frmMain::mnuRemoveTags(wxCommandEvent& event)
     mnuClearAnalysis(evt);
 }
 
-void frmMain::OnlstFilesItemRClick(wxListEvent& event)
-{
-    updateControls();
-
-    // Displays the popup menu when you click a list item
-    lstFiles->PopupMenu(&Menu1);
-}
-
 void frmMain::mnuSettings(wxCommandEvent& event)
 {
     wxCommandEvent evt;
@@ -492,17 +484,6 @@ void frmMain::updateTxtNormalVolumeDb()
     txtNormalVolume->Connect(wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler(frmMain::OntxtNormalVolumeText), NULL, this);
 }
 
-void frmMain::OnlstFilesInsertItem(wxListEvent& event)
-{
-    updateControls();
-}
-
-void frmMain::OnlstFilesDeleteItem(wxListEvent& event)
-{
-    lstFilesData->Detach(event.GetIndex());
-    updateControls();
-}
-
 void frmMain::updateGainLabels(wxListCtrl* listFilesUpdate, ConfigBase* configBaseUpdate, ArrayOfFiles* lstFilesDataUpdate, const double& dblNormalVolumeUpdate)
 {
     for (int i = 0; i < listFilesUpdate->GetItemCount(); i++)
@@ -556,6 +537,25 @@ void frmMain::mnuClearAnalysis(wxCommandEvent& event)
         lstFiles->SetItem(i, 5, _T(""));
         lstFiles->SetItemTextColour(i, *wxBLACK);
     }
+}
+
+void frmMain::OnlstFilesItemRClick(wxListEvent& event)
+{
+    updateControls();
+
+    // Displays the popup menu when you click a list item
+    lstFiles->PopupMenu(&Menu1);
+}
+
+void frmMain::OnlstFilesDeleteItem(wxListEvent& event)
+{
+    lstFilesData->Detach(event.GetIndex());
+    updateControls();
+}
+
+void frmMain::OnlstFilesInsertItem(wxListEvent& event)
+{
+    updateControls();
 }
 
 void frmMain::updateControls()

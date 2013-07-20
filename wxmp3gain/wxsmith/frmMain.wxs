@@ -150,7 +150,7 @@
 		</object>
 		<object class="wxStatusBar" name="ID_STATUSBAR1" variable="StatusBar1" member="yes">
 			<fields>3</fields>
-			<widths>-10,-10,-10</widths>
+			<widths>-10,-5,-10</widths>
 			<styles>wxSB_NORMAL,wxSB_NORMAL,wxSB_NORMAL</styles>
 			<style>wxST_SIZEGRIP</style>
 		</object>
