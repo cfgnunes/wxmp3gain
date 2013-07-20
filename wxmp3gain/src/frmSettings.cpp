@@ -7,8 +7,8 @@
 #include "Global.h"
 
 //(*InternalHeaders(frmSettings)
-#include <wx/string.h>
 #include <wx/intl.h>
+#include <wx/string.h>
 //*)
 
 //(*IdInit(frmSettings)
@@ -49,21 +49,21 @@ frmSettings::frmSettings(wxWindow* parent, ConfigBase* configBase, wxWindowID id
 : configBase(configBase)
 {
     //(*Initialize(frmSettings)
-    wxStaticBoxSizer* StaticBoxSizer2;
-    wxBoxSizer* BoxSizer3;
-    wxStaticBoxSizer* StaticBoxSizer7;
-    wxStaticBoxSizer* StaticBoxSizer5;
-    wxBoxSizer* BoxSizer10;
-    wxBoxSizer* BoxSizer7;
-    wxBoxSizer* BoxSizer2;
-    wxStaticBoxSizer* StaticBoxSizer3;
     wxBoxSizer* BoxSizer4;
-    wxStaticBoxSizer* StaticBoxSizer4;
-    wxStaticBoxSizer* StaticBoxSizer6;
-    wxBoxSizer* BoxSizer1;
+    wxStaticBoxSizer* StaticBoxSizer2;
     wxBoxSizer* BoxSizer6;
     wxBoxSizer* BoxSizer5;
+    wxBoxSizer* BoxSizer10;
+    wxBoxSizer* BoxSizer7;
+    wxStaticBoxSizer* StaticBoxSizer4;
+    wxBoxSizer* BoxSizer2;
+    wxStaticBoxSizer* StaticBoxSizer7;
+    wxStaticBoxSizer* StaticBoxSizer3;
+    wxStaticBoxSizer* StaticBoxSizer6;
+    wxBoxSizer* BoxSizer1;
     wxStaticBoxSizer* StaticBoxSizer1;
+    wxBoxSizer* BoxSizer3;
+    wxStaticBoxSizer* StaticBoxSizer5;
 
     Create(parent, wxID_ANY, _("Settings"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE, _T("wxID_ANY"));
     BoxSizer1 = new wxBoxSizer(wxVERTICAL);

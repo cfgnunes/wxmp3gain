@@ -4,7 +4,7 @@
  */
 
 #include "DndFile.h"
-#include <wx/msgdlg.h>
+
 DndFile::DndFile(wxListCtrl *owner, ArrayOfFiles *lstFilesData) : lstFilesData(lstFilesData)
 {
     m_owner = owner;
