@@ -22,9 +22,11 @@ all:
 	@mkdir -p ./resource/msg/pt_BR/
 	@mkdir -p ./resource/msg/es/
 	@mkdir -p ./resource/msg/ru/
+	@mkdir -p ./resource/msg/cs/
 	@msgfmt ./msg/pt_BR.po -o ./resource/msg/pt_BR/$(APP_NAME).mo
 	@msgfmt ./msg/es.po -o ./resource/msg/es/$(APP_NAME).mo
 	@msgfmt ./msg/ru.po -o ./resource/msg/ru/$(APP_NAME).mo
+	@msgfmt ./msg/cs.po -o ./resource/msg/cs/$(APP_NAME).mo
 
 clean:
 	@rm -f *.o *.depend *.layout
