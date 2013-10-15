@@ -19,32 +19,10 @@ bool DndFile::OnDropFiles(wxCoord x, wxCoord y, const wxArrayString& filenames)
 {
     wxArrayString files;
 
-    // Workaround to work DragAndDrop with LXDE
-    wxArrayString tempFilenames;
-    if(filenames.GetCount() == 1)
-    {
-        wxStringTokenizer strToken(filenames[0]);
-        while (strToken.HasMoreTokens())
-        {
-            tempFilenames.Add(strToken.GetNextToken());
-        }
-    }
-    else
-    {
-        tempFilenames = filenames;
-    }
-
     // Check if is a directory or a file
-    for (size_t n = 0; n < tempFilenames.GetCount(); n++)
+    for (size_t n = 0; n < filenames.GetCount(); n++)
     {
-        wxString filename = tempFilenames[n];
-
-        // Workaround to work with "file://" string filename in some Linux distros
-        if(filename.Contains(_T("//")))
-        {
-            filename = filename.Mid(filename.Find(_T("//"))+2);
-        }
-
+        wxString filename = filenames[n].Trim();
         if (wxFileName::DirExists(filename))
             InsertFileListDir(filename);
         else
