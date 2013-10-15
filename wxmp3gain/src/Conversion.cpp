@@ -1,6 +1,6 @@
 /*
  * This file is part of the wxMP3gain and licensed under the GNU General Public License, version 3
- * http://www.gnu.org/licenses/gpl-3.0.htmlc
+ * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
 #include "Conversion.h"
