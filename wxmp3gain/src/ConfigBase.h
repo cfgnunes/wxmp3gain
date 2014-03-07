@@ -64,7 +64,7 @@ public:
     wxString getStringToolOptionsTag();
     wxString getStringToolOptionsGain();
 
-    //gets...
+    // Gets...
     wxString getLastOpenDir();
     int getNormalVolumeDb();
     wxString getToolExecutable();
@@ -78,7 +78,7 @@ public:
     bool getPreserveTimeEnabled();
     bool getForceInputEnabled();
 
-    //sets...
+    // Sets...
     void setLastOpenDir(wxString value);
     void setNormalVolumeDb(int value);
     void setToolExecutable(wxString value);
