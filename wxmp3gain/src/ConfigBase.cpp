@@ -122,7 +122,7 @@ wxString ConfigBase::getStringToolOptionsGain()
     return toolOptions;
 }
 
-//gets...
+// Gets...
 
 wxString ConfigBase::getLastOpenDir()
 {
@@ -208,7 +208,7 @@ bool ConfigBase::getForceInputEnabled()
     return value;
 }
 
-//sets...
+// Sets...
 
 void ConfigBase::setLastOpenDir(wxString value)
 {

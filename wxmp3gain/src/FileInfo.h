@@ -22,14 +22,14 @@ public:
     FileInfo(const wxString& fileName);
     virtual ~FileInfo();
 
-    //gets...
+    // Gets...
     wxFileName getFileName();
     double getVolume();
     double getMaxPcmSample();
     bool isVolumeSet();
     int getGainChange();
 
-    //sets...
+    // Sets...
     void setVolume(const double& value);
     void setMaxPcmSample(const double& value);
     void setGainChange(const int& value);

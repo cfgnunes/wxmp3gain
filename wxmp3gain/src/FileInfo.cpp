@@ -20,7 +20,7 @@ FileInfo::~FileInfo()
     //dtor
 }
 
-//sets..
+// Sets..
 
 void FileInfo::setVolume(const double& value)
 {
@@ -43,7 +43,7 @@ void FileInfo::volumeReset()
     volumeSet = false;
 }
 
-//gets..
+// Gets..
 
 wxFileName FileInfo::getFileName()
 {
