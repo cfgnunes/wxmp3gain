@@ -21,7 +21,7 @@
  * Purpose:   A free front-end for MP3gain.
  * Author:    Cristiano Nunes (cfgnunes@gmail.com)
  * Created:   2012-02-04
- * Copyright: Copyright (C) 2012  Cristiano Nunes
+ * Copyright: Copyright (C) 2012 Cristiano Nunes
  * License:   licensed under the GNU General Public License, version 3
  *            http://www.gnu.org/licenses/gpl-3.0.html
  ************************************************************************/

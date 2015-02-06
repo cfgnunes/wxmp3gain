@@ -22,7 +22,7 @@ bool DndFile::OnDropFiles(wxCoord x, wxCoord y, const wxArrayString& filenames)
     // Check if is a directory or a file
     for (size_t n = 0; n < filenames.GetCount(); n++)
     {
-        wxString filename = filenames[n].Trim();
+        wxString filename = filenames[n];
         if (wxFileName::DirExists(filename))
             InsertFileListDir(filename);
         else
