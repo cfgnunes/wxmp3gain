@@ -130,6 +130,7 @@ private:
     void mnuRemoveTags(wxCommandEvent& event);
     void mnuAddDirectory(wxCommandEvent& event);
     void OnTimer1Trigger(wxTimerEvent& event);
+    void OnlstFilesKeyDown(wxListEvent& event);
     //*)
 
     void OntxtNormalVolumeTextKillFocus(wxFocusEvent& event);

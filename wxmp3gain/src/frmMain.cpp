@@ -189,6 +189,7 @@ frmMain::frmMain(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSi
     Connect(ID_LISTCTRL2,wxEVT_COMMAND_LIST_ITEM_SELECTED,(wxObjectEventFunction)&frmMain::OnlstFilesInsertItem);
     Connect(ID_LISTCTRL2,wxEVT_COMMAND_LIST_ITEM_DESELECTED,(wxObjectEventFunction)&frmMain::OnlstFilesInsertItem);
     Connect(ID_LISTCTRL2,wxEVT_COMMAND_LIST_ITEM_RIGHT_CLICK,(wxObjectEventFunction)&frmMain::OnlstFilesItemRClick);
+    Connect(ID_LISTCTRL2,wxEVT_COMMAND_LIST_KEY_DOWN,(wxObjectEventFunction)&frmMain::OnlstFilesKeyDown);
     Connect(ID_LISTCTRL2,wxEVT_COMMAND_LIST_INSERT_ITEM,(wxObjectEventFunction)&frmMain::OnlstFilesInsertItem);
     Connect(ID_MENUITEM17,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&frmMain::mnuAddDirectory);
     Connect(ID_MENUITEM2,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&frmMain::mnuAddFiles);
@@ -612,4 +613,12 @@ void frmMain::OnTimer1Trigger(wxTimerEvent& event)
     MenuBar1->Enable(ID_MENUITEM8, lstFiles->GetItemCount() > 0 && configBase->getTagOptions() != 2);
     ToolBar1->EnableTool(ID_TOOLBARITEM4, lstFiles->GetItemCount() > 0);
     ToolBar1->EnableTool(ID_TOOLBARITEM5, lstFiles->GetItemCount() > 0);
+}
+
+void frmMain::OnlstFilesKeyDown(wxListEvent& event)
+{
+    // Remove files with Delete key
+    int keyCode = event.GetKeyCode();
+    if(keyCode == WXK_DELETE)
+        mnuRemoveFiles(event);
 }

@@ -63,6 +63,7 @@
 						<handler function="OnlstFilesInsertItem" entry="EVT_LIST_ITEM_SELECTED" />
 						<handler function="OnlstFilesInsertItem" entry="EVT_LIST_ITEM_DESELECTED" />
 						<handler function="OnlstFilesItemRClick" entry="EVT_LIST_ITEM_RIGHT_CLICK" />
+						<handler function="OnlstFilesKeyDown" entry="EVT_LIST_KEY_DOWN" />
 						<handler function="OnlstFilesInsertItem" entry="EVT_LIST_INSERT_ITEM" />
 					</object>
 					<flag>wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
