@@ -1,8 +1,10 @@
 wxMP3gain - Changelog file
 
-Changelog v2.4.4 (2013-??-??)
+Changelog v3.0 (2015-02-??)
 --------------
 - Added Czech translation
+- Added German translation
+- Updated to wxWidgets 3.0 library
 
 Changelog v2.4.3 (2013-07-20)
 --------------
