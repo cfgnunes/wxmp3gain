@@ -131,6 +131,7 @@ private:
     void mnuAddDirectory(wxCommandEvent& event);
     void OnTimer1Trigger(wxTimerEvent& event);
     void OnlstFilesKeyDown(wxListEvent& event);
+    void OnlstFilesItemSelect(wxListEvent& event);
     //*)
 
     void OntxtNormalVolumeTextKillFocus(wxFocusEvent& event);
