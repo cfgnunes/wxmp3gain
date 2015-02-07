@@ -58,7 +58,6 @@ const long frmMain::ID_MENUITEM18 = wxNewId();
 const long frmMain::ID_MENUITEM5 = wxNewId();
 const long frmMain::ID_MENUITEM12 = wxNewId();
 const long frmMain::ID_MENUITEM13 = wxNewId();
-const long frmMain::ID_TIMER1 = wxNewId();
 //*)
 
 BEGIN_EVENT_TABLE(frmMain, wxFrame)
@@ -181,7 +180,6 @@ frmMain::frmMain(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSi
     g_mainMenu.Append(MenuItem10);
     MenuItem11 = new wxMenuItem((&g_mainMenu), ID_MENUITEM13, _("Clear list"), wxEmptyString, wxITEM_NORMAL);
     g_mainMenu.Append(MenuItem11);
-    Timer1.SetOwner(this, ID_TIMER1);
     Center();
 
     Connect(ID_LISTCTRL2, wxEVT_COMMAND_LIST_DELETE_ITEM, (wxObjectEventFunction) & frmMain::OnlstFilesDeleteItem);
@@ -216,7 +214,6 @@ frmMain::frmMain(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSi
     Connect(ID_MENUITEM5, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuAddFiles);
     Connect(ID_MENUITEM12, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuRemoveFiles);
     Connect(ID_MENUITEM13, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuClearList);
-    Connect(ID_TIMER1, wxEVT_TIMER, (wxObjectEventFunction) & frmMain::OnTimer1Trigger);
     //*)
 
     // If lost focus of txtNormalVolume
@@ -533,10 +530,6 @@ void frmMain::OnlstFilesInsertItem(wxListEvent& event) {
 }
 
 void frmMain::updateControls() {
-    Timer1.Start(10, true);
-}
-
-void frmMain::OnTimer1Trigger(wxTimerEvent& event) {
     wxString newExeTool = mp_configBase->getToolExecutable();
     if (!m_exeTool.IsSameAs(newExeTool, false)) {
         m_exeInputString.Clear();
