@@ -61,8 +61,8 @@
 						<focused>1</focused>
 						<style>wxLC_REPORT</style>
 						<handler function="OnlstFilesDeleteItem" entry="EVT_LIST_DELETE_ITEM" />
-						<handler function="OnlstFilesInsertItem" entry="EVT_LIST_ITEM_SELECTED" />
-						<handler function="OnlstFilesInsertItem" entry="EVT_LIST_ITEM_DESELECTED" />
+						<handler function="OnlstFilesItemSelect" entry="EVT_LIST_ITEM_SELECTED" />
+						<handler function="OnlstFilesItemSelect" entry="EVT_LIST_ITEM_DESELECTED" />
 						<handler function="OnlstFilesItemRClick" entry="EVT_LIST_ITEM_RIGHT_CLICK" />
 						<handler function="OnlstFilesKeyDown" entry="EVT_LIST_KEY_DOWN" />
 						<handler function="OnlstFilesInsertItem" entry="EVT_LIST_INSERT_ITEM" />
