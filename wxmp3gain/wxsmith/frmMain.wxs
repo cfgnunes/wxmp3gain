@@ -221,8 +221,5 @@
 				<handler function="mnuClearList" entry="EVT_MENU" />
 			</object>
 		</object>
-		<object class="wxTimer" name="ID_TIMER1" variable="Timer1" member="yes">
-			<handler function="OnTimer1Trigger" entry="EVT_TIMER" />
-		</object>
 	</object>
 </wxsmith>
