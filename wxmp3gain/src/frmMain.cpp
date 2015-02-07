@@ -8,7 +8,6 @@
 #include "Progress.h"
 #include "Conversion.h"
 #include "Global.h"
-#include "DndFile.h"
 
 //(*InternalHeaders(frmMain)
 #include <wx/string.h>
@@ -58,6 +57,7 @@ const long frmMain::ID_MENUITEM18 = wxNewId();
 const long frmMain::ID_MENUITEM5 = wxNewId();
 const long frmMain::ID_MENUITEM12 = wxNewId();
 const long frmMain::ID_MENUITEM13 = wxNewId();
+const long frmMain::ID_TIMER1 = wxNewId();
 //*)
 
 BEGIN_EVENT_TABLE(frmMain, wxFrame)
@@ -180,6 +180,7 @@ frmMain::frmMain(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSi
     g_mainMenu.Append(MenuItem10);
     MenuItem11 = new wxMenuItem((&g_mainMenu), ID_MENUITEM13, _("Clear list"), wxEmptyString, wxITEM_NORMAL);
     g_mainMenu.Append(MenuItem11);
+    Timer1.SetOwner(this, ID_TIMER1);
     Center();
 
     Connect(ID_LISTCTRL2, wxEVT_COMMAND_LIST_DELETE_ITEM, (wxObjectEventFunction) & frmMain::OnlstFilesDeleteItem);
@@ -214,6 +215,7 @@ frmMain::frmMain(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSi
     Connect(ID_MENUITEM5, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuAddFiles);
     Connect(ID_MENUITEM12, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuRemoveFiles);
     Connect(ID_MENUITEM13, wxEVT_COMMAND_MENU_SELECTED, (wxObjectEventFunction) & frmMain::mnuClearList);
+    Connect(ID_TIMER1, wxEVT_TIMER, (wxObjectEventFunction) & frmMain::OnTimer1Trigger);
     //*)
 
     // If lost focus of txtNormalVolume
@@ -226,7 +228,8 @@ frmMain::frmMain(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSi
     mp_lstFilesData = new ArrayOfFiles();
 
     // Support Drag & Drop
-    g_lstFiles->SetDropTarget(new DndFile(g_lstFiles, mp_lstFilesData));
+    mp_dndFile = new DndFile(g_lstFiles, mp_lstFilesData);
+    g_lstFiles->SetDropTarget(mp_dndFile);
 
     // Configuration file
     mp_configBase = new ConfigBase(APP_NAME);
@@ -272,8 +275,7 @@ frmMain::~frmMain() {
 }
 
 void frmMain::setFilesCmdLine(const wxArrayString& filenames) {
-    DndFile dndFile(g_lstFiles, mp_lstFilesData);
-    dndFile.OnDropFiles(0, 0, filenames);
+    mp_dndFile->OnDropFiles(0, 0, filenames);
 }
 
 void frmMain::mnuAddFiles(wxCommandEvent& event) {
@@ -288,8 +290,7 @@ void frmMain::mnuAddFiles(wxCommandEvent& event) {
 
         // Get the file(s) the user selected
         fileDialog.GetPaths(files);
-        DndFile dndFile(g_lstFiles, mp_lstFilesData);
-        dndFile.insertFileList(files);
+        mp_dndFile->insertFileList(files);
 
         // Remembers the last used directory
         mp_configBase->setLastOpenDir(fileDialog.GetDirectory());
@@ -304,8 +305,7 @@ void frmMain::mnuAddDirectory(wxCommandEvent& event) {
     dirDialog.SetPath(mp_configBase->getLastOpenDir());
     if (dirDialog.ShowModal() == wxID_OK) {
         SetCursor(wxCURSOR_WAIT);
-        DndFile dndFile(g_lstFiles, mp_lstFilesData);
-        dndFile.insertFileListDir(dirDialog.GetPath());
+        mp_dndFile->insertFileListDir(dirDialog.GetPath());
 
         // Remembers the last used directory
         mp_configBase->setLastOpenDir(dirDialog.GetPath());
@@ -525,7 +525,13 @@ void frmMain::OnlstFilesDeleteItem(wxListEvent& event) {
 }
 
 void frmMain::OnlstFilesInsertItem(wxListEvent& event) {
-    updateControls();
+    /*
+     * :KLUDGE:
+     * EVT_LIST_INSERT_ITEM is triggered before or after item is added:
+     *   on wxGTK -> triggered before item is added;
+     *   on wxMSW -> triggered after item is added.
+     */
+    updateControlsDelayed();
     event.Skip();
 }
 
@@ -569,6 +575,14 @@ void frmMain::updateControls() {
     g_mainMenuBar->Enable(ID_MENUITEM8, g_lstFiles->GetItemCount() > 0 && mp_configBase->getTagOptions() != 2);
     g_mainToolBar->EnableTool(ID_TOOLBARITEM4, g_lstFiles->GetItemCount() > 0);
     g_mainToolBar->EnableTool(ID_TOOLBARITEM5, g_lstFiles->GetItemCount() > 0);
+}
+
+void frmMain::updateControlsDelayed() {
+    Timer1.Start(10, true);
+}
+
+void frmMain::OnTimer1Trigger(wxTimerEvent& event) {
+    updateControls();
 }
 
 void frmMain::OnlstFilesKeyDown(wxListEvent& event) {

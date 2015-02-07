@@ -8,6 +8,7 @@
 
 #include "ConfigBase.h"
 #include "FileInfo.h"
+#include "DndFile.h"
 
 //(*Headers(frmMain)
 #include <wx/toolbar.h>
@@ -19,6 +20,7 @@
 #include <wx/frame.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
+#include <wx/timer.h>
 //*)
 
 class frmMain : public wxFrame {
@@ -40,6 +42,7 @@ public:
     wxMenu* Menu6;
     wxMenuItem* MenuItem15;
     wxStaticText* StaticText1;
+    wxTimer Timer1;
     wxToolBarToolBase* ToolBarItem7;
     wxToolBarToolBase* ToolBarItem2;
     wxMenuItem* MenuItem17;
@@ -103,6 +106,7 @@ protected:
     static const long ID_MENUITEM5;
     static const long ID_MENUITEM12;
     static const long ID_MENUITEM13;
+    static const long ID_TIMER1;
     //*)
 
 private:
@@ -125,15 +129,18 @@ private:
     void mnuUndoGain(wxCommandEvent& event);
     void mnuRemoveTags(wxCommandEvent& event);
     void mnuAddDirectory(wxCommandEvent& event);
+    void OnTimer1Trigger(wxTimerEvent& event);
     void OnlstFilesKeyDown(wxListEvent& event);
     //*)
 
     void OntxtNormalVolumeTextKillFocus(wxFocusEvent& event);
     void updateTxtNormalVolumeDb();
     void updateControls();
+    void updateControlsDelayed();
     void loadResources();
     ConfigBase *mp_configBase;
     ArrayOfFiles *mp_lstFilesData;
+    DndFile *mp_dndFile;
     double m_dblNormalVolume;
     wxString m_exeTool;
     wxArrayString m_exeInputString;
