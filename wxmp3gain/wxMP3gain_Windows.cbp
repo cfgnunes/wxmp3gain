@@ -3,6 +3,7 @@
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="wxMP3gain" />
+        <Option makefile="makefile" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -15,14 +16,35 @@
 				<Compiler>
 					<Add option="-g" />
 					<Add option="-D__WXDEBUG__" />
-					<Add directory="$(#wx)\lib\gcc_dll\mswud" />
+					<Add directory="$(#wx)/lib/gcc481TDM_dll/mswu" />
 				</Compiler>
 				<ResourceCompiler>
-					<Add directory="$(#wx)\lib\gcc_dll\mswud" />
+					<Add directory="$(#wx)/lib/gcc481TDM_dll/mswu" />
 				</ResourceCompiler>
 				<Linker>
-					<Add library="libwxmsw28ud.a" />
-					<Add directory="$(#wx)\lib\gcc_dll" />
+					<Add library="libwxbase30ud.a" />
+					<Add library="libwxbase30ud_net.a" />
+					<Add library="libwxbase30ud_xml.a" />
+					<Add library="libwxexpatd.a" />
+					<Add library="libwxjpegd.a" />
+					<Add library="libwxmsw30ud_adv.a" />
+					<Add library="libwxmsw30ud_aui.a" />
+					<Add library="libwxmsw30ud_core.a" />
+					<Add library="libwxmsw30ud_gl.a" />
+					<Add library="libwxmsw30ud_html.a" />
+					<Add library="libwxmsw30ud_media.a" />
+					<Add library="libwxmsw30ud_propgrid.a" />
+					<Add library="libwxmsw30ud_ribbon.a" />
+					<Add library="libwxmsw30ud_richtext.a" />
+					<Add library="libwxmsw30ud_stc.a" />
+					<Add library="libwxmsw30ud_webview.a" />
+					<Add library="libwxmsw30ud_xrc.a" />
+					<Add library="libwxpngd.a" />
+					<Add library="libwxregexud.a" />
+					<Add library="libwxscintillad.a" />
+					<Add library="libwxtiffd.a" />
+					<Add library="libwxzlibd.a" />
+					<Add directory="$(#wx)/lib/gcc481TDM_dll" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -33,15 +55,36 @@
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-O2" />
-					<Add directory="$(#wx)\lib\gcc_dll\mswu" />
+					<Add directory="$(#wx)/lib/gcc481TDM_dll/mswu" />
 				</Compiler>
 				<ResourceCompiler>
-					<Add directory="$(#wx)\lib\gcc_dll\mswu" />
+					<Add directory="$(#wx)/lib/gcc481TDM_dll/mswu" />
 				</ResourceCompiler>
 				<Linker>
 					<Add option="-s" />
-					<Add library="libwxmsw28u.a" />
-					<Add directory="$(#wx)\lib\gcc_dll" />
+					<Add library="libwxbase30u.a" />
+					<Add library="libwxbase30u_net.a" />
+					<Add library="libwxbase30u_xml.a" />
+					<Add library="libwxexpat.a" />
+					<Add library="libwxjpeg.a" />
+					<Add library="libwxmsw30u_adv.a" />
+					<Add library="libwxmsw30u_aui.a" />
+					<Add library="libwxmsw30u_core.a" />
+					<Add library="libwxmsw30u_gl.a" />
+					<Add library="libwxmsw30u_html.a" />
+					<Add library="libwxmsw30u_media.a" />
+					<Add library="libwxmsw30u_propgrid.a" />
+					<Add library="libwxmsw30u_ribbon.a" />
+					<Add library="libwxmsw30u_richtext.a" />
+					<Add library="libwxmsw30u_stc.a" />
+					<Add library="libwxmsw30u_webview.a" />
+					<Add library="libwxmsw30u_xrc.a" />
+					<Add library="libwxpng.a" />
+					<Add library="libwxregexu.a" />
+					<Add library="libwxscintilla.a" />
+					<Add library="libwxtiff.a" />
+					<Add library="libwxzlib.a" />
+					<Add directory="$(#wx)/lib/gcc481TDM_dll" />
 				</Linker>
 			</Target>
 		</Build>
@@ -54,11 +97,11 @@
 			<Add option="-DwxUSE_UNICODE" />
 			<Add option='[[if (PLATFORM == PLATFORM_MSW &amp;&amp; (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.0.0&quot;))) print(_T(&quot;-Wno-attributes&quot;));]]' />
 			<Add option="-Wall" />
-			<Add directory="$(#wx)\include" />
-			<Add directory="$(#wx)\contrib\include" />
+			<Add directory="$(#wx)/include" />
+			<Add directory="$(#wx)/contrib/include" />
 		</Compiler>
 		<ResourceCompiler>
-			<Add directory="$(#wx)\include" />
+			<Add directory="$(#wx)/include" />
 		</ResourceCompiler>
 		<Linker>
 			<Add option="-mthreads" />
@@ -93,6 +136,7 @@
 					<wxDialog wxs="wxsmith/frmSettings.wxs" src="src/frmSettings.cpp" hdr="src/frmSettings.h" fwddecl="0" i18n="1" name="frmSettings" language="CPP" />
 				</resources>
 			</wxsmith>
+			<envvars />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

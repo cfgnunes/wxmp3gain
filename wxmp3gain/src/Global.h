@@ -9,7 +9,7 @@
 #include <wx/string.h>
 
 const wxString APP_NAME = _T("wxMP3gain");
-const wxString APP_VERSION = _T("3.0");
+const wxString APP_VERSION = _T("3.1");
 const wxString APP_NAME_WITH_VERSION = APP_NAME + _T(" v") + APP_VERSION;
 
 const wxString APP_AUTHOR = _T("Cristiano Nunes <cfgnunes@gmail.com>");
