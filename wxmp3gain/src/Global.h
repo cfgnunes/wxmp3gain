@@ -11,7 +11,7 @@
 #include <wx/filename.h>
 
 const wxString APP_NAME = _T("wxMP3gain");
-const wxString APP_VERSION = _T("3.2");
+const wxString APP_VERSION = _T("3.3");
 const wxString APP_NAME_WITH_VERSION = APP_NAME + _T(" v") + APP_VERSION;
 
 const wxString APP_AUTHOR = _T("Cristiano Nunes <cfgnunes@gmail.com>");
