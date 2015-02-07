@@ -344,13 +344,13 @@ void frmMain::mnuRemoveFiles(wxCommandEvent& event) {
 void frmMain::mnuScan(wxCommandEvent& event) {
     // Displays the "Progress" window
     Progress progressDialog(0, mp_configBase, g_lstFiles, mp_lstFilesData, m_dblNormalVolume, TOOL_ANALYSIS);
-    progressDialog.Execute();
+    progressDialog.execute();
 }
 
 void frmMain::mnuFix(wxCommandEvent& event) {
     // Displays the "Progress" window
     Progress progressDialog(0, mp_configBase, g_lstFiles, mp_lstFilesData, m_dblNormalVolume, TOOL_GAIN);
-    progressDialog.Execute();
+    progressDialog.execute();
 }
 
 void frmMain::mnuUndoGain(wxCommandEvent& event) {
@@ -358,7 +358,7 @@ void frmMain::mnuUndoGain(wxCommandEvent& event) {
 
     // Displays the "Progress" window
     Progress progressDialog(0, mp_configBase, g_lstFiles, mp_lstFilesData, m_dblNormalVolume, TOOL_UNDO);
-    progressDialog.Execute();
+    progressDialog.execute();
 
     mnuClearAnalysis(evt);
 }
@@ -368,7 +368,7 @@ void frmMain::mnuRemoveTags(wxCommandEvent& event) {
 
     // Displays the "Progress" window
     Progress progressDialog(0, mp_configBase, g_lstFiles, mp_lstFilesData, m_dblNormalVolume, TOOL_DELETE_TAG);
-    progressDialog.Execute();
+    progressDialog.execute();
 
     mnuClearAnalysis(evt);
 }

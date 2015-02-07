@@ -19,7 +19,7 @@ Progress::Progress(wxWindow* parent, ConfigBase* configBase, wxListCtrl* listFil
 Progress::~Progress() {
 }
 
-void Progress::Execute() {
+void Progress::execute() {
     int maxValue = mp_listFiles->GetItemCount();
     bool cont = true;
 
