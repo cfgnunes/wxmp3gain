@@ -1,5 +1,10 @@
 wxMP3gain - Changelog file
 
+Changelog v3.3 (2015-02-07)
+--------------
+- Code refactor
+- Bug fix
+
 Changelog v3.2 (2015-02-07)
 --------------
 - Added command line arguments to input files and directories
