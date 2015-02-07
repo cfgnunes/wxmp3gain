@@ -10,62 +10,49 @@
 WX_DEFINE_OBJARRAY(ArrayOfFiles);
 // LIST (end)
 
-FileInfo::FileInfo(const wxString& fileName) : fileName(fileName)
-{
-    volumeSet = false;
+FileInfo::FileInfo(const wxString& fileName) : m_fileName(fileName), m_volumeSet(false) {
 }
 
-FileInfo::~FileInfo()
-{
-    //dtor
+FileInfo::~FileInfo() {
 }
 
 // Sets..
 
-void FileInfo::setVolume(const double& value)
-{
-    volume = value;
-    volumeSet = true;
+void FileInfo::setVolume(const double& value) {
+    m_volume = value;
+    m_volumeSet = true;
 }
 
-void FileInfo::setMaxPcmSample(const double& value)
-{
-    maxPcmSample = value;
+void FileInfo::setMaxPcmSample(const double& value) {
+    m_maxPcmSample = value;
 }
 
-void FileInfo::setGainChange(const int& value)
-{
-    gainChange = value;
+void FileInfo::setGainChange(const int& value) {
+    m_gainChange = value;
 }
 
-void FileInfo::volumeReset()
-{
-    volumeSet = false;
+void FileInfo::volumeReset() {
+    m_volumeSet = false;
 }
 
 // Gets..
 
-wxFileName FileInfo::getFileName()
-{
-    return fileName;
+wxFileName FileInfo::getFileName() {
+    return m_fileName;
 }
 
-double FileInfo::getVolume()
-{
-    return volume;
+double FileInfo::getVolume() {
+    return m_volume;
 }
 
-double FileInfo::getMaxPcmSample()
-{
-    return maxPcmSample;
+double FileInfo::getMaxPcmSample() {
+    return m_maxPcmSample;
 }
 
-int FileInfo::getGainChange()
-{
-    return gainChange;
+int FileInfo::getGainChange() {
+    return m_gainChange;
 }
 
-bool FileInfo::isVolumeSet()
-{
-    return volumeSet;
+bool FileInfo::isVolumeSet() {
+    return m_volumeSet;
 }
