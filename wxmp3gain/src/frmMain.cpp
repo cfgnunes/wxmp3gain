@@ -106,6 +106,7 @@ frmMain::frmMain(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSi
     BoxConstantGain->Add(lblConstantGain, 1, wxTOP|wxBOTTOM|wxRIGHT|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BoxMain->Add(BoxConstantGain, 0, wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     lstFiles = new wxListCtrl(Panel1, ID_LISTCTRL2, wxDefaultPosition, wxDefaultSize, wxLC_REPORT, wxDefaultValidator, _T("ID_LISTCTRL2"));
+    lstFiles->SetFocus();
     BoxMain->Add(lstFiles, 1, wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     Panel1->SetSizer(BoxMain);
     BoxMain->Fit(Panel1);
@@ -220,12 +221,11 @@ frmMain::frmMain(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSi
     Connect(ID_TIMER1,wxEVT_TIMER,(wxObjectEventFunction)&frmMain::OnTimer1Trigger);
     //*)
 
-    // Disable status bar pane used to display menu and toolbar help
-    SetStatusBarPane(-1);
-
     // If lost focus of txtNormalVolume
     txtNormalVolume->Connect(wxEVT_KILL_FOCUS, wxFocusEventHandler(frmMain::OntxtNormalVolumeTextKillFocus), NULL, this);
-    txtNormalVolume->Connect(wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler(frmMain::OntxtNormalVolumeText), NULL, this);
+
+    // Disable status bar pane used to display menu and toolbar help
+    SetStatusBarPane(-1);
 
     // Aux list for wxListctrl
     lstFilesData = new ArrayOfFiles();
@@ -276,6 +276,12 @@ frmMain::~frmMain()
 
     // Deletes the object configuration file and updates the file / record
     delete configBase;
+}
+
+void frmMain::SetFilesCmdLine(const wxArrayString& filenames)
+{
+    DndFile dndFile(lstFiles, lstFilesData);
+    dndFile.OnDropFiles(0, 0, filenames);
 }
 
 void frmMain::mnuAddFiles(wxCommandEvent& event)
@@ -412,9 +418,9 @@ void frmMain::mnuSettings(wxCommandEvent& event)
         mnuClearAnalysis(evt);
 
     // Updates after closing the window "Settings"
-    updateGainLabels(lstFiles, configBase, lstFilesData, dblNormalVolume);
     updateControls();
     updateTxtNormalVolumeDb();
+    updateGainLabels(lstFiles, configBase, lstFilesData, dblNormalVolume);
 }
 
 void frmMain::mnuAbout(wxCommandEvent& event)
@@ -446,23 +452,25 @@ void frmMain::mnuToolWebsite(wxCommandEvent& event)
 
 void frmMain::loadResources()
 {
+    wxString resourceDir = GetResourceDir();
+
     // Window icon
     wxIcon FrameIcon;
-    FrameIcon.CopyFromBitmap(wxBitmap(wxImage(RESOURCE_DIR + _T("icon2.ico"))));
+    FrameIcon.CopyFromBitmap(wxBitmap(wxImage(resourceDir + _T("icon2.ico"))));
     SetIcon(FrameIcon);
 
     // Toolbar bitmaps
-    ToolBar1->SetToolNormalBitmap(ID_TOOLBARITEM1, wxBitmap(wxImage(RESOURCE_DIR + _T("toolbar/add.png"))));
-    ToolBar1->SetToolNormalBitmap(ID_TOOLBARITEM2, wxBitmap(wxImage(RESOURCE_DIR + _T("toolbar/remove.png"))));
-    ToolBar1->SetToolNormalBitmap(ID_TOOLBARITEM3, wxBitmap(wxImage(RESOURCE_DIR + _T("toolbar/clear.png"))));
-    ToolBar1->SetToolNormalBitmap(ID_TOOLBARITEM4, wxBitmap(wxImage(RESOURCE_DIR + _T("toolbar/analysis.png"))));
-    ToolBar1->SetToolNormalBitmap(ID_TOOLBARITEM5, wxBitmap(wxImage(RESOURCE_DIR + _T("toolbar/gain.png"))));
-    ToolBar1->SetToolNormalBitmap(ID_TOOLBARITEM6, wxBitmap(wxImage(RESOURCE_DIR + _T("toolbar/settings.png"))));
-    ToolBar1->SetToolNormalBitmap(ID_TOOLBARITEM7, wxBitmap(wxImage(RESOURCE_DIR + _T("toolbar/about.png"))));
-    ToolBar1->SetToolNormalBitmap(ID_TOOLBARITEM8, wxBitmap(wxImage(RESOURCE_DIR + _T("toolbar/folder.png"))));
+    ToolBar1->SetToolNormalBitmap(ID_TOOLBARITEM1, wxBitmap(wxImage(resourceDir + _T("toolbar/add.png"))));
+    ToolBar1->SetToolNormalBitmap(ID_TOOLBARITEM2, wxBitmap(wxImage(resourceDir + _T("toolbar/remove.png"))));
+    ToolBar1->SetToolNormalBitmap(ID_TOOLBARITEM3, wxBitmap(wxImage(resourceDir + _T("toolbar/clear.png"))));
+    ToolBar1->SetToolNormalBitmap(ID_TOOLBARITEM4, wxBitmap(wxImage(resourceDir + _T("toolbar/analysis.png"))));
+    ToolBar1->SetToolNormalBitmap(ID_TOOLBARITEM5, wxBitmap(wxImage(resourceDir + _T("toolbar/gain.png"))));
+    ToolBar1->SetToolNormalBitmap(ID_TOOLBARITEM6, wxBitmap(wxImage(resourceDir + _T("toolbar/settings.png"))));
+    ToolBar1->SetToolNormalBitmap(ID_TOOLBARITEM7, wxBitmap(wxImage(resourceDir + _T("toolbar/about.png"))));
+    ToolBar1->SetToolNormalBitmap(ID_TOOLBARITEM8, wxBitmap(wxImage(resourceDir + _T("toolbar/folder.png"))));
 }
 
-void frmMain::OntxtNormalVolumeText(wxCommandEvent& event)
+void frmMain::OntxtNormalVolumeTextKillFocus(wxFocusEvent& event)
 {
     wxString strNormalVolume = txtNormalVolume->GetLineText(0);
     Conversion::convertDotComma(strNormalVolume);
@@ -474,10 +482,7 @@ void frmMain::OntxtNormalVolumeText(wxCommandEvent& event)
         dblNormalVolume = 105.0;
 
     updateGainLabels(lstFiles, configBase, lstFilesData, dblNormalVolume);
-}
 
-void frmMain::OntxtNormalVolumeTextKillFocus(wxFocusEvent& event)
-{
     // Save the NormalVolumeDb
     configBase->setNormalVolumeDb((int) (float) (dblNormalVolume * 10.0));
     updateTxtNormalVolumeDb();
@@ -488,10 +493,8 @@ void frmMain::OntxtNormalVolumeTextKillFocus(wxFocusEvent& event)
 void frmMain::updateTxtNormalVolumeDb()
 {
     dblNormalVolume = (double) (configBase->getNormalVolumeDb() / 10.0);
-    txtNormalVolume->Disconnect(wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler(frmMain::OntxtNormalVolumeText), NULL, this);
     txtNormalVolume->Clear();
     txtNormalVolume->WriteText(wxString::Format(_T("%.1f"), dblNormalVolume));
-    txtNormalVolume->Connect(wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler(frmMain::OntxtNormalVolumeText), NULL, this);
 }
 
 void frmMain::updateGainLabels(wxListCtrl* listFilesUpdate, ConfigBase* configBaseUpdate, ArrayOfFiles* lstFilesDataUpdate, const double& dblNormalVolumeUpdate)

@@ -28,6 +28,7 @@ public:
 
     frmMain(wxWindow* parent, wxWindowID id = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize);
     virtual ~frmMain();
+    void SetFilesCmdLine(const wxArrayString& filenames);
 
     //(*Declarations(frmMain)
     wxToolBarToolBase* ToolBarItem5;
@@ -122,7 +123,6 @@ private:
     void mnuSettings(wxCommandEvent& event);
     void mnuScan(wxCommandEvent& event);
     void mnuFix(wxCommandEvent& event);
-    void OntxtNormalVolumeText(wxCommandEvent& event);
     void OnlstFilesInsertItem(wxListEvent& event);
     void OnlstFilesDeleteItem(wxListEvent& event);
     void mnuClearAnalysis(wxCommandEvent& event);
