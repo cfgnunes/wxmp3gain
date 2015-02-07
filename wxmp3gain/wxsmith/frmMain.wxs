@@ -58,6 +58,7 @@
 				</object>
 				<object class="sizeritem">
 					<object class="wxListCtrl" name="ID_LISTCTRL2" variable="lstFiles" member="yes">
+						<focused>1</focused>
 						<style>wxLC_REPORT</style>
 						<handler function="OnlstFilesDeleteItem" entry="EVT_LIST_DELETE_ITEM" />
 						<handler function="OnlstFilesInsertItem" entry="EVT_LIST_ITEM_SELECTED" />

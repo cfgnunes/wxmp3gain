@@ -7,6 +7,8 @@
 #define GLOBAL_H_INCLUDED
 
 #include <wx/string.h>
+#include <wx/stdpaths.h>
+#include <wx/filename.h>
 
 const wxString APP_NAME = _T("wxMP3gain");
 const wxString APP_VERSION = _T("3.1");
@@ -19,10 +21,16 @@ const wxString APP_WEBSITE = _T("http://sourceforge.net/projects/wxmp3gain/");
 const wxString APP_WILDCARD_EXT = _T("MP3 files (*.mp3)|*.mp3;*.MP3");
 const wxString APP_OPEN_EXT = _T("mp3");
 
-#ifdef __LINUX__
-const wxString RESOURCE_DIR = _T("/usr/share/wxmp3gain/resource/");
-#else
-const wxString RESOURCE_DIR = _T("resource/");
-#endif
+inline wxString GetResourceDir()
+{
+    #ifdef __LINUX__
+    wxString resourceDir = _T("/usr/share/wxmp3gain/resource/");
+    #else
+    wxString executablePath = wxStandardPaths::Get().GetExecutablePath();
+    wxFileName executableFilename(executablePath);
+    wxString resourceDir = executableFilename.GetPath() + _T("/resource/");
+    #endif
+    return resourceDir;
+}
 
 #endif // GLOBAL_H_INCLUDED

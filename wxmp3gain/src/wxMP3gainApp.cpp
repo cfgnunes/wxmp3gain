@@ -39,26 +39,21 @@ IMPLEMENT_APP(wxMP3gainApp);
 bool wxMP3gainApp::OnInit()
 {
     // Load language translation
-    m_locale = NULL;
-    selectLanguage(wxLANGUAGE_DEFAULT);
-
-    //(*AppInitialize
-    bool wxsOK = true;
-    wxInitAllImageHandlers();
-    if (wxsOK)
-    {
-        frmMain* Frame = new frmMain(0);
-        Frame->Show();
-        SetTopWindow(Frame);
-    }
-    //*)
-    return wxsOK;
-}
-
-void wxMP3gainApp::selectLanguage(int lang)
-{
     delete m_locale;
-    m_locale = new wxLocale(lang);
-    m_locale->AddCatalogLookupPathPrefix(RESOURCE_DIR + _T("msg"));
+    m_locale = new wxLocale(wxLANGUAGE_DEFAULT);
+    m_locale->AddCatalogLookupPathPrefix(GetResourceDir() + _T("msg"));
     m_locale->AddCatalog(_T("wxmp3gain"));
+
+    wxInitAllImageHandlers();
+    frmMain* Frame = new frmMain(0);
+
+    // Read command line files
+    m_filesCmdLine = new wxArrayString();
+    for (int i=1; i<argc; i++)
+        m_filesCmdLine->Add(wxString(argv[i]));
+    Frame->SetFilesCmdLine(*m_filesCmdLine);
+
+    Frame->Show();
+    SetTopWindow(Frame);
+    return true;
 }

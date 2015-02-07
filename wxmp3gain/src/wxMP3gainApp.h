@@ -14,8 +14,8 @@ public:
     virtual bool OnInit();
 
 private:
-    void selectLanguage(int lang);
-    wxLocale* m_locale;
+    wxLocale *m_locale;
+    wxArrayString *m_filesCmdLine;
 };
 
 #endif
