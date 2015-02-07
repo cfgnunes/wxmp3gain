@@ -23,7 +23,7 @@ class Progress {
 public:
     Progress(wxWindow* parent, ConfigBase* configBase, wxListCtrl* listFiles, ArrayOfFiles* lstFilesData, const double& dblNormalVolume, int workType);
     virtual ~Progress();
-    void Execute();
+    void execute();
 
 private:
     void processFile(int fileIterator);
