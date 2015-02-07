@@ -7,8 +7,7 @@
 
 #include <cmath>
 
-void Conversion::convertDotComma(wxString& str)
-{
+void Conversion::convertDotComma(wxString& str) {
     // Convert between DOT/COMMA if necessary [workaround to use .ToDouble]
     if (wxString::Format(_T("%.1f"), 1.1)[1] == ',')
         str.Replace(_T("."), _T(","));
@@ -16,8 +15,7 @@ void Conversion::convertDotComma(wxString& str)
         str.Replace(_T(","), _T("."));
 }
 
-int Conversion::convertDoubleToIntGain(const double& dblGainChange)
-{
+int Conversion::convertDoubleToIntGain(const double& dblGainChange) {
     int intGainChange;
 
     // From mp3gain code...
@@ -30,22 +28,18 @@ int Conversion::convertDoubleToIntGain(const double& dblGainChange)
     return intGainChange;
 }
 
-int Conversion::getMaxNoclipMp3Gain(const double& mvarCurrMaxAmp)
-{
+int Conversion::getMaxNoclipMp3Gain(const double& mvarCurrMaxAmp) {
     int MaxNoclipMp3Gain;
     double dblAdjust;
 
     // From mp3gain GUI vb6 code...
-    if ((mvarCurrMaxAmp < 1000000.0) && (mvarCurrMaxAmp > 0))
-    {
+    if ((mvarCurrMaxAmp < 1000000.0) && (mvarCurrMaxAmp > 0)) {
         dblAdjust = 4.0 * log10(32767.0 / mvarCurrMaxAmp) / log10(2);
         if ((double) ((int) (dblAdjust)) > dblAdjust)
             MaxNoclipMp3Gain = (int) (dblAdjust) - 1;
         else
             MaxNoclipMp3Gain = (int) (dblAdjust);
-    }
-    else
-    {
+    } else {
         MaxNoclipMp3Gain = 0;
     }
     // ...end

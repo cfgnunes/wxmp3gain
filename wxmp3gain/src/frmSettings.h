@@ -15,7 +15,6 @@
 #include <wx/notebook.h>
 #include <wx/button.h>
 #include <wx/radiobut.h>
-#include <wx/filedlg.h>
 #include <wx/panel.h>
 #include <wx/slider.h>
 #include <wx/stattext.h>
@@ -23,41 +22,39 @@
 #include <wx/choice.h>
 //*)
 
-class frmSettings : public wxDialog
-{
+class frmSettings : public wxDialog {
 public:
 
     frmSettings(wxWindow* parent, ConfigBase* configBase, wxWindowID id = wxID_ANY);
     virtual ~frmSettings();
 
     //(*Declarations(frmSettings)
-    wxCheckBox* chkForceInput;
+    wxButton* g_btnToolExecutable;
+    wxCheckBox* g_chkConstantGain;
     wxPanel* Panel1;
     wxPanel* Panel6;
-    wxStaticText* lblConstantGain;
-    wxChoice* chcFileWriting;
-    wxRadioButton* optTagSKIP;
-    wxCheckBox* chkTagFORCE;
-    wxCheckBox* chkPreserveTime;
-    wxRadioButton* optLeftChannel;
+    wxCheckBox* g_chkTagFORCE;
+    wxButton* g_btnCancel;
+    wxChoice* g_chcFileWriting;
+    wxButton* g_btnOK;
     wxPanel* Panel2;
-    wxRadioButton* optRightChannel;
-    wxTextCtrl* txtToolExecutable;
-    wxFileDialog* FileDialog1;
+    wxCheckBox* g_chkPreserveTime;
+    wxCheckBox* g_chkAutoLower;
+    wxStaticText* g_lblConstantGain;
     wxPanel* Panel3;
-    wxSlider* sldConstantGain;
-    wxRadioButton* optTagID3;
-    wxRadioButton* optTagAPE;
+    wxCheckBox* g_chkForceInput;
+    wxRadioButton* g_optRightChannel;
     wxStaticText* StaticText4;
+    wxRadioButton* g_optLeftChannel;
+    wxRadioButton* g_optTagSKIP;
     wxStaticText* StaticText2;
-    wxRadioButton* optBothChannel;
     wxNotebook* Notebook1;
-    wxButton* btnOK;
-    wxButton* btnCancel;
-    wxCheckBox* chkAutoLower;
-    wxCheckBox* chkConstantGain;
-    wxButton* btnDefault;
-    wxButton* btnToolExecutable;
+    wxTextCtrl* g_txtToolExecutable;
+    wxRadioButton* g_optTagID3;
+    wxButton* g_btnDefault;
+    wxSlider* g_sldConstantGain;
+    wxRadioButton* g_optBothChannel;
+    wxRadioButton* g_optTagAPE;
     //*)
 
 protected:
@@ -109,8 +106,8 @@ private:
     void saveValuesConfig();
     void setLabelsControls();
 
-    ConfigBase* configBase;
+    ConfigBase* mp_configBase;
     DECLARE_EVENT_TABLE()
 };
 
-#endif
+#endif // FRMSETTINGS_H

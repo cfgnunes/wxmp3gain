@@ -5,79 +5,64 @@
 
 #include "DndFile.h"
 
-DndFile::DndFile(wxListCtrl *owner, ArrayOfFiles *lstFilesData) : lstFilesData(lstFilesData)
-{
-    m_owner = owner;
+DndFile::DndFile(wxListCtrl *owner, ArrayOfFiles *lstFilesData) : mp_owner(owner), mp_lstFilesData(lstFilesData) {
 }
 
-DndFile::~DndFile()
-{
-    //dtor
+DndFile::~DndFile() {
 }
 
-bool DndFile::OnDropFiles(wxCoord x, wxCoord y, const wxArrayString& filenames)
-{
+bool DndFile::OnDropFiles(wxCoord x, wxCoord y, const wxArrayString& filenames) {
     wxArrayString files;
 
     // Check if is a directory or a file
-    for (size_t n = 0; n < filenames.GetCount(); n++)
-    {
+    for (size_t n = 0; n < filenames.GetCount(); n++) {
         wxString filename = filenames[n];
         if (wxFileName::DirExists(filename))
-            InsertFileListDir(filename);
+            insertFileListDir(filename);
         else
             files.Add(filename);
     }
-    InsertFileList(files);
+    insertFileList(files);
 
     return true;
 }
 
-void DndFile::InsertFileList(const wxArrayString& filenames)
-{
+void DndFile::insertFileList(const wxArrayString& filenames) {
     wxFileName file;
     size_t nFiles = filenames.GetCount();
 
     // Add files in wxListCtrl
-    for (size_t n = 0; n < nFiles; n++)
-    {
+    for (size_t n = 0; n < nFiles; n++) {
         file.SetFullName(filenames[n]);
 
-        if (CheckValidExtension(file))
-        {
+        if (checkValidExtension(file)) {
             // Don't insert repeated filenames
             bool repeated = false;
-            for (int i = 0; i < m_owner->GetItemCount(); i++)
-            {
-                FileInfo& fileInfo = lstFilesData->Item(i);
+            for (int i = 0; i < mp_owner->GetItemCount(); i++) {
+                FileInfo& fileInfo = mp_lstFilesData->Item(i);
                 wxFileName filenameInput = fileInfo.getFileName();
-                if (filenameInput.GetFullPath() == filenames[n])
-                {
+                if (filenameInput.GetFullPath() == filenames[n]) {
                     repeated = true;
                 }
             }
-            if (!repeated)
-            {
-                m_owner->InsertItem(m_owner->GetItemCount(), file.GetFullName());
-                lstFilesData->Add(new FileInfo(filenames[n]));
+            if (!repeated) {
+                mp_owner->InsertItem(mp_owner->GetItemCount(), file.GetFullName());
+                mp_lstFilesData->Add(new FileInfo(filenames[n]));
             }
         }
     }
 }
 
-void DndFile::InsertFileListDir(const wxString& dirname)
-{
+void DndFile::insertFileListDir(const wxString& dirname) {
     wxArrayString files;
     wxDir::GetAllFiles(dirname, &files);
 
-    InsertFileList(files);
+    insertFileList(files);
 }
 
-bool DndFile::CheckValidExtension(const wxFileName& file)
-{
+bool DndFile::checkValidExtension(const wxFileName& file) {
     wxStringTokenizer strToken(APP_OPEN_EXT, _T(";"));
-    while (strToken.HasMoreTokens())
-    {
+    while (strToken.HasMoreTokens()) {
         wxString token = strToken.GetNextToken();
 
         if (file.GetExt().CmpNoCase(token) == 0)

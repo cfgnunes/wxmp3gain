@@ -3,8 +3,8 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-#ifndef GLOBAL_H_INCLUDED
-#define GLOBAL_H_INCLUDED
+#ifndef GLOBAL_H
+#define GLOBAL_H
 
 #include <wx/string.h>
 #include <wx/stdpaths.h>
@@ -21,16 +21,15 @@ const wxString APP_WEBSITE = _T("http://sourceforge.net/projects/wxmp3gain/");
 const wxString APP_WILDCARD_EXT = _T("MP3 files (*.mp3)|*.mp3;*.MP3");
 const wxString APP_OPEN_EXT = _T("mp3");
 
-inline wxString GetResourceDir()
-{
-    #ifdef __LINUX__
+inline wxString GetResourceDir() {
+#ifdef __LINUX__
     wxString resourceDir = _T("/usr/share/wxmp3gain/resource/");
-    #else
+#else
     wxString executablePath = wxStandardPaths::Get().GetExecutablePath();
     wxFileName executableFilename(executablePath);
     wxString resourceDir = executableFilename.GetPath() + _T("/resource/");
-    #endif
+#endif
     return resourceDir;
 }
 
-#endif // GLOBAL_H_INCLUDED
+#endif // GLOBAL_H

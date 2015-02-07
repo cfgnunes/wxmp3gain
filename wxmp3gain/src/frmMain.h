@@ -22,23 +22,22 @@
 #include <wx/timer.h>
 //*)
 
-class frmMain : public wxFrame
-{
+class frmMain : public wxFrame {
 public:
 
     frmMain(wxWindow* parent, wxWindowID id = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize);
     virtual ~frmMain();
-    void SetFilesCmdLine(const wxArrayString& filenames);
+    void setFilesCmdLine(const wxArrayString& filenames);
 
     //(*Declarations(frmMain)
     wxToolBarToolBase* ToolBarItem5;
     wxPanel* Panel1;
-    wxStaticText* lblConstantGain;
-    wxStatusBar* StatusBar1;
     wxMenuItem* MenuItem16;
     wxMenuItem* MenuItem12;
+    wxStatusBar* g_mainStatusBar;
     wxToolBarToolBase* ToolBarItem6;
-    wxListCtrl* lstFiles;
+    wxListCtrl* g_lstFiles;
+    wxTextCtrl* g_txtNormalVolume;
     wxMenu* Menu6;
     wxMenuItem* MenuItem15;
     wxStaticText* StaticText1;
@@ -48,24 +47,24 @@ public:
     wxMenuItem* MenuItem17;
     wxStaticText* StaticText3;
     wxMenu* Menu7;
-    wxToolBar* ToolBar1;
+    wxStaticText* g_lblConstantGain;
     wxToolBarToolBase* ToolBarItem4;
-    wxTextCtrl* txtNormalVolume;
+    wxToolBar* g_mainToolBar;
     wxToolBarToolBase* ToolBarItem1;
-    wxMenuBar* MenuBar1;
     wxStaticText* StaticText2;
+    wxMenu g_mainMenu;
     wxMenuItem* MenuItem18;
     wxToolBarToolBase* ToolBarItem3;
     wxMenuItem* MenuItem7;
     wxMenuItem* MenuItem13;
     wxToolBarToolBase* ToolBarItem8;
-    wxMenu Menu1;
+    wxMenuBar* g_mainMenuBar;
     wxMenuItem* MenuItem8;
     wxMenuItem* MenuItem14;
     //*)
-    wxBoxSizer* boxNormalVolume;
-    wxBoxSizer* boxConstantGain;
-    wxBoxSizer* boxMain;
+    wxBoxSizer* g_boxNormalVolume;
+    wxBoxSizer* g_boxConstantGain;
+    wxBoxSizer* g_boxMain;
     static void updateGainLabels(wxListCtrl* listFilesUpdate, ConfigBase* configBaseUpdate, ArrayOfFiles* lstFilesDataUpdate, const double& dblNormalVolumeUpdate);
 
 protected:
@@ -137,14 +136,14 @@ private:
     void updateTxtNormalVolumeDb();
     void updateControls();
     void loadResources();
-    ConfigBase *configBase;
-    ArrayOfFiles *lstFilesData;
-    double dblNormalVolume;
-    wxString exeTool;
-    wxArrayString exeInputString;
-    wxArrayString exeInputErrorString;
+    ConfigBase *mp_configBase;
+    ArrayOfFiles *mp_lstFilesData;
+    double m_dblNormalVolume;
+    wxString m_exeTool;
+    wxArrayString m_exeInputString;
+    wxArrayString m_exeInputErrorString;
 
     DECLARE_EVENT_TABLE()
 };
 
-#endif
+#endif // FRMMAIN_H

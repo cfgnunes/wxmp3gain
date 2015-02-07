@@ -16,8 +16,7 @@ class FileInfo;
 WX_DECLARE_OBJARRAY(FileInfo, ArrayOfFiles);
 // LIST (end)
 
-class FileInfo : public wxObject
-{
+class FileInfo : public wxObject {
 public:
     FileInfo(const wxString& fileName);
     virtual ~FileInfo();
@@ -36,11 +35,11 @@ public:
     void volumeReset();
 
 private:
-    wxFileName fileName;
-    double volume;
-    double maxPcmSample;
-    bool volumeSet;
-    int gainChange;
+    wxFileName m_fileName;
+    double m_volume;
+    double m_maxPcmSample;
+    bool m_volumeSet;
+    int m_gainChange;
 };
 
-#endif
+#endif // FILEINFO_H

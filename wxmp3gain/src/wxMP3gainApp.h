@@ -8,8 +8,7 @@
 
 #include <wx/app.h>
 
-class wxMP3gainApp : public wxApp
-{
+class wxMP3gainApp : public wxApp {
 public:
     virtual bool OnInit();
 
@@ -18,4 +17,4 @@ private:
     wxArrayString *m_filesCmdLine;
 };
 
-#endif
+#endif // WXMP3GAIN_H
