@@ -60,7 +60,7 @@ void DndFile::insertFileListDir(const wxString& dirname) {
     insertFileList(files);
 }
 
-bool DndFile::checkValidExtension(const wxFileName& file) {
+bool DndFile::checkValidExtension(const wxFileName& file) const {
     wxStringTokenizer strToken(APP_OPEN_EXT, _T(";"));
     while (strToken.HasMoreTokens()) {
         wxString token = strToken.GetNextToken();

@@ -32,6 +32,7 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-ansi" />
 			<Add option="`wx-config --cflags`" />
 		</Compiler>
 		<Linker>
