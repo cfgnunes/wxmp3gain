@@ -1,11 +1,21 @@
-######################
-# CodeBlocks files
-######################
-*.layout
-*.depend
-
-######################
-# Binary folders
-######################
-bin/
-obj/
+##############################
+# C/C++ binary files
+##############################
+*.slo
+*.lo
+*.o
+*.obj
+*.gch
+*.pch
+*.so
+*.dll
+*.dylib
+*.lai
+*.la
+*.a
+*.lib
+*.exe
+*.out
+*.app
+*.class
+*.com
