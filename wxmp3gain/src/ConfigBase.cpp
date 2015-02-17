@@ -40,7 +40,7 @@ void ConfigBase::setConfigFlush() {
     mp_config->Flush();
 }
 
-wxString ConfigBase::getStringToolOptions() {
+wxString ConfigBase::getStringToolOptions() const {
     wxString toolOptions;
 
     // FileWriting
@@ -65,7 +65,7 @@ wxString ConfigBase::getStringToolOptions() {
     return toolOptions;
 }
 
-wxString ConfigBase::getStringToolOptionsTag() {
+wxString ConfigBase::getStringToolOptionsTag() const {
     wxString toolOptions;
 
     // TagsOptions
@@ -85,7 +85,7 @@ wxString ConfigBase::getStringToolOptionsTag() {
     return toolOptions;
 }
 
-wxString ConfigBase::getStringToolOptionsGain() {
+wxString ConfigBase::getStringToolOptionsGain() const {
     wxString toolOptions;
 
     // Ignore clipping warning when applying gain
@@ -112,73 +112,73 @@ wxString ConfigBase::getStringToolOptionsGain() {
 
 // Gets...
 
-wxString ConfigBase::getLastOpenDir() {
+wxString ConfigBase::getLastOpenDir() const {
     wxString value = wxEmptyString;
     mp_config->Read(CONFIG_SYSTEM_GROUP + CONFIG_STR_LastOpenDir, &value);
     return value;
 }
 
-int ConfigBase::getNormalVolumeDb() {
+int ConfigBase::getNormalVolumeDb() const {
     int value;
     mp_config->Read(CONFIG_GENERAL_GROUP + CONFIG_STR_NormalVolumeDb, &value);
     return value;
 }
 
-wxString ConfigBase::getToolExecutable() {
+wxString ConfigBase::getToolExecutable() const {
     wxString value = wxEmptyString;
     mp_config->Read(CONFIG_GENERAL_GROUP + CONFIG_STR_ToolExecutable, &value);
     return value;
 }
 
-bool ConfigBase::getAutoLowerEnabled() {
+bool ConfigBase::getAutoLowerEnabled() const {
     bool value;
     mp_config->Read(CONFIG_GENERAL_GROUP + CONFIG_STR_AutoLowerEnabled, &value);
     return value;
 }
 
-int ConfigBase::getTagOptions() {
+int ConfigBase::getTagOptions() const {
     int value;
     mp_config->Read(CONFIG_TAGS_GROUP + CONFIG_STR_TagOptions, &value);
     return value;
 }
 
-bool ConfigBase::getTagForceEnabled() {
+bool ConfigBase::getTagForceEnabled() const {
     bool value;
     mp_config->Read(CONFIG_TAGS_GROUP + CONFIG_STR_TagForceEnabled, &value);
     return value;
 }
 
-bool ConfigBase::getConstantGainEnabled() {
+bool ConfigBase::getConstantGainEnabled() const {
     bool value;
     mp_config->Read(CONFIG_CTGAIN_GROUP + CONFIG_STR_ConstantGainEnabled, &value);
     return value;
 }
 
-int ConfigBase::getConstantGainValue() {
+int ConfigBase::getConstantGainValue() const {
     int value;
     mp_config->Read(CONFIG_CTGAIN_GROUP + CONFIG_STR_ConstantGainValue, &value);
     return value;
 }
 
-int ConfigBase::getChannelGainMode() {
+int ConfigBase::getChannelGainMode() const {
     int value;
     mp_config->Read(CONFIG_CTGAIN_GROUP + CONFIG_STR_ChannelGainMode, &value);
     return value;
 }
 
-int ConfigBase::getFileWriting() {
+int ConfigBase::getFileWriting() const {
     int value;
     mp_config->Read(CONFIG_FOPTIONS_GROUP + CONFIG_STR_FileWriting, &value);
     return value;
 }
 
-bool ConfigBase::getPreserveTimeEnabled() {
+bool ConfigBase::getPreserveTimeEnabled() const {
     bool value;
     mp_config->Read(CONFIG_FOPTIONS_GROUP + CONFIG_STR_PreserveTimeEnabled, &value);
     return value;
 }
 
-bool ConfigBase::getForceInputEnabled() {
+bool ConfigBase::getForceInputEnabled() const {
     bool value;
     mp_config->Read(CONFIG_FOPTIONS_GROUP + CONFIG_STR_ForceInputEnabled, &value);
     return value;

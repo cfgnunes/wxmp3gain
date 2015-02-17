@@ -9,7 +9,7 @@ INSTALL_SHARE_DIR	= $(DESTDIR)$(PREFIX)/share
 APP_SHARE_DIR = $(INSTALL_SHARE_DIR)/$(APP_NAME)
 DOC_SHARE_DIR = $(INSTALL_SHARE_DIR)/doc/$(APP_NAME)
 
-COMMON_COMPILE_FLAGS = -Wall -pthread -O2
+COMMON_COMPILE_FLAGS = -Wall -ansi -pthread -O2
 COMMON_LINK_FLAGS    = -pthread -s
 
 CPPFLAGS  = $(COMMON_COMPILE_FLAGS) `wx-config --cxxflags --debug=no --unicode=yes`

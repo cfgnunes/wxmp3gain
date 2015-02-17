@@ -22,11 +22,11 @@ public:
     virtual ~FileInfo();
 
     // Gets...
-    wxFileName getFileName();
-    double getVolume();
-    double getMaxPcmSample();
-    bool isVolumeSet();
-    int getGainChange();
+    wxFileName getFileName() const;
+    double getVolume() const;
+    double getMaxPcmSample() const;
+    bool isVolumeSet() const;
+    int getGainChange() const;
 
     // Sets...
     void setVolume(const double& value);

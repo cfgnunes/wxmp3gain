@@ -24,7 +24,7 @@ public:
     void insertFileListDir(const wxString& dirname);
 
 private:
-    bool checkValidExtension(const wxFileName& file);
+    bool checkValidExtension(const wxFileName& file) const;
     wxListCtrl *mp_owner;
     ArrayOfFiles *mp_lstFilesData;
 };

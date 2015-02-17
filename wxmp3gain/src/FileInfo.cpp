@@ -37,22 +37,22 @@ void FileInfo::volumeReset() {
 
 // Gets..
 
-wxFileName FileInfo::getFileName() {
+wxFileName FileInfo::getFileName() const {
     return m_fileName;
 }
 
-double FileInfo::getVolume() {
+double FileInfo::getVolume() const {
     return m_volume;
 }
 
-double FileInfo::getMaxPcmSample() {
+double FileInfo::getMaxPcmSample() const {
     return m_maxPcmSample;
 }
 
-int FileInfo::getGainChange() {
+int FileInfo::getGainChange() const {
     return m_gainChange;
 }
 
-bool FileInfo::isVolumeSet() {
+bool FileInfo::isVolumeSet() const {
     return m_volumeSet;
 }

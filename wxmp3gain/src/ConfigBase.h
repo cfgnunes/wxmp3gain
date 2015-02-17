@@ -59,23 +59,23 @@ public:
 
     void setDefaultConfig();
     void setConfigFlush();
-    wxString getStringToolOptions();
-    wxString getStringToolOptionsTag();
-    wxString getStringToolOptionsGain();
+    wxString getStringToolOptions() const;
+    wxString getStringToolOptionsTag() const;
+    wxString getStringToolOptionsGain() const;
 
     // Gets...
-    wxString getLastOpenDir();
-    int getNormalVolumeDb();
-    wxString getToolExecutable();
-    bool getAutoLowerEnabled();
-    int getTagOptions();
-    bool getTagForceEnabled();
-    bool getConstantGainEnabled();
-    int getConstantGainValue();
-    int getChannelGainMode();
-    int getFileWriting();
-    bool getPreserveTimeEnabled();
-    bool getForceInputEnabled();
+    wxString getLastOpenDir() const;
+    int getNormalVolumeDb() const;
+    wxString getToolExecutable() const;
+    bool getAutoLowerEnabled() const;
+    int getTagOptions() const;
+    bool getTagForceEnabled() const;
+    bool getConstantGainEnabled() const;
+    int getConstantGainValue() const;
+    int getChannelGainMode() const;
+    int getFileWriting() const;
+    bool getPreserveTimeEnabled() const;
+    bool getForceInputEnabled() const;
 
     // Sets...
     void setLastOpenDir(wxString value);
