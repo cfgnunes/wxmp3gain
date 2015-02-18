@@ -16,42 +16,30 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/************************************************************************
- * Name:      wxMP3gain
- * Purpose:   A free front-end for MP3gain.
- * Author:    Cristiano Nunes (cfgnunes@gmail.com)
- * Created:   2012-02-04
- * Copyright: Copyright (C) 2012 Cristiano Nunes
- * License:   licensed under the GNU General Public License, version 3
- *            http://www.gnu.org/licenses/gpl-3.0.html
- ************************************************************************/
-
-#include "wxMP3gainApp.h"
+#include "Application.h"
 #include "Global.h"
+#include "GuiMain.h"
 
-//(*AppHeaders
-#include "frmMain.h"
 #include <wx/image.h>
-//*)
 
-IMPLEMENT_APP(wxMP3gainApp);
+IMPLEMENT_APP(Application);
 
-bool wxMP3gainApp::OnInit() {
+bool Application::OnInit() {
     // Load language translation
-    m_locale = new wxLocale(wxLANGUAGE_DEFAULT);
-    m_locale->AddCatalogLookupPathPrefix(GetResourceDir() + _T("msg"));
-    m_locale->AddCatalog(_T("wxmp3gain"));
+    mp_locale = new wxLocale(wxLANGUAGE_DEFAULT);
+    mp_locale->AddCatalogLookupPathPrefix(GetResourceDir() + _T("msg"));
+    mp_locale->AddCatalog(_T("wxmp3gain"));
 
     wxInitAllImageHandlers();
-    frmMain* Frame = new frmMain(0);
+    GuiMain* guiMain = new GuiMain(0);
 
     // Read command line files
-    m_filesCmdLine = new wxArrayString();
+    mp_filesCmdLine = new wxArrayString();
     for (int i = 1; i < argc; i++)
-        m_filesCmdLine->Add(wxString(argv[i]));
-    Frame->setFilesCmdLine(*m_filesCmdLine);
+        mp_filesCmdLine->Add(wxString(argv[i]));
+    guiMain->setFilesCmdLine(*mp_filesCmdLine);
 
-    Frame->Show();
-    SetTopWindow(Frame);
+    guiMain->Show();
+    SetTopWindow(guiMain);
     return true;
 }

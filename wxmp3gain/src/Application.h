@@ -3,18 +3,18 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-#ifndef WXMP3GAIN_H
-#define WXMP3GAIN_H
+#ifndef APPLICATION_H
+#define APPLICATION_H
 
 #include <wx/app.h>
 
-class wxMP3gainApp : public wxApp {
+class Application : public wxApp {
 public:
     virtual bool OnInit();
 
 private:
-    wxLocale *m_locale;
-    wxArrayString *m_filesCmdLine;
+    wxLocale *mp_locale;
+    wxArrayString *mp_filesCmdLine;
 };
 
-#endif // WXMP3GAIN_H
+#endif // APPLICATION_H
