@@ -88,13 +88,7 @@ void GuiMain::OnlstFilesDeleteItem(wxListEvent& event) {
 }
 
 void GuiMain::OnlstFilesInsertItem(wxListEvent& event) {
-    /*
-     * :KLUDGE:
-     * EVT_LIST_INSERT_ITEM is triggered before or after item is added:
-     *   on wxGTK -> triggered before item is added;
-     *   on wxMSW -> triggered after item is added.
-     */
-    updateControlsDelayed();
+    updateControls();
     event.Skip();
 }
 
@@ -273,7 +267,45 @@ void GuiMain::mnuAbout(wxCommandEvent & event) {
 }
 
 void GuiMain::OnTimer1Trigger(wxTimerEvent & event) {
-    updateControls();
+    wxString newExeTool = mp_configBase->getToolExecutable();
+    if (!m_exeTool.IsSameAs(newExeTool, false)) {
+        m_exeInputString.Clear();
+        m_exeInputErrorString.Clear();
+        m_exeTool = newExeTool;
+        // Execute external application
+        wxExecute(m_exeTool + _T(" -v"), m_exeInputString, m_exeInputErrorString, wxEXEC_NODISABLE);
+
+        // Show the version of tool
+        if (!m_exeInputErrorString.IsEmpty())
+            g_mainStatusBar->SetStatusText(_("Using MP3gain version: ") + m_exeInputErrorString.Item(0).AfterLast(' '), 0);
+        else
+            g_mainStatusBar->SetStatusText(_("MP3gain not found!"), 0);
+    }
+
+    // Show the number of files in list on status bar
+    g_mainStatusBar->SetStatusText(wxString::Format(_T("%i "), g_lstFiles->GetItemCount()) + _("files"), 1);
+
+    // Constant gain box
+    g_lblConstantGain->SetLabel(wxString::Format(_T("%+i"), mp_configBase->getConstantGainValue()) + _T(" (") + wxString::Format(_T("%+.1f"), mp_configBase->getConstantGainValue() * (5.0 * log10(2.0))) + _T(" dB)"));
+
+    // Disables the menu item "Remove files" if no item is selected
+    g_mainMenu->Enable(ID_REMOVE_FILES, g_lstFiles->GetSelectedItemCount() > 0);
+    g_mainMenuBar->Enable(ID_REMOVE_FILES, g_lstFiles->GetSelectedItemCount() > 0);
+    g_mainToolBar->EnableTool(ID_REMOVE_FILES, g_lstFiles->GetSelectedItemCount() > 0);
+
+    // Disables the menu item "Clear list" if there is no item in the list
+    g_mainMenu->Enable(ID_CLEAR_LIST, g_lstFiles->GetItemCount() > 0);
+    g_mainMenuBar->Enable(ID_CLEAR_LIST, g_lstFiles->GetItemCount() > 0);
+    g_mainToolBar->EnableTool(ID_CLEAR_LIST, g_lstFiles->GetItemCount() > 0);
+
+    // Disables menus when there is no item in the list
+    g_mainMenuBar->Enable(ID_ANALYZE, g_lstFiles->GetItemCount() > 0);
+    g_mainMenuBar->Enable(ID_CLEAR_ANALYSIS, g_lstFiles->GetItemCount() > 0);
+    g_mainMenuBar->Enable(ID_GAIN, g_lstFiles->GetItemCount() > 0);
+    g_mainMenuBar->Enable(ID_UNDO_GAIN, g_lstFiles->GetItemCount() > 0 && mp_configBase->getTagOptions() != 2);
+    g_mainMenuBar->Enable(ID_DELETE_TAG, g_lstFiles->GetItemCount() > 0 && mp_configBase->getTagOptions() != 2);
+    g_mainToolBar->EnableTool(ID_ANALYZE, g_lstFiles->GetItemCount() > 0);
+    g_mainToolBar->EnableTool(ID_GAIN, g_lstFiles->GetItemCount() > 0);
 }
 
 void GuiMain::loadResources() {
@@ -333,49 +365,13 @@ void GuiMain::updateGainLabels(wxListCtrl* listFilesUpdate, ConfigBase* configBa
 }
 
 void GuiMain::updateControls() {
-    wxString newExeTool = mp_configBase->getToolExecutable();
-    if (!m_exeTool.IsSameAs(newExeTool, false)) {
-        m_exeInputString.Clear();
-        m_exeInputErrorString.Clear();
-        m_exeTool = newExeTool;
-        // Execute external application
-        wxExecute(m_exeTool + _T(" -v"), m_exeInputString, m_exeInputErrorString, wxEXEC_NODISABLE);
-
-        // Show the version of tool
-        if (!m_exeInputErrorString.IsEmpty())
-            g_mainStatusBar->SetStatusText(_("Using MP3gain version: ") + m_exeInputErrorString.Item(0).AfterLast(' '), 0);
-        else
-            g_mainStatusBar->SetStatusText(_("MP3gain not found!"), 0);
-    }
-
-    // Show the number of files in list on status bar
-    g_mainStatusBar->SetStatusText(wxString::Format(_T("%i "), g_lstFiles->GetItemCount()) + _("files"), 1);
-
-    // Constant gain box
-    g_lblConstantGain->SetLabel(wxString::Format(_T("%+i"), mp_configBase->getConstantGainValue()) + _T(" (") + wxString::Format(_T("%+.1f"), mp_configBase->getConstantGainValue() * (5.0 * log10(2.0))) + _T(" dB)"));
-
-    // Disables the menu item "Remove files" if no item is selected
-    g_mainMenu->Enable(ID_REMOVE_FILES, g_lstFiles->GetSelectedItemCount() > 0);
-    g_mainMenuBar->Enable(ID_REMOVE_FILES, g_lstFiles->GetSelectedItemCount() > 0);
-    g_mainToolBar->EnableTool(ID_REMOVE_FILES, g_lstFiles->GetSelectedItemCount() > 0);
-
-    // Disables the menu item "Clear list" if there is no item in the list
-    g_mainMenu->Enable(ID_CLEAR_LIST, g_lstFiles->GetItemCount() > 0);
-    g_mainMenuBar->Enable(ID_CLEAR_LIST, g_lstFiles->GetItemCount() > 0);
-    g_mainToolBar->EnableTool(ID_CLEAR_LIST, g_lstFiles->GetItemCount() > 0);
-
-    // Disables menus when there is no item in the list
-    g_mainMenuBar->Enable(ID_ANALYZE, g_lstFiles->GetItemCount() > 0);
-    g_mainMenuBar->Enable(ID_CLEAR_ANALYSIS, g_lstFiles->GetItemCount() > 0);
-    g_mainMenuBar->Enable(ID_GAIN, g_lstFiles->GetItemCount() > 0);
-    g_mainMenuBar->Enable(ID_UNDO_GAIN, g_lstFiles->GetItemCount() > 0 && mp_configBase->getTagOptions() != 2);
-    g_mainMenuBar->Enable(ID_DELETE_TAG, g_lstFiles->GetItemCount() > 0 && mp_configBase->getTagOptions() != 2);
-    g_mainToolBar->EnableTool(ID_ANALYZE, g_lstFiles->GetItemCount() > 0);
-    g_mainToolBar->EnableTool(ID_GAIN, g_lstFiles->GetItemCount() > 0);
-}
-
-void GuiMain::updateControlsDelayed() {
-    m_timer1.Start(10, true);
+    /*
+     * :KLUDGE:
+     * EVT_LIST_INSERT_ITEM is triggered before or after item is added:
+     *   on wxGTK -> triggered before item is added;
+     *   on wxMSW -> triggered after item is added.
+     */
+    m_timer1.Start(20, true);
 }
 
 void GuiMain::setFilesCmdLine(const wxArrayString& filenames) {
