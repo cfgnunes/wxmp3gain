@@ -164,10 +164,6 @@ msgstr "Zachovat časová razítka souborů"
 msgid "MP3gain Website"
 msgstr "Stránky MP3gain"
 
-#: frmSettings.cpp:78
-msgid "MP3gain executable"
-msgstr "Spustitelný soubor pro MP3gain"
-
 #: frmMain.cpp:464
 msgid "MP3gain not found!"
 msgstr "MP3gain nenalezen!"
@@ -297,4 +293,3 @@ msgstr "Neznámý"
 
 msgid "files"
 msgstr "Soubory"
-

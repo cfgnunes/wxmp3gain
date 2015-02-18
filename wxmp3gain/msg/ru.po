@@ -165,10 +165,6 @@ msgstr "Сохранять метки времени файлов"
 msgid "MP3gain Website"
 msgstr "Веб-сайт MP3gain"
 
-#: frmSettings.cpp:78
-msgid "MP3gain executable"
-msgstr "Исполняемый файл MP3gain"
-
 #: frmMain.cpp:464
 msgid "MP3gain not found!"
 msgstr "MP3gain не найден!"

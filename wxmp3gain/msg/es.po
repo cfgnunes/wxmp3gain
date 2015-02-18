@@ -162,10 +162,6 @@ msgstr "Mantener marcas de tiempo"
 msgid "MP3gain Website"
 msgstr "Sitio web de MP3Gain"
 
-#: frmSettings.cpp:78
-msgid "MP3gain executable"
-msgstr "Ejecutable de MP3Gain"
-
 #: frmMain.cpp:464
 msgid "MP3gain not found!"
 msgstr "MP3Gain no encontrado!"

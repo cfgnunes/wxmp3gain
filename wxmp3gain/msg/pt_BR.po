@@ -162,10 +162,6 @@ msgstr "Manter data de modificação dos arquivos"
 msgid "MP3gain Website"
 msgstr "Site do MP3gain"
 
-#: frmSettings.cpp:78
-msgid "MP3gain executable"
-msgstr "Executável do MP3gain"
-
 #: frmMain.cpp:464
 msgid "MP3gain not found!"
 msgstr "MP3gain não encontrado!"
