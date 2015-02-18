@@ -14,7 +14,7 @@
         <property name="file">Gui</property>
         <property name="first_id">1000</property>
         <property name="help_provider">none</property>
-        <property name="internationalize">0</property>
+        <property name="internationalize">1</property>
         <property name="name">Gui</property>
         <property name="namespace"></property>
         <property name="path">.</property>
@@ -827,7 +827,7 @@
                         <property name="help"></property>
                         <property name="id">ID_CLEAR_ANALYSIS</property>
                         <property name="kind">wxITEM_NORMAL</property>
-                        <property name="label">Clear Analysis</property>
+                        <property name="label">Clear analysis</property>
                         <property name="name">g_mnbClearAnalysis</property>
                         <property name="permission">none</property>
                         <property name="shortcut"></property>
@@ -866,7 +866,7 @@
                         <property name="help"></property>
                         <property name="id">ID_UNDO_GAIN</property>
                         <property name="kind">wxITEM_NORMAL</property>
-                        <property name="label">Undo gain changes (based on stored tag info)</property>
+                        <property name="label">Undo gain changes (based on stored tag info)&#x09;Ctrl+Z</property>
                         <property name="name">g_mnbUndoGain</property>
                         <property name="permission">none</property>
                         <property name="shortcut"></property>
@@ -901,7 +901,7 @@
                         <property name="help"></property>
                         <property name="id">ID_WEBSITE</property>
                         <property name="kind">wxITEM_NORMAL</property>
-                        <property name="label">LAME website</property>
+                        <property name="label">MP3gain Website</property>
                         <property name="name">g_mnbToolWebsite</property>
                         <property name="permission">none</property>
                         <property name="shortcut"></property>
@@ -916,7 +916,7 @@
                         <property name="help"></property>
                         <property name="id">ID_TOOL_WEBSITE</property>
                         <property name="kind">wxITEM_NORMAL</property>
-                        <property name="label">wxLame website</property>
+                        <property name="label">wxMP3gain Website</property>
                         <property name="name">g_mnbWebsite</property>
                         <property name="permission">none</property>
                         <property name="shortcut"></property>
@@ -1096,7 +1096,7 @@
                     <property name="context_menu">0</property>
                     <property name="id">ID_ADD_FILES</property>
                     <property name="kind">wxITEM_NORMAL</property>
-                    <property name="label">Add Files</property>
+                    <property name="label">Add files</property>
                     <property name="name">g_tbAddFiles</property>
                     <property name="permission">protected</property>
                     <property name="statusbar"></property>
@@ -1117,7 +1117,7 @@
                     <property name="context_menu">0</property>
                     <property name="id">ID_REMOVE_FILES</property>
                     <property name="kind">wxITEM_NORMAL</property>
-                    <property name="label">Remove Files</property>
+                    <property name="label">Remove files</property>
                     <property name="name">g_tbRemoveFiles</property>
                     <property name="permission">protected</property>
                     <property name="statusbar"></property>
@@ -1138,7 +1138,7 @@
                     <property name="context_menu">0</property>
                     <property name="id">ID_CLEAR_LIST</property>
                     <property name="kind">wxITEM_NORMAL</property>
-                    <property name="label">Clear List</property>
+                    <property name="label">Clear list</property>
                     <property name="name">g_tbClearList</property>
                     <property name="permission">protected</property>
                     <property name="statusbar"></property>
@@ -1256,7 +1256,7 @@
                     <property name="help"></property>
                     <property name="id">ID_ADD_FOLDER</property>
                     <property name="kind">wxITEM_NORMAL</property>
-                    <property name="label">Add Folder</property>
+                    <property name="label">Add folder</property>
                     <property name="name">g_mnuAddFolder</property>
                     <property name="permission">none</property>
                     <property name="shortcut"></property>
@@ -1271,7 +1271,7 @@
                     <property name="help"></property>
                     <property name="id">ID_ADD_FILES</property>
                     <property name="kind">wxITEM_NORMAL</property>
-                    <property name="label">Add Files</property>
+                    <property name="label">Add files</property>
                     <property name="name">g_mnuAddFiles</property>
                     <property name="permission">none</property>
                     <property name="shortcut"></property>
@@ -1286,7 +1286,7 @@
                     <property name="help"></property>
                     <property name="id">ID_REMOVE_FILES</property>
                     <property name="kind">wxITEM_NORMAL</property>
-                    <property name="label">Remove Files</property>
+                    <property name="label">Remove files</property>
                     <property name="name">g_mnuRemoveFiles</property>
                     <property name="permission">none</property>
                     <property name="shortcut"></property>
@@ -1301,7 +1301,7 @@
                     <property name="help"></property>
                     <property name="id">ID_CLEAR_LIST</property>
                     <property name="kind">wxITEM_NORMAL</property>
-                    <property name="label">Clear List</property>
+                    <property name="label">Clear list</property>
                     <property name="name">g_mnuClearList</property>
                     <property name="permission">none</property>
                     <property name="shortcut"></property>
