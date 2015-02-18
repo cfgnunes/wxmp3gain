@@ -20,7 +20,7 @@ const wxString CONFIG_STR_LastOpenDir = _T("LastOpenDir");
 
 const wxString CONFIG_STR_NormalVolumeDb = _T("NormalVolumeDb");
 const wxString CONFIG_STR_AutoLowerEnabled = _T("AutoLowerEnabled");
-const wxString CONFIG_STR_FileWriting = _T("FileWriting");
+const wxString CONFIG_STR_WorkOnTemporaryFile = _T("WorkOnTemporaryFile");
 const wxString CONFIG_STR_PreserveTimeEnabled = _T("PreserveTimeEnabled");
 const wxString CONFIG_STR_ForceInputEnabled = _T("ForceInputEnabled");
 
@@ -36,7 +36,7 @@ const wxString DEFAULT_VALUE_LastOpenDir = wxEmptyString;
 
 const int DEFAULT_VALUE_NormalVolumeDb = 890;
 const bool DEFAULT_VALUE_AutoLowerEnabled = false;
-const int DEFAULT_VALUE_FileWriting = 0;
+const bool DEFAULT_VALUE_WorkOnTemporaryFile = false;
 const bool DEFAULT_VALUE_PreserveTimeEnabled = false;
 const bool DEFAULT_VALUE_ForceInputEnabled = false;
 
@@ -62,7 +62,7 @@ public:
     wxString getLastOpenDir() const;
     int getNormalVolumeDb() const;
     bool getAutoLowerEnabled() const;
-    int getFileWriting() const;
+    bool getWorkOnTemporaryFile() const;
     bool getPreserveTimeEnabled() const;
     bool getForceInputEnabled() const;
     int getTagOptions() const;
@@ -75,7 +75,7 @@ public:
     void setLastOpenDir(wxString value);
     void setNormalVolumeDb(int value);
     void setAutoLowerEnabled(bool value);
-    void setFileWriting(int value);
+    void setWorkOnTemporaryFile(bool value);
     void setPreserveTimeEnabled(bool value);
     void setForceInputEnabled(bool value);
     void setTagOptions(int value);

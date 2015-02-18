@@ -29,7 +29,6 @@
 #include <wx/frame.h>
 #include <wx/checkbox.h>
 #include <wx/statbox.h>
-#include <wx/choice.h>
 #include <wx/panel.h>
 #include <wx/radiobut.h>
 #include <wx/slider.h>
@@ -138,8 +137,7 @@ class Settings : public wxDialog
 		wxNotebook* m_notebook1;
 		wxPanel* m_panel1;
 		wxCheckBox* g_chkAutoLower;
-		wxStaticText* m_staticText15;
-		wxChoice* g_chcFileWriting;
+		wxCheckBox* g_chkWorkOnTemporaryFile;
 		wxCheckBox* g_chkPreserveTime;
 		wxCheckBox* g_chkForceInput;
 		wxPanel* m_panel2;

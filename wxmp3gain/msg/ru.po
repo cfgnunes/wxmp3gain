@@ -109,10 +109,6 @@ msgstr "Файл"
 msgid "File options"
 msgstr "Опции файла"
 
-#: frmSettings.cpp:135
-msgid "File writing:"
-msgstr "Запись файла:"
-
 #: frmSettings.cpp:98
 msgid "Force re-calculation (do not read tag info)"
 msgstr "Принудительно пересчитать (не читая информацию о тегах)"
@@ -258,13 +254,9 @@ msgstr "Громкость"
 msgid "Wait..."
 msgstr "Ждите..."
 
-#: frmSettings.cpp:139
-msgid "work on original file"
-msgstr "работа над исходным файлом"
-
 #: frmSettings.cpp:138
-msgid "work on temp file"
-msgstr "работа над временным файлом"
+msgid "Work on temporary file"
+msgstr "Pабота над временным файлом"
 
 #: frmMain.cpp:150
 msgid "wxMP3gain Website"
