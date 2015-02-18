@@ -135,26 +135,26 @@ Main::Main( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoin
 	this->SetMenuBar( g_mainMenuBar );
 	
 	g_mainStatusBar = this->CreateStatusBar( 3, wxST_SIZEGRIP, wxID_ANY );
-	g_mainToolBar = this->CreateToolBar( wxTB_HORIZONTAL|wxTB_TEXT, wxID_ANY ); 
-	g_tbAddFolder = g_mainToolBar->AddTool( ID_ADD_FOLDER, _("Add folder"), wxArtProvider::GetBitmap( wxART_MISSING_IMAGE, wxART_TOOLBAR ), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString, NULL ); 
+	g_mainToolBar = this->CreateToolBar( wxTB_HORIZONTAL, wxID_ANY ); 
+	g_tbAddFolder = g_mainToolBar->AddTool( ID_ADD_FOLDER, wxEmptyString, wxArtProvider::GetBitmap( wxART_MISSING_IMAGE, wxART_TOOLBAR ), wxNullBitmap, wxITEM_NORMAL, _("Add folder"), wxEmptyString, NULL ); 
 	
-	g_tbAddFiles = g_mainToolBar->AddTool( ID_ADD_FILES, _("Add files"), wxArtProvider::GetBitmap( wxART_MISSING_IMAGE, wxART_TOOLBAR ), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString, NULL ); 
+	g_tbAddFiles = g_mainToolBar->AddTool( ID_ADD_FILES, wxEmptyString, wxArtProvider::GetBitmap( wxART_MISSING_IMAGE, wxART_TOOLBAR ), wxNullBitmap, wxITEM_NORMAL, _("Add files"), wxEmptyString, NULL ); 
 	
-	g_tbRemoveFiles = g_mainToolBar->AddTool( ID_REMOVE_FILES, _("Remove files"), wxArtProvider::GetBitmap( wxART_MISSING_IMAGE, wxART_TOOLBAR ), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString, NULL ); 
+	g_tbRemoveFiles = g_mainToolBar->AddTool( ID_REMOVE_FILES, wxEmptyString, wxArtProvider::GetBitmap( wxART_MISSING_IMAGE, wxART_TOOLBAR ), wxNullBitmap, wxITEM_NORMAL, _("Remove files"), wxEmptyString, NULL ); 
 	
-	g_tbClearList = g_mainToolBar->AddTool( ID_CLEAR_LIST, _("Clear list"), wxArtProvider::GetBitmap( wxART_MISSING_IMAGE, wxART_TOOLBAR ), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString, NULL ); 
-	
-	g_mainToolBar->AddSeparator(); 
-	
-	g_tbAnalyze = g_mainToolBar->AddTool( ID_ANALYZE, _("Analyze"), wxArtProvider::GetBitmap( wxART_MISSING_IMAGE, wxART_TOOLBAR ), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString, NULL ); 
-	
-	g_tbGain = g_mainToolBar->AddTool( ID_GAIN, _("Gain"), wxArtProvider::GetBitmap( wxART_MISSING_IMAGE, wxART_TOOLBAR ), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString, NULL ); 
+	g_tbClearList = g_mainToolBar->AddTool( ID_CLEAR_LIST, wxEmptyString, wxArtProvider::GetBitmap( wxART_MISSING_IMAGE, wxART_TOOLBAR ), wxNullBitmap, wxITEM_NORMAL, _("Clear list"), wxEmptyString, NULL ); 
 	
 	g_mainToolBar->AddSeparator(); 
 	
-	g_tbSettings = g_mainToolBar->AddTool( ID_SETTINGS, _("Settings"), wxArtProvider::GetBitmap( wxART_MISSING_IMAGE, wxART_TOOLBAR ), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString, NULL ); 
+	g_tbAnalyze = g_mainToolBar->AddTool( ID_ANALYZE, wxEmptyString, wxArtProvider::GetBitmap( wxART_MISSING_IMAGE, wxART_TOOLBAR ), wxNullBitmap, wxITEM_NORMAL, _("Analyze"), wxEmptyString, NULL ); 
 	
-	g_tbAbout = g_mainToolBar->AddTool( ID_ABOUT, _("About"), wxArtProvider::GetBitmap( wxART_MISSING_IMAGE, wxART_TOOLBAR ), wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString, NULL ); 
+	g_tbGain = g_mainToolBar->AddTool( ID_GAIN, wxEmptyString, wxArtProvider::GetBitmap( wxART_MISSING_IMAGE, wxART_TOOLBAR ), wxNullBitmap, wxITEM_NORMAL, _("Gain"), wxEmptyString, NULL ); 
+	
+	g_mainToolBar->AddSeparator(); 
+	
+	g_tbSettings = g_mainToolBar->AddTool( ID_SETTINGS, wxEmptyString, wxArtProvider::GetBitmap( wxART_MISSING_IMAGE, wxART_TOOLBAR ), wxNullBitmap, wxITEM_NORMAL, _("Settings"), wxEmptyString, NULL ); 
+	
+	g_tbAbout = g_mainToolBar->AddTool( ID_ABOUT, wxEmptyString, wxArtProvider::GetBitmap( wxART_MISSING_IMAGE, wxART_TOOLBAR ), wxNullBitmap, wxITEM_NORMAL, _("About"), wxEmptyString, NULL ); 
 	
 	g_mainToolBar->Realize(); 
 	
