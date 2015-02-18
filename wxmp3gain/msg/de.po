@@ -168,10 +168,6 @@ msgstr "Dateizeitstempel erhalten"
 msgid "MP3gain Website"
 msgstr "MP3gain Webseite"
 
-#: frmSettings.cpp:78
-msgid "MP3gain executable"
-msgstr "MP3gain Programmdatei"
-
 #: frmMain.cpp:464
 msgid "MP3gain not found!"
 msgstr "MP3gain nicht gefunden!"

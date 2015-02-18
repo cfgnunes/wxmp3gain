@@ -162,10 +162,6 @@ msgstr ""
 msgid "MP3gain Website"
 msgstr ""
 
-#: frmSettings.cpp:78
-msgid "MP3gain executable"
-msgstr ""
-
 #: frmMain.cpp:464
 msgid "MP3gain not found!"
 msgstr ""
