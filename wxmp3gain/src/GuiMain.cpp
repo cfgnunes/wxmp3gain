@@ -267,7 +267,7 @@ void GuiMain::mnuAbout(wxCommandEvent & event) {
 }
 
 void GuiMain::OnTimer1Trigger(wxTimerEvent & event) {
-    wxString newExeTool = mp_configBase->getToolExecutable();
+    wxString newExeTool = APP_TOOL_EXECUTABLE;
     if (!m_exeTool.IsSameAs(newExeTool, false)) {
         m_exeInputString.Clear();
         m_exeInputErrorString.Clear();

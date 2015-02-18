@@ -37,7 +37,7 @@ void Progress::execute() {
 }
 
 void Progress::processFile(int fileIterator) {
-    wxString fullCommand = mp_configBase->getToolExecutable() + _T(" ") + mp_configBase->getStringToolOptions() + _T(" ") + mp_configBase->getStringToolOptionsTag();
+    wxString fullCommand = APP_TOOL_EXECUTABLE + _T(" ") + mp_configBase->getStringToolOptions() + _T(" ") + mp_configBase->getStringToolOptionsTag();
     wxString runCommand;
     FileInfo& fileInfo = mp_lstFilesData->Item(fileIterator);
     wxFileName filenameInput = fileInfo.getFileName();
@@ -52,7 +52,7 @@ void Progress::processFile(int fileIterator) {
                 mp_listFiles->SetItem(fileIterator, 5, _("yes"));
         }
         if (!fileInfo.isVolumeSet()) {
-            runCommand = mp_configBase->getToolExecutable() + _T(" -s s \"") + filenameInput.GetFullPath() + _T("\"");
+            runCommand = APP_TOOL_EXECUTABLE + _T(" -s s \"") + filenameInput.GetFullPath() + _T("\"");
             wxExecute(runCommand, m_inputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
             processOutputString(fileIterator);
             mp_listFiles->SetItem(fileIterator, 5, _T(""));

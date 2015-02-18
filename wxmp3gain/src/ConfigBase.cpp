@@ -20,20 +20,19 @@ ConfigBase::~ConfigBase() {
 
 void ConfigBase::setDefaultConfig() {
     setLastOpenDir(DEFAULT_VALUE_LastOpenDir);
+
     setNormalVolumeDb(DEFAULT_VALUE_NormalVolumeDb);
-
-    setToolExecutable(DEFAULT_VALUE_ToolExecutable);
     setAutoLowerEnabled(DEFAULT_VALUE_AutoLowerEnabled);
+    setFileWriting(DEFAULT_VALUE_FileWriting);
+    setPreserveTimeEnabled(DEFAULT_VALUE_PreserveTimeEnabled);
+    setForceInputEnabled(DEFAULT_VALUE_ForceInputEnabled);
 
+    setTagForceEnabled(DEFAULT_VALUE_TagForceEnabled);
     setTagOptions(DEFAULT_VALUE_TagOptions);
 
     setConstantGainEnabled(DEFAULT_VALUE_ConstantGainEnabled);
     setConstantGainValue(DEFAULT_VALUE_ConstantGainValue);
     setChannelGainMode(DEFAULT_VALUE_ChannelGainMode);
-
-    setFileWriting(DEFAULT_VALUE_FileWriting);
-    setPreserveTimeEnabled(DEFAULT_VALUE_PreserveTimeEnabled);
-    setForceInputEnabled(DEFAULT_VALUE_ForceInputEnabled);
 }
 
 void ConfigBase::setConfigFlush() {
@@ -124,15 +123,27 @@ int ConfigBase::getNormalVolumeDb() const {
     return value;
 }
 
-wxString ConfigBase::getToolExecutable() const {
-    wxString value = wxEmptyString;
-    mp_config->Read(CONFIG_GENERAL_GROUP + CONFIG_STR_ToolExecutable, &value);
-    return value;
-}
-
 bool ConfigBase::getAutoLowerEnabled() const {
     bool value;
     mp_config->Read(CONFIG_GENERAL_GROUP + CONFIG_STR_AutoLowerEnabled, &value);
+    return value;
+}
+
+int ConfigBase::getFileWriting() const {
+    int value;
+    mp_config->Read(CONFIG_GENERAL_GROUP + CONFIG_STR_FileWriting, &value);
+    return value;
+}
+
+bool ConfigBase::getPreserveTimeEnabled() const {
+    bool value;
+    mp_config->Read(CONFIG_GENERAL_GROUP + CONFIG_STR_PreserveTimeEnabled, &value);
+    return value;
+}
+
+bool ConfigBase::getForceInputEnabled() const {
+    bool value;
+    mp_config->Read(CONFIG_GENERAL_GROUP + CONFIG_STR_ForceInputEnabled, &value);
     return value;
 }
 
@@ -166,24 +177,6 @@ int ConfigBase::getChannelGainMode() const {
     return value;
 }
 
-int ConfigBase::getFileWriting() const {
-    int value;
-    mp_config->Read(CONFIG_FOPTIONS_GROUP + CONFIG_STR_FileWriting, &value);
-    return value;
-}
-
-bool ConfigBase::getPreserveTimeEnabled() const {
-    bool value;
-    mp_config->Read(CONFIG_FOPTIONS_GROUP + CONFIG_STR_PreserveTimeEnabled, &value);
-    return value;
-}
-
-bool ConfigBase::getForceInputEnabled() const {
-    bool value;
-    mp_config->Read(CONFIG_FOPTIONS_GROUP + CONFIG_STR_ForceInputEnabled, &value);
-    return value;
-}
-
 // Sets...
 
 void ConfigBase::setLastOpenDir(wxString value) {
@@ -194,12 +187,20 @@ void ConfigBase::setNormalVolumeDb(int value) {
     mp_config->Write(CONFIG_GENERAL_GROUP + CONFIG_STR_NormalVolumeDb, value);
 }
 
-void ConfigBase::setToolExecutable(wxString value) {
-    mp_config->Write(CONFIG_GENERAL_GROUP + CONFIG_STR_ToolExecutable, value);
-}
-
 void ConfigBase::setAutoLowerEnabled(bool value) {
     mp_config->Write(CONFIG_GENERAL_GROUP + CONFIG_STR_AutoLowerEnabled, value);
+}
+
+void ConfigBase::setFileWriting(int value) {
+    mp_config->Write(CONFIG_GENERAL_GROUP + CONFIG_STR_FileWriting, value);
+}
+
+void ConfigBase::setPreserveTimeEnabled(bool value) {
+    mp_config->Write(CONFIG_GENERAL_GROUP + CONFIG_STR_PreserveTimeEnabled, value);
+}
+
+void ConfigBase::setForceInputEnabled(bool value) {
+    mp_config->Write(CONFIG_GENERAL_GROUP + CONFIG_STR_ForceInputEnabled, value);
 }
 
 void ConfigBase::setTagOptions(int value) {
@@ -220,16 +221,4 @@ void ConfigBase::setConstantGainValue(int value) {
 
 void ConfigBase::setChannelGainMode(int value) {
     mp_config->Write(CONFIG_CTGAIN_GROUP + CONFIG_STR_ChannelGainMode, value);
-}
-
-void ConfigBase::setFileWriting(int value) {
-    mp_config->Write(CONFIG_FOPTIONS_GROUP + CONFIG_STR_FileWriting, value);
-}
-
-void ConfigBase::setPreserveTimeEnabled(bool value) {
-    mp_config->Write(CONFIG_FOPTIONS_GROUP + CONFIG_STR_PreserveTimeEnabled, value);
-}
-
-void ConfigBase::setForceInputEnabled(bool value) {
-    mp_config->Write(CONFIG_FOPTIONS_GROUP + CONFIG_STR_ForceInputEnabled, value);
 }

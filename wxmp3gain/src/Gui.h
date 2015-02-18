@@ -29,12 +29,12 @@
 #include <wx/frame.h>
 #include <wx/checkbox.h>
 #include <wx/statbox.h>
-#include <wx/button.h>
+#include <wx/choice.h>
 #include <wx/panel.h>
 #include <wx/radiobut.h>
 #include <wx/slider.h>
-#include <wx/choice.h>
 #include <wx/notebook.h>
+#include <wx/button.h>
 #include <wx/dialog.h>
 
 ///////////////////////////////////////////////////////////////////////////
@@ -138,8 +138,10 @@ class Settings : public wxDialog
 		wxNotebook* m_notebook1;
 		wxPanel* m_panel1;
 		wxCheckBox* g_chkAutoLower;
-		wxTextCtrl* g_txtToolExecutable;
-		wxButton* g_btnToolExecutable;
+		wxStaticText* m_staticText15;
+		wxChoice* g_chcFileWriting;
+		wxCheckBox* g_chkPreserveTime;
+		wxCheckBox* g_chkForceInput;
 		wxPanel* m_panel2;
 		wxRadioButton* g_optTagAPE;
 		wxRadioButton* g_optTagID3;
@@ -153,17 +155,11 @@ class Settings : public wxDialog
 		wxRadioButton* g_optBothChannel;
 		wxRadioButton* g_optLeftChannel;
 		wxRadioButton* g_optRightChannel;
-		wxPanel* m_panel4;
-		wxStaticText* m_staticText15;
-		wxChoice* g_chcFileWriting;
-		wxCheckBox* g_chkPreserveTime;
-		wxCheckBox* g_chkForceInput;
 		wxButton* g_btnDefault;
 		wxButton* g_btnOK;
 		wxButton* g_btnCancel;
 		
 		// Virtual event handlers, overide them in your derived class
-		virtual void OnbtnToolExecutableClick( wxCommandEvent& event ) { event.Skip(); }
 		virtual void updateDisabledControlsEvent( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnsldConstantGainCmdSliderUpdated( wxScrollEvent& event ) { event.Skip(); }
 		virtual void OnbtnDefaultClick( wxCommandEvent& event ) { event.Skip(); }
