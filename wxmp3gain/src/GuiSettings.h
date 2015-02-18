@@ -15,7 +15,6 @@ public:
     virtual ~GuiSettings();
 
 protected:
-    void OnbtnToolExecutableClick(wxCommandEvent& event);
     void updateDisabledControlsEvent(wxCommandEvent& event);
     void OnsldConstantGainCmdSliderUpdated(wxScrollEvent& event);
     void OnbtnDefaultClick(wxCommandEvent& event);

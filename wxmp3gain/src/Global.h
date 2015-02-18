@@ -18,6 +18,7 @@ const wxString APP_AUTHOR = _T("Cristiano Nunes <cfgnunes@gmail.com>");
 const wxString APP_COPYRIGHT = _T("(C) 2011-2015 Cristiano Nunes <cfgnunes@gmail.com>");
 const wxString APP_WEBSITE = _T("http://sourceforge.net/projects/wxmp3gain/");
 
+const wxString APP_TOOL_EXECUTABLE = _T("mp3gain");
 const wxString APP_WILDCARD_EXT = _T("MP3 files (*.mp3)|*.mp3;*.MP3");
 const wxString APP_OPEN_EXT = _T("mp3");
 

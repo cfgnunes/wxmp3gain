@@ -24,14 +24,6 @@ GuiSettings::GuiSettings(wxWindow* parent, ConfigBase* configBase)
 GuiSettings::~GuiSettings() {
 }
 
-void GuiSettings::OnbtnToolExecutableClick(wxCommandEvent& event) {
-    wxFileDialog fileDialog(this, _("Select file"), wxEmptyString, wxEmptyString, wxFileSelectorDefaultWildcardStr, wxFD_OPEN);
-    if (fileDialog.ShowModal() == wxID_OK) {
-        g_txtToolExecutable->Clear();
-        g_txtToolExecutable->WriteText(fileDialog.GetPath());
-    }
-}
-
 void GuiSettings::updateDisabledControlsEvent(wxCommandEvent& event) {
     updateDisabledControls();
 }
@@ -59,9 +51,10 @@ void GuiSettings::updateValueControls() {
     wxScrollEvent evt;
 
     // General controls
-    g_txtToolExecutable->Clear();
-    g_txtToolExecutable->WriteText(mp_configBase->getToolExecutable());
     g_chkAutoLower->SetValue(mp_configBase->getAutoLowerEnabled());
+    g_chcFileWriting->SetSelection(mp_configBase->getFileWriting());
+    g_chkPreserveTime->SetValue(mp_configBase->getPreserveTimeEnabled());
+    g_chkForceInput->SetValue(mp_configBase->getForceInputEnabled());
 
     // Tags options
     g_optTagAPE->SetValue(mp_configBase->getTagOptions() == 0);
@@ -76,11 +69,6 @@ void GuiSettings::updateValueControls() {
     g_optBothChannel->SetValue(mp_configBase->getChannelGainMode() == 0);
     g_optLeftChannel->SetValue(mp_configBase->getChannelGainMode() == 1);
     g_optRightChannel->SetValue(mp_configBase->getChannelGainMode() == 2);
-
-    // File options
-    g_chcFileWriting->SetSelection(mp_configBase->getFileWriting());
-    g_chkPreserveTime->SetValue(mp_configBase->getPreserveTimeEnabled());
-    g_chkForceInput->SetValue(mp_configBase->getForceInputEnabled());
 }
 
 void GuiSettings::updateDisabledControls() {
@@ -96,8 +84,10 @@ void GuiSettings::updateDisabledControls() {
 
 void GuiSettings::saveValuesConfig() {
     // General controls
-    mp_configBase->setToolExecutable(g_txtToolExecutable->GetLineText(0));
     mp_configBase->setAutoLowerEnabled(g_chkAutoLower->GetValue());
+    mp_configBase->setFileWriting(g_chcFileWriting->GetSelection());
+    mp_configBase->setPreserveTimeEnabled(g_chkPreserveTime->GetValue());
+    mp_configBase->setForceInputEnabled(g_chkForceInput->GetValue());
 
     // Tags options
     if (g_optTagAPE->GetValue())
@@ -119,11 +109,6 @@ void GuiSettings::saveValuesConfig() {
     else if (g_optRightChannel->GetValue())
         mp_configBase->setChannelGainMode(2);
 
-    // File options
-    mp_configBase->setFileWriting(g_chcFileWriting->GetSelection());
-    mp_configBase->setPreserveTimeEnabled(g_chkPreserveTime->GetValue());
-    mp_configBase->setForceInputEnabled(g_chkForceInput->GetValue());
-
     mp_configBase->setConfigFlush();
 }
 
@@ -134,9 +119,10 @@ void GuiSettings::defaultValueControls() {
     mp_configBase->setNormalVolumeDb(DEFAULT_VALUE_NormalVolumeDb);
 
     // General controls
-    g_txtToolExecutable->Clear();
-    g_txtToolExecutable->WriteText(DEFAULT_VALUE_ToolExecutable);
     g_chkAutoLower->SetValue(DEFAULT_VALUE_AutoLowerEnabled);
+    g_chcFileWriting->SetSelection(DEFAULT_VALUE_FileWriting);
+    g_chkPreserveTime->SetValue(DEFAULT_VALUE_PreserveTimeEnabled);
+    g_chkForceInput->SetValue(DEFAULT_VALUE_ForceInputEnabled);
 
     // Tags options
     g_optTagAPE->SetValue(true);
@@ -151,13 +137,7 @@ void GuiSettings::defaultValueControls() {
     g_optBothChannel->SetValue(true);
     g_optLeftChannel->SetValue(false);
     g_optRightChannel->SetValue(false);
-
-    // File options
-    g_chcFileWriting->SetSelection(DEFAULT_VALUE_FileWriting);
-    g_chkPreserveTime->SetValue(DEFAULT_VALUE_PreserveTimeEnabled);
-    g_chkForceInput->SetValue(DEFAULT_VALUE_ForceInputEnabled);
 }
 
 void GuiSettings::setLabelsControls() {
-    g_btnToolExecutable->SetLabel(_T("..."));
 }

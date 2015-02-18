@@ -280,17 +280,33 @@ Settings::Settings( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	
 	bSizer5->Add( sbSizer5, 0, wxEXPAND, 5 );
 	
-	wxStaticBoxSizer* sbSizer4;
-	sbSizer4 = new wxStaticBoxSizer( new wxStaticBox( m_panel1, wxID_ANY, wxT("MP3gain executable") ), wxHORIZONTAL );
+	wxStaticBoxSizer* sbSizer11;
+	sbSizer11 = new wxStaticBoxSizer( new wxStaticBox( m_panel1, wxID_ANY, wxT("File options") ), wxVERTICAL );
 	
-	g_txtToolExecutable = new wxTextCtrl( m_panel1, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
-	sbSizer4->Add( g_txtToolExecutable, 1, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
+	wxBoxSizer* bSizer16;
+	bSizer16 = new wxBoxSizer( wxHORIZONTAL );
 	
-	g_btnToolExecutable = new wxButton( m_panel1, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( 22,22 ), 0 );
-	sbSizer4->Add( g_btnToolExecutable, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
+	m_staticText15 = new wxStaticText( m_panel1, wxID_ANY, wxT("File writing:"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText15->Wrap( -1 );
+	bSizer16->Add( m_staticText15, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
+	
+	wxString g_chcFileWritingChoices[] = { wxT("work on original file"), wxT("work on temp file") };
+	int g_chcFileWritingNChoices = sizeof( g_chcFileWritingChoices ) / sizeof( wxString );
+	g_chcFileWriting = new wxChoice( m_panel1, wxID_ANY, wxDefaultPosition, wxDefaultSize, g_chcFileWritingNChoices, g_chcFileWritingChoices, 0 );
+	g_chcFileWriting->SetSelection( 0 );
+	bSizer16->Add( g_chcFileWriting, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 	
 	
-	bSizer5->Add( sbSizer4, 0, wxEXPAND, 5 );
+	sbSizer11->Add( bSizer16, 1, wxEXPAND, 5 );
+	
+	g_chkPreserveTime = new wxCheckBox( m_panel1, wxID_ANY, wxT("Keep file timestamps"), wxDefaultPosition, wxDefaultSize, 0 );
+	sbSizer11->Add( g_chkPreserveTime, 0, wxALL, 2 );
+	
+	g_chkForceInput = new wxCheckBox( m_panel1, wxID_ANY, wxT("Force to assume input is an MPEG 2 Layer III file"), wxDefaultPosition, wxDefaultSize, 0 );
+	sbSizer11->Add( g_chkForceInput, 0, wxALL, 2 );
+	
+	
+	bSizer5->Add( sbSizer11, 0, wxEXPAND, 5 );
 	
 	
 	m_panel1->SetSizer( bSizer5 );
@@ -380,43 +396,6 @@ Settings::Settings( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	m_panel3->Layout();
 	bSizer10->Fit( m_panel3 );
 	m_notebook1->AddPage( m_panel3, wxT("Constant gain"), false );
-	m_panel4 = new wxPanel( m_notebook1, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
-	wxBoxSizer* bSizer11;
-	bSizer11 = new wxBoxSizer( wxVERTICAL );
-	
-	wxStaticBoxSizer* sbSizer11;
-	sbSizer11 = new wxStaticBoxSizer( new wxStaticBox( m_panel4, wxID_ANY, wxT("Output sampling frequency") ), wxVERTICAL );
-	
-	wxBoxSizer* bSizer16;
-	bSizer16 = new wxBoxSizer( wxHORIZONTAL );
-	
-	m_staticText15 = new wxStaticText( m_panel4, wxID_ANY, wxT("File writing:"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_staticText15->Wrap( -1 );
-	bSizer16->Add( m_staticText15, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-	
-	wxString g_chcFileWritingChoices[] = { wxT("work on original file"), wxT("work on temp file") };
-	int g_chcFileWritingNChoices = sizeof( g_chcFileWritingChoices ) / sizeof( wxString );
-	g_chcFileWriting = new wxChoice( m_panel4, wxID_ANY, wxDefaultPosition, wxDefaultSize, g_chcFileWritingNChoices, g_chcFileWritingChoices, 0 );
-	g_chcFileWriting->SetSelection( 0 );
-	bSizer16->Add( g_chcFileWriting, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-	
-	
-	sbSizer11->Add( bSizer16, 1, wxEXPAND, 5 );
-	
-	g_chkPreserveTime = new wxCheckBox( m_panel4, wxID_ANY, wxT("Keep file timestamps"), wxDefaultPosition, wxDefaultSize, 0 );
-	sbSizer11->Add( g_chkPreserveTime, 0, wxALL, 2 );
-	
-	g_chkForceInput = new wxCheckBox( m_panel4, wxID_ANY, wxT("Force to assume input is an MPEG 2 Layer III file"), wxDefaultPosition, wxDefaultSize, 0 );
-	sbSizer11->Add( g_chkForceInput, 0, wxALL, 2 );
-	
-	
-	bSizer11->Add( sbSizer11, 0, wxEXPAND, 5 );
-	
-	
-	m_panel4->SetSizer( bSizer11 );
-	m_panel4->Layout();
-	bSizer11->Fit( m_panel4 );
-	m_notebook1->AddPage( m_panel4, wxT("File options"), false );
 	
 	bSizer2->Add( m_notebook1, 0, wxEXPAND | wxALL, 5 );
 	
@@ -443,7 +422,6 @@ Settings::Settings( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	this->Centre( wxBOTH );
 	
 	// Connect Events
-	g_btnToolExecutable->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Settings::OnbtnToolExecutableClick ), NULL, this );
 	g_optTagAPE->Connect( wxEVT_COMMAND_RADIOBUTTON_SELECTED, wxCommandEventHandler( Settings::updateDisabledControlsEvent ), NULL, this );
 	g_optTagID3->Connect( wxEVT_COMMAND_RADIOBUTTON_SELECTED, wxCommandEventHandler( Settings::updateDisabledControlsEvent ), NULL, this );
 	g_optTagSKIP->Connect( wxEVT_COMMAND_RADIOBUTTON_SELECTED, wxCommandEventHandler( Settings::updateDisabledControlsEvent ), NULL, this );
@@ -466,7 +444,6 @@ Settings::Settings( wxWindow* parent, wxWindowID id, const wxString& title, cons
 Settings::~Settings()
 {
 	// Disconnect Events
-	g_btnToolExecutable->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Settings::OnbtnToolExecutableClick ), NULL, this );
 	g_optTagAPE->Disconnect( wxEVT_COMMAND_RADIOBUTTON_SELECTED, wxCommandEventHandler( Settings::updateDisabledControlsEvent ), NULL, this );
 	g_optTagID3->Disconnect( wxEVT_COMMAND_RADIOBUTTON_SELECTED, wxCommandEventHandler( Settings::updateDisabledControlsEvent ), NULL, this );
 	g_optTagSKIP->Disconnect( wxEVT_COMMAND_RADIOBUTTON_SELECTED, wxCommandEventHandler( Settings::updateDisabledControlsEvent ), NULL, this );
