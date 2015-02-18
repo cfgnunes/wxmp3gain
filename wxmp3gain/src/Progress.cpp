@@ -4,7 +4,7 @@
  */
 
 #include "Progress.h"
-#include "frmMain.h"
+#include "GuiMain.h"
 #include "Conversion.h"
 
 #include <wx/filename.h>
@@ -131,7 +131,7 @@ void Progress::processOutputString(int fileIterator) {
                     mp_listFiles->SetItem(fileIterator, 2, _T(""));
                     mp_listFiles->SetItemTextColour(fileIterator, *wxBLACK);
                 }
-                frmMain::updateGainLabels(mp_listFiles, mp_configBase, mp_lstFilesData, m_dblNormalVolume);
+                GuiMain::updateGainLabels(mp_listFiles, mp_configBase, mp_lstFilesData, m_dblNormalVolume);
             }
         }
 
