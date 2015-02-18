@@ -14,257 +14,194 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: frmMain.cpp:137
 msgid "&Analysis"
 msgstr "&Análise"
 
-#: frmMain.cpp:130
 msgid "&Edit"
 msgstr "&Editar"
 
-#: frmMain.cpp:121
 msgid "&File"
 msgstr "&Arquivo"
 
-#: frmMain.cpp:146
 msgid "&Gain"
 msgstr "&Ganho"
 
-#: frmMain.cpp:155
 msgid "&Help"
 msgstr "&Ajuda"
 
-#: frmMain.cpp:98
 msgid "(Default 89.0 dB)"
 msgstr "(Padrão 89,0 dB)"
 
-#: frmMain.cpp:153 frmMain.cpp:173
 msgid "About"
 msgstr "Sobre"
 
-#: frmMain.cpp:116 frmMain.cpp:165 frmMain.cpp:178
 msgid "Add files"
 msgstr "Adicionar arquivos"
 
-#: frmMain.cpp:114 frmMain.cpp:164 frmMain.cpp:176
 msgid "Add folder"
 msgstr "Adicionar diretório"
 
-#: frmMain.cpp:132 frmMain.cpp:169
 msgid "Analyze"
 msgstr "Analisar"
 
-#: frmSettings.cpp:74
 msgid "Automatically lower gain to not clip audio"
 msgstr "Diminuir o ganho automaticamente para evitar o clip no audio"
 
-#: frmSettings.cpp:162
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: frmSettings.cpp:120
 msgid "Channel"
 msgstr "Canal"
 
-#: frmMain.cpp:135
 msgid "Clear analysis"
 msgstr "Limpar análise"
 
-#: frmMain.cpp:125 frmMain.cpp:167 frmMain.cpp:182
 msgid "Clear list"
 msgstr "Limpar lista"
 
-#: frmMain.cpp:241
 msgid "Clipping"
 msgstr "Clipping"
 
-#: frmSettings.cpp:107 frmSettings.cpp:154
 msgid "Constant gain"
 msgstr "Ganho constante"
 
-#: frmSettings.cpp:112
 msgid "Constant gain:"
 msgstr "Ganho constante:"
 
-#: frmMain.cpp:144
 msgid "Delete stored tag info"
 msgstr "Apagar tag de informação armazenada"
 
-#: Progress.cpp:41
 msgid "Do you want to stop process now?"
 msgstr "Deseja parar o processo agora?"
 
-#: frmMain.cpp:119
 msgid "Exit"
 msgstr "Sair"
 
-#: frmMain.cpp:239
 msgid "File"
 msgstr "Arquivo"
 
-#: frmSettings.cpp:133 frmSettings.cpp:155
 msgid "File options"
 msgstr "Opções de arquivo"
 
-#: frmSettings.cpp:98
 msgid "Force re-calculation (do not read tag info)"
 msgstr "Forçar o recálculo (não ler tag de informação)"
 
-#: frmSettings.cpp:145
 msgid "Force to assume input is an MPEG 2 Layer III file"
 msgstr "Força para assumir que a entrada é um arquivo MPEG 2 Layer III"
 
-#: frmMain.cpp:475
 msgid "Free front-end for the MP3gain"
 msgstr "Livre front-end para o MP3gain"
 
-#: frmMain.cpp:139 frmMain.cpp:170
 msgid "Gain"
 msgstr "Ganho"
 
-#: frmMain.cpp:242
 msgid "Gain (dB)"
 msgstr "Ganho (dB)"
 
-#: frmMain.cpp:243
 msgid "Gain (mp3)"
 msgstr "Ganho (mp3)"
 
-#: frmSettings.cpp:121
 msgid "Gain on both channels"
 msgstr "Ganho em ambos os canais"
 
-#: frmSettings.cpp:123
 msgid "Gain on left channel only (not for Joint Stereo mp3s)"
 msgstr "Ganho apenas no canal esquerdo (não em mp3s Joint Stereo)"
 
-#: frmSettings.cpp:125
 msgid "Gain on right channel only (not for Joint Stereo mp3s)"
 msgstr "Ganho apenas no canal direito (não em mp3s Joint Stereo)"
 
-#: frmSettings.cpp:73
 msgid "Gain options"
 msgstr "Opções de ganho"
 
-#: frmSettings.cpp:152
 msgid "General"
 msgstr "Geral"
 
-#: frmSettings.cpp:142
 msgid "Keep file timestamps"
 msgstr "Manter data de modificação dos arquivos"
 
-#: frmMain.cpp:148
 msgid "MP3gain Website"
 msgstr "Site do MP3gain"
 
-#: frmMain.cpp:464
 msgid "MP3gain not found!"
 msgstr "MP3gain não encontrado!"
 
-#: frmMain.cpp:93
 msgid "Normal volume (dB):"
 msgstr "Volume normal (dB):"
 
-#: frmSettings.cpp:160
 msgid "OK"
 msgstr "OK"
 
-#: Progress.cpp:33 Progress.cpp:38
 msgid "Processed %i files of %i."
 msgstr "Processado %i arquivos de %i."
 
-#: Progress.cpp:32
 msgid "Progress"
 msgstr "Progresso"
 
-#: frmMain.cpp:123 frmMain.cpp:166 frmMain.cpp:180
 msgid "Remove files"
 msgstr "Remover arquivos"
 
-#: frmSettings.cpp:158
 msgid "Restore defaults"
 msgstr "Restaurar padrões"
 
-#: frmMain.cpp:302
 msgid "Select directory"
 msgstr "Selecionar diretório"
 
-#: frmMain.cpp:280 frmSettings.cpp:166
 msgid "Select file"
 msgstr "Selecionar arquivo"
 
-#: frmMain.cpp:128 frmMain.cpp:172 frmSettings.cpp:68
 msgid "Settings"
 msgstr "Configurações"
 
-#: frmSettings.cpp:94
 msgid "Skip stored tag info (do not read or write tags)"
 msgstr "Pular informações de tag armazenadas (não ler ou gravar tags)"
 
-#: frmMain.cpp:244
 msgid "Tag info"
 msgstr "Info tag"
 
-#: frmSettings.cpp:153
 msgid "Tags"
 msgstr "Tags"
 
-#: frmSettings.cpp:89
 msgid "Tags options"
 msgstr "Opções de tags"
 
-#: frmSettings.cpp:97
 msgid "Tags reading"
 msgstr "Leitura de Tags"
 
-#: frmMain.cpp:142
 msgid "Undo gain changes (based on stored tag info)\tCtrl+Z"
 msgstr ""
 "Desfazer alterações de ganho (com base na tag de informação armazenada)\tCtrl"
 "+Z"
 
-#: frmSettings.cpp:90
 msgid "Use APEv2 tag for gain information (default)"
 msgstr "Usar tag APEv2 para informações de ganho (padrão)"
 
-#: frmSettings.cpp:92
 msgid "Use ID3v2 tag for gain information"
 msgstr "Usar tag ID3v2 para informações de ganho"
 
-#: frmSettings.cpp:108
 msgid "Use constant gain without doing any analysis"
 msgstr "Usar o ganho constante sem fazer qualquer análise"
 
-#: frmMain.cpp:462
 msgid "Using MP3gain version: "
 msgstr "Usando a versão do MP3gain: "
 
-#: frmMain.cpp:102
 msgid "Using constant gain: "
 msgstr "Usando o ganho constante: "
 
-#: frmMain.cpp:240
 msgid "Volume"
 msgstr "Volume"
 
-#: Progress.cpp:32
 msgid "Wait..."
 msgstr "Aguarde..."
 
-#: frmSettings.cpp:138
 msgid "Work on temporary file"
 msgstr "Trabalhar em arquivo temporário"
 
-#: frmMain.cpp:150
 msgid "wxMP3gain Website"
 msgstr "Site do wxMP3gain"
 
-#: Progress.cpp:64 Progress.cpp:94 Progress.cpp:152
 msgid "yes"
 msgstr "sim"
 
-#: Progress box
 msgid "Elapsed time : "
 msgstr "Tempo decorrido : "
 

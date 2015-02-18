@@ -16,272 +16,208 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Virtaal 0.7.0\n"
 
-#: frmMain.cpp:137
 msgid "&Analysis"
 msgstr "&Analyse"
 
-#: frmMain.cpp:130
 msgid "&Edit"
 msgstr "B&earbeiten"
 
-#: frmMain.cpp:121
 msgid "&File"
 msgstr "Datei"
 
-#: frmMain.cpp:146
 msgid "&Gain"
 msgstr "Ein&gangsverstärkung (Gain)"
 
-#: frmMain.cpp:155
 msgid "&Help"
 msgstr "&Hilfe"
 
-#: frmMain.cpp:98
 msgid "(Default 89.0 dB)"
 msgstr "(Standard 89.0 dB)"
 
-#: frmMain.cpp:153 frmMain.cpp:173
 msgid "About"
 msgstr "Über"
 
-#: frmMain.cpp:116 frmMain.cpp:165 frmMain.cpp:178
 msgid "Add files"
 msgstr "Dateien hinzufügen"
 
-#: frmMain.cpp:114 frmMain.cpp:164 frmMain.cpp:176
 msgid "Add folder"
 msgstr "Ordner hinzufügen"
 
-#: frmMain.cpp:132 frmMain.cpp:169
 msgid "Analyze"
 msgstr "Analysieren"
 
-#: frmSettings.cpp:74
 msgid "Automatically lower gain to not clip audio"
 msgstr "Eingangsverstärkung automatisch reduzieren, um Clipping zu vermeiden"
 
-#: frmSettings.cpp:162
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: frmSettings.cpp:120
 msgid "Channel"
 msgstr "Kanal"
 
-#: frmMain.cpp:135
 msgid "Clear analysis"
 msgstr "Analyse-Daten löschen"
 
-#: frmMain.cpp:125 frmMain.cpp:167 frmMain.cpp:182
 msgid "Clear list"
 msgstr "Liste löschen"
 
-#: frmMain.cpp:241
 msgid "Clipping"
 msgstr "Clipping"
 
-#: frmSettings.cpp:107 frmSettings.cpp:154
 msgid "Constant gain"
 msgstr "Konstante Eingangsverstärkung"
 
-#: frmSettings.cpp:112
 msgid "Constant gain:"
 msgstr "Konstante Eingangsverstärkung:"
 
-#: frmMain.cpp:144
 msgid "Delete stored tag info"
 msgstr "Enthaltene Tag-Infos löschen"
 
-#: Progress.cpp:41
 msgid "Do you want to stop process now?"
 msgstr "Möchten Sie den Vorgang jetzt abbrechen?"
 
-#: frmMain.cpp:119
 msgid "Exit"
 msgstr "Beenden"
 
-#: frmMain.cpp:239
 msgid "File"
 msgstr "Datei"
 
-#: frmSettings.cpp:133 frmSettings.cpp:155
 msgid "File options"
 msgstr "Dateioptionen"
 
-#: frmSettings.cpp:98
 msgid "Force re-calculation (do not read tag info)"
 msgstr "Neu-Kalkulation erzwingen (gespeicherte Tag-Informationen überspringen)"
 
-#: frmSettings.cpp:145
 msgid "Force to assume input is an MPEG 2 Layer III file"
 msgstr "Behandlung von Quelldateien als MPEG 2 Layer III erzwingen"
 
-#: frmMain.cpp:475
 msgid "Free front-end for the MP3gain"
 msgstr "Freies Frontend für MP3gain"
 
-#: frmMain.cpp:139 frmMain.cpp:170
 msgid "Gain"
 msgstr "Eingangsverstärkung (Gain)"
 
-#: frmMain.cpp:242
 msgid "Gain (dB)"
 msgstr "Eingangsverstärkung (dB)"
 
-#: frmMain.cpp:243
 msgid "Gain (mp3)"
 msgstr "Eingangsverstärkung (mp3)"
 
-#: frmSettings.cpp:121
 msgid "Gain on both channels"
 msgstr "Eingangsverstärkung auf beiden Kanälen"
 
-#: frmSettings.cpp:123
 msgid "Gain on left channel only (not for Joint Stereo mp3s)"
 msgstr ""
 "Eingangsverstärkung nur auf dem linken Kanal (nicht für MP3 mit Joint "
 "Stereo)"
 
-#: frmSettings.cpp:125
 msgid "Gain on right channel only (not for Joint Stereo mp3s)"
 msgstr ""
 "Eingangsverstärkung nur auf dem rechten Kanal (nicht für MP3 mit Joint "
 "Stereo)"
 
-#: frmSettings.cpp:73
 msgid "Gain options"
 msgstr "Optionen zur Eingangsverstärkung (Gain)"
 
-#: frmSettings.cpp:152
 msgid "General"
 msgstr "Allgemein"
 
-#: frmSettings.cpp:142
 msgid "Keep file timestamps"
 msgstr "Dateizeitstempel erhalten"
 
-#: frmMain.cpp:148
 msgid "MP3gain Website"
 msgstr "MP3gain Webseite"
 
-#: frmMain.cpp:464
 msgid "MP3gain not found!"
 msgstr "MP3gain nicht gefunden!"
 
-#: frmMain.cpp:93
 msgid "Normal volume (dB):"
 msgstr "Normale Lautstärke (dB):"
 
-#: frmSettings.cpp:160
 msgid "OK"
 msgstr "OK"
 
-#: Progress.cpp:33 Progress.cpp:38
-#, c-format
 msgid "Processed %i files of %i."
 msgstr "%i von %i Dateien bearbeitet."
 
-#: Progress.cpp:32
 msgid "Progress"
 msgstr "Fortschritt"
 
-#: frmMain.cpp:123 frmMain.cpp:166 frmMain.cpp:180
 msgid "Remove files"
 msgstr "Dateien entfernen"
 
-#: frmSettings.cpp:158
 msgid "Restore defaults"
 msgstr "Standardeinstellungen wiederherstellen"
 
-#: frmMain.cpp:302
 msgid "Select directory"
 msgstr "Ordner wählen"
 
-#: frmMain.cpp:280 frmSettings.cpp:166
 msgid "Select file"
 msgstr "Datei wählen"
 
-#: frmMain.cpp:128 frmMain.cpp:172 frmSettings.cpp:68
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: frmSettings.cpp:94
 msgid "Skip stored tag info (do not read or write tags)"
 msgstr ""
 "In Datei gespeicherte Tag-Informationen überspringen (kein Lesen oder "
 "Schreiben von Tags)"
 
-#: frmMain.cpp:244
 msgid "Tag info"
 msgstr "Tag-Informationen"
 
-#: frmSettings.cpp:153
 msgid "Tags"
 msgstr "Tags"
 
-#: frmSettings.cpp:89
 msgid "Tags options"
 msgstr "Tag-Optionen"
 
-#: frmSettings.cpp:97
 msgid "Tags reading"
 msgstr "Tags lesen"
 
-#: frmMain.cpp:142
 msgid "Undo gain changes (based on stored tag info)\tCtrl+Z"
 msgstr ""
 "Eingangsverstärkung zurücksetzen (auf gespeicherten Tag-Informationen "
 "basierend)\tCtrl+Z"
 
-#: frmSettings.cpp:90
 msgid "Use APEv2 tag for gain information (default)"
 msgstr "APEv2 für Gain-Informationen benutzen (Standard)"
 
-#: frmSettings.cpp:92
 msgid "Use ID3v2 tag for gain information"
 msgstr "ID3v2 für Gain-Informationen benutzen (Standard)"
 
-#: frmSettings.cpp:108
 msgid "Use constant gain without doing any analysis"
 msgstr "Konstante Eingangsverstärkung ohne Analyse verwenden"
 
-#: frmMain.cpp:462
 msgid "Using MP3gain version: "
 msgstr "Benutze MP3gain version: "
 
-#: frmMain.cpp:102
 msgid "Using constant gain: "
 msgstr "Konstante Eingangsverstärkung verwenden:"
 
-#: frmMain.cpp:240
 msgid "Volume"
 msgstr "Lautstärke"
 
-#: Progress.cpp:32
 msgid "Wait..."
 msgstr "Bitte warten..."
 
-#: frmSettings.cpp:138
 msgid "Work on temporary file"
 msgstr "Temporäre Datei verwenden"
 
-#: frmMain.cpp:150
 msgid "wxMP3gain Website"
 msgstr "wxMP3gain Webseite"
 
-#: Progress.cpp:64 Progress.cpp:94 Progress.cpp:152
 msgid "yes"
 msgstr "ja"
 
-#: Progress box
 msgid "Elapsed time : "
-msgstr "Verstrichene Zeit :"
+msgstr "Verstrichene Zeit : "
 
 msgid "Estimated time : "
-msgstr "Geschätzte Zeit :"
+msgstr "Geschätzte Zeit : "
 
 msgid "Remaining time : "
-msgstr "Verbleibende Zeit :"
+msgstr "Verbleibende Zeit : "
 
 msgid "Close"
 msgstr "Schließen"
@@ -290,4 +226,4 @@ msgid "unknown"
 msgstr "unbekannt"
 
 msgid "files"
-msgstr "Dateien"
+msgstr "dateien"
