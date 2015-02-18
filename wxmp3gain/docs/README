@@ -17,28 +17,28 @@ the Free Software Foundation, either version 3 of the License, or
 Supported systems
 -----------------
 
-wxMP3gain has been tested on the following platforms:
-- Windows XP, Vista, 7, 8
+This program has been tested on the following platforms:
+- Windows XP, Vista, 7, 8, 8.1
 - Several major Linux distributions
 
 Contact
 -------
 
-Project website: http://sourceforge.net/projects/wxmp3gain/
+Project website: http://sourceforge.net/projects/wxlame/
 E-mail:          cfgnunes@gmail.com (Cristiano Nunes - Developer - Project leader)
 
 Tools used for development
 --------------------------
 
 Source code written completely in C++ using:
-GCC		- The GNU Compiler Collection
-CodeBlocks 	- Open-Source IDE
-wxWidgets	- Open-Source GUI framework
-wxSmith		- wxWidgets GUI-builder
+GCC             - The GNU Compiler Collection
+CodeBlocks      - Open-Source IDE
+wxWidgets       - Open-Source GUI framework
+wxFormBuilder   - Open-Source GUI framework
 
 Other tools:
-UPX		- The Ultimate Packer for eXecutables
-Inno Setup	- Create windows installer
+UPX             - The Ultimate Packer for eXecutables
+Inno Setup      - Create windows installer
 
 License
 -------
