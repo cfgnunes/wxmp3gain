@@ -1,18 +1,25 @@
 wxMP3gain - Changelog file
 
+Changelog v3.4 (2015-02-18)
+--------------
+- Changed Settings screen
+- Minor improvements
+- Code refactor
+- Bug fixes
+
 Changelog v3.3 (2015-02-07)
 --------------
 - Code refactor
-- Bug fix
+- Bug fixes
 
 Changelog v3.2 (2015-02-07)
 --------------
 - Added command line arguments to input files and directories
-- Small bug fix
+- Bug fixes
 
 Changelog v3.1 (2015-02-06)
 --------------
-- Small bug fix
+- Bug fixes
 
 Changelog v3.0 (2015-02-06)
 --------------
@@ -45,7 +52,7 @@ Changelog v2.3.1 (2013-04-23)
 
 Changelog v2.3 (2012-02-24)
 --------------
-- Small bug fix
+- Bug fixes
 
 Changelog v2.2 (2012-02-17)
 --------------

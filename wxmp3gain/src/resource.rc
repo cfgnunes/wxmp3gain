@@ -1,3 +1,0 @@
-ICO_APP		    ICON	DISCARDABLE "resource/icon.ico"
-
-#include "wx/msw/wx.rc"
