@@ -34,7 +34,7 @@ Source code written completely in C++ using:
 GCC             - The GNU Compiler Collection
 CodeBlocks      - Open-Source IDE
 wxWidgets       - Open-Source GUI framework
-wxFormBuilder   - Open-Source GUI framework
+wxFormBuilder   - wxWidgets GUI-builder
 
 Other tools:
 UPX             - The Ultimate Packer for eXecutables
