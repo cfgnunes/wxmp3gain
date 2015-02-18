@@ -10,7 +10,7 @@ ConfigBase::ConfigBase(const wxString& appName) {
     mp_config = new wxConfig(appName);
 
     // If there isn't a setting, writes a new one with default values
-    if (!mp_config->Exists(CONFIG_GENERAL_GROUP))
+    if (getAppVersion().Cmp(APP_VERSION) != 0)
         setDefaultConfig();
 }
 
@@ -19,6 +19,7 @@ ConfigBase::~ConfigBase() {
 }
 
 void ConfigBase::setDefaultConfig() {
+    setAppVersion(APP_VERSION);
     setLastOpenDir(DEFAULT_VALUE_LastOpenDir);
 
     setNormalVolumeDb(DEFAULT_VALUE_NormalVolumeDb);
@@ -107,6 +108,12 @@ wxString ConfigBase::getStringToolOptionsGain() const {
 
 // Gets...
 
+wxString ConfigBase::getAppVersion() const {
+    wxString value = wxEmptyString;
+    mp_config->Read(CONFIG_SYSTEM_GROUP + CONFIG_STR_AppVersion, &value);
+    return value;
+}
+
 wxString ConfigBase::getLastOpenDir() const {
     wxString value = wxEmptyString;
     mp_config->Read(CONFIG_SYSTEM_GROUP + CONFIG_STR_LastOpenDir, &value);
@@ -174,6 +181,10 @@ int ConfigBase::getChannelGainMode() const {
 }
 
 // Sets...
+
+void ConfigBase::setAppVersion(wxString value) {
+    mp_config->Write(CONFIG_SYSTEM_GROUP + CONFIG_STR_AppVersion, value);
+}
 
 void ConfigBase::setLastOpenDir(wxString value) {
     mp_config->Write(CONFIG_SYSTEM_GROUP + CONFIG_STR_LastOpenDir, value);
