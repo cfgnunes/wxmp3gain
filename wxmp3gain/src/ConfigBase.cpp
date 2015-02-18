@@ -23,7 +23,7 @@ void ConfigBase::setDefaultConfig() {
 
     setNormalVolumeDb(DEFAULT_VALUE_NormalVolumeDb);
     setAutoLowerEnabled(DEFAULT_VALUE_AutoLowerEnabled);
-    setFileWriting(DEFAULT_VALUE_FileWriting);
+    setWorkOnTemporaryFile(DEFAULT_VALUE_WorkOnTemporaryFile);
     setPreserveTimeEnabled(DEFAULT_VALUE_PreserveTimeEnabled);
     setForceInputEnabled(DEFAULT_VALUE_ForceInputEnabled);
 
@@ -42,15 +42,11 @@ void ConfigBase::setConfigFlush() {
 wxString ConfigBase::getStringToolOptions() const {
     wxString toolOptions;
 
-    // FileWriting
-    switch (getFileWriting()) {
-        case 0:
-            toolOptions.append(_T("-t "));
-            break;
-        case 1:
-            toolOptions.append(_T("-T "));
-            break;
-    }
+    // WorkOnTemporaryFile
+    if (getWorkOnTemporaryFile())
+        toolOptions.append(_T("-t "));
+    else
+        toolOptions.append(_T("-T "));
 
     // PreserveTimestamp
     if (getPreserveTimeEnabled())
@@ -129,9 +125,9 @@ bool ConfigBase::getAutoLowerEnabled() const {
     return value;
 }
 
-int ConfigBase::getFileWriting() const {
-    int value;
-    mp_config->Read(CONFIG_GENERAL_GROUP + CONFIG_STR_FileWriting, &value);
+bool ConfigBase::getWorkOnTemporaryFile() const {
+    bool value;
+    mp_config->Read(CONFIG_GENERAL_GROUP + CONFIG_STR_WorkOnTemporaryFile, &value);
     return value;
 }
 
@@ -191,8 +187,8 @@ void ConfigBase::setAutoLowerEnabled(bool value) {
     mp_config->Write(CONFIG_GENERAL_GROUP + CONFIG_STR_AutoLowerEnabled, value);
 }
 
-void ConfigBase::setFileWriting(int value) {
-    mp_config->Write(CONFIG_GENERAL_GROUP + CONFIG_STR_FileWriting, value);
+void ConfigBase::setWorkOnTemporaryFile(bool value) {
+    mp_config->Write(CONFIG_GENERAL_GROUP + CONFIG_STR_WorkOnTemporaryFile, value);
 }
 
 void ConfigBase::setPreserveTimeEnabled(bool value) {

@@ -283,21 +283,8 @@ Settings::Settings( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	wxStaticBoxSizer* sbSizer11;
 	sbSizer11 = new wxStaticBoxSizer( new wxStaticBox( m_panel1, wxID_ANY, wxT("File options") ), wxVERTICAL );
 	
-	wxBoxSizer* bSizer16;
-	bSizer16 = new wxBoxSizer( wxHORIZONTAL );
-	
-	m_staticText15 = new wxStaticText( m_panel1, wxID_ANY, wxT("File writing:"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_staticText15->Wrap( -1 );
-	bSizer16->Add( m_staticText15, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-	
-	wxString g_chcFileWritingChoices[] = { wxT("work on original file"), wxT("work on temp file") };
-	int g_chcFileWritingNChoices = sizeof( g_chcFileWritingChoices ) / sizeof( wxString );
-	g_chcFileWriting = new wxChoice( m_panel1, wxID_ANY, wxDefaultPosition, wxDefaultSize, g_chcFileWritingNChoices, g_chcFileWritingChoices, 0 );
-	g_chcFileWriting->SetSelection( 0 );
-	bSizer16->Add( g_chcFileWriting, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-	
-	
-	sbSizer11->Add( bSizer16, 1, wxEXPAND, 5 );
+	g_chkWorkOnTemporaryFile = new wxCheckBox( m_panel1, wxID_ANY, wxT("Work on temporary file"), wxDefaultPosition, wxDefaultSize, 0 );
+	sbSizer11->Add( g_chkWorkOnTemporaryFile, 0, wxALL, 2 );
 	
 	g_chkPreserveTime = new wxCheckBox( m_panel1, wxID_ANY, wxT("Keep file timestamps"), wxDefaultPosition, wxDefaultSize, 0 );
 	sbSizer11->Add( g_chkPreserveTime, 0, wxALL, 2 );
@@ -354,7 +341,7 @@ Settings::Settings( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	sbSizer9 = new wxStaticBoxSizer( new wxStaticBox( m_panel3, wxID_ANY, wxT("Constant gain") ), wxVERTICAL );
 	
 	g_chkConstantGain = new wxCheckBox( m_panel3, wxID_ANY, wxT("Use constant gain without doing any analysis"), wxDefaultPosition, wxDefaultSize, 0 );
-	sbSizer9->Add( g_chkConstantGain, 0, wxALL, 5 );
+	sbSizer9->Add( g_chkConstantGain, 0, wxALL, 2 );
 	
 	wxBoxSizer* bSizer15;
 	bSizer15 = new wxBoxSizer( wxHORIZONTAL );

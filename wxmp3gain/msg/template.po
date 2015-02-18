@@ -106,10 +106,6 @@ msgstr ""
 msgid "File options"
 msgstr ""
 
-#: frmSettings.cpp:135
-msgid "File writing:"
-msgstr ""
-
 #: frmSettings.cpp:98
 msgid "Force re-calculation (do not read tag info)"
 msgstr ""
@@ -255,12 +251,8 @@ msgstr ""
 msgid "Wait..."
 msgstr ""
 
-#: frmSettings.cpp:139
-msgid "work on original file"
-msgstr ""
-
 #: frmSettings.cpp:138
-msgid "work on temp file"
+msgid "Work on temporary file"
 msgstr ""
 
 #: frmMain.cpp:150
