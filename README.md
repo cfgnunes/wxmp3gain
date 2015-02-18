@@ -26,7 +26,7 @@ Source code written completely in C++ using:
 - GCC - The GNU Compiler Collection
 - CodeBlocks - Open-Source IDE
 - wxWidgets - Open-Source GUI framework
-- wxFormBuilder - Open-Source GUI framework
+- wxFormBuilder - wxWidgets GUI-builder
 
 ### License
 This program is licensed under the terms of the GNU General Public License version 3. Available online under:
