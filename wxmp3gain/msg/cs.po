@@ -16,272 +16,208 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: frmMain.cpp:137
 msgid "&Analysis"
 msgstr "&Rozbor"
 
-#: frmMain.cpp:130
 msgid "&Edit"
 msgstr "Ú&pravy"
 
-#: frmMain.cpp:121
 msgid "&File"
 msgstr "&Soubor"
 
-#: frmMain.cpp:146
 msgid "&Gain"
 msgstr "&Zesílení"
 
-#: frmMain.cpp:155
 msgid "&Help"
 msgstr "&Nápověda"
 
-#: frmMain.cpp:98
 msgid "(Default 89.0 dB)"
 msgstr "(Výchozí 89.0 dB)"
 
-#: frmMain.cpp:153 frmMain.cpp:173
 msgid "About"
 msgstr "O programu"
 
-#: frmMain.cpp:116 frmMain.cpp:165 frmMain.cpp:178
 msgid "Add files"
 msgstr "Přidat soubory"
 
-#: frmMain.cpp:114 frmMain.cpp:164 frmMain.cpp:176
 msgid "Add folder"
 msgstr "Přidat složku"
 
-#: frmMain.cpp:132 frmMain.cpp:169
 msgid "Analyze"
 msgstr "Provést rozbor"
 
-#: frmSettings.cpp:74
 msgid "Automatically lower gain to not clip audio"
 msgstr "Automaticky snížit zesílení, aby nedocházelo k přebuzení zvuku"
 
-#: frmSettings.cpp:162
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: frmSettings.cpp:120
 msgid "Channel"
 msgstr "Kanál"
 
-#: frmMain.cpp:135
 msgid "Clear analysis"
 msgstr "Smazat rozbor"
 
-#: frmMain.cpp:125 frmMain.cpp:167 frmMain.cpp:182
 msgid "Clear list"
 msgstr "Vyprázdnit seznam"
 
-#: frmMain.cpp:241
 msgid "Clipping"
 msgstr "Přebuzení (clipping)"
 
-#: frmSettings.cpp:107 frmSettings.cpp:154
 msgid "Constant gain"
 msgstr "Stálé zesílení"
 
-#: frmSettings.cpp:112
 msgid "Constant gain:"
 msgstr "Stálé zesílení:"
 
-#: frmMain.cpp:144
 msgid "Delete stored tag info"
 msgstr "Smazat uložené značky"
 
-#: Progress.cpp:41
 msgid "Do you want to stop process now?"
 msgstr "Chcete nyní proces zastavit?"
 
-#: frmMain.cpp:119
 msgid "Exit"
 msgstr "Ukončit"
 
-#: frmMain.cpp:239
 msgid "File"
 msgstr "Soubor"
 
-#: frmSettings.cpp:133 frmSettings.cpp:155
 msgid "File options"
 msgstr "Volby pro soubory"
 
-#: frmSettings.cpp:98
 msgid "Force re-calculation (do not read tag info)"
 msgstr "Vynutit přepočítání (nečíst značky"
 
-#: frmSettings.cpp:145
 msgid "Force to assume input is an MPEG 2 Layer III file"
 msgstr "Vynutit předpoklad, že vstup je soubor MPEG 2 Layer III"
 
-#: frmMain.cpp:475
 msgid "Free front-end for the MP3gain"
 msgstr "Rozhraní pro MP3gGain"
 
-#: frmMain.cpp:139 frmMain.cpp:170
 msgid "Gain"
 msgstr "Zesílení"
 
-#: frmMain.cpp:242
 msgid "Gain (dB)"
 msgstr "Zesílení (dB)"
 
-#: frmMain.cpp:243
 msgid "Gain (mp3)"
 msgstr "Zesílení (mp3)"
 
-#: frmSettings.cpp:121
 msgid "Gain on both channels"
 msgstr "Zesílení obou kanálů"
 
-#: frmSettings.cpp:123
 msgid "Gain on left channel only (not for Joint Stereo mp3s)"
 msgstr "Zesílení pouze levého kanálu (ne pro Joint Stereo mp3s)"
 
-#: frmSettings.cpp:125
 msgid "Gain on right channel only (not for Joint Stereo mp3s)"
 msgstr "Zesílení pouze pravého kanálu (ne pro Joint Stereo mp3s)"
 
-#: frmSettings.cpp:73
 msgid "Gain options"
 msgstr "Volby pro zesílení"
 
-#: frmSettings.cpp:152
 msgid "General"
 msgstr "Obecné"
 
-#: frmSettings.cpp:142
 msgid "Keep file timestamps"
 msgstr "Zachovat časová razítka souborů"
 
-#: frmMain.cpp:148
 msgid "MP3gain Website"
 msgstr "Stránky MP3gain"
 
-#: frmMain.cpp:464
 msgid "MP3gain not found!"
 msgstr "MP3gain nenalezen!"
 
-#: frmMain.cpp:93
 msgid "Normal volume (dB):"
 msgstr "Normální hlasitost (dB):"
 
-#: frmSettings.cpp:160
 msgid "OK"
 msgstr "OK"
 
-#: Progress.cpp:33 Progress.cpp:38
-#, c-format
 msgid "Processed %i files of %i."
 msgstr "Zpracováno %i souborů z %i."
 
-#: Progress.cpp:32
 msgid "Progress"
 msgstr "Postup"
 
-#: frmMain.cpp:123 frmMain.cpp:166 frmMain.cpp:180
 msgid "Remove files"
 msgstr "Odstranit soubory"
 
-#: frmSettings.cpp:158
 msgid "Restore defaults"
 msgstr "Obnovit výchozí nastavení"
 
-#: frmMain.cpp:302
 msgid "Select directory"
 msgstr "Vybrat adresář"
 
-#: frmMain.cpp:280 frmSettings.cpp:166
 msgid "Select file"
 msgstr "Vybrat soubor"
 
-#: frmMain.cpp:128 frmMain.cpp:172 frmSettings.cpp:68
 msgid "Settings"
 msgstr "Nastavení"
 
-#: frmSettings.cpp:94
 msgid "Skip stored tag info (do not read or write tags)"
 msgstr "Přeskočit uložené informace o značkách (nečíst při zápisu značek)"
 
-#: frmMain.cpp:244
 msgid "Tag info"
 msgstr "Informace o značkách"
 
-#: frmSettings.cpp:153
 msgid "Tags"
 msgstr "Značky"
 
-#: frmSettings.cpp:89
 msgid "Tags options"
 msgstr "Volby pro značky"
 
-#: frmSettings.cpp:97
 msgid "Tags reading"
 msgstr "Čtení značek"
 
-#: frmMain.cpp:142
 msgid "Undo gain changes (based on stored tag info)\tCtrl+Z"
 msgstr ""
 "Vrátit zpět změny zesílení (založeno na uložených informacích o "
 "značkách)\tCtrl+Z"
 
-#: frmSettings.cpp:90
 msgid "Use APEv2 tag for gain information (default)"
 msgstr "Použít značku APEv2 pro informace o zesílení (výchozí)"
 
-#: frmSettings.cpp:92
 msgid "Use ID3v2 tag for gain information"
 msgstr "Použít značku ID3v2 pro informace o zesílení"
 
-#: frmSettings.cpp:108
 msgid "Use constant gain without doing any analysis"
 msgstr "Použít stálé zesílení, aniž by se prováděl jakýkoli rozbor"
 
-#: frmMain.cpp:462
 msgid "Using MP3gain version: "
 msgstr "Verze MP3gain: "
 
-#: frmMain.cpp:102
 msgid "Using constant gain: "
 msgstr "Stálé zesílení: "
 
-#: frmMain.cpp:240
 msgid "Volume"
 msgstr "Hlasitost"
 
-#: Progress.cpp:32
 msgid "Wait..."
 msgstr "Čekejte..."
 
-#: frmSettings.cpp:138
 msgid "Work on temporary file"
 msgstr "Pracuje se na dočasném souboru"
 
-#: frmMain.cpp:150
 msgid "wxMP3gain Website"
 msgstr "Stránky wxMP3MP3gain"
 
-#: Progress.cpp:64 Progress.cpp:94 Progress.cpp:152
 msgid "yes"
-msgstr "Ano"
+msgstr "ano"
 
-#: Progress box
 msgid "Elapsed time : "
-msgstr "Uplynulý čas: "
+msgstr "Uplynulý čas : "
 
 msgid "Estimated time : "
-msgstr "Odhadovaný čas: "
+msgstr "Odhadovaný čas : "
 
 msgid "Remaining time : "
-msgstr "Zbývající čas: "
+msgstr "Zbývající čas : "
 
 msgid "Close"
 msgstr "Zavřít"
 
 msgid "unknown"
-msgstr "Neznámý"
+msgstr "neznámý"
 
 msgid "files"
-msgstr "Soubory"
+msgstr "soubory"
