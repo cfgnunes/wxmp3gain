@@ -7,7 +7,7 @@
 #include "GuiSettings.h"
 #include "Progress.h"
 #include "Conversion.h"
-#include "Global.h"
+#include "Constants.h"
 
 #include <wx/aboutdlg.h>
 #include <wx/filedlg.h>
@@ -18,12 +18,25 @@ GuiMain::GuiMain(wxWindow* parent)
     // Disable status bar pane used to display menu and toolbar help
     SetStatusBarPane(-1);
 
-    // Aux list for wxListctrl
-    mp_lstFilesData = new ArrayOfFiles();
+    // File list manager
+    mp_fileListManager = new FileListManager(g_lstFiles);
 
-    // Support Drag & Drop
-    mp_dndFile = new DndFile(g_lstFiles, mp_lstFilesData);
+    // List Drag & Drop
+    mp_dndFile = new DndFile(mp_fileListManager);
     g_lstFiles->SetDropTarget(mp_dndFile);
+
+    // Title List
+    g_lstFiles->InsertColumn(ID_LIST_FILE, _("File"), wxLIST_FORMAT_LEFT, 200);
+    g_lstFiles->InsertColumn(ID_LIST_FOLDER, _("Folder"), wxLIST_FORMAT_LEFT, 200);
+    g_lstFiles->InsertColumn(ID_LIST_VOLUME, _("Volume"), wxLIST_FORMAT_LEFT, 60);
+    g_lstFiles->InsertColumn(ID_LIST_CLIPPING, _("Clipping"), wxLIST_FORMAT_LEFT, 70);
+    g_lstFiles->InsertColumn(ID_LIST_GAIN_DB, _("Gain (dB)"), wxLIST_FORMAT_LEFT, 80);
+    g_lstFiles->InsertColumn(ID_LIST_GAIN_MP3, _("Gain (mp3)"), wxLIST_FORMAT_LEFT, 80);
+    g_lstFiles->InsertColumn(ID_LIST_TAG_INFO, _("Tag info"), wxLIST_FORMAT_LEFT, 70);
+
+    // Set statusbar widths
+    const int wxStatusBarWidths [3] = {-10, -5, -10};
+    g_mainStatusBar->SetStatusWidths(3, wxStatusBarWidths);
 
     // Configuration file
     mp_configBase = new ConfigBase(APP_NAME);
@@ -33,14 +46,6 @@ GuiMain::GuiMain(wxWindow* parent)
 
     // Load resource
     loadResources();
-
-    // Title List
-    g_lstFiles->InsertColumn(0, _("File"), wxLIST_FORMAT_LEFT, 350);
-    g_lstFiles->InsertColumn(1, _("Volume"), wxLIST_FORMAT_LEFT, 70);
-    g_lstFiles->InsertColumn(2, _("Clipping"), wxLIST_FORMAT_LEFT, 80);
-    g_lstFiles->InsertColumn(3, _("Gain (dB)"), wxLIST_FORMAT_LEFT, 85);
-    g_lstFiles->InsertColumn(4, _("Gain (mp3)"), wxLIST_FORMAT_LEFT, 85);
-    g_lstFiles->InsertColumn(5, _("Tag info"), wxLIST_FORMAT_LEFT, 80);
 
     // Updates the controls
     updateControls();
@@ -67,7 +72,7 @@ void GuiMain::OntxtNormalVolumeTextKillFocus(wxFocusEvent& event) {
     else if (m_dblNormalVolume > 105)
         m_dblNormalVolume = 105.0;
 
-    updateGainLabels(g_lstFiles, mp_configBase, mp_lstFilesData, m_dblNormalVolume);
+    mp_fileListManager->updateGainLabels(m_dblNormalVolume, mp_configBase);
 
     // Save the NormalVolumeDb
     mp_configBase->setNormalVolumeDb((int) (float) (m_dblNormalVolume * 10.0));
@@ -77,12 +82,13 @@ void GuiMain::OntxtNormalVolumeTextKillFocus(wxFocusEvent& event) {
 }
 
 GuiMain::~GuiMain() {
-    delete mp_lstFilesData;
+    delete mp_fileListManager;
     delete mp_configBase;
 }
 
 void GuiMain::OnlstFilesDeleteItem(wxListEvent& event) {
-    mp_lstFilesData->Detach(event.GetIndex());
+    mp_fileListManager->deleteItem(event.GetIndex());
+
     updateControls();
     event.Skip();
 }
@@ -121,7 +127,7 @@ void GuiMain::mnuAddDirectory(wxCommandEvent& event) {
     dirDialog.SetPath(mp_configBase->getLastOpenDir());
     if (dirDialog.ShowModal() == wxID_OK) {
         SetCursor(wxCURSOR_WAIT);
-        mp_dndFile->insertFileListDir(dirDialog.GetPath());
+        mp_fileListManager->insertDir(dirDialog.GetPath());
 
         // Remembers the last used directory
         mp_configBase->setLastOpenDir(dirDialog.GetPath());
@@ -141,7 +147,7 @@ void GuiMain::mnuAddFiles(wxCommandEvent& event) {
 
         // Get the file(s) the user selected
         fileDialog.GetPaths(files);
-        mp_dndFile->insertFileList(files);
+        mp_fileListManager->insertFiles(files);
 
         // Remembers the last used directory
         mp_configBase->setLastOpenDir(fileDialog.GetDirectory());
@@ -149,27 +155,24 @@ void GuiMain::mnuAddFiles(wxCommandEvent& event) {
     }
 }
 
-void GuiMain::mnuExit(wxCommandEvent & event) {
+void GuiMain::mnuExit(wxCommandEvent& event) {
     // Terminates the program
     Close();
 }
 
-void GuiMain::mnuRemoveFiles(wxCommandEvent & event) {
+void GuiMain::mnuRemoveFiles(wxCommandEvent& event) {
     int itemCount = g_lstFiles->GetSelectedItemCount();
     SetCursor(wxCURSOR_WAIT);
-    for (int i = 0; i < itemCount; i++) {
+    for (int i = 0; i < itemCount; i++)
         g_lstFiles->DeleteItem(g_lstFiles->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED));
-    }
-
     SetCursor(wxCURSOR_ARROW);
 
     updateControls();
 }
 
-void GuiMain::mnuClearList(wxCommandEvent & event) {
+void GuiMain::mnuClearList(wxCommandEvent& event) {
     // Deletes all items from the list
-    g_lstFiles->DeleteAllItems();
-    mp_lstFilesData->Clear();
+    mp_fileListManager->clear();
 
     updateControls();
 }
@@ -180,8 +183,8 @@ void GuiMain::mnuSettings(wxCommandEvent & event) {
     bool oldTagForceEnabled = mp_configBase->getTagForceEnabled();
 
     // Displays the "Settings" window
-    GuiSettings Dlg(this, mp_configBase);
-    Dlg.ShowModal();
+    GuiSettings guiSettings(this, mp_configBase);
+    guiSettings.ShowModal();
 
     // Updates the box bar after closing the window "Settings"
     if (mp_configBase->getConstantGainEnabled()) {
@@ -199,31 +202,31 @@ void GuiMain::mnuSettings(wxCommandEvent & event) {
     // Updates after closing the window "Settings"
     updateControls();
     updateTxtNormalVolumeDb();
-    updateGainLabels(g_lstFiles, mp_configBase, mp_lstFilesData, m_dblNormalVolume);
+    mp_fileListManager->updateGainLabels(m_dblNormalVolume, mp_configBase);
 }
 
 void GuiMain::mnuClearAnalysis(wxCommandEvent& event) {
-    for (int i = 0; i < g_lstFiles->GetItemCount(); i++) {
-        FileInfo& fileInfo = mp_lstFilesData->Item(i);
+    for (unsigned long int i = 0; i < mp_fileListManager->size(); i++) {
+        FileInfo& fileInfo = mp_fileListManager->getItem(i);
         fileInfo.volumeReset();
-        g_lstFiles->SetItem(i, 1, _T(""));
         g_lstFiles->SetItem(i, 2, _T(""));
         g_lstFiles->SetItem(i, 3, _T(""));
         g_lstFiles->SetItem(i, 4, _T(""));
         g_lstFiles->SetItem(i, 5, _T(""));
+        g_lstFiles->SetItem(i, 6, _T(""));
         g_lstFiles->SetItemTextColour(i, *wxBLACK);
     }
 }
 
 void GuiMain::mnuAnalyze(wxCommandEvent& event) {
     // Displays the "Progress" window
-    Progress progressDialog(0, mp_configBase, g_lstFiles, mp_lstFilesData, m_dblNormalVolume, TOOL_ANALYSIS);
+    Progress progressDialog(this, mp_configBase, mp_fileListManager, m_dblNormalVolume, TOOL_ANALYSIS);
     progressDialog.execute();
 }
 
 void GuiMain::mnuGain(wxCommandEvent& event) {
     // Displays the "Progress" window
-    Progress progressDialog(0, mp_configBase, g_lstFiles, mp_lstFilesData, m_dblNormalVolume, TOOL_GAIN);
+    Progress progressDialog(this, mp_configBase, mp_fileListManager, m_dblNormalVolume, TOOL_GAIN);
     progressDialog.execute();
 }
 
@@ -231,7 +234,7 @@ void GuiMain::mnuUndoGain(wxCommandEvent& event) {
     wxCommandEvent evt;
 
     // Displays the "Progress" window
-    Progress progressDialog(0, mp_configBase, g_lstFiles, mp_lstFilesData, m_dblNormalVolume, TOOL_UNDO);
+    Progress progressDialog(this, mp_configBase, mp_fileListManager, m_dblNormalVolume, TOOL_UNDO);
     progressDialog.execute();
 
     mnuClearAnalysis(evt);
@@ -241,7 +244,7 @@ void GuiMain::mnuDeleteTag(wxCommandEvent& event) {
     wxCommandEvent evt;
 
     // Displays the "Progress" window
-    Progress progressDialog(0, mp_configBase, g_lstFiles, mp_lstFilesData, m_dblNormalVolume, TOOL_DELETE_TAG);
+    Progress progressDialog(this, mp_configBase, mp_fileListManager, m_dblNormalVolume, TOOL_DELETE_TAG);
     progressDialog.execute();
 
     mnuClearAnalysis(evt);
@@ -255,7 +258,7 @@ void GuiMain::mnuWebsite(wxCommandEvent & event) {
     wxLaunchDefaultBrowser(APP_WEBSITE);
 }
 
-void GuiMain::mnuAbout(wxCommandEvent & event) {
+void GuiMain::mnuAbout(wxCommandEvent& event) {
     wxAboutDialogInfo aboutInfo;
     aboutInfo.SetName(APP_NAME);
     aboutInfo.SetVersion(APP_VERSION);
@@ -271,7 +274,7 @@ void GuiMain::mnuAbout(wxCommandEvent & event) {
     wxAboutBox(aboutInfo);
 }
 
-void GuiMain::OnTimer1Trigger(wxTimerEvent & event) {
+void GuiMain::OnTimer1Trigger(wxTimerEvent& event) {
     wxString newExeTool = APP_TOOL_EXECUTABLE;
     if (!m_exeTool.IsSameAs(newExeTool, false)) {
         m_exeInputString.Clear();
@@ -338,37 +341,6 @@ void GuiMain::updateTxtNormalVolumeDb() {
     g_txtNormalVolume->WriteText(wxString::Format(_T("%.1f"), m_dblNormalVolume));
 }
 
-void GuiMain::updateGainLabels(wxListCtrl* listFilesUpdate, ConfigBase* configBaseUpdate, ArrayOfFiles* lstFilesDataUpdate, const double& dblNormalVolumeUpdate) {
-    for (int i = 0; i < listFilesUpdate->GetItemCount(); i++) {
-        FileInfo& fileInfo = lstFilesDataUpdate->Item(i);
-
-        // Update GainChange
-        if (configBaseUpdate->getConstantGainEnabled()) {
-            fileInfo.setGainChange(configBaseUpdate->getConstantGainValue());
-        } else {
-            double dblGainChange = (dblNormalVolumeUpdate - fileInfo.getVolume()) / (5.0 * log10(2.0));
-            int intGainChange = Conversion::convertDoubleToIntGain(dblGainChange);
-            fileInfo.setGainChange(intGainChange);
-        }
-
-        // Correct gain if has clipping
-        if (configBaseUpdate->getAutoLowerEnabled()) {
-            int maxNoclipMp3Gain = Conversion::getMaxNoclipMp3Gain(fileInfo.getMaxPcmSample());
-            if (fileInfo.getGainChange() > maxNoclipMp3Gain)
-                fileInfo.setGainChange(maxNoclipMp3Gain);
-        }
-
-        // Update the list itens
-        if (fileInfo.isVolumeSet()) {
-            listFilesUpdate->SetItem(i, 4, wxString::Format(_T("%i"), fileInfo.getGainChange()));
-            listFilesUpdate->SetItem(i, 3, wxString::Format(_T("%.1f"), fileInfo.getGainChange() * (5.0 * log10(2.0))));
-        } else {
-            listFilesUpdate->SetItem(i, 4, _T(""));
-            listFilesUpdate->SetItem(i, 3, _T(""));
-        }
-    }
-}
-
 void GuiMain::updateControls() {
     /*
      * :KLUDGE:
@@ -380,5 +352,5 @@ void GuiMain::updateControls() {
 }
 
 void GuiMain::setFilesCmdLine(const wxArrayString& filenames) {
-    mp_dndFile->OnDropFiles(0, 0, filenames);
+    mp_fileListManager->insertFilesAndDir(filenames);
 }

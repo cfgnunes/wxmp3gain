@@ -4,7 +4,7 @@
  */
 
 #include "GuiSettings.h"
-#include "Global.h"
+#include "Constants.h"
 
 #include <wx/filedlg.h>
 #include <wx/dirdlg.h>
