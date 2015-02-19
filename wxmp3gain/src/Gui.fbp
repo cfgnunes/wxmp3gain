@@ -44,7 +44,7 @@
             <property name="minimum_size"></property>
             <property name="name">Main</property>
             <property name="pos"></property>
-            <property name="size">770,450</property>
+            <property name="size">790,450</property>
             <property name="style">wxDEFAULT_FRAME_STYLE</property>
             <property name="subclass"></property>
             <property name="title"></property>

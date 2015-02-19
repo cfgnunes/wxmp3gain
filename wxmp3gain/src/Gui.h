@@ -116,7 +116,7 @@ class Main : public wxFrame
 	
 	public:
 		
-		Main( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 770,450 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
+		Main( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 790,450 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
 		
 		~Main();
 		
