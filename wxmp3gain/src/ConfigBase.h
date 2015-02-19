@@ -10,10 +10,10 @@
 #include <wx/config.h>
 
 // Config Group Strings
-const wxString CONFIG_SYSTEM_GROUP = _T("/System/");
-const wxString CONFIG_GENERAL_GROUP = _T("/General/");
-const wxString CONFIG_TAGS_GROUP = _T("/Tags/");
-const wxString CONFIG_CTGAIN_GROUP = _T("/ConstantGain/");
+const wxString CONFIG_GROUP_SYSTEM = _T("/System/");
+const wxString CONFIG_GROUP_GENERAL = _T("/General/");
+const wxString CONFIG_GROUP_TAGS = _T("/Tags/");
+const wxString CONFIG_GROUP_CTGAIN = _T("/ConstantGain/");
 
 // Config Strings
 const wxString CONFIG_STR_AppVersion = _T("AppVersion");

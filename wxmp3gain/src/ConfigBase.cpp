@@ -110,122 +110,122 @@ wxString ConfigBase::getStringToolOptionsGain() const {
 
 wxString ConfigBase::getAppVersion() const {
     wxString value = wxEmptyString;
-    mp_config->Read(CONFIG_SYSTEM_GROUP + CONFIG_STR_AppVersion, &value);
+    mp_config->Read(CONFIG_GROUP_SYSTEM + CONFIG_STR_AppVersion, &value);
     return value;
 }
 
 wxString ConfigBase::getLastOpenDir() const {
     wxString value = wxEmptyString;
-    mp_config->Read(CONFIG_SYSTEM_GROUP + CONFIG_STR_LastOpenDir, &value);
+    mp_config->Read(CONFIG_GROUP_SYSTEM + CONFIG_STR_LastOpenDir, &value);
     return value;
 }
 
 int ConfigBase::getNormalVolumeDb() const {
     int value;
-    mp_config->Read(CONFIG_GENERAL_GROUP + CONFIG_STR_NormalVolumeDb, &value);
+    mp_config->Read(CONFIG_GROUP_GENERAL + CONFIG_STR_NormalVolumeDb, &value);
     return value;
 }
 
 bool ConfigBase::getAutoLowerEnabled() const {
     bool value;
-    mp_config->Read(CONFIG_GENERAL_GROUP + CONFIG_STR_AutoLowerEnabled, &value);
+    mp_config->Read(CONFIG_GROUP_GENERAL + CONFIG_STR_AutoLowerEnabled, &value);
     return value;
 }
 
 bool ConfigBase::getWorkOnTemporaryFile() const {
     bool value;
-    mp_config->Read(CONFIG_GENERAL_GROUP + CONFIG_STR_WorkOnTemporaryFile, &value);
+    mp_config->Read(CONFIG_GROUP_GENERAL + CONFIG_STR_WorkOnTemporaryFile, &value);
     return value;
 }
 
 bool ConfigBase::getPreserveTimeEnabled() const {
     bool value;
-    mp_config->Read(CONFIG_GENERAL_GROUP + CONFIG_STR_PreserveTimeEnabled, &value);
+    mp_config->Read(CONFIG_GROUP_GENERAL + CONFIG_STR_PreserveTimeEnabled, &value);
     return value;
 }
 
 bool ConfigBase::getForceInputEnabled() const {
     bool value;
-    mp_config->Read(CONFIG_GENERAL_GROUP + CONFIG_STR_ForceInputEnabled, &value);
+    mp_config->Read(CONFIG_GROUP_GENERAL + CONFIG_STR_ForceInputEnabled, &value);
     return value;
 }
 
 int ConfigBase::getTagOptions() const {
     int value;
-    mp_config->Read(CONFIG_TAGS_GROUP + CONFIG_STR_TagOptions, &value);
+    mp_config->Read(CONFIG_GROUP_TAGS + CONFIG_STR_TagOptions, &value);
     return value;
 }
 
 bool ConfigBase::getTagForceEnabled() const {
     bool value;
-    mp_config->Read(CONFIG_TAGS_GROUP + CONFIG_STR_TagForceEnabled, &value);
+    mp_config->Read(CONFIG_GROUP_TAGS + CONFIG_STR_TagForceEnabled, &value);
     return value;
 }
 
 bool ConfigBase::getConstantGainEnabled() const {
     bool value;
-    mp_config->Read(CONFIG_CTGAIN_GROUP + CONFIG_STR_ConstantGainEnabled, &value);
+    mp_config->Read(CONFIG_GROUP_CTGAIN + CONFIG_STR_ConstantGainEnabled, &value);
     return value;
 }
 
 int ConfigBase::getConstantGainValue() const {
     int value;
-    mp_config->Read(CONFIG_CTGAIN_GROUP + CONFIG_STR_ConstantGainValue, &value);
+    mp_config->Read(CONFIG_GROUP_CTGAIN + CONFIG_STR_ConstantGainValue, &value);
     return value;
 }
 
 int ConfigBase::getChannelGainMode() const {
     int value;
-    mp_config->Read(CONFIG_CTGAIN_GROUP + CONFIG_STR_ChannelGainMode, &value);
+    mp_config->Read(CONFIG_GROUP_CTGAIN + CONFIG_STR_ChannelGainMode, &value);
     return value;
 }
 
 // Sets...
 
 void ConfigBase::setAppVersion(wxString value) {
-    mp_config->Write(CONFIG_SYSTEM_GROUP + CONFIG_STR_AppVersion, value);
+    mp_config->Write(CONFIG_GROUP_SYSTEM + CONFIG_STR_AppVersion, value);
 }
 
 void ConfigBase::setLastOpenDir(wxString value) {
-    mp_config->Write(CONFIG_SYSTEM_GROUP + CONFIG_STR_LastOpenDir, value);
+    mp_config->Write(CONFIG_GROUP_SYSTEM + CONFIG_STR_LastOpenDir, value);
 }
 
 void ConfigBase::setNormalVolumeDb(int value) {
-    mp_config->Write(CONFIG_GENERAL_GROUP + CONFIG_STR_NormalVolumeDb, value);
+    mp_config->Write(CONFIG_GROUP_GENERAL + CONFIG_STR_NormalVolumeDb, value);
 }
 
 void ConfigBase::setAutoLowerEnabled(bool value) {
-    mp_config->Write(CONFIG_GENERAL_GROUP + CONFIG_STR_AutoLowerEnabled, value);
+    mp_config->Write(CONFIG_GROUP_GENERAL + CONFIG_STR_AutoLowerEnabled, value);
 }
 
 void ConfigBase::setWorkOnTemporaryFile(bool value) {
-    mp_config->Write(CONFIG_GENERAL_GROUP + CONFIG_STR_WorkOnTemporaryFile, value);
+    mp_config->Write(CONFIG_GROUP_GENERAL + CONFIG_STR_WorkOnTemporaryFile, value);
 }
 
 void ConfigBase::setPreserveTimeEnabled(bool value) {
-    mp_config->Write(CONFIG_GENERAL_GROUP + CONFIG_STR_PreserveTimeEnabled, value);
+    mp_config->Write(CONFIG_GROUP_GENERAL + CONFIG_STR_PreserveTimeEnabled, value);
 }
 
 void ConfigBase::setForceInputEnabled(bool value) {
-    mp_config->Write(CONFIG_GENERAL_GROUP + CONFIG_STR_ForceInputEnabled, value);
+    mp_config->Write(CONFIG_GROUP_GENERAL + CONFIG_STR_ForceInputEnabled, value);
 }
 
 void ConfigBase::setTagOptions(int value) {
-    mp_config->Write(CONFIG_TAGS_GROUP + CONFIG_STR_TagOptions, value);
+    mp_config->Write(CONFIG_GROUP_TAGS + CONFIG_STR_TagOptions, value);
 }
 
 void ConfigBase::setTagForceEnabled(bool value) {
-    mp_config->Write(CONFIG_TAGS_GROUP + CONFIG_STR_TagForceEnabled, value);
+    mp_config->Write(CONFIG_GROUP_TAGS + CONFIG_STR_TagForceEnabled, value);
 }
 
 void ConfigBase::setConstantGainEnabled(bool value) {
-    mp_config->Write(CONFIG_CTGAIN_GROUP + CONFIG_STR_ConstantGainEnabled, value);
+    mp_config->Write(CONFIG_GROUP_CTGAIN + CONFIG_STR_ConstantGainEnabled, value);
 }
 
 void ConfigBase::setConstantGainValue(int value) {
-    mp_config->Write(CONFIG_CTGAIN_GROUP + CONFIG_STR_ConstantGainValue, value);
+    mp_config->Write(CONFIG_GROUP_CTGAIN + CONFIG_STR_ConstantGainValue, value);
 }
 
 void ConfigBase::setChannelGainMode(int value) {
-    mp_config->Write(CONFIG_CTGAIN_GROUP + CONFIG_STR_ChannelGainMode, value);
+    mp_config->Write(CONFIG_GROUP_CTGAIN + CONFIG_STR_ChannelGainMode, value);
 }
