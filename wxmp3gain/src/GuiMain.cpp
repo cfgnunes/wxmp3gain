@@ -263,6 +263,11 @@ void GuiMain::mnuAbout(wxCommandEvent & event) {
     aboutInfo.SetCopyright(APP_COPYRIGHT);
     aboutInfo.SetWebSite(APP_WEBSITE);
     aboutInfo.AddDeveloper(APP_AUTHOR);
+    aboutInfo.AddTranslator(APP_AUTHOR);
+    aboutInfo.AddTranslator(_T("Carlos Sánchez <carlos1994sanchez@gmail.com>"));
+    aboutInfo.AddTranslator(_T("Jan Rimmek <jan@rimmek.de>"));
+    aboutInfo.AddTranslator(_T("Sergey Basalaev <sbasalaev@gmail.com>"));
+    aboutInfo.AddTranslator(_T("Pavel Fric <pavelfric@seznam.cz>"));
     wxAboutBox(aboutInfo);
 }
 
