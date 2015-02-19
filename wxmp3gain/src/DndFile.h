@@ -7,26 +7,18 @@
 #define DNDFILE_H
 
 #include "FileInfo.h"
-#include "Global.h"
+#include "FileListManager.h"
 
-#include <wx/tokenzr.h>
-#include <wx/dir.h>
 #include <wx/dnd.h>
-#include <wx/listctrl.h>
-#include <wx/filename.h>
 
 class DndFile : public wxFileDropTarget {
 public:
-    DndFile(wxListCtrl *owner, ArrayOfFiles *lstFilesData);
+    DndFile(FileListManager *fileListManager);
     virtual ~DndFile();
     virtual bool OnDropFiles(wxCoord x, wxCoord y, const wxArrayString& filenames);
-    void insertFileList(const wxArrayString& filenames);
-    void insertFileListDir(const wxString& dirname);
 
 private:
-    bool checkValidExtension(const wxFileName& file) const;
-    wxListCtrl *mp_owner;
-    ArrayOfFiles *mp_lstFilesData;
+    FileListManager *mp_fileListManager;
 };
 
 #endif // DNDFILE_H

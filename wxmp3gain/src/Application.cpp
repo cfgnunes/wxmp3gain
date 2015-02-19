@@ -17,10 +17,8 @@
  */
 
 #include "Application.h"
-#include "Global.h"
 #include "GuiMain.h"
-
-#include <wx/image.h>
+#include "Constants.h"
 
 IMPLEMENT_APP(Application);
 

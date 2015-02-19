@@ -9,45 +9,6 @@
 #include <wx/string.h>
 #include <wx/config.h>
 
-// Config Group Strings
-const wxString CONFIG_GROUP_SYSTEM = _T("/System/");
-const wxString CONFIG_GROUP_GENERAL = _T("/General/");
-const wxString CONFIG_GROUP_TAGS = _T("/Tags/");
-const wxString CONFIG_GROUP_CTGAIN = _T("/ConstantGain/");
-
-// Config Strings
-const wxString CONFIG_STR_AppVersion = _T("AppVersion");
-const wxString CONFIG_STR_LastOpenDir = _T("LastOpenDir");
-
-const wxString CONFIG_STR_NormalVolumeDb = _T("NormalVolumeDb");
-const wxString CONFIG_STR_AutoLowerEnabled = _T("AutoLowerEnabled");
-const wxString CONFIG_STR_WorkOnTemporaryFile = _T("WorkOnTemporaryFile");
-const wxString CONFIG_STR_PreserveTimeEnabled = _T("PreserveTimeEnabled");
-const wxString CONFIG_STR_ForceInputEnabled = _T("ForceInputEnabled");
-
-const wxString CONFIG_STR_TagOptions = _T("TagOptions");
-const wxString CONFIG_STR_TagForceEnabled = _T("TagForceEnabled");
-
-const wxString CONFIG_STR_ConstantGainEnabled = _T("ConstantGainEnabled");
-const wxString CONFIG_STR_ConstantGainValue = _T("ConstantGainValue");
-const wxString CONFIG_STR_ChannelGainMode = _T("ChannelGainMode");
-
-// Default Values
-const wxString DEFAULT_VALUE_LastOpenDir = wxFileName::GetHomeDir();
-
-const int DEFAULT_VALUE_NormalVolumeDb = 890;
-const bool DEFAULT_VALUE_AutoLowerEnabled = false;
-const bool DEFAULT_VALUE_WorkOnTemporaryFile = false;
-const bool DEFAULT_VALUE_PreserveTimeEnabled = false;
-const bool DEFAULT_VALUE_ForceInputEnabled = false;
-
-const int DEFAULT_VALUE_TagOptions = 0;
-const bool DEFAULT_VALUE_TagForceEnabled = false;
-
-const bool DEFAULT_VALUE_ConstantGainEnabled = false;
-const int DEFAULT_VALUE_ConstantGainValue = 0;
-const int DEFAULT_VALUE_ChannelGainMode = 0;
-
 class ConfigBase {
 public:
     ConfigBase(const wxString& appName = wxEmptyString);

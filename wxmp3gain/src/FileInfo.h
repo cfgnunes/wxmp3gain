@@ -6,17 +6,10 @@
 #ifndef FILEINFO_H
 #define FILEINFO_H
 
-#include <wx/object.h>
 #include <wx/string.h>
 #include <wx/filename.h>
 
-// LIST (start)
-#include <wx/dynarray.h>
-class FileInfo;
-WX_DECLARE_OBJARRAY(FileInfo, ArrayOfFiles);
-// LIST (end)
-
-class FileInfo : public wxObject {
+class FileInfo {
 public:
     FileInfo(const wxString& fileName);
     virtual ~FileInfo();

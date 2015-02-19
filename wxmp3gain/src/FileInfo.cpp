@@ -5,11 +5,6 @@
 
 #include "FileInfo.h"
 
-// LIST (start)
-#include <wx/arrimpl.cpp>
-WX_DEFINE_OBJARRAY(ArrayOfFiles);
-// LIST (end)
-
 FileInfo::FileInfo(const wxString& fileName) : m_fileName(fileName), m_volumeSet(false) {
 }
 

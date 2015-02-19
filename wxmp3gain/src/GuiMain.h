@@ -8,7 +8,7 @@
 
 #include "Gui.h"
 #include "ConfigBase.h"
-#include "FileInfo.h"
+#include "FileListManager.h"
 #include "DndFile.h"
 
 class GuiMain : public Main {
@@ -16,7 +16,6 @@ public:
     GuiMain(wxWindow* parent);
     virtual ~GuiMain();
     void setFilesCmdLine(const wxArrayString& filenames);
-    static void updateGainLabels(wxListCtrl* listFilesUpdate, ConfigBase* configBaseUpdate, ArrayOfFiles* lstFilesDataUpdate, const double& dblNormalVolumeUpdate);
 
 protected:
     void OntxtNormalVolumeTextKillFocus(wxFocusEvent& event);
@@ -47,7 +46,7 @@ private:
     void loadResources();
 
     ConfigBase *mp_configBase;
-    ArrayOfFiles *mp_lstFilesData;
+    FileListManager *mp_fileListManager;
     DndFile *mp_dndFile;
     double m_dblNormalVolume;
     wxString m_exeTool;

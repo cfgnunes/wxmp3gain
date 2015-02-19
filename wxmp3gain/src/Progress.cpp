@@ -12,22 +12,22 @@
 #include <wx/progdlg.h>
 #include <wx/msgdlg.h>
 
-Progress::Progress(wxWindow* parent, ConfigBase* configBase, wxListCtrl* listFiles, ArrayOfFiles* lstFilesData, const double& dblNormalVolume, int workType)
-: mp_parent(parent), mp_configBase(configBase), mp_listFiles(listFiles), mp_lstFilesData(lstFilesData), m_dblNormalVolume(dblNormalVolume), m_workType(workType) {
+Progress::Progress(wxWindow *parent, ConfigBase* configBase, FileListManager *fileListManager, double dblNormalVolume, int workType)
+: mp_parent(parent), mp_configBase(configBase), mp_fileListManager(fileListManager), m_dblNormalVolume(dblNormalVolume), m_workType(workType) {
 }
 
 Progress::~Progress() {
 }
 
 void Progress::execute() {
-    int maxValue = mp_listFiles->GetItemCount();
+    unsigned long int maxValue = mp_fileListManager->size();
     bool cont = true;
 
     wxProgressDialog dialog(_("Progress"), _("Wait..."), maxValue, mp_parent, wxPD_CAN_ABORT | wxPD_APP_MODAL | wxPD_ELAPSED_TIME | wxPD_ESTIMATED_TIME | wxPD_REMAINING_TIME);
-    dialog.Update(0, wxString::Format(_("Processed %i files of %i."), 0, maxValue));
-    for (int i = 0; i < maxValue; i++) {
+    dialog.Update(0, wxString::Format(_("Processed %lu files of %lu."), (unsigned long int) 0, maxValue));
+    for (unsigned long int i = 0; i < maxValue; i++) {
         processFile(i);
-        cont = dialog.Update(i + 1, wxString::Format(_("Processed %i files of %i."), i + 1, maxValue));
+        cont = dialog.Update(i + 1, wxString::Format(_("Processed %lu files of %lu."), i + 1, maxValue));
         if (!cont) {
             if (wxMessageBox(_("Do you want to stop process now?"), APP_NAME, wxYES_NO | wxICON_QUESTION) == wxYES)
                 break;
@@ -36,10 +36,10 @@ void Progress::execute() {
     }
 }
 
-void Progress::processFile(int fileIterator) {
+void Progress::processFile(unsigned long int fileIterator) {
     wxString fullCommand = APP_TOOL_EXECUTABLE + _T(" ") + mp_configBase->getStringToolOptions() + _T(" ") + mp_configBase->getStringToolOptionsTag();
     wxString runCommand;
-    FileInfo& fileInfo = mp_lstFilesData->Item(fileIterator);
+    FileInfo& fileInfo = mp_fileListManager->getItem(fileIterator);
     wxFileName filenameInput = fileInfo.getFileName();
 
     if (m_workType == TOOL_GAIN || m_workType == TOOL_ANALYSIS) {
@@ -49,13 +49,13 @@ void Progress::processFile(int fileIterator) {
             wxExecute(runCommand, m_inputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
             processOutputString(fileIterator);
             if (fileInfo.isVolumeSet())
-                mp_listFiles->SetItem(fileIterator, 5, _("yes"));
+                mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_TAG_INFO, _("yes"));
         }
         if (!fileInfo.isVolumeSet()) {
             runCommand = APP_TOOL_EXECUTABLE + _T(" -s s \"") + filenameInput.GetFullPath() + _T("\"");
             wxExecute(runCommand, m_inputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
             processOutputString(fileIterator);
-            mp_listFiles->SetItem(fileIterator, 5, _T(""));
+            mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_TAG_INFO, _T(""));
         }
     }
 
@@ -76,12 +76,13 @@ void Progress::processFile(int fileIterator) {
         switch (mp_configBase->getTagOptions()) {
             case 0:
             case 1:
-                mp_listFiles->SetItem(fileIterator, 5, _("yes"));
+                mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_TAG_INFO, _("yes"));
                 break;
             case 2:
-                mp_listFiles->SetItem(fileIterator, 5, _T(""));
+                mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_TAG_INFO, _T(""));
                 break;
         }
+
         // Updates the list
         processOutputString(fileIterator);
     }
@@ -97,8 +98,8 @@ void Progress::processFile(int fileIterator) {
     }
 }
 
-void Progress::processOutputString(int fileIterator) {
-    FileInfo& fileInfo = mp_lstFilesData->Item(fileIterator);
+void Progress::processOutputString(unsigned long int fileIterator) {
+    FileInfo& fileInfo = mp_fileListManager->getItem(fileIterator);
     wxString tempString;
 
     if (!m_inputString.IsEmpty()) {
@@ -115,7 +116,8 @@ void Progress::processOutputString(int fileIterator) {
                 volume = DEFAULT_VALUE_NormalVolumeDb / 10 - dbGainValue;
 
                 fileInfo.setVolume(volume);
-                mp_listFiles->SetItem(fileIterator, 1, wxString::Format(_T("%.1f"), volume));
+
+                mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_VOLUME, wxString::Format(_T("%.1f"), volume));
             }// Clipping means that some value in some frame of the song is greater than +/- 32767
             else if (tempString.Lower().Contains(_T("max pcm"))) {
                 double dblMaxPcmSample;
@@ -125,13 +127,13 @@ void Progress::processOutputString(int fileIterator) {
                 fileInfo.setMaxPcmSample(dblMaxPcmSample);
 
                 if (dblMaxPcmSample > 32767) {
-                    mp_listFiles->SetItem(fileIterator, 2, _("yes"));
-                    mp_listFiles->SetItemTextColour(fileIterator, *wxRED);
+                    mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_CLIPPING, _("yes"));
+                    mp_fileListManager->getOwner().SetItemTextColour(fileIterator, *wxRED);
                 } else {
-                    mp_listFiles->SetItem(fileIterator, 2, _T(""));
-                    mp_listFiles->SetItemTextColour(fileIterator, *wxBLACK);
+                    mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_CLIPPING, _T(""));
+                    mp_fileListManager->getOwner().SetItemTextColour(fileIterator, *wxBLACK);
                 }
-                GuiMain::updateGainLabels(mp_listFiles, mp_configBase, mp_lstFilesData, m_dblNormalVolume);
+                mp_fileListManager->updateGainLabels(m_dblNormalVolume, mp_configBase);
             }
         }
 

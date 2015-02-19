@@ -4,7 +4,7 @@
  */
 
 #include "ConfigBase.h"
-#include "Global.h"
+#include "Constants.h"
 
 ConfigBase::ConfigBase(const wxString& appName) {
     mp_config = new wxConfig(appName);
