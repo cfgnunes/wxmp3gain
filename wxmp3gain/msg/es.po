@@ -3,202 +3,274 @@
 # Carlos Sánchez <carlos1994sanchez@gmail.com>, 2013.
 msgid ""
 msgstr ""
-"Project-Id-Version: wxMP3val\n"
+"Project-Id-Version: wxMP3gain\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-26 19:09-0300\n"
-"PO-Revision-Date: 2013-04-29 06:30+0100\n"
-"Last-Translator: Carlos Sánchez <carlos1994sanchez@gmail.com>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2015-02-19 21:08-0300\n"
+"Last-Translator: Cristiano Nunes <cfgnunes@gmail.com>\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 
+#: Gui.cpp:99
 msgid "&Analysis"
 msgstr "A&nálisis"
 
+#: Gui.cpp:86
 msgid "&Edit"
 msgstr "&Editar"
 
+#: Gui.cpp:69
 msgid "&File"
 msgstr "&Archivo"
 
+#: Gui.cpp:116
 msgid "&Gain"
 msgstr "&Ganancia"
 
+#: Gui.cpp:133
 msgid "&Help"
 msgstr "A&yuda"
 
+#: Gui.cpp:27
 msgid "(Default 89.0 dB)"
 msgstr "(Por defecto 89.0 dB)"
 
+#: Gui.cpp:130 Gui.cpp:157
 msgid "About"
 msgstr "Acerca de..."
 
+#: Gui.cpp:60 Gui.cpp:141 Gui.cpp:167
 msgid "Add files"
 msgstr "Añadir archivo(s)"
 
+#: Gui.cpp:56 Gui.cpp:139 Gui.cpp:163
 msgid "Add folder"
 msgstr "Añadir carpeta"
 
+#: Gui.cpp:90 Gui.cpp:149
 msgid "Analyze"
 msgstr "Analizar"
 
+#: Gui.cpp:277
 msgid "Automatically lower gain to not clip audio"
 msgstr "Bajar ganancia automática para no cortar audio"
 
+#: Gui.cpp:398
 msgid "Cancel"
 msgstr "Cancelar"
 
+#: Gui.cpp:367
 msgid "Channel"
 msgstr "Canal"
 
+#: Gui.cpp:96
 msgid "Clear analysis"
 msgstr "Limpiar análisis"
 
+#: Gui.cpp:77 Gui.cpp:145 Gui.cpp:175
 msgid "Clear list"
 msgstr "Limpiar lista"
 
+#: GuiMain.cpp:32
 msgid "Clipping"
 msgstr "Recorte"
 
+#: Gui.cpp:341 Gui.cpp:385
 msgid "Constant gain"
 msgstr "Ganancia constante"
 
+#: Gui.cpp:349
 msgid "Constant gain:"
 msgstr "Ganancia constante:"
 
+#: Gui.cpp:113
 msgid "Delete stored tag info"
 msgstr "Eliminar información de etiqueta almacenada"
 
+#: Progress.cpp:32
 msgid "Do you want to stop process now?"
 msgstr "¿Quiere detener el proceso ahora?"
 
+#: Gui.cpp:66
 msgid "Exit"
 msgstr "Salir"
 
+#: GuiMain.cpp:29
 msgid "File"
 msgstr "Archivo"
 
+#: Gui.cpp:284
 msgid "File options"
 msgstr "Opciones de archivo"
 
+#: GuiMain.cpp:30
+msgid "Folder"
+msgstr "Carpeta"
+
+#: Gui.cpp:325
 msgid "Force re-calculation (do not read tag info)"
 msgstr "Forzar recalculación (no leer información de la etiqueta)"
 
+#: Gui.cpp:292
 msgid "Force to assume input is an MPEG 2 Layer III file"
 msgstr "Forzar a asumir entrada que es un archivo de MPEG 2 Layer III"
 
+#: GuiMain.cpp:265
 msgid "Free front-end for the MP3gain"
 msgstr "Front-end libre para MP3Gain"
 
+#: Gui.cpp:103 Gui.cpp:151
 msgid "Gain"
 msgstr "Ganancia"
 
+#: GuiMain.cpp:33
 msgid "Gain (dB)"
 msgstr "Ganancia (dB)"
 
+#: GuiMain.cpp:34
 msgid "Gain (mp3)"
 msgstr "Ganancia (mp3)"
 
+#: Gui.cpp:369
 msgid "Gain on both channels"
 msgstr "Ganancia en ambos canales"
 
+#: Gui.cpp:372
 msgid "Gain on left channel only (not for Joint Stereo mp3s)"
 msgstr "Ganancia en canal izquierdo (no para mp3s Estéreo Mixto)"
 
+#: Gui.cpp:375
 msgid "Gain on right channel only (not for Joint Stereo mp3s)"
 msgstr "Ganancia en canal derecho (no para mp3s Estéreo Mixto)"
 
+#: Gui.cpp:275
 msgid "Gain options"
 msgstr "Opciones de ganacia"
 
+#: Gui.cpp:302
 msgid "General"
 msgstr "General"
 
+#: Gui.cpp:289
 msgid "Keep file timestamps"
 msgstr "Mantener marcas de tiempo"
 
+#: Gui.cpp:120
 msgid "MP3gain Website"
 msgstr "Sitio web de MP3Gain"
 
+#: GuiMain.cpp:290
 msgid "MP3gain not found!"
 msgstr "MP3Gain no encontrado!"
 
+#: Gui.cpp:20
 msgid "Normal volume (dB):"
 msgstr "Volumen normal (dB):"
 
+#: Gui.cpp:395
 msgid "OK"
 msgstr "Aceptar"
 
-msgid "Processed %i files of %i."
-msgstr "Procesado %i archivo(s) de %i."
+#: Progress.cpp:27 Progress.cpp:30
+#, c-format
+msgid "Processed %lu files of %lu."
+msgstr "Procesado %lu archivo(s) de %lu."
 
+#: Progress.cpp:26
 msgid "Progress"
 msgstr "Progreso"
 
+#: Gui.cpp:73 Gui.cpp:143 Gui.cpp:171
 msgid "Remove files"
 msgstr "Quitar archivo(s)"
 
+#: Gui.cpp:392
 msgid "Restore defaults"
 msgstr "Restaurar"
 
+#: GuiMain.cpp:124
 msgid "Select directory"
 msgstr "Seleccionar directorio"
 
+#: GuiMain.cpp:140
 msgid "Select file"
 msgstr "Seleccionar archivo(s)"
 
+#: Gui.cpp:83 Gui.cpp:155 Gui.h:171
 msgid "Settings"
 msgstr "Configuración"
 
+#: Gui.cpp:316
 msgid "Skip stored tag info (do not read or write tags)"
 msgstr "Saltar info de etiqueta almacenada (no leer ni escribir etiquetas)"
 
+#: GuiMain.cpp:35
 msgid "Tag info"
 msgstr "Información de etiqueta"
 
+#: Gui.cpp:335
 msgid "Tags"
 msgstr "Etiquetas"
 
+#: Gui.cpp:308
 msgid "Tags options"
 msgstr "Opciones de etiquetas"
 
+#: Gui.cpp:323
 msgid "Tags reading"
 msgstr "Lectura de etiquetas"
 
+#: Gui.cpp:109
 msgid "Undo gain changes (based on stored tag info)\tCtrl+Z"
 msgstr ""
 "Deshacer cambios de ganancia (base información de etiqueta almacenada)\tCtrl"
 "+Z"
 
+#: Gui.cpp:310
 msgid "Use APEv2 tag for gain information (default)"
 msgstr "Usar etiqueta APEv2 para información de ganancia (por defecto)"
 
+#: Gui.cpp:313
 msgid "Use ID3v2 tag for gain information"
 msgstr "Usar etiqueta ID3v2 para información de ganancia"
 
+#: Gui.cpp:343
 msgid "Use constant gain without doing any analysis"
 msgstr "Usar ganancia constante sin hacer ningún análisis"
 
+#: GuiMain.cpp:288
 msgid "Using MP3gain version: "
 msgstr "Usando MP3gain versión: "
 
+#: Gui.cpp:36
 msgid "Using constant gain: "
 msgstr "Usando ganancia constante: "
 
+#: GuiMain.cpp:31
 msgid "Volume"
 msgstr "Volumen"
 
+#: Progress.cpp:26
 msgid "Wait..."
 msgstr "Espere..."
 
+#: Gui.cpp:286
 msgid "Work on temporary file"
 msgstr "Trabajar en archivo temporal"
 
+#: GuiMain.cpp:294
+msgid "files"
+msgstr "archivos"
+
+#: Gui.cpp:124
 msgid "wxMP3gain Website"
 msgstr "Sitio web de wxMP3gain"
 
+#: Progress.cpp:52 Progress.cpp:79 Progress.cpp:130
 msgid "yes"
 msgstr "sí"
 
@@ -216,6 +288,3 @@ msgstr "Cerrar"
 
 msgid "unknown"
 msgstr "desconocido"
-
-msgid "files"
-msgstr "archivos"
