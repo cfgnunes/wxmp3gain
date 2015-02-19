@@ -16,6 +16,7 @@ const wxString CONFIG_TAGS_GROUP = _T("/Tags/");
 const wxString CONFIG_CTGAIN_GROUP = _T("/ConstantGain/");
 
 // Config Strings
+const wxString CONFIG_STR_AppVersion = _T("AppVersion");
 const wxString CONFIG_STR_LastOpenDir = _T("LastOpenDir");
 
 const wxString CONFIG_STR_NormalVolumeDb = _T("NormalVolumeDb");
@@ -32,7 +33,7 @@ const wxString CONFIG_STR_ConstantGainValue = _T("ConstantGainValue");
 const wxString CONFIG_STR_ChannelGainMode = _T("ChannelGainMode");
 
 // Default Values
-const wxString DEFAULT_VALUE_LastOpenDir = wxEmptyString;
+const wxString DEFAULT_VALUE_LastOpenDir = wxFileName::GetHomeDir();
 
 const int DEFAULT_VALUE_NormalVolumeDb = 890;
 const bool DEFAULT_VALUE_AutoLowerEnabled = false;
@@ -59,6 +60,7 @@ public:
     wxString getStringToolOptionsGain() const;
 
     // Gets...
+    wxString getAppVersion() const;
     wxString getLastOpenDir() const;
     int getNormalVolumeDb() const;
     bool getAutoLowerEnabled() const;
@@ -72,6 +74,7 @@ public:
     int getChannelGainMode() const;
 
     // Sets...
+    void setAppVersion(wxString value);
     void setLastOpenDir(wxString value);
     void setNormalVolumeDb(int value);
     void setAutoLowerEnabled(bool value);
