@@ -19,6 +19,7 @@
 #include <wx/settings.h>
 #include <wx/textctrl.h>
 #include <wx/sizer.h>
+#include <wx/panel.h>
 #include <wx/listctrl.h>
 #include <wx/bitmap.h>
 #include <wx/image.h>
@@ -30,7 +31,6 @@
 #include <wx/frame.h>
 #include <wx/checkbox.h>
 #include <wx/statbox.h>
-#include <wx/panel.h>
 #include <wx/radiobut.h>
 #include <wx/slider.h>
 #include <wx/notebook.h>
@@ -63,6 +63,7 @@ class Main : public wxFrame
 	
 	protected:
 		wxBoxSizer* g_boxMain;
+		wxPanel* m_panel4;
 		wxBoxSizer* g_boxNormalVolume;
 		wxStaticText* m_staticText9;
 		wxTextCtrl* g_txtNormalVolume;

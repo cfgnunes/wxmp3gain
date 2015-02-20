@@ -15,34 +15,44 @@ Main::Main( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoin
 	
 	g_boxMain = new wxBoxSizer( wxVERTICAL );
 	
+	m_panel4 = new wxPanel( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
+	wxBoxSizer* bSizer13;
+	bSizer13 = new wxBoxSizer( wxVERTICAL );
+	
 	g_boxNormalVolume = new wxBoxSizer( wxHORIZONTAL );
 	
-	m_staticText9 = new wxStaticText( this, wxID_ANY, _("Normal volume (dB):"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText9 = new wxStaticText( m_panel4, wxID_ANY, _("Normal volume (dB):"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText9->Wrap( -1 );
 	g_boxNormalVolume->Add( m_staticText9, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 	
-	g_txtNormalVolume = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	g_txtNormalVolume = new wxTextCtrl( m_panel4, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
 	g_boxNormalVolume->Add( g_txtNormalVolume, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 	
-	m_staticText10 = new wxStaticText( this, wxID_ANY, _("(Default 89.0 dB)"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText10 = new wxStaticText( m_panel4, wxID_ANY, _("(Default 89.0 dB)"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText10->Wrap( -1 );
 	g_boxNormalVolume->Add( m_staticText10, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 	
 	
-	g_boxMain->Add( g_boxNormalVolume, 0, wxEXPAND, 5 );
+	bSizer13->Add( g_boxNormalVolume, 0, wxEXPAND, 5 );
 	
 	g_boxConstantGain = new wxBoxSizer( wxHORIZONTAL );
 	
-	m_staticText11 = new wxStaticText( this, wxID_ANY, _("Using constant gain: "), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText11 = new wxStaticText( m_panel4, wxID_ANY, _("Using constant gain: "), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText11->Wrap( -1 );
 	g_boxConstantGain->Add( m_staticText11, 0, wxALL, 5 );
 	
-	g_lblConstantGain = new wxStaticText( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	g_lblConstantGain = new wxStaticText( m_panel4, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
 	g_lblConstantGain->Wrap( -1 );
 	g_boxConstantGain->Add( g_lblConstantGain, 1, wxALL, 5 );
 	
 	
-	g_boxMain->Add( g_boxConstantGain, 0, wxEXPAND, 5 );
+	bSizer13->Add( g_boxConstantGain, 0, wxEXPAND, 5 );
+	
+	
+	m_panel4->SetSizer( bSizer13 );
+	m_panel4->Layout();
+	bSizer13->Fit( m_panel4 );
+	g_boxMain->Add( m_panel4, 0, wxEXPAND, 5 );
 	
 	g_lstFiles = new wxListCtrl( this, wxID_ANY, wxDefaultPosition, wxSize( -1,-1 ), wxLC_REPORT );
 	g_boxMain->Add( g_lstFiles, 1, wxALL|wxEXPAND, 0 );
