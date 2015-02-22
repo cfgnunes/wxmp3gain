@@ -56,9 +56,13 @@ Main::Main( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoin
 	
 	g_gugProgress = new wxGauge( m_panel4, wxID_ANY, 100, wxDefaultPosition, wxDefaultSize, wxGA_HORIZONTAL );
 	g_gugProgress->SetValue( 0 ); 
+	g_gugProgress->Enable( false );
+	
 	bSizer11->Add( g_gugProgress, 1, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 	
 	g_btnStop = new wxButton( m_panel4, wxID_ANY, _("&Stop"), wxDefaultPosition, wxDefaultSize, 0 );
+	g_btnStop->Enable( false );
+	
 	bSizer11->Add( g_btnStop, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 	
 	
