@@ -70,6 +70,12 @@ int const ID_LIST_GAIN_MP3 = 4;
 int const ID_LIST_CLIPPING = 5;
 int const ID_LIST_TAG_INFO = 6;
 
+// ID for work type
+int const TOOL_ANALYSIS = 0;
+int const TOOL_GAIN = 1;
+int const TOOL_UNDO = 2;
+int const TOOL_DELETE_TAG = 3;
+
 inline wxString GetResourceDir() {
 #ifdef __LINUX__
     wxString resourceDir = _T("/usr/share/wxmp3gain/resource/");

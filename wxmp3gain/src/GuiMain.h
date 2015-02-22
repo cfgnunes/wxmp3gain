@@ -24,6 +24,7 @@ protected:
     void OnlstFilesItemSelect(wxListEvent& event);
     void OnlstFilesItemRClick(wxListEvent& event);
     void OnlstFilesKeyDown(wxListEvent& event);
+    void btnProcessStop(wxCommandEvent& event);
     void mnuAddDirectory(wxCommandEvent& event);
     void mnuAddFiles(wxCommandEvent& event);
     void mnuExit(wxCommandEvent& event);
@@ -44,6 +45,9 @@ private:
     void updateTxtNormalVolumeDb();
     void updateControls();
     void loadResources();
+    void processExecute();
+    void processFile(unsigned long int fileIterator);
+    void processOutputString(unsigned long int fileIterator);
 
     ConfigBase *mp_configBase;
     FileListManager *mp_fileListManager;
@@ -52,6 +56,8 @@ private:
     wxString m_exeTool;
     wxArrayString m_exeInputString;
     wxArrayString m_exeInputErrorString;
+    int m_processType;
+    bool m_processRunning;
 };
 
 #endif // GUIMAIN_H
