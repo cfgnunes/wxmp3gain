@@ -309,7 +309,9 @@ void GuiMain::OnTimer1Trigger(wxTimerEvent& event) {
     // Constant gain box
     g_lblConstantGain->SetLabel(wxString::Format(_T("%+i"), mp_configBase->getConstantGainValue()) + _T(" (") + wxString::Format(_T("%+.1f"), mp_configBase->getConstantGainValue() * VALUE_5LOG2) + _T(" dB)"));
 
-    g_mainMenuBar->Enable(!m_processRunning);
+    for (size_t i = 0; i < g_mainMenuBar->GetMenuCount(); i++)
+        g_mainMenuBar->EnableTop(i, !m_processRunning);
+
     g_mainToolBar->Enable(!m_processRunning);
     g_txtNormalVolume->Enable(!m_processRunning);
 
