@@ -296,12 +296,6 @@ void GuiMain::mnuAbout(wxCommandEvent& event) {
     aboutInfo.SetDescription(_("Free front-end for the MP3gain"));
     aboutInfo.SetCopyright(APP_COPYRIGHT);
     aboutInfo.SetWebSite(APP_WEBSITE);
-    aboutInfo.AddDeveloper(APP_AUTHOR);
-    aboutInfo.AddTranslator(APP_AUTHOR);
-    aboutInfo.AddTranslator(_T("Carlos Sánchez <carlos1994sanchez@gmail.com>"));
-    aboutInfo.AddTranslator(_T("Jan Rimmek <jan@rimmek.de>"));
-    aboutInfo.AddTranslator(_T("Sergey Basalaev <sbasalaev@gmail.com>"));
-    aboutInfo.AddTranslator(_T("Pavel Fric <pavelfric@seznam.cz>"));
     wxAboutBox(aboutInfo);
 }
 
@@ -325,7 +319,7 @@ void GuiMain::OnTimer1Trigger(wxTimerEvent& event) {
     g_mainStatusBar->SetStatusText(wxString::Format(_T("%i "), g_lstFiles->GetItemCount()) + _("files"), 1);
 
     // Constant gain box
-    g_lblConstantGain->SetLabel(wxString::Format(_T("%+i"), mp_configBase->getConstantGainValue()) + _T(" (") + wxString::Format(_T("%+.1f"), mp_configBase->getConstantGainValue() * (5.0 * log10(2.0))) + _T(" dB)"));
+    g_lblConstantGain->SetLabel(wxString::Format(_T("%+i"), mp_configBase->getConstantGainValue()) + _T(" (") + wxString::Format(_T("%+.1f"), mp_configBase->getConstantGainValue() * VALUE_5LOG2) + _T(" dB)"));
 
     g_txtNormalVolume->Enable(!m_processRunning);
 

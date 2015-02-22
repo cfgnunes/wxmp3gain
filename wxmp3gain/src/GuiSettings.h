@@ -26,7 +26,6 @@ private:
     void updateValueControls();
     void defaultValueControls();
     void saveValuesConfig();
-    void setLabelsControls();
 
     ConfigBase *mp_configBase;
 };

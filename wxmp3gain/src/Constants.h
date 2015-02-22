@@ -22,6 +22,25 @@ const wxString APP_TOOL_EXECUTABLE = _T("mp3gain");
 const wxString APP_WILDCARD_EXT = _T("MP3 files (*.mp3)|*.mp3;*.MP3");
 const wxString APP_OPEN_EXT = _T("mp3");
 
+enum ProcessTypeValues {
+    TOOL_ANALYSIS,
+    TOOL_GAIN,
+    TOOL_UNDO,
+    TOOL_DELETE_TAG
+};
+
+enum TagOptionsValues {
+    TAG_APE,
+    TAG_ID3,
+    TAG_SKIP
+};
+
+enum ChannelGainModeValues {
+    CHANNEL_BOTH,
+    CHANNEL_LEFT,
+    CHANNEL_RIGHT
+};
+
 // Config Group Strings
 const wxString CONFIG_GROUP_SYSTEM = _T("/System/");
 const wxString CONFIG_GROUP_GENERAL = _T("/General/");
@@ -54,12 +73,12 @@ const bool DEFAULT_VALUE_WorkOnTemporaryFile = false;
 const bool DEFAULT_VALUE_PreserveTimeEnabled = false;
 const bool DEFAULT_VALUE_ForceInputEnabled = false;
 
-const int DEFAULT_VALUE_TagOptions = 0;
+const int DEFAULT_VALUE_TagOptions = TAG_APE;
 const bool DEFAULT_VALUE_TagForceEnabled = false;
 
 const bool DEFAULT_VALUE_ConstantGainEnabled = false;
 const int DEFAULT_VALUE_ConstantGainValue = 0;
-const int DEFAULT_VALUE_ChannelGainMode = 0;
+const int DEFAULT_VALUE_ChannelGainMode = CHANNEL_BOTH;
 
 // ID for title in wxListCtrl
 int const ID_LIST_FILE = 0;
@@ -70,11 +89,7 @@ int const ID_LIST_GAIN_MP3 = 4;
 int const ID_LIST_CLIPPING = 5;
 int const ID_LIST_TAG_INFO = 6;
 
-// ID for work type
-int const TOOL_ANALYSIS = 0;
-int const TOOL_GAIN = 1;
-int const TOOL_UNDO = 2;
-int const TOOL_DELETE_TAG = 3;
+double const VALUE_5LOG2 = 1.505149978; // 5.0 * log10(2.0)
 
 inline wxString GetResourceDir() {
 #ifdef __LINUX__
