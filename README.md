@@ -24,7 +24,6 @@ $ sudo apt-get -y install wxmp3gain
 ### Tools used for development
 Source code written completely in C++ using:
 - GCC - The GNU Compiler Collection
-- CodeBlocks - Open-Source IDE
 - wxWidgets - Open-Source GUI framework
 - wxFormBuilder - wxWidgets GUI-builder
 
