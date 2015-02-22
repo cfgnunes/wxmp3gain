@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: wxMP3gain\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-26 19:09-0300\n"
-"PO-Revision-Date: 2015-02-19 21:10-0300\n"
+"PO-Revision-Date: 2015-02-22 00:18-0300\n"
 "Last-Translator: Cristiano Nunes <cfgnunes@gmail.com>\n"
 "Language-Team: \n"
 "Language: pt-BR\n"
@@ -15,63 +15,67 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: Gui.cpp:99
+#: Gui.cpp:122
 msgid "&Analysis"
 msgstr "&Análise"
 
-#: Gui.cpp:86
+#: Gui.cpp:109
 msgid "&Edit"
 msgstr "&Editar"
 
-#: Gui.cpp:69
+#: Gui.cpp:92
 msgid "&File"
 msgstr "&Arquivo"
 
-#: Gui.cpp:116
+#: Gui.cpp:139
 msgid "&Gain"
 msgstr "&Ganho"
 
-#: Gui.cpp:133
+#: Gui.cpp:156
 msgid "&Help"
 msgstr "&Ajuda"
 
-#: Gui.cpp:27
+#: Gui.cpp:61
+msgid "&Stop"
+msgstr "&Parar"
+
+#: Gui.cpp:31
 msgid "(Default 89.0 dB)"
 msgstr "(Padrão 89,0 dB)"
 
-#: Gui.cpp:130 Gui.cpp:157
+#: Gui.cpp:153 Gui.cpp:180
 msgid "About"
 msgstr "Sobre"
 
-#: Gui.cpp:60 Gui.cpp:141 Gui.cpp:167
+#: Gui.cpp:83 Gui.cpp:164 Gui.cpp:190
 msgid "Add files"
 msgstr "Adicionar arquivos"
 
-#: Gui.cpp:56 Gui.cpp:139 Gui.cpp:163
+#: Gui.cpp:79 Gui.cpp:162 Gui.cpp:186
 msgid "Add folder"
 msgstr "Adicionar pasta"
 
-#: Gui.cpp:90 Gui.cpp:149
+#: Gui.cpp:113 Gui.cpp:172
 msgid "Analyze"
 msgstr "Analisar"
 
-#: Gui.cpp:277
+#: Gui.cpp:302
 msgid "Automatically lower gain to not clip audio"
 msgstr "Diminuir o ganho automaticamente para evitar o clip no audio"
 
-#: Gui.cpp:398
+#: Gui.cpp:423
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: Gui.cpp:367
+#: Gui.cpp:392
 msgid "Channel"
 msgstr "Canal"
 
-#: Gui.cpp:96
+#: Gui.cpp:119
 msgid "Clear analysis"
 msgstr "Limpar análise"
 
-#: Gui.cpp:77 Gui.cpp:145 Gui.cpp:175
+#: Gui.cpp:100 Gui.cpp:168 Gui.cpp:198
 msgid "Clear list"
 msgstr "Limpar lista"
 
@@ -79,23 +83,23 @@ msgstr "Limpar lista"
 msgid "Clipping"
 msgstr "Clipping"
 
-#: Gui.cpp:341 Gui.cpp:385
+#: Gui.cpp:366 Gui.cpp:410
 msgid "Constant gain"
 msgstr "Ganho constante"
 
-#: Gui.cpp:349
+#: Gui.cpp:374
 msgid "Constant gain:"
 msgstr "Ganho constante:"
 
-#: Gui.cpp:113
+#: Gui.cpp:136
 msgid "Delete stored tag info"
 msgstr "Apagar tag de informação armazenada"
 
-#: Progress.cpp:32
+#: GuiMain.cpp:418
 msgid "Do you want to stop process now?"
 msgstr "Deseja parar o processo agora?"
 
-#: Gui.cpp:66
+#: Gui.cpp:89
 msgid "Exit"
 msgstr "Sair"
 
@@ -103,7 +107,7 @@ msgstr "Sair"
 msgid "File"
 msgstr "Arquivo"
 
-#: Gui.cpp:284
+#: Gui.cpp:309
 msgid "File options"
 msgstr "Opções de arquivo"
 
@@ -111,19 +115,19 @@ msgstr "Opções de arquivo"
 msgid "Folder"
 msgstr "Pasta"
 
-#: Gui.cpp:325
+#: Gui.cpp:350
 msgid "Force re-calculation (do not read tag info)"
 msgstr "Forçar o recálculo (não ler tag de informação)"
 
-#: Gui.cpp:292
+#: Gui.cpp:317
 msgid "Force to assume input is an MPEG 2 Layer III file"
 msgstr "Força para assumir que a entrada é um arquivo MPEG 2 Layer III"
 
-#: GuiMain.cpp:265
+#: GuiMain.cpp:296
 msgid "Free front-end for the MP3gain"
 msgstr "Livre front-end para o MP3gain"
 
-#: Gui.cpp:103 Gui.cpp:151
+#: Gui.cpp:126 Gui.cpp:174
 msgid "Gain"
 msgstr "Ganho"
 
@@ -135,76 +139,72 @@ msgstr "Ganho (dB)"
 msgid "Gain (mp3)"
 msgstr "Ganho (mp3)"
 
-#: Gui.cpp:369
+#: Gui.cpp:394
 msgid "Gain on both channels"
 msgstr "Ganho em ambos os canais"
 
-#: Gui.cpp:372
+#: Gui.cpp:397
 msgid "Gain on left channel only (not for Joint Stereo mp3s)"
 msgstr "Ganho apenas no canal esquerdo (não em mp3s Joint Stereo)"
 
-#: Gui.cpp:375
+#: Gui.cpp:400
 msgid "Gain on right channel only (not for Joint Stereo mp3s)"
 msgstr "Ganho apenas no canal direito (não em mp3s Joint Stereo)"
 
-#: Gui.cpp:275
+#: Gui.cpp:300
 msgid "Gain options"
 msgstr "Opções de ganho"
 
-#: Gui.cpp:302
+#: Gui.cpp:327
 msgid "General"
 msgstr "Geral"
 
-#: Gui.cpp:289
+#: Gui.cpp:314
 msgid "Keep file timestamps"
 msgstr "Manter data de modificação dos arquivos"
 
-#: Gui.cpp:120
+#: Gui.cpp:143
 msgid "MP3gain Website"
 msgstr "Site do MP3gain"
 
-#: GuiMain.cpp:290
+#: GuiMain.cpp:321
 msgid "MP3gain not found!"
 msgstr "MP3gain não encontrado!"
 
-#: Gui.cpp:20
+#: Gui.cpp:24
 msgid "Normal volume (dB):"
 msgstr "Volume normal (dB):"
 
-#: Gui.cpp:395
+#: Gui.cpp:420
 msgid "OK"
 msgstr "OK"
 
-#: Progress.cpp:27 Progress.cpp:30
+#: GuiMain.cpp:424 GuiMain.cpp:489
 #, c-format
 msgid "Processed %lu files of %lu."
 msgstr "Processado %lu arquivos de %lu."
 
-#: Progress.cpp:26
-msgid "Progress"
-msgstr "Progresso"
-
-#: Gui.cpp:73 Gui.cpp:143 Gui.cpp:171
+#: Gui.cpp:96 Gui.cpp:166 Gui.cpp:194
 msgid "Remove files"
 msgstr "Remover arquivos"
 
-#: Gui.cpp:392
+#: Gui.cpp:417
 msgid "Restore defaults"
 msgstr "Restaurar padrões"
 
-#: GuiMain.cpp:124
+#: GuiMain.cpp:143
 msgid "Select directory"
 msgstr "Selecionar diretório"
 
-#: GuiMain.cpp:140
+#: GuiMain.cpp:159
 msgid "Select file"
 msgstr "Selecionar arquivo"
 
-#: Gui.cpp:83 Gui.cpp:155 Gui.h:171
+#: Gui.cpp:106 Gui.cpp:178 Gui.h:176
 msgid "Settings"
 msgstr "Configurações"
 
-#: Gui.cpp:316
+#: Gui.cpp:341
 msgid "Skip stored tag info (do not read or write tags)"
 msgstr "Pular informações de tag armazenadas (não ler ou gravar tags)"
 
@@ -212,41 +212,41 @@ msgstr "Pular informações de tag armazenadas (não ler ou gravar tags)"
 msgid "Tag info"
 msgstr "Info tag"
 
-#: Gui.cpp:335
+#: Gui.cpp:360
 msgid "Tags"
 msgstr "Tags"
 
-#: Gui.cpp:308
+#: Gui.cpp:333
 msgid "Tags options"
 msgstr "Opções de tags"
 
-#: Gui.cpp:323
+#: Gui.cpp:348
 msgid "Tags reading"
 msgstr "Leitura de Tags"
 
-#: Gui.cpp:109
+#: Gui.cpp:132
 msgid "Undo gain changes (based on stored tag info)\tCtrl+Z"
 msgstr ""
 "Desfazer alterações de ganho (com base na tag de informação armazenada)\tCtrl"
 "+Z"
 
-#: Gui.cpp:310
+#: Gui.cpp:335
 msgid "Use APEv2 tag for gain information (default)"
 msgstr "Usar tag APEv2 para informações de ganho (padrão)"
 
-#: Gui.cpp:313
+#: Gui.cpp:338
 msgid "Use ID3v2 tag for gain information"
 msgstr "Usar tag ID3v2 para informações de ganho"
 
-#: Gui.cpp:343
+#: Gui.cpp:368
 msgid "Use constant gain without doing any analysis"
 msgstr "Usar o ganho constante sem fazer qualquer análise"
 
-#: GuiMain.cpp:288
+#: GuiMain.cpp:319
 msgid "Using MP3gain version: "
 msgstr "Usando a versão do MP3gain: "
 
-#: Gui.cpp:36
+#: Gui.cpp:40
 msgid "Using constant gain: "
 msgstr "Usando o ganho constante: "
 
@@ -254,37 +254,39 @@ msgstr "Usando o ganho constante: "
 msgid "Volume"
 msgstr "Volume"
 
-#: Progress.cpp:26
-msgid "Wait..."
-msgstr "Aguarde..."
-
-#: Gui.cpp:286
+#: Gui.cpp:311
 msgid "Work on temporary file"
 msgstr "Trabalhar em arquivo temporário"
 
-#: GuiMain.cpp:294
+#: GuiMain.cpp:325
 msgid "files"
 msgstr "arquivos"
 
-#: Gui.cpp:124
+#: Gui.cpp:147
 msgid "wxMP3gain Website"
 msgstr "Site do wxMP3gain"
 
-#: Progress.cpp:52 Progress.cpp:79 Progress.cpp:130
+#: GuiMain.cpp:441 GuiMain.cpp:468 GuiMain.cpp:521
 msgid "yes"
 msgstr "sim"
 
-msgid "Elapsed time : "
-msgstr "Tempo decorrido : "
+#~ msgid "Progress"
+#~ msgstr "Progresso"
 
-msgid "Estimated time : "
-msgstr "Tempo estimado : "
+#~ msgid "Wait..."
+#~ msgstr "Aguarde..."
 
-msgid "Remaining time : "
-msgstr "Tempo restante : "
+#~ msgid "Elapsed time : "
+#~ msgstr "Tempo decorrido : "
 
-msgid "Close"
-msgstr "Fechar"
+#~ msgid "Estimated time : "
+#~ msgstr "Tempo estimado : "
 
-msgid "unknown"
-msgstr "desconhecido"
+#~ msgid "Remaining time : "
+#~ msgstr "Tempo restante : "
+
+#~ msgid "Close"
+#~ msgstr "Fechar"
+
+#~ msgid "unknown"
+#~ msgstr "desconhecido"
