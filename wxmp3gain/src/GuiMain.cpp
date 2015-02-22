@@ -87,56 +87,49 @@ GuiMain::~GuiMain() {
 }
 
 void GuiMain::OnlstFilesDeleteItem(wxListEvent& event) {
-    if (m_processRunning)
-        return;
-
-    mp_fileListManager->deleteItem(event.GetIndex());
-
-    updateControls();
+    if (!m_processRunning) {
+        mp_fileListManager->deleteItem(event.GetIndex());
+        updateControls();
+    }
     event.Skip();
 }
 
 void GuiMain::OnlstFilesInsertItem(wxListEvent& event) {
-    if (m_processRunning)
-        return;
-
-    updateControls();
+    if (!m_processRunning) {
+        updateControls();
+    }
     event.Skip();
 }
 
 void GuiMain::OnlstFilesItemSelect(wxListEvent& event) {
-    if (m_processRunning)
-        return;
-
-    updateControls();
+    if (!m_processRunning) {
+        updateControls();
+    }
     event.Skip();
 }
 
 void GuiMain::OnlstFilesItemRClick(wxListEvent& event) {
-    if (m_processRunning)
-        return;
-
-    updateControls();
-
-    // Displays the popup menu when you click a list item
-    g_lstFiles->PopupMenu(g_mainMenu);
+    if (!m_processRunning) {
+        updateControls();
+        // Displays the popup menu when you click a list item
+        g_lstFiles->PopupMenu(g_mainMenu);
+    }
     event.Skip();
 }
 
 void GuiMain::OnlstFilesKeyDown(wxListEvent& event) {
-    if (m_processRunning)
-        return;
-
-    // Remove files with Delete key
-    int keyCode = event.GetKeyCode();
-    if (keyCode == WXK_DELETE)
-        mnuRemoveFiles(event);
-
+    if (!m_processRunning) {
+        // Remove files with Delete key
+        int keyCode = event.GetKeyCode();
+        if (keyCode == WXK_DELETE)
+            mnuRemoveFiles(event);
+    }
     event.Skip();
 }
 
 void GuiMain::btnProcessStop(wxCommandEvent& event) {
     m_processRunning = false;
+    g_btnStop->Enable(false);
 }
 
 void GuiMain::mnuAddDirectory(wxCommandEvent& event) {
@@ -197,7 +190,6 @@ void GuiMain::mnuClearList(wxCommandEvent& event) {
 }
 
 void GuiMain::mnuSettings(wxCommandEvent & event) {
-    wxCommandEvent evt;
     int oldTagOptions = mp_configBase->getTagOptions();
     bool oldTagForceEnabled = mp_configBase->getTagForceEnabled();
 
@@ -216,7 +208,7 @@ void GuiMain::mnuSettings(wxCommandEvent & event) {
     g_boxMain->Layout();
 
     if (oldTagOptions != mp_configBase->getTagOptions() || oldTagForceEnabled != mp_configBase->getTagForceEnabled())
-        mnuClearAnalysis(evt);
+        mnuClearAnalysis(event);
 
     // Updates after closing the window "Settings"
     updateControls();
@@ -256,8 +248,6 @@ void GuiMain::mnuGain(wxCommandEvent& event) {
 }
 
 void GuiMain::mnuUndoGain(wxCommandEvent& event) {
-    wxCommandEvent evt;
-
     m_processType = TOOL_UNDO;
     m_processRunning = true;
     updateControls();
@@ -265,12 +255,10 @@ void GuiMain::mnuUndoGain(wxCommandEvent& event) {
     m_processRunning = false;
     updateControls();
 
-    mnuClearAnalysis(evt);
+    mnuClearAnalysis(event);
 }
 
 void GuiMain::mnuDeleteTag(wxCommandEvent& event) {
-    wxCommandEvent evt;
-
     m_processType = TOOL_DELETE_TAG;
     m_processRunning = true;
     updateControls();
@@ -278,7 +266,7 @@ void GuiMain::mnuDeleteTag(wxCommandEvent& event) {
     m_processRunning = false;
     updateControls();
 
-    mnuClearAnalysis(evt);
+    mnuClearAnalysis(event);
 }
 
 void GuiMain::mnuToolWebsite(wxCommandEvent & event) {
@@ -321,15 +309,9 @@ void GuiMain::OnTimer1Trigger(wxTimerEvent& event) {
     // Constant gain box
     g_lblConstantGain->SetLabel(wxString::Format(_T("%+i"), mp_configBase->getConstantGainValue()) + _T(" (") + wxString::Format(_T("%+.1f"), mp_configBase->getConstantGainValue() * VALUE_5LOG2) + _T(" dB)"));
 
+    g_mainMenuBar->Enable(!m_processRunning);
+    g_mainToolBar->Enable(!m_processRunning);
     g_txtNormalVolume->Enable(!m_processRunning);
-
-    g_mainMenu->Enable(ID_ADD_FOLDER, !m_processRunning);
-    g_mainMenuBar->Enable(ID_ADD_FOLDER, !m_processRunning);
-    g_mainToolBar->EnableTool(ID_ADD_FOLDER, !m_processRunning);
-
-    g_mainMenu->Enable(ID_ADD_FILES, !m_processRunning);
-    g_mainMenuBar->Enable(ID_ADD_FILES, !m_processRunning);
-    g_mainToolBar->EnableTool(ID_ADD_FILES, !m_processRunning);
 
     g_mainMenu->Enable(ID_REMOVE_FILES, g_lstFiles->GetSelectedItemCount() > 0 && !m_processRunning);
     g_mainMenuBar->Enable(ID_REMOVE_FILES, g_lstFiles->GetSelectedItemCount() > 0 && !m_processRunning);
@@ -338,9 +320,6 @@ void GuiMain::OnTimer1Trigger(wxTimerEvent& event) {
     g_mainMenu->Enable(ID_CLEAR_LIST, g_lstFiles->GetItemCount() > 0 && !m_processRunning);
     g_mainMenuBar->Enable(ID_CLEAR_LIST, g_lstFiles->GetItemCount() > 0 && !m_processRunning);
     g_mainToolBar->EnableTool(ID_CLEAR_LIST, g_lstFiles->GetItemCount() > 0 && !m_processRunning);
-
-    g_mainMenuBar->Enable(ID_SETTINGS, !m_processRunning);
-    g_mainToolBar->EnableTool(ID_SETTINGS, !m_processRunning);
 
     g_mainMenuBar->Enable(ID_ANALYZE, g_lstFiles->GetItemCount() > 0 && !m_processRunning);
     g_mainToolBar->EnableTool(ID_ANALYZE, g_lstFiles->GetItemCount() > 0 && !m_processRunning);
@@ -352,11 +331,7 @@ void GuiMain::OnTimer1Trigger(wxTimerEvent& event) {
     g_mainMenuBar->Enable(ID_UNDO_GAIN, g_lstFiles->GetItemCount() > 0 && mp_configBase->getTagOptions() != 2 && !m_processRunning);
     g_mainMenuBar->Enable(ID_DELETE_TAG, g_lstFiles->GetItemCount() > 0 && mp_configBase->getTagOptions() != 2 && !m_processRunning);
 
-    g_mainMenuBar->Enable(ID_ABOUT, !m_processRunning);
-    g_mainToolBar->EnableTool(ID_ABOUT, !m_processRunning);
-
     g_btnStop->Enable(m_processRunning);
-    g_gugProgress->Enable(m_processRunning);
 }
 
 void GuiMain::loadResources() {
@@ -408,11 +383,12 @@ void GuiMain::processExecute() {
         g_gugProgress->SetValue((int) i + 1);
 
         if (!m_processRunning) {
-            m_processRunning = true;
             if (wxMessageBox(_("Do you want to stop process now?"), APP_NAME, wxYES_NO | wxICON_QUESTION) == wxYES) {
                 i++;
                 break;
             }
+            m_processRunning = true;
+            g_btnStop->Enable(true);
         }
     }
     wxMessageBox(wxString::Format(_("Processed %lu files of %lu."), i, maxValue), APP_NAME, wxOK | wxICON_INFORMATION);
