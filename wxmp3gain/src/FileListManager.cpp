@@ -108,11 +108,14 @@ void FileListManager::updateGainLabels(const double& dblNormalVolumeUpdate, Conf
     for (unsigned long int i = 0; i < mp_lstFilesData->size(); i++) {
         FileInfo& fileInfo = getItem(i);
 
+        if (!fileInfo.isVolumeSet())
+            continue;
+
         // Update GainChange
         if (configBase->getConstantGainEnabled()) {
             fileInfo.setGainChange(configBase->getConstantGainValue());
         } else {
-            double dblGainChange = (dblNormalVolumeUpdate - fileInfo.getVolume()) / (5.0 * log10(2.0));
+            double dblGainChange = (dblNormalVolumeUpdate - fileInfo.getVolume()) / VALUE_5LOG2;
             int intGainChange = Conversion::convertDoubleToIntGain(dblGainChange);
             fileInfo.setGainChange(intGainChange);
         }
@@ -125,12 +128,8 @@ void FileListManager::updateGainLabels(const double& dblNormalVolumeUpdate, Conf
         }
 
         // Update the list itens
-        if (fileInfo.isVolumeSet()) {
-            mp_owner->SetItem(i, ID_LIST_GAIN_MP3, wxString::Format(_T("%i"), fileInfo.getGainChange()));
-            mp_owner->SetItem(i, ID_LIST_GAIN_DB, wxString::Format(_T("%.1f"), fileInfo.getGainChange() * (5.0 * log10(2.0))));
-        } else {
-            mp_owner->SetItem(i, ID_LIST_GAIN_MP3, _T(""));
-            mp_owner->SetItem(i, ID_LIST_GAIN_DB, _T(""));
-        }
+        mp_owner->SetItem(i, ID_LIST_GAIN_MP3, wxString::Format(_T("%i"), fileInfo.getGainChange()));
+        mp_owner->SetItem(i, ID_LIST_GAIN_DB, wxString::Format(_T("%.1f"), fileInfo.getGainChange() * VALUE_5LOG2));
+
     }
 }

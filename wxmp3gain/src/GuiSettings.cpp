@@ -11,9 +11,6 @@
 
 GuiSettings::GuiSettings(wxWindow* parent, ConfigBase* configBase)
 : Settings(parent), mp_configBase(configBase) {
-    // Set labels of controls
-    setLabelsControls();
-
     // Updates the values controls according to the configuration file
     updateValueControls();
 
@@ -30,7 +27,7 @@ void GuiSettings::updateDisabledControlsEvent(wxCommandEvent& event) {
 
 void GuiSettings::OnsldConstantGainCmdSliderUpdated(wxScrollEvent& event) {
     int intGain = g_sldConstantGain->GetValue();
-    g_lblConstantGain->SetLabel(wxString::Format(_T("%+i"), intGain) + _T(" (") + wxString::Format(_T("%+.1f"), intGain * (5.0 * log10(2.0))) + _T(" dB)"));
+    g_lblConstantGain->SetLabel(wxString::Format(_T("%+i"), intGain) + _T(" (") + wxString::Format(_T("%+.1f"), intGain * VALUE_5LOG2) + _T(" dB)"));
 }
 
 void GuiSettings::OnbtnDefaultClick(wxCommandEvent& event) {
@@ -57,18 +54,18 @@ void GuiSettings::updateValueControls() {
     g_chkForceInput->SetValue(mp_configBase->getForceInputEnabled());
 
     // Tags options
-    g_optTagAPE->SetValue(mp_configBase->getTagOptions() == 0);
-    g_optTagID3->SetValue(mp_configBase->getTagOptions() == 1);
-    g_optTagSKIP->SetValue(mp_configBase->getTagOptions() == 2);
+    g_optTagAPE->SetValue(mp_configBase->getTagOptions() == TAG_APE);
+    g_optTagID3->SetValue(mp_configBase->getTagOptions() == TAG_ID3);
+    g_optTagSKIP->SetValue(mp_configBase->getTagOptions() == TAG_SKIP);
     g_chkTagFORCE->SetValue(mp_configBase->getTagForceEnabled());
 
     // Constant gain
     g_chkConstantGain->SetValue(mp_configBase->getConstantGainEnabled());
     g_sldConstantGain->SetValue(mp_configBase->getConstantGainValue());
     OnsldConstantGainCmdSliderUpdated(evt);
-    g_optBothChannel->SetValue(mp_configBase->getChannelGainMode() == 0);
-    g_optLeftChannel->SetValue(mp_configBase->getChannelGainMode() == 1);
-    g_optRightChannel->SetValue(mp_configBase->getChannelGainMode() == 2);
+    g_optBothChannel->SetValue(mp_configBase->getChannelGainMode() == CHANNEL_BOTH);
+    g_optLeftChannel->SetValue(mp_configBase->getChannelGainMode() == CHANNEL_LEFT);
+    g_optRightChannel->SetValue(mp_configBase->getChannelGainMode() == CHANNEL_RIGHT);
 }
 
 void GuiSettings::updateDisabledControls() {
@@ -91,11 +88,11 @@ void GuiSettings::saveValuesConfig() {
 
     // Tags options
     if (g_optTagAPE->GetValue())
-        mp_configBase->setTagOptions(0);
+        mp_configBase->setTagOptions(TAG_APE);
     else if (g_optTagID3->GetValue())
-        mp_configBase->setTagOptions(1);
+        mp_configBase->setTagOptions(TAG_ID3);
     else if (g_optTagSKIP->GetValue())
-        mp_configBase->setTagOptions(2);
+        mp_configBase->setTagOptions(TAG_SKIP);
 
     mp_configBase->setTagForceEnabled(g_chkTagFORCE->GetValue());
 
@@ -103,11 +100,11 @@ void GuiSettings::saveValuesConfig() {
     mp_configBase->setConstantGainEnabled(g_chkConstantGain->GetValue());
     mp_configBase->setConstantGainValue(g_sldConstantGain->GetValue());
     if (g_optBothChannel->GetValue())
-        mp_configBase->setChannelGainMode(0);
+        mp_configBase->setChannelGainMode(CHANNEL_BOTH);
     else if (g_optLeftChannel->GetValue())
-        mp_configBase->setChannelGainMode(1);
+        mp_configBase->setChannelGainMode(CHANNEL_LEFT);
     else if (g_optRightChannel->GetValue())
-        mp_configBase->setChannelGainMode(2);
+        mp_configBase->setChannelGainMode(CHANNEL_RIGHT);
 
     mp_configBase->setConfigFlush();
 }
@@ -137,7 +134,4 @@ void GuiSettings::defaultValueControls() {
     g_optBothChannel->SetValue(true);
     g_optLeftChannel->SetValue(false);
     g_optRightChannel->SetValue(false);
-}
-
-void GuiSettings::setLabelsControls() {
 }

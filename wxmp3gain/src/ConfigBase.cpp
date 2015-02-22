@@ -66,13 +66,13 @@ wxString ConfigBase::getStringToolOptionsTag() const {
 
     // TagsOptions
     switch (getTagOptions()) {
-        case 0:
+        case TAG_APE:
             toolOptions.append(_T("-s a "));
             break;
-        case 1:
+        case TAG_ID3:
             toolOptions.append(_T("-s i "));
             break;
-        case 2:
+        case TAG_SKIP:
             toolOptions.append(_T("-s s "));
             break;
     }
@@ -90,13 +90,13 @@ wxString ConfigBase::getStringToolOptionsGain() const {
     // Constant Gain
     if (getConstantGainEnabled()) {
         switch (getChannelGainMode()) {
-            case 0:
+            case CHANNEL_BOTH:
                 toolOptions.append(_T("-g ") + wxString::Format(_T("%i "), getConstantGainValue()));
                 break;
-            case 1:
+            case CHANNEL_LEFT:
                 toolOptions.append(_T("-l 0 ") + wxString::Format(_T("%i "), getConstantGainValue()));
                 break;
-            case 2:
+            case CHANNEL_RIGHT:
                 toolOptions.append(_T("-l 1 ") + wxString::Format(_T("%i "), getConstantGainValue()));
                 break;
         }
