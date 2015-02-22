@@ -37,7 +37,7 @@ msgstr "A&yuda"
 
 #: Gui.cpp:61
 msgid "&Stop"
-msgstr "&Parar"
+msgstr "&Detener"
 
 #: Gui.cpp:31
 msgid "(Default 89.0 dB)"
