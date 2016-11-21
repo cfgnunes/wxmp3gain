@@ -72,6 +72,7 @@ wxString ConfigBase::getStringToolOptionsTag() const {
         case TAG_ID3:
             toolOptions.append(_T("-s i "));
             break;
+        default:
         case TAG_SKIP:
             toolOptions.append(_T("-s s "));
             break;
@@ -90,6 +91,7 @@ wxString ConfigBase::getStringToolOptionsGain() const {
     // Constant Gain
     if (getConstantGainEnabled()) {
         switch (getChannelGainMode()) {
+            default:
             case CHANNEL_BOTH:
                 toolOptions.append(_T("-g ") + wxString::Format(_T("%i "), getConstantGainValue()));
                 break;
