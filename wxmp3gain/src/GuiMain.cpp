@@ -88,7 +88,7 @@ GuiMain::~GuiMain() {
 
 void GuiMain::OnlstFilesDeleteItem(wxListEvent &event) {
     if (!m_processRunning) {
-        mp_fileListManager->deleteItem(event.GetIndex());
+        mp_fileListManager->deleteItem((unsigned long) event.GetIndex());
         updateControls();
     }
     event.Skip();
@@ -362,7 +362,7 @@ void GuiMain::loadResources() {
 }
 
 void GuiMain::updateTxtNormalVolumeDb() {
-    m_dblNormalVolume = (double) (mp_configBase->getNormalVolumeDb() / 10.0);
+    m_dblNormalVolume = mp_configBase->getNormalVolumeDb() / 10.0;
     g_txtNormalVolume->Clear();
     g_txtNormalVolume->WriteText(wxString::Format(_T("%.1f"), m_dblNormalVolume));
 }
