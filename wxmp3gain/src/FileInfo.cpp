@@ -5,7 +5,7 @@
 
 #include "FileInfo.h"
 
-FileInfo::FileInfo(const wxString& fileName) : m_fileName(fileName), m_volumeSet(false) {
+FileInfo::FileInfo(const wxString &fileName) : m_fileName(fileName), m_volumeSet(false) {
 }
 
 FileInfo::~FileInfo() {
@@ -13,16 +13,16 @@ FileInfo::~FileInfo() {
 
 // Sets..
 
-void FileInfo::setVolume(const double& value) {
+void FileInfo::setVolume(const double &value) {
     m_volume = value;
     m_volumeSet = true;
 }
 
-void FileInfo::setMaxPcmSample(const double& value) {
+void FileInfo::setMaxPcmSample(const double &value) {
     m_maxPcmSample = value;
 }
 
-void FileInfo::setGainChange(const int& value) {
+void FileInfo::setGainChange(const int &value) {
     m_gainChange = value;
 }
 

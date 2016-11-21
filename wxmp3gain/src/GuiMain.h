@@ -13,40 +13,68 @@
 
 class GuiMain : public Main {
 public:
-    GuiMain(wxWindow* parent);
+    GuiMain(wxWindow *parent);
+
     virtual ~GuiMain();
-    void setFilesCmdLine(const wxArrayString& filenames);
+
+    void setFilesCmdLine(const wxArrayString &filenames);
 
 protected:
-    void OntxtNormalVolumeTextKillFocus(wxFocusEvent& event);
-    void OnlstFilesDeleteItem(wxListEvent& event);
-    void OnlstFilesInsertItem(wxListEvent& event);
-    void OnlstFilesItemSelect(wxListEvent& event);
-    void OnlstFilesItemRClick(wxListEvent& event);
-    void OnlstFilesKeyDown(wxListEvent& event);
-    void btnProcessStop(wxCommandEvent& event);
-    void mnuAddDirectory(wxCommandEvent& event);
-    void mnuAddFiles(wxCommandEvent& event);
-    void mnuExit(wxCommandEvent& event);
-    void mnuRemoveFiles(wxCommandEvent& event);
-    void mnuClearList(wxCommandEvent& event);
-    void mnuSettings(wxCommandEvent& event);
-    void mnuClearAnalysis(wxCommandEvent& event);
-    void mnuGain(wxCommandEvent& event);
-    void mnuUndoGain(wxCommandEvent& event);
-    void mnuDeleteTag(wxCommandEvent& event);
-    void mnuToolWebsite(wxCommandEvent& event);
-    void mnuWebsite(wxCommandEvent& event);
-    void mnuAbout(wxCommandEvent& event);
-    void mnuAnalyze(wxCommandEvent& event);
-    void OnTimer1Trigger(wxTimerEvent& event);
+    void OntxtNormalVolumeTextKillFocus(wxFocusEvent &event);
+
+    void OnlstFilesDeleteItem(wxListEvent &event);
+
+    void OnlstFilesInsertItem(wxListEvent &event);
+
+    void OnlstFilesItemSelect(wxListEvent &event);
+
+    void OnlstFilesItemRClick(wxListEvent &event);
+
+    void OnlstFilesKeyDown(wxListEvent &event);
+
+    void btnProcessStop(wxCommandEvent &event);
+
+    void mnuAddDirectory(wxCommandEvent &event);
+
+    void mnuAddFiles(wxCommandEvent &event);
+
+    void mnuExit(wxCommandEvent &event);
+
+    void mnuRemoveFiles(wxCommandEvent &event);
+
+    void mnuClearList(wxCommandEvent &event);
+
+    void mnuSettings(wxCommandEvent &event);
+
+    void mnuClearAnalysis(wxCommandEvent &event);
+
+    void mnuGain(wxCommandEvent &event);
+
+    void mnuUndoGain(wxCommandEvent &event);
+
+    void mnuDeleteTag(wxCommandEvent &event);
+
+    void mnuToolWebsite(wxCommandEvent &event);
+
+    void mnuWebsite(wxCommandEvent &event);
+
+    void mnuAbout(wxCommandEvent &event);
+
+    void mnuAnalyze(wxCommandEvent &event);
+
+    void OnTimer1Trigger(wxTimerEvent &event);
 
 private:
     void updateTxtNormalVolumeDb();
+
     void updateControls();
+
     void loadResources();
+
     void processExecute();
+
     void processFile(unsigned long int fileIterator);
+
     void processOutputString(unsigned long int fileIterator);
 
     ConfigBase *mp_configBase;

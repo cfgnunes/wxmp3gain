@@ -6,11 +6,8 @@
 #include "GuiSettings.h"
 #include "Constants.h"
 
-#include <wx/filedlg.h>
-#include <wx/dirdlg.h>
-
-GuiSettings::GuiSettings(wxWindow* parent, ConfigBase* configBase)
-: Settings(parent), mp_configBase(configBase) {
+GuiSettings::GuiSettings(wxWindow *parent, ConfigBase *configBase)
+        : Settings(parent), mp_configBase(configBase) {
     // Updates the values controls according to the configuration file
     updateValueControls();
 
@@ -21,26 +18,28 @@ GuiSettings::GuiSettings(wxWindow* parent, ConfigBase* configBase)
 GuiSettings::~GuiSettings() {
 }
 
-void GuiSettings::updateDisabledControlsEvent(wxCommandEvent& event) {
+void GuiSettings::updateDisabledControlsEvent(wxCommandEvent &event) {
     updateDisabledControls();
 }
 
-void GuiSettings::OnsldConstantGainCmdSliderUpdated(wxScrollEvent& event) {
+void GuiSettings::OnsldConstantGainCmdSliderUpdated(wxScrollEvent &event) {
     int intGain = g_sldConstantGain->GetValue();
-    g_lblConstantGain->SetLabel(wxString::Format(_T("%+i"), intGain) + _T(" (") + wxString::Format(_T("%+.1f"), intGain * VALUE_5LOG2) + _T(" dB)"));
+    g_lblConstantGain->SetLabel(
+            wxString::Format(_T("%+i"), intGain) + _T(" (") + wxString::Format(_T("%+.1f"), intGain * VALUE_5LOG2) +
+            _T(" dB)"));
 }
 
-void GuiSettings::OnbtnDefaultClick(wxCommandEvent& event) {
+void GuiSettings::OnbtnDefaultClick(wxCommandEvent &event) {
     defaultValueControls();
     updateDisabledControls();
 }
 
-void GuiSettings::OnbtnOKClick(wxCommandEvent& event) {
+void GuiSettings::OnbtnOKClick(wxCommandEvent &event) {
     saveValuesConfig();
     Close();
 }
 
-void GuiSettings::OnbtnCancelClick(wxCommandEvent& event) {
+void GuiSettings::OnbtnCancelClick(wxCommandEvent &event) {
     Close();
 }
 

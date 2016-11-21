@@ -5,9 +5,7 @@
 
 #include "FileListManager.h"
 #include "Constants.h"
-#include "ConfigBase.h"
 #include "Conversion.h"
-#include "Constants.h"
 
 #include <wx/tokenzr.h>
 #include <wx/dir.h>
@@ -20,7 +18,7 @@ FileListManager::~FileListManager() {
     delete mp_lstFilesData;
 }
 
-void FileListManager::insertFilesAndDir(const wxArrayString& filenames) {
+void FileListManager::insertFilesAndDir(const wxArrayString &filenames) {
     wxArrayString files;
 
     // Check if is a directory or a file
@@ -34,7 +32,7 @@ void FileListManager::insertFilesAndDir(const wxArrayString& filenames) {
     insertFiles(files);
 }
 
-void FileListManager::insertFiles(const wxArrayString& filenames) {
+void FileListManager::insertFiles(const wxArrayString &filenames) {
     unsigned long int nFiles = filenames.GetCount();
 
     // Add files in wxListCtrl
@@ -46,7 +44,8 @@ void FileListManager::insertFiles(const wxArrayString& filenames) {
             bool repeated = false;
 
             unsigned long int i = 0;
-            for (std::list<FileInfo>::iterator fileInfo = mp_lstFilesData->begin(); fileInfo != mp_lstFilesData->end(); fileInfo++, i++) {
+            for (std::list<FileInfo>::iterator fileInfo = mp_lstFilesData->begin();
+                 fileInfo != mp_lstFilesData->end(); fileInfo++, i++) {
                 wxFileName filenameInput = (*fileInfo).getFileName();
                 if (filenameInput.GetFullPath() == filenames[n]) {
                     repeated = true;
@@ -61,14 +60,14 @@ void FileListManager::insertFiles(const wxArrayString& filenames) {
     }
 }
 
-void FileListManager::insertDir(const wxString& dirname) {
+void FileListManager::insertDir(const wxString &dirname) {
     wxArrayString files;
     wxDir::GetAllFiles(dirname, &files);
 
     insertFiles(files);
 }
 
-bool FileListManager::checkValidExtension(const wxFileName& file) const {
+bool FileListManager::checkValidExtension(const wxFileName &file) const {
     wxStringTokenizer strToken(APP_OPEN_EXT, _T(";"));
     while (strToken.HasMoreTokens()) {
         wxString token = strToken.GetNextToken();
@@ -94,19 +93,19 @@ long unsigned int FileListManager::size() {
     return mp_lstFilesData->size();
 }
 
-FileInfo& FileListManager::getItem(unsigned long int index) {
+FileInfo &FileListManager::getItem(unsigned long int index) {
     std::list<FileInfo>::iterator fileInfo = mp_lstFilesData->begin();
     std::advance(fileInfo, index);
     return *fileInfo;
 }
 
-wxListCtrl& FileListManager::getOwner() {
+wxListCtrl &FileListManager::getOwner() {
     return *mp_owner;
 }
 
-void FileListManager::updateGainLabels(const double& dblNormalVolumeUpdate, ConfigBase *configBase) {
+void FileListManager::updateGainLabels(const double &dblNormalVolumeUpdate, ConfigBase *configBase) {
     for (unsigned long int i = 0; i < mp_lstFilesData->size(); i++) {
-        FileInfo& fileInfo = getItem(i);
+        FileInfo &fileInfo = getItem(i);
 
         if (!fileInfo.isVolumeSet())
             continue;

@@ -12,19 +12,27 @@
 class GuiSettings : public Settings {
 public:
     GuiSettings(wxWindow *parent, ConfigBase *configBase);
+
     virtual ~GuiSettings();
 
 protected:
-    void updateDisabledControlsEvent(wxCommandEvent& event);
-    void OnsldConstantGainCmdSliderUpdated(wxScrollEvent& event);
-    void OnbtnDefaultClick(wxCommandEvent& event);
-    void OnbtnOKClick(wxCommandEvent& event);
-    void OnbtnCancelClick(wxCommandEvent& event);
+    void updateDisabledControlsEvent(wxCommandEvent &event);
+
+    void OnsldConstantGainCmdSliderUpdated(wxScrollEvent &event);
+
+    void OnbtnDefaultClick(wxCommandEvent &event);
+
+    void OnbtnOKClick(wxCommandEvent &event);
+
+    void OnbtnCancelClick(wxCommandEvent &event);
 
 private:
     void updateDisabledControls();
+
     void updateValueControls();
+
     void defaultValueControls();
+
     void saveValuesConfig();
 
     ConfigBase *mp_configBase;

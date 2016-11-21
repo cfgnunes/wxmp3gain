@@ -14,8 +14,10 @@
 class DndFile : public wxFileDropTarget {
 public:
     DndFile(FileListManager *fileListManager);
+
     virtual ~DndFile();
-    virtual bool OnDropFiles(wxCoord x, wxCoord y, const wxArrayString& filenames);
+
+    virtual bool OnDropFiles(wxCoord x, wxCoord y, const wxArrayString &filenames);
 
 private:
     FileListManager *mp_fileListManager;
