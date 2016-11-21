@@ -11,20 +11,28 @@
 
 class FileInfo {
 public:
-    FileInfo(const wxString& fileName);
+    FileInfo(const wxString &fileName);
+
     virtual ~FileInfo();
 
     // Gets...
     wxFileName getFileName() const;
+
     double getVolume() const;
+
     double getMaxPcmSample() const;
+
     bool isVolumeSet() const;
+
     int getGainChange() const;
 
     // Sets...
-    void setVolume(const double& value);
-    void setMaxPcmSample(const double& value);
-    void setGainChange(const int& value);
+    void setVolume(const double &value);
+
+    void setMaxPcmSample(const double &value);
+
+    void setGainChange(const int &value);
+
     void volumeReset();
 
 private:

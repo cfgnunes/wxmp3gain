@@ -7,7 +7,7 @@
 
 #include <cmath>
 
-void Conversion::convertDotComma(wxString& str) {
+void Conversion::convertDotComma(wxString &str) {
     // Convert between DOT/COMMA if necessary [workaround to use .ToDouble]
     if (wxString::Format(_T("%.1f"), 1.1)[1] == ',')
         str.Replace(_T("."), _T(","));
@@ -15,7 +15,7 @@ void Conversion::convertDotComma(wxString& str) {
         str.Replace(_T(","), _T("."));
 }
 
-int Conversion::convertDoubleToIntGain(const double& dblGainChange) {
+int Conversion::convertDoubleToIntGain(const double &dblGainChange) {
     int intGainChange;
 
     // From mp3gain code...
@@ -28,7 +28,7 @@ int Conversion::convertDoubleToIntGain(const double& dblGainChange) {
     return intGainChange;
 }
 
-int Conversion::getMaxNoclipMp3Gain(const double& mvarCurrMaxAmp) {
+int Conversion::getMaxNoclipMp3Gain(const double &mvarCurrMaxAmp) {
     int MaxNoclipMp3Gain;
     double dblAdjust;
 

@@ -13,8 +13,8 @@
 #include <wx/filedlg.h>
 #include <wx/dirdlg.h>
 
-GuiMain::GuiMain(wxWindow* parent)
-: Main(parent), m_processRunning(false) {
+GuiMain::GuiMain(wxWindow *parent)
+        : Main(parent), m_processRunning(false) {
     // Disable status bar pane used to display menu and toolbar help
     SetStatusBarPane(-1);
 
@@ -35,7 +35,7 @@ GuiMain::GuiMain(wxWindow* parent)
     g_lstFiles->InsertColumn(ID_LIST_TAG_INFO, _("Tag info"), wxLIST_FORMAT_LEFT, 70);
 
     // Set statusbar widths
-    const int wxStatusBarWidths [3] = {-10, -10, -5};
+    const int wxStatusBarWidths[3] = {-10, -10, -5};
     g_mainStatusBar->SetStatusWidths(3, wxStatusBarWidths);
 
     // Configuration file
@@ -62,7 +62,7 @@ GuiMain::GuiMain(wxWindow* parent)
     g_boxMain->Layout();
 }
 
-void GuiMain::OntxtNormalVolumeTextKillFocus(wxFocusEvent& event) {
+void GuiMain::OntxtNormalVolumeTextKillFocus(wxFocusEvent &event) {
     wxString strNormalVolume = g_txtNormalVolume->GetLineText(0);
     Conversion::convertDotComma(strNormalVolume);
     strNormalVolume.ToDouble(&m_dblNormalVolume);
@@ -86,7 +86,7 @@ GuiMain::~GuiMain() {
     delete mp_configBase;
 }
 
-void GuiMain::OnlstFilesDeleteItem(wxListEvent& event) {
+void GuiMain::OnlstFilesDeleteItem(wxListEvent &event) {
     if (!m_processRunning) {
         mp_fileListManager->deleteItem(event.GetIndex());
         updateControls();
@@ -94,21 +94,21 @@ void GuiMain::OnlstFilesDeleteItem(wxListEvent& event) {
     event.Skip();
 }
 
-void GuiMain::OnlstFilesInsertItem(wxListEvent& event) {
+void GuiMain::OnlstFilesInsertItem(wxListEvent &event) {
     if (!m_processRunning) {
         updateControls();
     }
     event.Skip();
 }
 
-void GuiMain::OnlstFilesItemSelect(wxListEvent& event) {
+void GuiMain::OnlstFilesItemSelect(wxListEvent &event) {
     if (!m_processRunning) {
         updateControls();
     }
     event.Skip();
 }
 
-void GuiMain::OnlstFilesItemRClick(wxListEvent& event) {
+void GuiMain::OnlstFilesItemRClick(wxListEvent &event) {
     if (!m_processRunning) {
         updateControls();
         // Displays the popup menu when you click a list item
@@ -117,7 +117,7 @@ void GuiMain::OnlstFilesItemRClick(wxListEvent& event) {
     event.Skip();
 }
 
-void GuiMain::OnlstFilesKeyDown(wxListEvent& event) {
+void GuiMain::OnlstFilesKeyDown(wxListEvent &event) {
     if (!m_processRunning) {
         // Remove files with Delete key
         int keyCode = event.GetKeyCode();
@@ -127,12 +127,12 @@ void GuiMain::OnlstFilesKeyDown(wxListEvent& event) {
     event.Skip();
 }
 
-void GuiMain::btnProcessStop(wxCommandEvent& event) {
+void GuiMain::btnProcessStop(wxCommandEvent &event) {
     m_processRunning = false;
     g_btnStop->Enable(false);
 }
 
-void GuiMain::mnuAddDirectory(wxCommandEvent& event) {
+void GuiMain::mnuAddDirectory(wxCommandEvent &event) {
     wxDirDialog dirDialog(this, _("Select directory"), wxEmptyString, wxDD_DEFAULT_STYLE);
 
     // Read the last directory used
@@ -147,9 +147,10 @@ void GuiMain::mnuAddDirectory(wxCommandEvent& event) {
     }
 }
 
-void GuiMain::mnuAddFiles(wxCommandEvent& event) {
+void GuiMain::mnuAddFiles(wxCommandEvent &event) {
     wxArrayString files;
-    wxFileDialog fileDialog(this, _("Select file"), wxEmptyString, wxEmptyString, APP_WILDCARD_EXT, wxFD_OPEN | wxFD_MULTIPLE);
+    wxFileDialog fileDialog(this, _("Select file"), wxEmptyString, wxEmptyString, APP_WILDCARD_EXT,
+                            wxFD_OPEN | wxFD_MULTIPLE);
 
     // Read the last directory used
     fileDialog.SetDirectory(mp_configBase->getLastOpenDir());
@@ -167,12 +168,12 @@ void GuiMain::mnuAddFiles(wxCommandEvent& event) {
     }
 }
 
-void GuiMain::mnuExit(wxCommandEvent& event) {
+void GuiMain::mnuExit(wxCommandEvent &event) {
     // Terminates the program
     Close();
 }
 
-void GuiMain::mnuRemoveFiles(wxCommandEvent& event) {
+void GuiMain::mnuRemoveFiles(wxCommandEvent &event) {
     int itemCount = g_lstFiles->GetSelectedItemCount();
     SetCursor(wxCURSOR_WAIT);
     for (int i = 0; i < itemCount; i++)
@@ -182,14 +183,14 @@ void GuiMain::mnuRemoveFiles(wxCommandEvent& event) {
     updateControls();
 }
 
-void GuiMain::mnuClearList(wxCommandEvent& event) {
+void GuiMain::mnuClearList(wxCommandEvent &event) {
     // Deletes all items from the list
     mp_fileListManager->clear();
 
     updateControls();
 }
 
-void GuiMain::mnuSettings(wxCommandEvent & event) {
+void GuiMain::mnuSettings(wxCommandEvent &event) {
     int oldTagOptions = mp_configBase->getTagOptions();
     bool oldTagForceEnabled = mp_configBase->getTagForceEnabled();
 
@@ -216,9 +217,9 @@ void GuiMain::mnuSettings(wxCommandEvent & event) {
     mp_fileListManager->updateGainLabels(m_dblNormalVolume, mp_configBase);
 }
 
-void GuiMain::mnuClearAnalysis(wxCommandEvent& event) {
+void GuiMain::mnuClearAnalysis(wxCommandEvent &event) {
     for (unsigned long int i = 0; i < mp_fileListManager->size(); i++) {
-        FileInfo& fileInfo = mp_fileListManager->getItem(i);
+        FileInfo &fileInfo = mp_fileListManager->getItem(i);
         fileInfo.volumeReset();
         g_lstFiles->SetItem(i, 2, _T(""));
         g_lstFiles->SetItem(i, 3, _T(""));
@@ -229,7 +230,7 @@ void GuiMain::mnuClearAnalysis(wxCommandEvent& event) {
     }
 }
 
-void GuiMain::mnuAnalyze(wxCommandEvent& event) {
+void GuiMain::mnuAnalyze(wxCommandEvent &event) {
     m_processType = TOOL_ANALYSIS;
     m_processRunning = true;
     updateControls();
@@ -238,7 +239,7 @@ void GuiMain::mnuAnalyze(wxCommandEvent& event) {
     updateControls();
 }
 
-void GuiMain::mnuGain(wxCommandEvent& event) {
+void GuiMain::mnuGain(wxCommandEvent &event) {
     m_processType = TOOL_GAIN;
     m_processRunning = true;
     updateControls();
@@ -247,7 +248,7 @@ void GuiMain::mnuGain(wxCommandEvent& event) {
     updateControls();
 }
 
-void GuiMain::mnuUndoGain(wxCommandEvent& event) {
+void GuiMain::mnuUndoGain(wxCommandEvent &event) {
     m_processType = TOOL_UNDO;
     m_processRunning = true;
     updateControls();
@@ -258,7 +259,7 @@ void GuiMain::mnuUndoGain(wxCommandEvent& event) {
     mnuClearAnalysis(event);
 }
 
-void GuiMain::mnuDeleteTag(wxCommandEvent& event) {
+void GuiMain::mnuDeleteTag(wxCommandEvent &event) {
     m_processType = TOOL_DELETE_TAG;
     m_processRunning = true;
     updateControls();
@@ -269,15 +270,15 @@ void GuiMain::mnuDeleteTag(wxCommandEvent& event) {
     mnuClearAnalysis(event);
 }
 
-void GuiMain::mnuToolWebsite(wxCommandEvent & event) {
+void GuiMain::mnuToolWebsite(wxCommandEvent &event) {
     wxLaunchDefaultBrowser(_T("http://mp3gain.sourceforge.net/"));
 }
 
-void GuiMain::mnuWebsite(wxCommandEvent & event) {
+void GuiMain::mnuWebsite(wxCommandEvent &event) {
     wxLaunchDefaultBrowser(APP_WEBSITE);
 }
 
-void GuiMain::mnuAbout(wxCommandEvent& event) {
+void GuiMain::mnuAbout(wxCommandEvent &event) {
     wxAboutDialogInfo aboutInfo;
     aboutInfo.SetName(APP_NAME);
     aboutInfo.SetVersion(APP_VERSION);
@@ -287,7 +288,7 @@ void GuiMain::mnuAbout(wxCommandEvent& event) {
     wxAboutBox(aboutInfo);
 }
 
-void GuiMain::OnTimer1Trigger(wxTimerEvent& event) {
+void GuiMain::OnTimer1Trigger(wxTimerEvent &event) {
     wxString newExeTool = APP_TOOL_EXECUTABLE;
     if (!m_exeTool.IsSameAs(newExeTool, false)) {
         m_exeInputString.Clear();
@@ -298,7 +299,8 @@ void GuiMain::OnTimer1Trigger(wxTimerEvent& event) {
 
         // Show the version of tool
         if (!m_exeInputErrorString.IsEmpty())
-            g_mainStatusBar->SetStatusText(_("Using MP3gain version: ") + m_exeInputErrorString.Item(0).AfterLast(' '), 0);
+            g_mainStatusBar->SetStatusText(_("Using MP3gain version: ") + m_exeInputErrorString.Item(0).AfterLast(' '),
+                                           0);
         else
             g_mainStatusBar->SetStatusText(_("MP3gain not found!"), 0);
     }
@@ -307,7 +309,9 @@ void GuiMain::OnTimer1Trigger(wxTimerEvent& event) {
     g_mainStatusBar->SetStatusText(wxString::Format(_T("%i "), g_lstFiles->GetItemCount()) + _("files"), 1);
 
     // Constant gain box
-    g_lblConstantGain->SetLabel(wxString::Format(_T("%+i"), mp_configBase->getConstantGainValue()) + _T(" (") + wxString::Format(_T("%+.1f"), mp_configBase->getConstantGainValue() * VALUE_5LOG2) + _T(" dB)"));
+    g_lblConstantGain->SetLabel(wxString::Format(_T("%+i"), mp_configBase->getConstantGainValue()) + _T(" (") +
+                                wxString::Format(_T("%+.1f"), mp_configBase->getConstantGainValue() * VALUE_5LOG2) +
+                                _T(" dB)"));
 
     for (size_t i = 0; i < g_mainMenuBar->GetMenuCount(); i++)
         g_mainMenuBar->EnableTop(i, !m_processRunning);
@@ -330,8 +334,10 @@ void GuiMain::OnTimer1Trigger(wxTimerEvent& event) {
     g_mainToolBar->EnableTool(ID_GAIN, g_lstFiles->GetItemCount() > 0 && !m_processRunning);
 
     g_mainMenuBar->Enable(ID_CLEAR_ANALYSIS, g_lstFiles->GetItemCount() > 0 && !m_processRunning);
-    g_mainMenuBar->Enable(ID_UNDO_GAIN, g_lstFiles->GetItemCount() > 0 && mp_configBase->getTagOptions() != 2 && !m_processRunning);
-    g_mainMenuBar->Enable(ID_DELETE_TAG, g_lstFiles->GetItemCount() > 0 && mp_configBase->getTagOptions() != 2 && !m_processRunning);
+    g_mainMenuBar->Enable(ID_UNDO_GAIN,
+                          g_lstFiles->GetItemCount() > 0 && mp_configBase->getTagOptions() != 2 && !m_processRunning);
+    g_mainMenuBar->Enable(ID_DELETE_TAG,
+                          g_lstFiles->GetItemCount() > 0 && mp_configBase->getTagOptions() != 2 && !m_processRunning);
 
     g_btnStop->Enable(m_processRunning);
 }
@@ -371,7 +377,7 @@ void GuiMain::updateControls() {
     m_timer1.Start(20, true);
 }
 
-void GuiMain::setFilesCmdLine(const wxArrayString& filenames) {
+void GuiMain::setFilesCmdLine(const wxArrayString &filenames) {
     mp_fileListManager->insertFilesAndDir(filenames);
 }
 
@@ -398,9 +404,10 @@ void GuiMain::processExecute() {
 }
 
 void GuiMain::processFile(unsigned long int fileIterator) {
-    wxString fullCommand = APP_TOOL_EXECUTABLE + _T(" ") + mp_configBase->getStringToolOptions() + _T(" ") + mp_configBase->getStringToolOptionsTag();
+    wxString fullCommand = APP_TOOL_EXECUTABLE + _T(" ") + mp_configBase->getStringToolOptions() + _T(" ") +
+                           mp_configBase->getStringToolOptionsTag();
     wxString runCommand;
-    FileInfo& fileInfo = mp_fileListManager->getItem(fileIterator);
+    FileInfo &fileInfo = mp_fileListManager->getItem(fileIterator);
     wxFileName filenameInput = fileInfo.getFileName();
 
     if (m_processType == TOOL_GAIN || m_processType == TOOL_ANALYSIS) {
@@ -424,9 +431,12 @@ void GuiMain::processFile(unsigned long int fileIterator) {
     if (m_processType == TOOL_GAIN && fileInfo.getGainChange() != 0) {
         // Execute Gain
         if (mp_configBase->getConstantGainEnabled())
-            runCommand = fullCommand + _T(" ") + mp_configBase->getStringToolOptionsGain() + _T(" \"") + filenameInput.GetFullPath() + _T("\"");
+            runCommand = fullCommand + _T(" ") + mp_configBase->getStringToolOptionsGain() + _T(" \"") +
+                         filenameInput.GetFullPath() + _T("\"");
         else
-            runCommand = fullCommand + _T(" ") + mp_configBase->getStringToolOptionsGain() + _T(" -g ") + wxString::Format(_T("%i "), fileInfo.getGainChange()) + _T(" \"") + filenameInput.GetFullPath() + _T("\"");
+            runCommand = fullCommand + _T(" ") + mp_configBase->getStringToolOptionsGain() + _T(" -g ") +
+                         wxString::Format(_T("%i "), fileInfo.getGainChange()) + _T(" \"") +
+                         filenameInput.GetFullPath() + _T("\"");
 
         wxExecute(runCommand, m_exeInputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
         m_exeInputString.Clear();
@@ -458,11 +468,12 @@ void GuiMain::processFile(unsigned long int fileIterator) {
         wxExecute(runCommand, m_exeInputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
     }
 
-    g_mainStatusBar->SetStatusText(wxString::Format(_("Processed %lu files of %lu."), fileIterator + 1, mp_fileListManager->size()), 1);
+    g_mainStatusBar->SetStatusText(
+            wxString::Format(_("Processed %lu files of %lu."), fileIterator + 1, mp_fileListManager->size()), 1);
 }
 
 void GuiMain::processOutputString(unsigned long int fileIterator) {
-    FileInfo& fileInfo = mp_fileListManager->getItem(fileIterator);
+    FileInfo &fileInfo = mp_fileListManager->getItem(fileIterator);
     wxString tempString;
 
     if (!m_exeInputString.IsEmpty()) {
@@ -480,7 +491,8 @@ void GuiMain::processOutputString(unsigned long int fileIterator) {
 
                 fileInfo.setVolume(volume);
 
-                mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_VOLUME, wxString::Format(_T("%.1f"), volume));
+                mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_VOLUME,
+                                                       wxString::Format(_T("%.1f"), volume));
             }// Clipping means that some value in some frame of the song is greater than +/- 32767
             else if (tempString.Lower().Contains(_T("max pcm"))) {
                 double dblMaxPcmSample;

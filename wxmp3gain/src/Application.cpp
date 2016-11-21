@@ -29,7 +29,7 @@ bool Application::OnInit() {
     mp_locale->AddCatalog(_T("wxmp3gain"));
 
     wxInitAllImageHandlers();
-    GuiMain* guiMain = new GuiMain(0);
+    GuiMain *guiMain = new GuiMain(0);
 
     // Read command line files
     mp_filesCmdLine = new wxArrayString();

@@ -10,9 +10,11 @@
 
 class Conversion {
 public:
-    static void convertDotComma(wxString& str);
-    static int convertDoubleToIntGain(const double& dblGainChange);
-    static int getMaxNoclipMp3Gain(const double& mvarCurrMaxAmp);
+    static void convertDotComma(wxString &str);
+
+    static int convertDoubleToIntGain(const double &dblGainChange);
+
+    static int getMaxNoclipMp3Gain(const double &mvarCurrMaxAmp);
 };
 
 #endif // CONVERSION_H

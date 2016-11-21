@@ -4,7 +4,7 @@
  */
 
 #ifndef FILELISTMANAGER_H
-#define	FILELISTMANAGER_H
+#define    FILELISTMANAGER_H
 
 #include "FileInfo.h"
 #include "ConfigBase.h"
@@ -17,19 +17,29 @@
 class FileListManager {
 public:
     FileListManager(wxListCtrl *owner);
+
     virtual ~FileListManager();
-    void insertFilesAndDir(const wxArrayString& filenames);
-    void insertFiles(const wxArrayString& filenames);
-    void insertDir(const wxString& dirname);
+
+    void insertFilesAndDir(const wxArrayString &filenames);
+
+    void insertFiles(const wxArrayString &filenames);
+
+    void insertDir(const wxString &dirname);
+
     void deleteItem(unsigned long int index);
+
     void clear();
+
     long unsigned int size();
-    FileInfo& getItem(unsigned long int index);
-    wxListCtrl& getOwner();
-    void updateGainLabels(const double& dblNormalVolumeUpdate, ConfigBase *configBase);
+
+    FileInfo &getItem(unsigned long int index);
+
+    wxListCtrl &getOwner();
+
+    void updateGainLabels(const double &dblNormalVolumeUpdate, ConfigBase *configBase);
 
 private:
-    bool checkValidExtension(const wxFileName& file) const;
+    bool checkValidExtension(const wxFileName &file) const;
 
     wxListCtrl *mp_owner;
     std::list<FileInfo> *mp_lstFilesData;
