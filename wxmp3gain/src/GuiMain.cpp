@@ -445,6 +445,7 @@ void GuiMain::processFile(unsigned long int fileIterator) {
         runCommand = fullCommand + _T(" \"") + filenameInput.GetFullPath() + _T("\"");
         wxExecute(runCommand, m_exeInputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
         switch (mp_configBase->getTagOptions()) {
+            default:
             case 0:
             case 1:
                 mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_TAG_INFO, _("yes"));
