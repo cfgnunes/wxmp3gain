@@ -1,26 +1,39 @@
+# File based on:
+# https://github.com/github/gitignore
+
 ##############################
-# C/C++ binary files
+# C++
 ##############################
-*.slo
+*.a
+*.app
+*.dll
+*.dylib
+*.exe
+*.gch
+*.la
+*.lai
+*.lib
 *.lo
 *.o
 *.obj
-*.gch
-*.pch
-*.so
-*.dll
-*.dylib
-*.lai
-*.la
-*.a
-*.lib
-*.exe
 *.out
-*.app
-*.class
-*.com
+*.pch
+*.slo
+*.so
 
 ##############################
-# IDE files
+# IDE
 ##############################
 .idea
+
+##############################
+# CMake
+##############################
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
