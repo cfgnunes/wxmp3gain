@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////
-// C++ code generated with wxFormBuilder (version Jun  6 2014)
+// C++ code generated with wxFormBuilder (version Feb 16 2016)
 // http://www.wxformbuilder.org/
 //
 // PLEASE DO "NOT" EDIT THIS FILE!
@@ -301,7 +301,7 @@ Settings::Settings( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	wxStaticBoxSizer* sbSizer5;
 	sbSizer5 = new wxStaticBoxSizer( new wxStaticBox( m_panel1, wxID_ANY, _("Gain options") ), wxHORIZONTAL );
 	
-	g_chkAutoLower = new wxCheckBox( m_panel1, wxID_ANY, _("Automatically lower gain to not clip audio"), wxDefaultPosition, wxDefaultSize, 0 );
+	g_chkAutoLower = new wxCheckBox( sbSizer5->GetStaticBox(), wxID_ANY, _("Automatically lower gain to not clip audio"), wxDefaultPosition, wxDefaultSize, 0 );
 	sbSizer5->Add( g_chkAutoLower, 0, wxALL, 2 );
 	
 	
@@ -310,13 +310,13 @@ Settings::Settings( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	wxStaticBoxSizer* sbSizer11;
 	sbSizer11 = new wxStaticBoxSizer( new wxStaticBox( m_panel1, wxID_ANY, _("File options") ), wxVERTICAL );
 	
-	g_chkWorkOnTemporaryFile = new wxCheckBox( m_panel1, wxID_ANY, _("Work on temporary file"), wxDefaultPosition, wxDefaultSize, 0 );
+	g_chkWorkOnTemporaryFile = new wxCheckBox( sbSizer11->GetStaticBox(), wxID_ANY, _("Work on temporary file"), wxDefaultPosition, wxDefaultSize, 0 );
 	sbSizer11->Add( g_chkWorkOnTemporaryFile, 0, wxALL, 2 );
 	
-	g_chkPreserveTime = new wxCheckBox( m_panel1, wxID_ANY, _("Keep file timestamps"), wxDefaultPosition, wxDefaultSize, 0 );
+	g_chkPreserveTime = new wxCheckBox( sbSizer11->GetStaticBox(), wxID_ANY, _("Keep file timestamps"), wxDefaultPosition, wxDefaultSize, 0 );
 	sbSizer11->Add( g_chkPreserveTime, 0, wxALL, 2 );
 	
-	g_chkForceInput = new wxCheckBox( m_panel1, wxID_ANY, _("Force to assume input is an MPEG 2 Layer III file"), wxDefaultPosition, wxDefaultSize, 0 );
+	g_chkForceInput = new wxCheckBox( sbSizer11->GetStaticBox(), wxID_ANY, _("Force to assume input is an MPEG 2 Layer III file"), wxDefaultPosition, wxDefaultSize, 0 );
 	sbSizer11->Add( g_chkForceInput, 0, wxALL, 2 );
 	
 	
@@ -334,13 +334,13 @@ Settings::Settings( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	wxStaticBoxSizer* sbSizer61;
 	sbSizer61 = new wxStaticBoxSizer( new wxStaticBox( m_panel2, wxID_ANY, _("Tags options") ), wxVERTICAL );
 	
-	g_optTagAPE = new wxRadioButton( m_panel2, wxID_ANY, _("Use APEv2 tag for gain information (default)"), wxDefaultPosition, wxDefaultSize, 0 );
+	g_optTagAPE = new wxRadioButton( sbSizer61->GetStaticBox(), wxID_ANY, _("Use APEv2 tag for gain information (default)"), wxDefaultPosition, wxDefaultSize, 0 );
 	sbSizer61->Add( g_optTagAPE, 0, wxALL, 2 );
 	
-	g_optTagID3 = new wxRadioButton( m_panel2, wxID_ANY, _("Use ID3v2 tag for gain information"), wxDefaultPosition, wxDefaultSize, 0 );
+	g_optTagID3 = new wxRadioButton( sbSizer61->GetStaticBox(), wxID_ANY, _("Use ID3v2 tag for gain information"), wxDefaultPosition, wxDefaultSize, 0 );
 	sbSizer61->Add( g_optTagID3, 0, wxALL, 2 );
 	
-	g_optTagSKIP = new wxRadioButton( m_panel2, wxID_ANY, _("Skip stored tag info (do not read or write tags)"), wxDefaultPosition, wxDefaultSize, 0 );
+	g_optTagSKIP = new wxRadioButton( sbSizer61->GetStaticBox(), wxID_ANY, _("Skip stored tag info (do not read or write tags)"), wxDefaultPosition, wxDefaultSize, 0 );
 	sbSizer61->Add( g_optTagSKIP, 0, wxALL, 2 );
 	
 	
@@ -349,7 +349,7 @@ Settings::Settings( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	wxStaticBoxSizer* sbSizer611;
 	sbSizer611 = new wxStaticBoxSizer( new wxStaticBox( m_panel2, wxID_ANY, _("Tags reading") ), wxHORIZONTAL );
 	
-	g_chkTagFORCE = new wxCheckBox( m_panel2, wxID_ANY, _("Force re-calculation (do not read tag info)"), wxDefaultPosition, wxDefaultSize, 0 );
+	g_chkTagFORCE = new wxCheckBox( sbSizer611->GetStaticBox(), wxID_ANY, _("Force re-calculation (do not read tag info)"), wxDefaultPosition, wxDefaultSize, 0 );
 	sbSizer611->Add( g_chkTagFORCE, 0, wxALL, 2 );
 	
 	
@@ -367,20 +367,20 @@ Settings::Settings( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	wxStaticBoxSizer* sbSizer9;
 	sbSizer9 = new wxStaticBoxSizer( new wxStaticBox( m_panel3, wxID_ANY, _("Constant gain") ), wxVERTICAL );
 	
-	g_chkConstantGain = new wxCheckBox( m_panel3, wxID_ANY, _("Use constant gain without doing any analysis"), wxDefaultPosition, wxDefaultSize, 0 );
+	g_chkConstantGain = new wxCheckBox( sbSizer9->GetStaticBox(), wxID_ANY, _("Use constant gain without doing any analysis"), wxDefaultPosition, wxDefaultSize, 0 );
 	sbSizer9->Add( g_chkConstantGain, 0, wxALL, 2 );
 	
 	wxBoxSizer* bSizer15;
 	bSizer15 = new wxBoxSizer( wxHORIZONTAL );
 	
-	m_staticText13 = new wxStaticText( m_panel3, wxID_ANY, _("Constant gain:"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText13 = new wxStaticText( sbSizer9->GetStaticBox(), wxID_ANY, _("Constant gain:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText13->Wrap( -1 );
 	bSizer15->Add( m_staticText13, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 	
-	g_sldConstantGain = new wxSlider( m_panel3, wxID_ANY, 0, -8, 8, wxDefaultPosition, wxDefaultSize, wxSL_HORIZONTAL );
+	g_sldConstantGain = new wxSlider( sbSizer9->GetStaticBox(), wxID_ANY, 0, -8, 8, wxDefaultPosition, wxDefaultSize, wxSL_HORIZONTAL );
 	bSizer15->Add( g_sldConstantGain, 1, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 	
-	g_lblConstantGain = new wxStaticText( m_panel3, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	g_lblConstantGain = new wxStaticText( sbSizer9->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
 	g_lblConstantGain->Wrap( -1 );
 	bSizer15->Add( g_lblConstantGain, 1, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 	
@@ -393,13 +393,13 @@ Settings::Settings( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	wxStaticBoxSizer* sbSizer612;
 	sbSizer612 = new wxStaticBoxSizer( new wxStaticBox( m_panel3, wxID_ANY, _("Channel") ), wxVERTICAL );
 	
-	g_optBothChannel = new wxRadioButton( m_panel3, wxID_ANY, _("Gain on both channels"), wxDefaultPosition, wxDefaultSize, 0 );
+	g_optBothChannel = new wxRadioButton( sbSizer612->GetStaticBox(), wxID_ANY, _("Gain on both channels"), wxDefaultPosition, wxDefaultSize, 0 );
 	sbSizer612->Add( g_optBothChannel, 0, wxALL, 2 );
 	
-	g_optLeftChannel = new wxRadioButton( m_panel3, wxID_ANY, _("Gain on left channel only (not for Joint Stereo mp3s)"), wxDefaultPosition, wxDefaultSize, 0 );
+	g_optLeftChannel = new wxRadioButton( sbSizer612->GetStaticBox(), wxID_ANY, _("Gain on left channel only (not for Joint Stereo mp3s)"), wxDefaultPosition, wxDefaultSize, 0 );
 	sbSizer612->Add( g_optLeftChannel, 0, wxALL, 2 );
 	
-	g_optRightChannel = new wxRadioButton( m_panel3, wxID_ANY, _("Gain on right channel only (not for Joint Stereo mp3s)"), wxDefaultPosition, wxDefaultSize, 0 );
+	g_optRightChannel = new wxRadioButton( sbSizer612->GetStaticBox(), wxID_ANY, _("Gain on right channel only (not for Joint Stereo mp3s)"), wxDefaultPosition, wxDefaultSize, 0 );
 	sbSizer612->Add( g_optRightChannel, 0, wxALL, 2 );
 	
 	
