@@ -1,6 +1,0 @@
-?package(wxmp3gain): needs="X11" \
-                     section="Applications/Sound" \
-                     title="wxMP3gain" \
-                     longtitle="wxMP3gain" \
-                     icon32x32="/usr/share/pixmaps/wxmp3gain.xpm" \
-                     command="/usr/bin/wxmp3gain"
