@@ -9,6 +9,7 @@
 #include <wx/string.h>
 #include <wx/stdpaths.h>
 #include <wx/filename.h>
+#include <wx/dir.h>
 
 const wxString APP_NAME = _T("wxMP3gain");
 const wxString APP_VERSION = _T("3.7");
@@ -91,14 +92,23 @@ int const ID_LIST_TAG_INFO = 6;
 double const VALUE_5LOG2 = 1.505149978; // 5.0 * log10(2.0)
 
 inline wxString GetResourceDir() {
-#ifdef __LINUX__
-    wxString resourceDir = _T("/usr/share/wxmp3gain/resource/");
-#else
     wxString executablePath = wxStandardPaths::Get().GetExecutablePath();
     wxFileName executableFilename(executablePath);
-    wxString resourceDir = executableFilename.GetPath() + _T("/resource/");
+    wxString resourceDirName = _T("/resource/");
+
+#ifdef __LINUX__
+    wxDir dir;
+    wxString resourceDir;
+
+    resourceDir = _T("/usr/share/wxmp3gain") + resourceDirName;
+    if (dir.Open(resourceDir))
+        return resourceDir;
+
+    resourceDir = _T("/usr/local/share/wxmp3gain") + resourceDirName;
+    if (dir.Open(resourceDir))
+        return resourceDir;
 #endif
-    return resourceDir;
+    return executableFilename.GetPath() + resourceDirName;
 }
 
 #endif // CONSTANTS_H
