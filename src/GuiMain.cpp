@@ -271,7 +271,7 @@ void GuiMain::mnuDeleteTag(wxCommandEvent &event) {
 }
 
 void GuiMain::mnuToolWebsite(wxCommandEvent &event) {
-    wxLaunchDefaultBrowser(_T("http://mp3gain.sourceforge.net/"));
+    wxLaunchDefaultBrowser(_T("https://github.com/cfgnunes/wxmp3gain"));
 }
 
 void GuiMain::mnuWebsite(wxCommandEvent &event) {
