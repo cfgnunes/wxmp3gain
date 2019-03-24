@@ -58,8 +58,6 @@ install:
 	@cp ./debian/menu/icon48x48.png		$(INSTALL_SHARE_DIR)/icons/hicolor/48x48/apps/$(APP_NAME).png
 	@cp ./debian/menu/icon64x64.png		$(INSTALL_SHARE_DIR)/icons/hicolor/64x64/apps/$(APP_NAME).png
 	@cp ./debian/menu/icon128x128.png	$(INSTALL_SHARE_DIR)/icons/hicolor/128x128/apps/$(APP_NAME).png
-	@cp ./debian/menu/icon.xpm		$(INSTALL_SHARE_DIR)/pixmaps/$(APP_NAME).xpm
-	@cp ./debian/menu/$(APP_NAME)		$(INSTALL_SHARE_DIR)/menu/$(APP_NAME)
 	@cp ./debian/menu/$(APP_NAME).desktop	$(INSTALL_SHARE_DIR)/applications/$(APP_NAME).desktop
 
 uninstall:
@@ -71,6 +69,4 @@ uninstall:
 	@rm -f $(INSTALL_SHARE_DIR)/icons/hicolor/48x48/apps/$(APP_NAME).png
 	@rm -f $(INSTALL_SHARE_DIR)/icons/hicolor/64x64/apps/$(APP_NAME).png
 	@rm -f $(INSTALL_SHARE_DIR)/icons/hicolor/128x128/apps/$(APP_NAME).png
-	@rm -f $(INSTALL_SHARE_DIR)/pixmaps/$(APP_NAME).xpm
-	@rm -f $(INSTALL_SHARE_DIR)/menu/$(APP_NAME)
 	@rm -f $(INSTALL_SHARE_DIR)/applications/$(APP_NAME).desktop
