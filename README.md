@@ -73,7 +73,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
 
 ## Acknowledgments
 
-* Carlos Sánchez <carlos1994sanchez@gmail.com>
-* Jan Rimmek <jan@rimmek.de>
-* Pavel Fric <pavelfric@seznam.cz>
-* Sergey Basalaev <sbasalaev@gmail.com>
+* Carlos Sánchez
+* Jan Rimmek
+* Pavel Fric
+* Sergey Basalaev
