@@ -10,25 +10,25 @@ include(${wxWidgets_USE_FILE})
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -s")
 
 # Sources
-file(GLOB SOURCE_FILES src/*.cpp src/*.h)
-file(GLOB LANG_FILES msg/*.po)
+file(GLOB SRC_FILES src/*.cpp src/*.h)
+file(GLOB MSG_FILES msg/*.po)
 
 # Translation files
 if(GETTEXT_FOUND)
-    foreach(LANG_FILE ${LANG_FILES})
-        # Remove path and extension of 'LANG_FILE'
-        get_filename_component(LANG_NAME ${LANG_FILE} NAME_WE)
+    foreach(MSG_FILE ${MSG_FILES})
+        # Remove path and extension of 'MSG_FILE'
+        get_filename_component(MSG_NAME ${MSG_FILE} NAME_WE)
         # Compile each '.po' file to '.gmo' file
-        GETTEXT_PROCESS_PO_FILES(${LANG_NAME} ALL PO_FILES "msg/${LANG_NAME}.po")
+        GETTEXT_PROCESS_PO_FILES(${MSG_NAME} ALL PO_FILES "msg/${MSG_NAME}.po")
         # Define the files location during install process
-        install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${LANG_NAME}.gmo" DESTINATION "share/${PROJECT_NAME}/resource/msg/${LANG_NAME}/" RENAME "${PROJECT_NAME}.mo")
+        install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${MSG_NAME}.gmo" DESTINATION "share/${PROJECT_NAME}/resource/msg/${MSG_NAME}/" RENAME "${PROJECT_NAME}.mo")
     endforeach()
 else()
     message(WARNING "gettext tools not found. Translations will not be built.")
 endif()
 
 # Compile the main executable
-add_executable(wxmp3gain ${SOURCE_FILES})
+add_executable(wxmp3gain ${SRC_FILES})
 target_link_libraries(wxmp3gain ${wxWidgets_LIBRARIES})
 
 # Define the files location during install process

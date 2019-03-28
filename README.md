@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/cfgnunes/wxmp3gain.svg?branch=master)](https://travis-ci.org/cfgnunes/wxmp3gain)
 # wxMP3gain
 
 wxMP3gain is a free front-end for the MP3gain.
@@ -30,7 +31,9 @@ sudo apt-get -y install mp3gain
 
 Compile the sources and install with following commands in the terminal:
 ```sh
-mkdir build && cd build && cmake ..
+mkdir build
+cd build
+cmake ..
 make
 sudo make install
 ```
