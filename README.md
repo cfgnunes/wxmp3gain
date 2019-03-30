@@ -61,6 +61,13 @@ Other tools:
 * [Inno Setup](http://www.jrsoftware.org/isinfo.php) - Installer for Windows programs
 * [UPX](https://upx.github.io/) - The Ultimate Packer for eXecutables
 
+## Contributing
+
+If you spot a bug, or want to improve the code, or even make the content better, you can do the following:
+
+* [Open an issue](https://github.com/cfgnunes/wxlame/issues/new) describing the bug or feature idea;
+* Fork the project, make changes, and submit a pull request.
+
 ## Versioning
 
 This project uses [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/cfgnunes/wxmp3gain/tags).
