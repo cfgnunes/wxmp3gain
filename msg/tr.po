@@ -1,0 +1,272 @@
+# This file is part of the wxMP3gain and licensed under the GNU General Public License, version 3
+# Cristiano Nunes <cfgnunes@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: wxMP3gain\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-26 19:09-0300\n"
+"PO-Revision-Date: 2019-03-30 23:01\n"
+"Last-Translator: Yaşar Çiv <yasarciv67@gmail.com>\n"
+"Language-Team: milislinux.org\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Language: tr_TR\n"
+"X-Source-Language: C\n"
+
+#: Gui.cpp:122
+msgid "&Analysis"
+msgstr "Çözü&mleme"
+
+#: Gui.cpp:109
+msgid "&Edit"
+msgstr "Düzenl&e"
+
+#: Gui.cpp:92
+msgid "&File"
+msgstr "&Dosya"
+
+#: Gui.cpp:139
+msgid "&Gain"
+msgstr "&Kazanç"
+
+#: Gui.cpp:156
+msgid "&Help"
+msgstr "&Yardım"
+
+#: Gui.cpp:61
+msgid "&Stop"
+msgstr "&Dur"
+
+#: Gui.cpp:31
+msgid "(Default 89.0 dB)"
+msgstr "(Varsayılan 89.0 dB)"
+
+#: Gui.cpp:153 Gui.cpp:180
+msgid "About"
+msgstr "Hakkında"
+
+#: Gui.cpp:83 Gui.cpp:164 Gui.cpp:190
+msgid "Add files"
+msgstr "Dosya(lar) ekle"
+
+#: Gui.cpp:79 Gui.cpp:162 Gui.cpp:186
+msgid "Add folder"
+msgstr "Dizin ekle"
+
+#: Gui.cpp:113 Gui.cpp:172
+msgid "Analyze"
+msgstr "Çözümle"
+
+#: Gui.cpp:302
+msgid "Automatically lower gain to not clip audio"
+msgstr "Sesi kırpmamak için otomatik olarak düşük kazanç"
+
+#: Gui.cpp:423
+msgid "Cancel"
+msgstr "İptal"
+
+#: Gui.cpp:392
+msgid "Channel"
+msgstr "Kanal"
+
+#: Gui.cpp:119
+msgid "Clear analysis"
+msgstr "Çözümlemeyi temizle"
+
+#: Gui.cpp:100 Gui.cpp:168 Gui.cpp:198
+msgid "Clear list"
+msgstr "Listeyi temizle"
+
+#: GuiMain.cpp:32
+msgid "Clipping"
+msgstr "Kırpma"
+
+#: Gui.cpp:366 Gui.cpp:410
+msgid "Constant gain"
+msgstr "Sabit kazanç"
+
+#: Gui.cpp:374
+msgid "Constant gain:"
+msgstr "Sabit kazanç:"
+
+#: Gui.cpp:136
+msgid "Delete stored tag info"
+msgstr "Depolanan etiket bilgisini sil"
+
+#: GuiMain.cpp:418
+msgid "Do you want to stop process now?"
+msgstr "Şimdi süreci durdurmak istiyor musunuz?"
+
+#: Gui.cpp:89
+msgid "Exit"
+msgstr "Çıkış"
+
+#: GuiMain.cpp:29
+msgid "File"
+msgstr "Dosya"
+
+#: Gui.cpp:309
+msgid "File options"
+msgstr "Dosya seçenekleri"
+
+#: GuiMain.cpp:30
+msgid "Folder"
+msgstr "Dizin"
+
+#: Gui.cpp:350
+msgid "Force re-calculation (do not read tag info)"
+msgstr "Yeniden hesaplamayı zorla (etiket bilgisini okumaz)"
+
+#: Gui.cpp:317
+msgid "Force to assume input is an MPEG 2 Layer III file"
+msgstr "Girdiyi üstlenmeye zorlama bir MPEG 2 Layer III dosyasıdır"
+
+#: GuiMain.cpp:296
+msgid "Free front-end for the MP3gain"
+msgstr "MP3-gain için ücretsiz ön yüz"
+
+#: Gui.cpp:126 Gui.cpp:174
+msgid "Gain"
+msgstr "Kazanç"
+
+#: GuiMain.cpp:33
+msgid "Gain (dB)"
+msgstr "Kazanç (dB)"
+
+#: GuiMain.cpp:34
+msgid "Gain (mp3)"
+msgstr "Kazanç (mp3)"
+
+#: Gui.cpp:394
+msgid "Gain on both channels"
+msgstr "Her iki kanalda da kazanç"
+
+#: Gui.cpp:397
+msgid "Gain on left channel only (not for Joint Stereo mp3s)"
+msgstr "Yalnızca sol kanalda kazanç (Joint Stereo mp3'ler için değil)"
+
+#: Gui.cpp:400
+msgid "Gain on right channel only (not for Joint Stereo mp3s)"
+msgstr "Yalnızca sağ kanalda kazanç (Joint Stereo mp3'ler için değil)"
+
+#: Gui.cpp:300
+msgid "Gain options"
+msgstr "Kazanç seçenekleri"
+
+#: Gui.cpp:327
+msgid "General"
+msgstr "Genel"
+
+#: Gui.cpp:314
+msgid "Keep file timestamps"
+msgstr "Dosya zaman damgalarını sakla"
+
+#: Gui.cpp:143
+msgid "MP3gain Website"
+msgstr "MP3gain Web sitesi"
+
+#: GuiMain.cpp:321
+msgid "MP3gain not found!"
+msgstr "MP3gain bulunamadı!"
+
+#: Gui.cpp:24
+msgid "Normal volume (dB):"
+msgstr "Normal hacim (dB):"
+
+#: Gui.cpp:420
+msgid "OK"
+msgstr "Tamam"
+
+#: GuiMain.cpp:424 GuiMain.cpp:489
+#, c-format
+msgid "Processed %lu files of %lu."
+msgstr "%lu dosyanın %lu tanesi işlendi."
+
+#: Gui.cpp:96 Gui.cpp:166 Gui.cpp:194
+msgid "Remove files"
+msgstr "Dosyaları kaldır"
+
+#: Gui.cpp:417
+msgid "Restore defaults"
+msgstr "Varsayılanları geri yükle"
+
+#: GuiMain.cpp:143
+msgid "Select directory"
+msgstr "Dizin seç"
+
+#: GuiMain.cpp:159
+msgid "Select file"
+msgstr "Dosya seç"
+
+#: Gui.cpp:106 Gui.cpp:178 Gui.h:176
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: Gui.cpp:341
+msgid "Skip stored tag info (do not read or write tags)"
+msgstr "Depolanan etiket bilgisini atla (etiketleri okuma veya yazma)"
+
+#: GuiMain.cpp:35
+msgid "Tag info"
+msgstr "Etiket bilgisi"
+
+#: Gui.cpp:360
+msgid "Tags"
+msgstr "Etiketler"
+
+#: Gui.cpp:333
+msgid "Tags options"
+msgstr "Etiket seçenekleri"
+
+#: Gui.cpp:348
+msgid "Tags reading"
+msgstr "Etiket okuma"
+
+#: Gui.cpp:132
+msgid "Undo gain changes (based on stored tag info)\tCtrl+Z"
+msgstr ""
+"Kazanç değişikliklerini geri al (kayıtlı etiket bilgisine göre) \t  Ctrl+Z"
+
+#: Gui.cpp:335
+msgid "Use APEv2 tag for gain information (default)"
+msgstr "Kazanç bilgisi için APEv2 etiketini kullan (varsayılan)"
+
+#: Gui.cpp:338
+msgid "Use ID3v2 tag for gain information"
+msgstr "Kazanç bilgisi için ID3v2 etiketini kullan"
+
+#: Gui.cpp:368
+msgid "Use constant gain without doing any analysis"
+msgstr "Herhangi bir çözümleme yapmadan sabit kazanç kullan"
+
+#: GuiMain.cpp:319
+msgid "Using MP3gain version: "
+msgstr "Kullanılan MP3Gain sürümü: "
+
+#: Gui.cpp:40
+msgid "Using constant gain: "
+msgstr "Kullanılan sabit kazanç: "
+
+#: GuiMain.cpp:31
+msgid "Volume"
+msgstr "Hacim"
+
+#: Gui.cpp:311
+msgid "Work on temporary file"
+msgstr "Geçici dosya üzerinde çalış"
+
+#: GuiMain.cpp:325
+msgid "files"
+msgstr "dosyalar"
+
+#: Gui.cpp:147
+msgid "wxMP3gain Website"
+msgstr "wxMP3gain Web sitesi"
+
+#: GuiMain.cpp:441 GuiMain.cpp:468 GuiMain.cpp:521
+msgid "yes"
+msgstr "evet"
