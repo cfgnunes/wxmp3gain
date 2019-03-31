@@ -270,3 +270,24 @@ msgstr "wxMP3gain Web sitesi"
 #: GuiMain.cpp:441 GuiMain.cpp:468 GuiMain.cpp:521
 msgid "yes"
 msgstr "evet"
+
+#~ msgid "Progress"
+#~ msgstr ""
+
+#~ msgid "Wait..."
+#~ msgstr ""
+
+#~ msgid "Elapsed time : "
+#~ msgstr ""
+
+#~ msgid "Estimated time : "
+#~ msgstr ""
+
+#~ msgid "Remaining time : "
+#~ msgstr ""
+
+#~ msgid "Close"
+#~ msgstr ""
+
+#~ msgid "unknown"
+#~ msgstr ""

@@ -11,8 +11,9 @@ msgstr ""
 "Language-Team: \n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: Gui.cpp:122
 msgid "&Analysis"
@@ -266,3 +267,24 @@ msgstr ""
 #: GuiMain.cpp:441 GuiMain.cpp:468 GuiMain.cpp:521
 msgid "yes"
 msgstr ""
+
+#~ msgid "Progress"
+#~ msgstr ""
+
+#~ msgid "Wait..."
+#~ msgstr ""
+
+#~ msgid "Elapsed time : "
+#~ msgstr ""
+
+#~ msgid "Estimated time : "
+#~ msgstr ""
+
+#~ msgid "Remaining time : "
+#~ msgstr ""
+
+#~ msgid "Close"
+#~ msgstr ""
+
+#~ msgid "unknown"
+#~ msgstr ""

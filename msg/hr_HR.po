@@ -1,48 +1,48 @@
 # This file is part of the wxMP3gain and licensed under the GNU General Public License, version 3
 # Cristiano Nunes <cfgnunes@gmail.com>, 2013.
-# Pavel Fric <pavelfric@seznam.cz>, 2013.
+# Dominko Aždajić <domazd@mail.ru>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: wxMP3gain\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-26 19:09-0300\n"
-"PO-Revision-Date: 2015-02-22 00:20-0300\n"
-"Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
-"Language-Team: Czech <>\n"
-"Language: cs\n"
+"PO-Revision-Date: 2018-02-26 18:46+0100\n"
+"Last-Translator: Dominko Aždajić <domazd@mail.ru>\n"
+"Language-Team: \n"
+"Language: hr_HR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 
 #: Gui.cpp:122
 msgid "&Analysis"
-msgstr "&Rozbor"
+msgstr "&Analiza"
 
 #: Gui.cpp:109
 msgid "&Edit"
-msgstr "Ú&pravy"
+msgstr "&Uredi"
 
 #: Gui.cpp:92
 msgid "&File"
-msgstr "&Soubor"
+msgstr "&Datoteka"
 
 #: Gui.cpp:139
 msgid "&Gain"
-msgstr "Z&esílení"
+msgstr "&Ulazna osjetljivost"
 
 #: Gui.cpp:156
 msgid "&Help"
-msgstr "&Nápověda"
+msgstr "&Pomoć"
 
 #: Gui.cpp:61
 msgid "&Stop"
-msgstr "&Zastavit"
+msgstr "&Stani"
 
 #: Gui.cpp:31
 msgid "(Default 89.0 dB)"
-msgstr "(Výchozí 89.0 dB)"
+msgstr "(Zadano 89.0 dB)"
 
 #: Gui.cpp:153 Gui.cpp:180
 msgid "About"
@@ -50,244 +50,242 @@ msgstr "O programu"
 
 #: Gui.cpp:83 Gui.cpp:164 Gui.cpp:190
 msgid "Add files"
-msgstr "Přidat soubory"
+msgstr "Dodaj datoteke"
 
 #: Gui.cpp:79 Gui.cpp:162 Gui.cpp:186
 msgid "Add folder"
-msgstr "Složka"
+msgstr "Dodaj mapu"
 
 #: Gui.cpp:113 Gui.cpp:172
 msgid "Analyze"
-msgstr "Provést rozbor"
+msgstr "Analiza"
 
 #: Gui.cpp:302
 msgid "Automatically lower gain to not clip audio"
-msgstr "Automaticky snížit zesílení, aby nedocházelo k přebuzení zvuku"
+msgstr "Automatski snizi ulaznu osjetljivost kako bi se izbjegao clipping"
 
 #: Gui.cpp:423
 msgid "Cancel"
-msgstr "Zrušit"
+msgstr "Odustani"
 
 #: Gui.cpp:392
 msgid "Channel"
-msgstr "Kanál"
+msgstr "Kanal"
 
 #: Gui.cpp:119
 msgid "Clear analysis"
-msgstr "Smazat rozbor"
+msgstr "Ukloni analizu"
 
 #: Gui.cpp:100 Gui.cpp:168 Gui.cpp:198
 msgid "Clear list"
-msgstr "Vyprázdnit seznam"
+msgstr "Očisti popis"
 
 #: GuiMain.cpp:32
 msgid "Clipping"
-msgstr "Přebuzení (clipping)"
+msgstr "Clipping"
 
 #: Gui.cpp:366 Gui.cpp:410
 msgid "Constant gain"
-msgstr "Stálé zesílení"
+msgstr "Konstantna ulazna osjetljivost"
 
 #: Gui.cpp:374
 msgid "Constant gain:"
-msgstr "Stálé zesílení:"
+msgstr "Konstantna ulazna osjetljivost:"
 
 #: Gui.cpp:136
 msgid "Delete stored tag info"
-msgstr "Smazat uložené značky"
+msgstr "Izbriši spremljene informacije oznaka"
 
 #: GuiMain.cpp:418
 msgid "Do you want to stop process now?"
-msgstr "Chcete nyní proces zastavit?"
+msgstr "Želite li postupak odmah prekinuti?"
 
 #: Gui.cpp:89
 msgid "Exit"
-msgstr "Ukončit"
+msgstr "Izlaz"
 
 #: GuiMain.cpp:29
 msgid "File"
-msgstr "Soubor"
+msgstr "Datoteka"
 
 #: Gui.cpp:309
 msgid "File options"
-msgstr "Volby pro soubory"
+msgstr "Mogućnosti datoteke"
 
 #: GuiMain.cpp:30
 msgid "Folder"
-msgstr "Složka"
+msgstr "Mapa"
 
 #: Gui.cpp:350
 msgid "Force re-calculation (do not read tag info)"
-msgstr "Vynutit přepočítání (nečíst značky"
+msgstr "Nametni ponovno izračunavanje (ne čita informaciju oznake)"
 
 #: Gui.cpp:317
 msgid "Force to assume input is an MPEG 2 Layer III file"
-msgstr "Vynutit předpoklad, že vstup je soubor MPEG 2 Layer III"
+msgstr "Nametni pretpostavku da je ulazna datoteka MPEG 2 Layer III"
 
 #: GuiMain.cpp:296
 msgid "Free front-end for the MP3gain"
-msgstr "Rozhraní pro MP3gGain"
+msgstr "Besplatno pristupno sučelje za MP3gain"
 
 #: Gui.cpp:126 Gui.cpp:174
 msgid "Gain"
-msgstr "Zesílení"
+msgstr "Ulazna osjetljivost"
 
 #: GuiMain.cpp:33
 msgid "Gain (dB)"
-msgstr "Zesílení (dB)"
+msgstr "Ulazna osjetljivost (dB)"
 
 #: GuiMain.cpp:34
 msgid "Gain (mp3)"
-msgstr "Zesílení (mp3)"
+msgstr "Ulazna osjetljivost (MP3)"
 
 #: Gui.cpp:394
 msgid "Gain on both channels"
-msgstr "Zesílení obou kanálů"
+msgstr "Ulazna osjetljivost na oba kanala"
 
 #: Gui.cpp:397
 msgid "Gain on left channel only (not for Joint Stereo mp3s)"
-msgstr "Zesílení pouze levého kanálu (ne pro Joint Stereo mp3s)"
+msgstr "Ulazna osjetljivost samo na lijevom kanalu (ne za MP3 s Joint Stereom)"
 
 #: Gui.cpp:400
 msgid "Gain on right channel only (not for Joint Stereo mp3s)"
-msgstr "Zesílení pouze pravého kanálu (ne pro Joint Stereo mp3s)"
+msgstr "Ulazna osjetljivost samo na desnom kanalu (ne za MP3 s Joint Stereom)"
 
 #: Gui.cpp:300
 msgid "Gain options"
-msgstr "Volby pro zesílení"
+msgstr "Mogućnosti ulaznog pojačavanja"
 
 #: Gui.cpp:327
 msgid "General"
-msgstr "Obecné"
+msgstr "Općenito"
 
 #: Gui.cpp:314
 msgid "Keep file timestamps"
-msgstr "Zachovat časová razítka souborů"
+msgstr "Zadrži vremenske oznake datoteka"
 
 #: Gui.cpp:143
 msgid "MP3gain Website"
-msgstr "Stránky MP3gain"
+msgstr "Mrežne stranice MP3gaina"
 
 #: GuiMain.cpp:321
 msgid "MP3gain not found!"
-msgstr "MP3gain nenalezen!"
+msgstr "MP3gain nije pronađen!"
 
 #: Gui.cpp:24
 msgid "Normal volume (dB):"
-msgstr "Normální hlasitost (dB):"
+msgstr "Normalna glasnoća (dB):"
 
 #: Gui.cpp:420
 msgid "OK"
-msgstr "OK"
+msgstr "U redu"
 
 #: GuiMain.cpp:424 GuiMain.cpp:489
 #, c-format
 msgid "Processed %lu files of %lu."
-msgstr "Zpracováno %lu souborů z %lu."
+msgstr "Obrađeno je %lu od %lu datoteka."
 
 #: Gui.cpp:96 Gui.cpp:166 Gui.cpp:194
 msgid "Remove files"
-msgstr "Odstranit soubory"
+msgstr "Ukloni datoteke"
 
 #: Gui.cpp:417
 msgid "Restore defaults"
-msgstr "Obnovit výchozí nastavení"
+msgstr "Vrati zadano"
 
 #: GuiMain.cpp:143
 msgid "Select directory"
-msgstr "Vybrat adresář"
+msgstr "Odaberite mapu"
 
 #: GuiMain.cpp:159
 msgid "Select file"
-msgstr "Vybrat soubor"
+msgstr "Odaberite datoteku"
 
 #: Gui.cpp:106 Gui.cpp:178 Gui.h:176
 msgid "Settings"
-msgstr "Nastavení"
+msgstr "Postavke"
 
 #: Gui.cpp:341
 msgid "Skip stored tag info (do not read or write tags)"
-msgstr "Přeskočit uložené informace o značkách (nečíst při zápisu značek)"
+msgstr "Preskoči spremljene informacije oznaka (bez čitanja ili pisanja oznaka)"
 
 #: GuiMain.cpp:35
 msgid "Tag info"
-msgstr "Informace o značkách"
+msgstr "Informacije oznaka"
 
 #: Gui.cpp:360
 msgid "Tags"
-msgstr "Značky"
+msgstr "Oznake"
 
 #: Gui.cpp:333
 msgid "Tags options"
-msgstr "Volby pro značky"
+msgstr "Mogućnosti oznaka"
 
 #: Gui.cpp:348
 msgid "Tags reading"
-msgstr "Čtení značek"
+msgstr "Čitanje oznaka"
 
 #: Gui.cpp:132
 msgid "Undo gain changes (based on stored tag info)\tCtrl+Z"
-msgstr ""
-"Vrátit zpět změny zesílení (založeno na uložených informacích o "
-"značkách)\tCtrl+Z"
+msgstr "Poništi izmjene ulazne osjetljivosti (temeljem spremljenih informacija oznaka)\tCtrl+Z"
 
 #: Gui.cpp:335
 msgid "Use APEv2 tag for gain information (default)"
-msgstr "Použít značku APEv2 pro informace o zesílení (výchozí)"
+msgstr "Koristi oznake APEv2 za informacije o ulaznoj osjetljivosti (zadano)"
 
 #: Gui.cpp:338
 msgid "Use ID3v2 tag for gain information"
-msgstr "Použít značku ID3v2 pro informace o zesílení"
+msgstr "Koristi oznake ID3v2 za informacije o ulaznoj osjetljivosti"
 
 #: Gui.cpp:368
 msgid "Use constant gain without doing any analysis"
-msgstr "Použít stálé zesílení, aniž by se prováděl jakýkoli rozbor"
+msgstr "Bez analize koristi stalnu ulaznu osjetljivost"
 
 #: GuiMain.cpp:319
 msgid "Using MP3gain version: "
-msgstr "Verze MP3gain: "
+msgstr "Korištena inačica MP3gaina: "
 
 #: Gui.cpp:40
 msgid "Using constant gain: "
-msgstr "Stálé zesílení: "
+msgstr "Koristi stalno ulaznu osjetljivost: "
 
 #: GuiMain.cpp:31
 msgid "Volume"
-msgstr "Hlasitost"
+msgstr "Glasnoća"
 
 #: Gui.cpp:311
 msgid "Work on temporary file"
-msgstr "Pracuje se na dočasném souboru"
+msgstr "Koristi privremene datoteke"
 
 #: GuiMain.cpp:325
 msgid "files"
-msgstr "soubory"
+msgstr "datoteka"
 
 #: Gui.cpp:147
 msgid "wxMP3gain Website"
-msgstr "Stránky wxMP3MP3gain"
+msgstr "Mrežne stranice wxMP3gaina"
 
 #: GuiMain.cpp:441 GuiMain.cpp:468 GuiMain.cpp:521
 msgid "yes"
-msgstr "ano"
+msgstr "da"
 
 #~ msgid "Progress"
-#~ msgstr "Postup"
+#~ msgstr ""
 
 #~ msgid "Wait..."
-#~ msgstr "Čekejte..."
+#~ msgstr ""
 
 #~ msgid "Elapsed time : "
-#~ msgstr "Uplynulý čas : "
+#~ msgstr ""
 
 #~ msgid "Estimated time : "
-#~ msgstr "Odhadovaný čas : "
+#~ msgstr ""
 
 #~ msgid "Remaining time : "
-#~ msgstr "Zbývající čas : "
+#~ msgstr ""
 
 #~ msgid "Close"
-#~ msgstr "Zavřít"
+#~ msgstr ""
 
 #~ msgid "unknown"
-#~ msgstr "neznámý"
+#~ msgstr ""
