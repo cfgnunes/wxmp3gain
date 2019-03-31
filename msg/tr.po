@@ -272,22 +272,22 @@ msgid "yes"
 msgstr "evet"
 
 #~ msgid "Progress"
-#~ msgstr ""
+#~ msgstr "İlerleme"
 
 #~ msgid "Wait..."
-#~ msgstr ""
+#~ msgstr "Bekleyin..."
 
 #~ msgid "Elapsed time : "
-#~ msgstr ""
+#~ msgstr "Geçen süre: "
 
 #~ msgid "Estimated time : "
-#~ msgstr ""
+#~ msgstr "Tahmini süre: "
 
 #~ msgid "Remaining time : "
-#~ msgstr ""
+#~ msgstr "Kalan süre: "
 
 #~ msgid "Close"
-#~ msgstr ""
+#~ msgstr "Kapat"
 
 #~ msgid "unknown"
-#~ msgstr ""
+#~ msgstr "bilinmeyen"
