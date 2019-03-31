@@ -131,7 +131,7 @@ msgstr "MP3-gain için ücretsiz ön yüz"
 
 #: Gui.cpp:126 Gui.cpp:174
 msgid "Gain"
-msgstr "Kazanç"
+msgstr "Kazancı uygula"
 
 #: GuiMain.cpp:33
 msgid "Gain (dB)"
@@ -184,7 +184,7 @@ msgstr "Tamam"
 #: GuiMain.cpp:424 GuiMain.cpp:489
 #, c-format
 msgid "Processed %lu files of %lu."
-msgstr "%lu dosyanın %lu tanesi işlendi."
+msgstr "İşlenen %lu dosya, toplamda %lu adet."
 
 #: Gui.cpp:96 Gui.cpp:166 Gui.cpp:194
 msgid "Remove files"
@@ -261,7 +261,7 @@ msgstr "Geçici dosya üzerinde çalış"
 
 #: GuiMain.cpp:325
 msgid "files"
-msgstr "dosyalar"
+msgstr "dosya"
 
 #: Gui.cpp:147
 msgid "wxMP3gain Website"
