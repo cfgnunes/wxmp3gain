@@ -93,7 +93,8 @@ This program is licensed under the terms of the GNU General Public License versi
 
 ## Acknowledgments
 
-* Carlos Sánchez
-* Jan Rimmek
-* Pavel Fric
-* Sergey Basalaev
+* Carlos Sánchez - *Spanish translations*
+* Jan Rimmek - *German translations*
+* Pavel Fric - *Czech translations*
+* Sergey Basalaev - *Russian translations*
+* Yaşar Çiv - *Turkish translations*
