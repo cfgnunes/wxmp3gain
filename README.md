@@ -69,7 +69,6 @@ Other tools:
 
 * [CMake](https://cmake.org/) - Build, test and package software
 * [Inno Setup](http://www.jrsoftware.org/isinfo.php) - Installer for Windows programs
-* [UPX](https://upx.github.io/) - The Ultimate Packer for eXecutables
 
 ## Contributing
 
