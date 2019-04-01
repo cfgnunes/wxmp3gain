@@ -33,7 +33,7 @@ echo Done!
 echo.
 
 echo Copying files to "%OUTPUT_DIR%" directory...
-xcopy /h /e /f "..\resource\*" "%OUTPUT_DIR%\resource\"
+xcopy /h /s /f "..\resource\*" "%OUTPUT_DIR%\resource\"
 copy /y "%APP_NAME%.exe" "%OUTPUT_DIR%\"
 copy /y "C:\TDM-GCC-32\lib\gcc510TDM_dll\wxbase312u_gcc510TDM.dll" "%OUTPUT_DIR%\"
 copy /y "C:\TDM-GCC-32\lib\gcc510TDM_dll\wxmsw312u_core_gcc510TDM.dll" "%OUTPUT_DIR%\"
