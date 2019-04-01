@@ -53,8 +53,6 @@ const wxString CONFIG_STR_LastOpenDir = _T("LastOpenDir");
 
 const wxString CONFIG_STR_NormalVolumeDb = _T("NormalVolumeDb");
 const wxString CONFIG_STR_AutoLowerEnabled = _T("AutoLowerEnabled");
-const wxString CONFIG_STR_WorkOnTemporaryFile = _T("WorkOnTemporaryFile");
-const wxString CONFIG_STR_PreserveTimeEnabled = _T("PreserveTimeEnabled");
 const wxString CONFIG_STR_ForceInputEnabled = _T("ForceInputEnabled");
 
 const wxString CONFIG_STR_TagOptions = _T("TagOptions");
@@ -69,8 +67,6 @@ const wxString DEFAULT_VALUE_LastOpenDir = wxFileName::GetHomeDir();
 
 const int DEFAULT_VALUE_NormalVolumeDb = 890;
 const bool DEFAULT_VALUE_AutoLowerEnabled = false;
-const bool DEFAULT_VALUE_WorkOnTemporaryFile = false;
-const bool DEFAULT_VALUE_PreserveTimeEnabled = false;
 const bool DEFAULT_VALUE_ForceInputEnabled = false;
 
 const int DEFAULT_VALUE_TagOptions = TAG_APE;

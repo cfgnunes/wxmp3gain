@@ -143,8 +143,6 @@ class Settings : public wxDialog
 		wxNotebook* m_notebook1;
 		wxPanel* m_panel1;
 		wxCheckBox* g_chkAutoLower;
-		wxCheckBox* g_chkWorkOnTemporaryFile;
-		wxCheckBox* g_chkPreserveTime;
 		wxCheckBox* g_chkForceInput;
 		wxPanel* m_panel2;
 		wxRadioButton* g_optTagAPE;

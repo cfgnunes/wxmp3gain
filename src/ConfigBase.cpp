@@ -24,8 +24,6 @@ void ConfigBase::setDefaultConfig() {
 
     setNormalVolumeDb(DEFAULT_VALUE_NormalVolumeDb);
     setAutoLowerEnabled(DEFAULT_VALUE_AutoLowerEnabled);
-    setWorkOnTemporaryFile(DEFAULT_VALUE_WorkOnTemporaryFile);
-    setPreserveTimeEnabled(DEFAULT_VALUE_PreserveTimeEnabled);
     setForceInputEnabled(DEFAULT_VALUE_ForceInputEnabled);
 
     setTagForceEnabled(DEFAULT_VALUE_TagForceEnabled);
@@ -42,16 +40,6 @@ void ConfigBase::setConfigFlush() {
 
 wxString ConfigBase::getStringToolOptions() const {
     wxString toolOptions;
-
-    // WorkOnTemporaryFile
-    if (getWorkOnTemporaryFile())
-        toolOptions.append(_T("-t "));
-    else
-        toolOptions.append(_T("-T "));
-
-    // PreserveTimestamp
-    if (getPreserveTimeEnabled())
-        toolOptions.append(_T("-p "));
 
     // ForceInput
     if (getForceInputEnabled())
@@ -134,18 +122,6 @@ bool ConfigBase::getAutoLowerEnabled() const {
     return value;
 }
 
-bool ConfigBase::getWorkOnTemporaryFile() const {
-    bool value;
-    mp_config->Read(CONFIG_GROUP_GENERAL + CONFIG_STR_WorkOnTemporaryFile, &value);
-    return value;
-}
-
-bool ConfigBase::getPreserveTimeEnabled() const {
-    bool value;
-    mp_config->Read(CONFIG_GROUP_GENERAL + CONFIG_STR_PreserveTimeEnabled, &value);
-    return value;
-}
-
 bool ConfigBase::getForceInputEnabled() const {
     bool value;
     mp_config->Read(CONFIG_GROUP_GENERAL + CONFIG_STR_ForceInputEnabled, &value);
@@ -198,14 +174,6 @@ void ConfigBase::setNormalVolumeDb(int value) {
 
 void ConfigBase::setAutoLowerEnabled(bool value) {
     mp_config->Write(CONFIG_GROUP_GENERAL + CONFIG_STR_AutoLowerEnabled, value);
-}
-
-void ConfigBase::setWorkOnTemporaryFile(bool value) {
-    mp_config->Write(CONFIG_GROUP_GENERAL + CONFIG_STR_WorkOnTemporaryFile, value);
-}
-
-void ConfigBase::setPreserveTimeEnabled(bool value) {
-    mp_config->Write(CONFIG_GROUP_GENERAL + CONFIG_STR_PreserveTimeEnabled, value);
 }
 
 void ConfigBase::setForceInputEnabled(bool value) {

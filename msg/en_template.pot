@@ -159,10 +159,6 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: Gui.cpp:314
-msgid "Keep file timestamps"
-msgstr ""
-
 #: Gui.cpp:143
 msgid "MP3gain Website"
 msgstr ""
@@ -252,10 +248,6 @@ msgstr ""
 msgid "Volume"
 msgstr ""
 
-#: Gui.cpp:311
-msgid "Work on temporary file"
-msgstr ""
-
 #: GuiMain.cpp:325
 msgid "files"
 msgstr ""
@@ -287,4 +279,10 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "unknown"
+#~ msgstr ""
+
+#~ msgid "Work on temporary file"
+#~ msgstr ""
+
+#~ msgid "Keep file timestamps"
 #~ msgstr ""
