@@ -2,6 +2,8 @@
 
 ## Windows packaging
 
+This section assumes Windows XP (also tested on Windows 7), but the procedure is similar for other Windows versions. The prerequisites to build the source is to install the following applications:
+
 ### Install prerequisites
 
 * [TDM-GCC 5.1.0-3](http://sourceforge.net/projects/tdm-gcc/files/TDM-GCC%20Installer/tdm-gcc-5.1.0-3.exe)
