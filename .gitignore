@@ -39,3 +39,6 @@
 
 # Output dirs
 *build*/
+
+# Windows resource files
+.res
