@@ -39,6 +39,7 @@
 
 # Output dirs
 *build*/
+!debian/build/
 
 # Windows resource files
 *.res
