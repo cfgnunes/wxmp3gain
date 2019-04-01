@@ -11,6 +11,7 @@
 #include <wx/msgdlg.h>
 #include <wx/aboutdlg.h>
 #include <wx/filedlg.h>
+#include <wx/filefn.h>
 #include <wx/dirdlg.h>
 
 GuiMain::GuiMain(wxWindow *parent)
@@ -410,17 +411,22 @@ void GuiMain::processFile(unsigned long int fileIterator) {
     FileInfo &fileInfo = mp_fileListManager->getItem(fileIterator);
     wxFileName filenameInput = fileInfo.getFileName();
 
+    // Works on a temp file
+    wxString fileTimestamp = wxString::Format(_T("/temp_%s.mp3"), wxDateTime::Now().Format(_T("%Y-%m-%d_%H-%M-%S")));
+    wxString filenameTemp = filenameInput.GetPath() + fileTimestamp;
+    wxCopyFile(filenameInput.GetFullPath(), filenameTemp, true);
+
     if (m_processType == TOOL_GAIN || m_processType == TOOL_ANALYSIS) {
         // Get old volume values (try read tag info first [if enabled tag read] )
         if (!fileInfo.isVolumeSet() && mp_configBase->getTagOptions() != 2 && !mp_configBase->getTagForceEnabled()) {
-            runCommand = fullCommand + _T(" -s c \"") + filenameInput.GetFullPath() + _T("\"");
+            runCommand = fullCommand + _T(" -s c \"") + filenameTemp + _T("\"");
             wxExecute(runCommand, m_exeInputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
             processOutputString(fileIterator);
             if (fileInfo.isVolumeSet())
                 mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_TAG_INFO, _("yes"));
         }
         if (!fileInfo.isVolumeSet()) {
-            runCommand = APP_TOOL_EXECUTABLE + _T(" -s s \"") + filenameInput.GetFullPath() + _T("\"");
+            runCommand = APP_TOOL_EXECUTABLE + _T(" -s s \"") + filenameTemp + _T("\"");
             wxExecute(runCommand, m_exeInputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
             processOutputString(fileIterator);
             mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_TAG_INFO, _T(""));
@@ -432,17 +438,17 @@ void GuiMain::processFile(unsigned long int fileIterator) {
         // Execute Gain
         if (mp_configBase->getConstantGainEnabled())
             runCommand = fullCommand + _T(" ") + mp_configBase->getStringToolOptionsGain() + _T(" \"") +
-                         filenameInput.GetFullPath() + _T("\"");
+                         filenameTemp + _T("\"");
         else
             runCommand = fullCommand + _T(" ") + mp_configBase->getStringToolOptionsGain() + _T(" -g ") +
                          wxString::Format(_T("%i "), fileInfo.getGainChange()) + _T(" \"") +
-                         filenameInput.GetFullPath() + _T("\"");
+                         filenameTemp + _T("\"");
 
         wxExecute(runCommand, m_exeInputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
         m_exeInputString.Clear();
 
         // Read file info after gain / Write tag gain (bug found on mp3gain linux)
-        runCommand = fullCommand + _T(" \"") + filenameInput.GetFullPath() + _T("\"");
+        runCommand = fullCommand + _T(" \"") + filenameTemp + _T("\"");
         wxExecute(runCommand, m_exeInputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
         switch (mp_configBase->getTagOptions()) {
             default:
@@ -460,14 +466,20 @@ void GuiMain::processFile(unsigned long int fileIterator) {
     }
 
     if (m_processType == TOOL_UNDO) {
-        runCommand = fullCommand + _T(" -u \"") + filenameInput.GetFullPath() + _T("\"");
+        runCommand = fullCommand + _T(" -u \"") + filenameTemp + _T("\"");
         wxExecute(runCommand, m_exeInputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
     }
 
     if (m_processType == TOOL_DELETE_TAG) {
-        runCommand = fullCommand + _T(" -s d \"") + filenameInput.GetFullPath() + _T("\"");
+        runCommand = fullCommand + _T(" -s d \"") + filenameTemp + _T("\"");
         wxExecute(runCommand, m_exeInputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
     }
+
+    // Delete temp file or rename to the original filename
+    if (m_processType == TOOL_ANALYSIS)
+        wxRemoveFile(filenameTemp);
+    else
+        wxRenameFile(filenameTemp, filenameInput.GetFullPath(), true);
 
     g_mainStatusBar->SetStatusText(
             wxString::Format(_("Processed %lu files of %lu."), fileIterator + 1, mp_fileListManager->size()), 1);
