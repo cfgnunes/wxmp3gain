@@ -3,6 +3,7 @@ cls
 
 set APP_NAME=wxmp3gain
 set OUTPUT_DIR=build
+set PATH=%PATH%;C:\TDM-GCC-32\bin
 
 echo Starting %APP_NAME% build...
 if exist %OUTPUT_DIR% rmdir %OUTPUT_DIR% /s /q
