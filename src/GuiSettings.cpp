@@ -48,8 +48,6 @@ void GuiSettings::updateValueControls() {
 
     // General controls
     g_chkAutoLower->SetValue(mp_configBase->getAutoLowerEnabled());
-    g_chkWorkOnTemporaryFile->SetValue(mp_configBase->getWorkOnTemporaryFile());
-    g_chkPreserveTime->SetValue(mp_configBase->getPreserveTimeEnabled());
     g_chkForceInput->SetValue(mp_configBase->getForceInputEnabled());
 
     // Tags options
@@ -81,8 +79,6 @@ void GuiSettings::updateDisabledControls() {
 void GuiSettings::saveValuesConfig() {
     // General controls
     mp_configBase->setAutoLowerEnabled(g_chkAutoLower->GetValue());
-    mp_configBase->setWorkOnTemporaryFile(g_chkWorkOnTemporaryFile->GetValue());
-    mp_configBase->setPreserveTimeEnabled(g_chkPreserveTime->GetValue());
     mp_configBase->setForceInputEnabled(g_chkForceInput->GetValue());
 
     // Tags options
@@ -116,8 +112,6 @@ void GuiSettings::defaultValueControls() {
 
     // General controls
     g_chkAutoLower->SetValue(DEFAULT_VALUE_AutoLowerEnabled);
-    g_chkWorkOnTemporaryFile->SetValue(DEFAULT_VALUE_WorkOnTemporaryFile);
-    g_chkPreserveTime->SetValue(DEFAULT_VALUE_PreserveTimeEnabled);
     g_chkForceInput->SetValue(DEFAULT_VALUE_ForceInputEnabled);
 
     // Tags options

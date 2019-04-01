@@ -310,12 +310,6 @@ Settings::Settings( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	wxStaticBoxSizer* sbSizer11;
 	sbSizer11 = new wxStaticBoxSizer( new wxStaticBox( m_panel1, wxID_ANY, _("File options") ), wxVERTICAL );
 	
-	g_chkWorkOnTemporaryFile = new wxCheckBox( sbSizer11->GetStaticBox(), wxID_ANY, _("Work on temporary file"), wxDefaultPosition, wxDefaultSize, 0 );
-	sbSizer11->Add( g_chkWorkOnTemporaryFile, 0, wxALL, 2 );
-	
-	g_chkPreserveTime = new wxCheckBox( sbSizer11->GetStaticBox(), wxID_ANY, _("Keep file timestamps"), wxDefaultPosition, wxDefaultSize, 0 );
-	sbSizer11->Add( g_chkPreserveTime, 0, wxALL, 2 );
-	
 	g_chkForceInput = new wxCheckBox( sbSizer11->GetStaticBox(), wxID_ANY, _("Force to assume input is an MPEG 2 Layer III file"), wxDefaultPosition, wxDefaultSize, 0 );
 	sbSizer11->Add( g_chkForceInput, 0, wxALL, 2 );
 	

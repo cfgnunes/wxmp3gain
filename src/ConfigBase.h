@@ -34,10 +34,6 @@ public:
 
     bool getAutoLowerEnabled() const;
 
-    bool getWorkOnTemporaryFile() const;
-
-    bool getPreserveTimeEnabled() const;
-
     bool getForceInputEnabled() const;
 
     int getTagOptions() const;
@@ -58,10 +54,6 @@ public:
     void setNormalVolumeDb(int value);
 
     void setAutoLowerEnabled(bool value);
-
-    void setWorkOnTemporaryFile(bool value);
-
-    void setPreserveTimeEnabled(bool value);
 
     void setForceInputEnabled(bool value);
 
