@@ -96,11 +96,11 @@ inline wxString GetResourceDir() {
     wxDir dir;
     wxString resourceDir;
 
-    resourceDir = _T("/usr/share/wxmp3val") + resourceDirName;
+    resourceDir = _T("/usr/share/wxmp3gain") + resourceDirName;
     if (dir.Open(resourceDir))
         return resourceDir;
 
-    resourceDir = _T("/usr/local/share/wxmp3val") + resourceDirName;
+    resourceDir = _T("/usr/local/share/wxmp3gain") + resourceDirName;
     if (dir.Open(resourceDir))
         return resourceDir;
 
