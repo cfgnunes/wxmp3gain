@@ -24,7 +24,7 @@ IMPLEMENT_APP(Application);
 
 bool Application::OnInit() {
     // Load language translation
-    mp_locale = new wxLocale(wxLANGUAGE_DEFAULT);
+    mp_locale = new wxLocale(wxLocale::GetSystemLanguage());
     mp_locale->AddCatalogLookupPathPrefix(GetResourceDir() + _T("msg"));
     mp_locale->AddCatalog(_T("wxmp3gain"));
 
