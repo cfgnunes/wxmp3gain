@@ -12,7 +12,7 @@
 #include <wx/dir.h>
 
 const wxString APP_NAME = _T("wxMP3gain");
-const wxString APP_VERSION = _T("3.7");
+const wxString APP_VERSION = _T("4.0");
 const wxString APP_NAME_WITH_VERSION = APP_NAME + _T(" v") + APP_VERSION;
 
 const wxString APP_COPYRIGHT = _T("(C) 2012-2019 Cristiano Nunes <cfgnunes@gmail.com>");

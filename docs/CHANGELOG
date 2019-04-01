@@ -1,5 +1,11 @@
 wxMP3gain - Changelog file
 
+Changelog v4.0 (2019-04-01)
+--------------
+- Support for unicode filenames
+- Added Turkish translation
+- Added Croatian translation
+
 Changelog v3.7 (2015-02-22)
 --------------
 - Code refactor
