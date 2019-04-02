@@ -412,8 +412,7 @@ void GuiMain::processFile(unsigned long int fileIterator) {
     wxFileName filenameInput = fileInfo.getFileName();
 
     // Works on a temp file
-    wxString fileTimestamp = wxString::Format(_T("/temp_%s.mp3"), wxDateTime::Now().Format(_T("%Y-%m-%d_%H-%M-%S")));
-    wxString filenameTemp = filenameInput.GetPath() + fileTimestamp;
+    wxString filenameTemp = wxFileName::CreateTempFileName(_T("temp-")) + _T(".mp3");
     wxCopyFile(filenameInput.GetFullPath(), filenameTemp, true);
 
     if (m_processType == TOOL_GAIN || m_processType == TOOL_ANALYSIS) {
