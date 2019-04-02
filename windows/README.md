@@ -10,12 +10,12 @@
 * [Gettext 0.19.8.1](https://mlocati.github.io/articles/gettext-iconv-windows.html) - 32 bit, static.
 * [Inno Setup 5.6.1](http://www.jrsoftware.org/download.php/is-unicode.exe) - unicode.
 
-### Build binaries
+### Build the binaries
 
 ```sh
-make-binaries.cmd
+build-binaries.cmd
 ```
 
 ### Build the installer
 
-To generate the setup installer, use file 'make-setup.iss' in the Inno Setup.
+To generate the installer setup, use file 'build-installer.iss' in the Inno Setup after build the binaries.
