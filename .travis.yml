@@ -1,5 +1,4 @@
 language: cpp
-
 matrix:
   include:
     # Tests on Ubuntu 14.04
@@ -7,8 +6,6 @@ matrix:
       dist: trusty
       addons:
        apt:
-         sources:
-           - ubuntu-toolchain-r-test
          packages:
            - build-essential
            - cmake
@@ -18,15 +15,13 @@ matrix:
       dist: xenial
       addons:
        apt:
-         sources:
-           - ubuntu-toolchain-r-test
          packages:
            - build-essential
            - cmake
            - libwxgtk3.0-dev
 script:
-     - mkdir build
-     - cd build
-     - cmake -DCMAKE_BUILD_TYPE=Coverage ..
-     - make
-     - sudo make install
+  - mkdir build
+  - cd build
+  - cmake -DCMAKE_BUILD_TYPE=Coverage ..
+  - make
+  - sudo make install
