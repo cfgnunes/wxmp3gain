@@ -19,8 +19,8 @@ This program has been tested on the following platforms:
 
 ```sh
 sudo add-apt-repository -y ppa:cfgnunes/ppa
-sudo apt-get update
-sudo apt-get -y install wxmp3gain
+sudo apt update
+sudo apt -y install wxmp3gain
 ```
 
 ### Install from sources
@@ -28,9 +28,9 @@ sudo apt-get -y install wxmp3gain
 This section assumes Ubuntu 14.04 (also tested on Ubuntu 16.04), but the procedure is similar for other Linux distributions. The prerequisites to build the source is to install the following packages:
 
 ```sh
-sudo apt-get -y install build-essential cmake
-sudo apt-get -y install libwxgtk3.0-dev
-sudo apt-get -y install mp3gain
+sudo apt -y install build-essential cmake
+sudo apt -y install libwxgtk3.0-dev
+sudo apt -y install mp3gain
 ```
 
 Compile the sources and install with following commands in the terminal:
@@ -48,7 +48,7 @@ sudo make install
 Install the prerequisites:
 
 ```sh
-sudo apt-get -y install devscripts debhelper
+sudo apt -y install devscripts debhelper
 ```
 
 Run the following command on source directory:
