@@ -131,7 +131,7 @@ void GuiMain::OnlstFilesKeyDown(wxListEvent &event) {
 void GuiMain::btnProcessStop(wxCommandEvent &event) {
     m_processRunning = false;
     g_btnStop->Enable(false);
-    event.Skip();
+    event.Skip(false);
 }
 
 void GuiMain::mnuAddDirectory(wxCommandEvent &event) {
@@ -147,7 +147,7 @@ void GuiMain::mnuAddDirectory(wxCommandEvent &event) {
         mp_configBase->setLastOpenDir(dirDialog.GetPath());
         SetCursor(wxCURSOR_ARROW);
     }
-    event.Skip();
+    event.Skip(false);
 }
 
 void GuiMain::mnuAddFiles(wxCommandEvent &event) {
@@ -169,13 +169,13 @@ void GuiMain::mnuAddFiles(wxCommandEvent &event) {
         mp_configBase->setLastOpenDir(fileDialog.GetDirectory());
         SetCursor(wxCURSOR_ARROW);
     }
-    event.Skip();
+    event.Skip(false);
 }
 
 void GuiMain::mnuExit(wxCommandEvent &event) {
     // Terminates the program
     Close();
-    event.Skip();
+    event.Skip(false);
 }
 
 void GuiMain::mnuRemoveFiles(wxCommandEvent &event) {
@@ -186,7 +186,7 @@ void GuiMain::mnuRemoveFiles(wxCommandEvent &event) {
     SetCursor(wxCURSOR_ARROW);
 
     updateControls();
-    event.Skip();
+    event.Skip(false);
 }
 
 void GuiMain::mnuClearList(wxCommandEvent &event) {
@@ -194,7 +194,7 @@ void GuiMain::mnuClearList(wxCommandEvent &event) {
     mp_fileListManager->clear();
 
     updateControls();
-    event.Skip();
+    event.Skip(false);
 }
 
 void GuiMain::mnuSettings(wxCommandEvent &event) {
@@ -222,7 +222,7 @@ void GuiMain::mnuSettings(wxCommandEvent &event) {
     updateControls();
     updateTxtNormalVolumeDb();
     mp_fileListManager->updateGainLabels(m_dblNormalVolume, mp_configBase);
-    event.Skip();
+    event.Skip(false);
 }
 
 void GuiMain::mnuClearAnalysis(wxCommandEvent &event) {
@@ -236,7 +236,7 @@ void GuiMain::mnuClearAnalysis(wxCommandEvent &event) {
         g_lstFiles->SetItem(i, 6, _T(""));
         g_lstFiles->SetItemTextColour(i, *wxBLACK);
     }
-    event.Skip();
+    event.Skip(false);
 }
 
 void GuiMain::mnuAnalyze(wxCommandEvent &event) {
@@ -246,7 +246,7 @@ void GuiMain::mnuAnalyze(wxCommandEvent &event) {
     processExecute();
     m_processRunning = false;
     updateControls();
-    event.Skip();
+    event.Skip(false);
 }
 
 void GuiMain::mnuGain(wxCommandEvent &event) {
@@ -256,7 +256,7 @@ void GuiMain::mnuGain(wxCommandEvent &event) {
     processExecute();
     m_processRunning = false;
     updateControls();
-    event.Skip();
+    event.Skip(false);
 }
 
 void GuiMain::mnuUndoGain(wxCommandEvent &event) {
@@ -268,7 +268,7 @@ void GuiMain::mnuUndoGain(wxCommandEvent &event) {
     updateControls();
 
     mnuClearAnalysis(event);
-    event.Skip();
+    event.Skip(false);
 }
 
 void GuiMain::mnuDeleteTag(wxCommandEvent &event) {
@@ -280,17 +280,17 @@ void GuiMain::mnuDeleteTag(wxCommandEvent &event) {
     updateControls();
 
     mnuClearAnalysis(event);
-    event.Skip();
+    event.Skip(false);
 }
 
 void GuiMain::mnuToolWebsite(wxCommandEvent &event) {
     wxLaunchDefaultBrowser(_T("http://mp3gain.sourceforge.net/"));
-    event.Skip();
+    event.Skip(false);
 }
 
 void GuiMain::mnuWebsite(wxCommandEvent &event) {
     wxLaunchDefaultBrowser(APP_WEBSITE);
-    event.Skip();
+    event.Skip(false);
 }
 
 void GuiMain::mnuAbout(wxCommandEvent &event) {
@@ -301,7 +301,7 @@ void GuiMain::mnuAbout(wxCommandEvent &event) {
     aboutInfo.SetCopyright(APP_COPYRIGHT);
     aboutInfo.SetWebSite(APP_WEBSITE);
     wxAboutBox(aboutInfo);
-    event.Skip();
+    event.Skip(false);
 }
 
 void GuiMain::OnTimer1Trigger(wxTimerEvent &event) {
@@ -356,7 +356,7 @@ void GuiMain::OnTimer1Trigger(wxTimerEvent &event) {
                           g_lstFiles->GetItemCount() > 0 && mp_configBase->getTagOptions() != 2 && !m_processRunning);
 
     g_btnStop->Enable(m_processRunning);
-    event.Skip();
+    event.Skip(false);
 }
 
 void GuiMain::loadResources() {
