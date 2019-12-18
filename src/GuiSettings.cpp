@@ -20,7 +20,7 @@ GuiSettings::~GuiSettings() {
 
 void GuiSettings::updateDisabledControlsEvent(wxCommandEvent &event) {
     updateDisabledControls();
-    event.Skip();
+    event.Skip(false);
 }
 
 void GuiSettings::OnsldConstantGainCmdSliderUpdated(wxScrollEvent &event) {
@@ -28,24 +28,24 @@ void GuiSettings::OnsldConstantGainCmdSliderUpdated(wxScrollEvent &event) {
     g_lblConstantGain->SetLabel(
             wxString::Format(_T("%+i"), intGain) + _T(" (") + wxString::Format(_T("%+.1f"), intGain * VALUE_5LOG2) +
             _T(" dB)"));
-    event.Skip();
+    event.Skip(false);
 }
 
 void GuiSettings::OnbtnDefaultClick(wxCommandEvent &event) {
     defaultValueControls();
     updateDisabledControls();
-    event.Skip();
+    event.Skip(false);
 }
 
 void GuiSettings::OnbtnOKClick(wxCommandEvent &event) {
     saveValuesConfig();
     Close();
-    event.Skip();
+    event.Skip(false);
 }
 
 void GuiSettings::OnbtnCancelClick(wxCommandEvent &event) {
     Close();
-    event.Skip();
+    event.Skip(false);
 }
 
 void GuiSettings::updateValueControls() {
