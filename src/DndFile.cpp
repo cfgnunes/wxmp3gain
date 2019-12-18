@@ -11,7 +11,7 @@ DndFile::DndFile(FileListManager *fileListManager) : mp_fileListManager(fileList
 DndFile::~DndFile() {
 }
 
-bool DndFile::OnDropFiles(wxCoord x, wxCoord y, const wxArrayString &filenames) {
+bool DndFile::OnDropFiles(wxCoord, wxCoord, const wxArrayString &filenames) {
     mp_fileListManager->insertFilesAndDir(filenames);
     return true;
 }

@@ -17,7 +17,7 @@ public:
 
     virtual ~DndFile();
 
-    virtual bool OnDropFiles(wxCoord x, wxCoord y, const wxArrayString &filenames);
+    virtual bool OnDropFiles(wxCoord, wxCoord, const wxArrayString &filenames);
 
 private:
     FileListManager *mp_fileListManager;
