@@ -20,7 +20,7 @@
 #include "GuiMain.h"
 #include "Constants.h"
 
-IMPLEMENT_APP(Application);
+IMPLEMENT_APP(Application)
 
 bool Application::OnInit() {
     // Load language translation

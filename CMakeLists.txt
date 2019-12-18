@@ -7,7 +7,7 @@ find_package(wxWidgets REQUIRED)
 include(${wxWidgets_USE_FILE})
 
 # Set compiler parameters
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -s")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -s -O3 -Wall -Wextra -Wpedantic")
 
 # Sources
 file(GLOB SRC_FILES src/*.cpp src/*.h)
