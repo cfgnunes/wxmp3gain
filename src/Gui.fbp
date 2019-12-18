@@ -128,11 +128,11 @@
                                     <property name="name">g_boxNormalVolume</property>
                                     <property name="orient">wxHORIZONTAL</property>
                                     <property name="permission">protected</property>
-                                    <object class="sizeritem" expanded="0">
+                                    <object class="sizeritem" expanded="1">
                                         <property name="border">5</property>
                                         <property name="flag">wxALL|wxALIGN_CENTER_VERTICAL</property>
                                         <property name="proportion">0</property>
-                                        <object class="wxStaticText" expanded="0">
+                                        <object class="wxStaticText" expanded="1">
                                             <property name="BottomDockable">1</property>
                                             <property name="LeftDockable">1</property>
                                             <property name="RightDockable">1</property>
@@ -189,11 +189,11 @@
                                             <property name="wrap">-1</property>
                                         </object>
                                     </object>
-                                    <object class="sizeritem" expanded="0">
+                                    <object class="sizeritem" expanded="1">
                                         <property name="border">5</property>
                                         <property name="flag">wxALL|wxALIGN_CENTER_VERTICAL</property>
                                         <property name="proportion">0</property>
-                                        <object class="wxTextCtrl" expanded="0">
+                                        <object class="wxTextCtrl" expanded="1">
                                             <property name="BottomDockable">1</property>
                                             <property name="LeftDockable">1</property>
                                             <property name="RightDockable">1</property>
@@ -254,11 +254,11 @@
                                             <event name="OnKillFocus">OntxtNormalVolumeTextKillFocus</event>
                                         </object>
                                     </object>
-                                    <object class="sizeritem" expanded="0">
+                                    <object class="sizeritem" expanded="1">
                                         <property name="border">5</property>
                                         <property name="flag">wxALL|wxALIGN_CENTER_VERTICAL</property>
                                         <property name="proportion">0</property>
-                                        <object class="wxStaticText" expanded="0">
+                                        <object class="wxStaticText" expanded="1">
                                             <property name="BottomDockable">1</property>
                                             <property name="LeftDockable">1</property>
                                             <property name="RightDockable">1</property>
@@ -326,11 +326,11 @@
                                     <property name="name">g_boxConstantGain</property>
                                     <property name="orient">wxHORIZONTAL</property>
                                     <property name="permission">protected</property>
-                                    <object class="sizeritem" expanded="0">
+                                    <object class="sizeritem" expanded="1">
                                         <property name="border">5</property>
                                         <property name="flag">wxALL</property>
                                         <property name="proportion">0</property>
-                                        <object class="wxStaticText" expanded="0">
+                                        <object class="wxStaticText" expanded="1">
                                             <property name="BottomDockable">1</property>
                                             <property name="LeftDockable">1</property>
                                             <property name="RightDockable">1</property>
@@ -387,11 +387,11 @@
                                             <property name="wrap">-1</property>
                                         </object>
                                     </object>
-                                    <object class="sizeritem" expanded="0">
+                                    <object class="sizeritem" expanded="1">
                                         <property name="border">5</property>
                                         <property name="flag">wxALL</property>
                                         <property name="proportion">1</property>
-                                        <object class="wxStaticText" expanded="0">
+                                        <object class="wxStaticText" expanded="1">
                                             <property name="BottomDockable">1</property>
                                             <property name="LeftDockable">1</property>
                                             <property name="RightDockable">1</property>
@@ -450,11 +450,11 @@
                                     </object>
                                 </object>
                             </object>
-                            <object class="sizeritem" expanded="0">
+                            <object class="sizeritem" expanded="1">
                                 <property name="border">0</property>
                                 <property name="flag">wxALL|wxEXPAND</property>
                                 <property name="proportion">1</property>
-                                <object class="wxListCtrl" expanded="0">
+                                <object class="wxListCtrl" expanded="1">
                                     <property name="BottomDockable">1</property>
                                     <property name="LeftDockable">1</property>
                                     <property name="RightDockable">1</property>
@@ -527,11 +527,11 @@
                                     <property name="name">bSizer11</property>
                                     <property name="orient">wxHORIZONTAL</property>
                                     <property name="permission">none</property>
-                                    <object class="sizeritem" expanded="0">
+                                    <object class="sizeritem" expanded="1">
                                         <property name="border">5</property>
                                         <property name="flag">wxALL|wxALIGN_CENTER_VERTICAL</property>
                                         <property name="proportion">1</property>
-                                        <object class="wxGauge" expanded="0">
+                                        <object class="wxGauge" expanded="1">
                                             <property name="BottomDockable">1</property>
                                             <property name="LeftDockable">1</property>
                                             <property name="RightDockable">1</property>
@@ -591,11 +591,11 @@
                                             <property name="window_style"></property>
                                         </object>
                                     </object>
-                                    <object class="sizeritem" expanded="0">
+                                    <object class="sizeritem" expanded="1">
                                         <property name="border">5</property>
                                         <property name="flag">wxALL|wxALIGN_CENTER_VERTICAL</property>
                                         <property name="proportion">0</property>
-                                        <object class="wxButton" expanded="0">
+                                        <object class="wxButton" expanded="1">
                                             <property name="BottomDockable">1</property>
                                             <property name="LeftDockable">1</property>
                                             <property name="RightDockable">1</property>
@@ -670,7 +670,7 @@
                     </object>
                 </object>
             </object>
-            <object class="wxMenuBar" expanded="0">
+            <object class="wxMenuBar" expanded="1">
                 <property name="bg"></property>
                 <property name="context_help"></property>
                 <property name="context_menu">1</property>
@@ -692,11 +692,11 @@
                 <property name="window_extra_style"></property>
                 <property name="window_name"></property>
                 <property name="window_style"></property>
-                <object class="wxMenu" expanded="0">
+                <object class="wxMenu" expanded="1">
                     <property name="label">&amp;File</property>
                     <property name="name">g_mnbFile</property>
                     <property name="permission">protected</property>
-                    <object class="wxMenuItem" expanded="0">
+                    <object class="wxMenuItem" expanded="1">
                         <property name="bitmap"></property>
                         <property name="checked">0</property>
                         <property name="enabled">1</property>
@@ -710,7 +710,7 @@
                         <property name="unchecked_bitmap"></property>
                         <event name="OnMenuSelection">mnuAddDirectory</event>
                     </object>
-                    <object class="wxMenuItem" expanded="0">
+                    <object class="wxMenuItem" expanded="1">
                         <property name="bitmap"></property>
                         <property name="checked">0</property>
                         <property name="enabled">1</property>
@@ -724,11 +724,11 @@
                         <property name="unchecked_bitmap"></property>
                         <event name="OnMenuSelection">mnuAddFiles</event>
                     </object>
-                    <object class="separator" expanded="0">
+                    <object class="separator" expanded="1">
                         <property name="name">m_separator1</property>
                         <property name="permission">none</property>
                     </object>
-                    <object class="wxMenuItem" expanded="0">
+                    <object class="wxMenuItem" expanded="1">
                         <property name="bitmap"></property>
                         <property name="checked">0</property>
                         <property name="enabled">1</property>
@@ -743,11 +743,11 @@
                         <event name="OnMenuSelection">mnuExit</event>
                     </object>
                 </object>
-                <object class="wxMenu" expanded="0">
+                <object class="wxMenu" expanded="1">
                     <property name="label">&amp;Edit</property>
                     <property name="name">g_mnbEdit</property>
                     <property name="permission">protected</property>
-                    <object class="wxMenuItem" expanded="0">
+                    <object class="wxMenuItem" expanded="1">
                         <property name="bitmap"></property>
                         <property name="checked">0</property>
                         <property name="enabled">1</property>
@@ -761,7 +761,7 @@
                         <property name="unchecked_bitmap"></property>
                         <event name="OnMenuSelection">mnuRemoveFiles</event>
                     </object>
-                    <object class="wxMenuItem" expanded="0">
+                    <object class="wxMenuItem" expanded="1">
                         <property name="bitmap"></property>
                         <property name="checked">0</property>
                         <property name="enabled">1</property>
@@ -775,11 +775,11 @@
                         <property name="unchecked_bitmap"></property>
                         <event name="OnMenuSelection">mnuClearList</event>
                     </object>
-                    <object class="separator" expanded="0">
+                    <object class="separator" expanded="1">
                         <property name="name">m_separator2</property>
                         <property name="permission">none</property>
                     </object>
-                    <object class="wxMenuItem" expanded="0">
+                    <object class="wxMenuItem" expanded="1">
                         <property name="bitmap"></property>
                         <property name="checked">0</property>
                         <property name="enabled">1</property>
@@ -794,11 +794,11 @@
                         <event name="OnMenuSelection">mnuSettings</event>
                     </object>
                 </object>
-                <object class="wxMenu" expanded="0">
+                <object class="wxMenu" expanded="1">
                     <property name="label">&amp;Analysis</property>
                     <property name="name">g_mnbAnalysis</property>
                     <property name="permission">protected</property>
-                    <object class="wxMenuItem" expanded="0">
+                    <object class="wxMenuItem" expanded="1">
                         <property name="bitmap"></property>
                         <property name="checked">0</property>
                         <property name="enabled">1</property>
@@ -812,11 +812,11 @@
                         <property name="unchecked_bitmap"></property>
                         <event name="OnMenuSelection">mnuAnalyze</event>
                     </object>
-                    <object class="separator" expanded="0">
+                    <object class="separator" expanded="1">
                         <property name="name">m_separator4</property>
                         <property name="permission">none</property>
                     </object>
-                    <object class="wxMenuItem" expanded="0">
+                    <object class="wxMenuItem" expanded="1">
                         <property name="bitmap"></property>
                         <property name="checked">0</property>
                         <property name="enabled">1</property>
@@ -831,11 +831,11 @@
                         <event name="OnMenuSelection">mnuClearAnalysis</event>
                     </object>
                 </object>
-                <object class="wxMenu" expanded="0">
+                <object class="wxMenu" expanded="1">
                     <property name="label">&amp;Gain</property>
                     <property name="name">g_mnuGain</property>
                     <property name="permission">protected</property>
-                    <object class="wxMenuItem" expanded="0">
+                    <object class="wxMenuItem" expanded="1">
                         <property name="bitmap"></property>
                         <property name="checked">0</property>
                         <property name="enabled">1</property>
@@ -849,11 +849,11 @@
                         <property name="unchecked_bitmap"></property>
                         <event name="OnMenuSelection">mnuGain</event>
                     </object>
-                    <object class="separator" expanded="0">
+                    <object class="separator" expanded="1">
                         <property name="name">m_separator5</property>
                         <property name="permission">none</property>
                     </object>
-                    <object class="wxMenuItem" expanded="0">
+                    <object class="wxMenuItem" expanded="1">
                         <property name="bitmap"></property>
                         <property name="checked">0</property>
                         <property name="enabled">1</property>
@@ -867,7 +867,7 @@
                         <property name="unchecked_bitmap"></property>
                         <event name="OnMenuSelection">mnuUndoGain</event>
                     </object>
-                    <object class="wxMenuItem" expanded="0">
+                    <object class="wxMenuItem" expanded="1">
                         <property name="bitmap"></property>
                         <property name="checked">0</property>
                         <property name="enabled">1</property>
@@ -882,11 +882,11 @@
                         <event name="OnMenuSelection">mnuDeleteTag</event>
                     </object>
                 </object>
-                <object class="wxMenu" expanded="0">
+                <object class="wxMenu" expanded="1">
                     <property name="label">&amp;Help</property>
                     <property name="name">g_mnbHelp</property>
                     <property name="permission">protected</property>
-                    <object class="wxMenuItem" expanded="0">
+                    <object class="wxMenuItem" expanded="1">
                         <property name="bitmap"></property>
                         <property name="checked">0</property>
                         <property name="enabled">1</property>
@@ -900,7 +900,7 @@
                         <property name="unchecked_bitmap"></property>
                         <event name="OnMenuSelection">mnuToolWebsite</event>
                     </object>
-                    <object class="wxMenuItem" expanded="0">
+                    <object class="wxMenuItem" expanded="1">
                         <property name="bitmap"></property>
                         <property name="checked">0</property>
                         <property name="enabled">1</property>
@@ -914,11 +914,11 @@
                         <property name="unchecked_bitmap"></property>
                         <event name="OnMenuSelection">mnuWebsite</event>
                     </object>
-                    <object class="separator" expanded="0">
+                    <object class="separator" expanded="1">
                         <property name="name">m_separator3</property>
                         <property name="permission">none</property>
                     </object>
-                    <object class="wxMenuItem" expanded="0">
+                    <object class="wxMenuItem" expanded="1">
                         <property name="bitmap"></property>
                         <property name="checked">0</property>
                         <property name="enabled">1</property>
@@ -934,7 +934,7 @@
                     </object>
                 </object>
             </object>
-            <object class="wxStatusBar" expanded="0">
+            <object class="wxStatusBar" expanded="1">
                 <property name="bg"></property>
                 <property name="context_help"></property>
                 <property name="context_menu">1</property>
@@ -1013,7 +1013,7 @@
                 <property name="window_extra_style"></property>
                 <property name="window_name"></property>
                 <property name="window_style"></property>
-                <object class="tool" expanded="0">
+                <object class="tool" expanded="1">
                     <property name="bitmap">Load From Art Provider; wxART_MISSING_IMAGE; wxART_TOOLBAR</property>
                     <property name="context_menu">0</property>
                     <property name="id">ID_ADD_FOLDER</property>
@@ -1025,7 +1025,7 @@
                     <property name="tooltip">Add folder</property>
                     <event name="OnToolClicked">mnuAddDirectory</event>
                 </object>
-                <object class="tool" expanded="0">
+                <object class="tool" expanded="1">
                     <property name="bitmap">Load From Art Provider; wxART_MISSING_IMAGE; wxART_TOOLBAR</property>
                     <property name="context_menu">0</property>
                     <property name="id">ID_ADD_FILES</property>
@@ -1037,7 +1037,7 @@
                     <property name="tooltip">Add files</property>
                     <event name="OnToolClicked">mnuAddFiles</event>
                 </object>
-                <object class="tool" expanded="0">
+                <object class="tool" expanded="1">
                     <property name="bitmap">Load From Art Provider; wxART_MISSING_IMAGE; wxART_TOOLBAR</property>
                     <property name="context_menu">0</property>
                     <property name="id">ID_REMOVE_FILES</property>
@@ -1049,7 +1049,7 @@
                     <property name="tooltip">Remove files</property>
                     <event name="OnToolClicked">mnuRemoveFiles</event>
                 </object>
-                <object class="tool" expanded="0">
+                <object class="tool" expanded="1">
                     <property name="bitmap">Load From Art Provider; wxART_MISSING_IMAGE; wxART_TOOLBAR</property>
                     <property name="context_menu">0</property>
                     <property name="id">ID_CLEAR_LIST</property>
@@ -1061,10 +1061,10 @@
                     <property name="tooltip">Clear list</property>
                     <event name="OnToolClicked">mnuClearList</event>
                 </object>
-                <object class="toolSeparator" expanded="0">
+                <object class="toolSeparator" expanded="1">
                     <property name="permission">none</property>
                 </object>
-                <object class="tool" expanded="0">
+                <object class="tool" expanded="1">
                     <property name="bitmap">Load From Art Provider; wxART_MISSING_IMAGE; wxART_TOOLBAR</property>
                     <property name="context_menu">0</property>
                     <property name="id">ID_ANALYZE</property>
@@ -1076,7 +1076,7 @@
                     <property name="tooltip">Analyze</property>
                     <event name="OnToolClicked">mnuAnalyze</event>
                 </object>
-                <object class="tool" expanded="0">
+                <object class="tool" expanded="1">
                     <property name="bitmap">Load From Art Provider; wxART_MISSING_IMAGE; wxART_TOOLBAR</property>
                     <property name="context_menu">0</property>
                     <property name="id">ID_GAIN</property>
@@ -1088,10 +1088,10 @@
                     <property name="tooltip">Gain</property>
                     <event name="OnToolClicked">mnuGain</event>
                 </object>
-                <object class="toolSeparator" expanded="0">
+                <object class="toolSeparator" expanded="1">
                     <property name="permission">none</property>
                 </object>
-                <object class="tool" expanded="0">
+                <object class="tool" expanded="1">
                     <property name="bitmap">Load From Art Provider; wxART_MISSING_IMAGE; wxART_TOOLBAR</property>
                     <property name="context_menu">0</property>
                     <property name="id">ID_SETTINGS</property>
@@ -1103,7 +1103,7 @@
                     <property name="tooltip">Settings</property>
                     <event name="OnToolClicked">mnuSettings</event>
                 </object>
-                <object class="tool" expanded="0">
+                <object class="tool" expanded="1">
                     <property name="bitmap">Load From Art Provider; wxART_MISSING_IMAGE; wxART_TOOLBAR</property>
                     <property name="context_menu">0</property>
                     <property name="id">ID_ABOUT</property>
@@ -1120,7 +1120,7 @@
                 <property name="label">MyMenu</property>
                 <property name="name">g_mainMenu</property>
                 <property name="permission">protected</property>
-                <object class="wxMenuItem" expanded="0">
+                <object class="wxMenuItem" expanded="1">
                     <property name="bitmap"></property>
                     <property name="checked">0</property>
                     <property name="enabled">1</property>
@@ -1134,7 +1134,7 @@
                     <property name="unchecked_bitmap"></property>
                     <event name="OnMenuSelection">mnuAddDirectory</event>
                 </object>
-                <object class="wxMenuItem" expanded="0">
+                <object class="wxMenuItem" expanded="1">
                     <property name="bitmap"></property>
                     <property name="checked">0</property>
                     <property name="enabled">1</property>
@@ -1148,7 +1148,7 @@
                     <property name="unchecked_bitmap"></property>
                     <event name="OnMenuSelection">mnuAddFiles</event>
                 </object>
-                <object class="wxMenuItem" expanded="0">
+                <object class="wxMenuItem" expanded="1">
                     <property name="bitmap"></property>
                     <property name="checked">0</property>
                     <property name="enabled">1</property>
@@ -1162,7 +1162,7 @@
                     <property name="unchecked_bitmap"></property>
                     <event name="OnMenuSelection">mnuRemoveFiles</event>
                 </object>
-                <object class="wxMenuItem" expanded="0">
+                <object class="wxMenuItem" expanded="1">
                     <property name="bitmap"></property>
                     <property name="checked">0</property>
                     <property name="enabled">1</property>
@@ -1177,7 +1177,7 @@
                     <event name="OnMenuSelection">mnuClearList</event>
                 </object>
             </object>
-            <object class="wxTimer" expanded="0">
+            <object class="wxTimer" expanded="1">
                 <property name="enabled">0</property>
                 <property name="id">wxID_ANY</property>
                 <property name="name">m_timer1</property>
@@ -1347,11 +1347,11 @@
                                             <property name="orient">wxHORIZONTAL</property>
                                             <property name="parent">1</property>
                                             <property name="permission">none</property>
-                                            <object class="sizeritem" expanded="0">
+                                            <object class="sizeritem" expanded="1">
                                                 <property name="border">2</property>
                                                 <property name="flag">wxALL</property>
                                                 <property name="proportion">0</property>
-                                                <object class="wxCheckBox" expanded="0">
+                                                <object class="wxCheckBox" expanded="1">
                                                     <property name="BottomDockable">1</property>
                                                     <property name="LeftDockable">1</property>
                                                     <property name="RightDockable">1</property>
@@ -1425,11 +1425,11 @@
                                             <property name="orient">wxVERTICAL</property>
                                             <property name="parent">1</property>
                                             <property name="permission">none</property>
-                                            <object class="sizeritem" expanded="0">
+                                            <object class="sizeritem" expanded="1">
                                                 <property name="border">2</property>
                                                 <property name="flag">wxALL</property>
                                                 <property name="proportion">0</property>
-                                                <object class="wxCheckBox" expanded="0">
+                                                <object class="wxCheckBox" expanded="1">
                                                     <property name="BottomDockable">1</property>
                                                     <property name="LeftDockable">1</property>
                                                     <property name="RightDockable">1</property>
@@ -1566,11 +1566,11 @@
                                             <property name="orient">wxVERTICAL</property>
                                             <property name="parent">1</property>
                                             <property name="permission">none</property>
-                                            <object class="sizeritem" expanded="0">
+                                            <object class="sizeritem" expanded="1">
                                                 <property name="border">2</property>
                                                 <property name="flag">wxALL</property>
                                                 <property name="proportion">0</property>
-                                                <object class="wxRadioButton" expanded="0">
+                                                <object class="wxRadioButton" expanded="1">
                                                     <property name="BottomDockable">1</property>
                                                     <property name="LeftDockable">1</property>
                                                     <property name="RightDockable">1</property>
@@ -1631,11 +1631,11 @@
                                                     <event name="OnRadioButton">updateDisabledControlsEvent</event>
                                                 </object>
                                             </object>
-                                            <object class="sizeritem" expanded="0">
+                                            <object class="sizeritem" expanded="1">
                                                 <property name="border">2</property>
                                                 <property name="flag">wxALL</property>
                                                 <property name="proportion">0</property>
-                                                <object class="wxRadioButton" expanded="0">
+                                                <object class="wxRadioButton" expanded="1">
                                                     <property name="BottomDockable">1</property>
                                                     <property name="LeftDockable">1</property>
                                                     <property name="RightDockable">1</property>
@@ -1696,11 +1696,11 @@
                                                     <event name="OnRadioButton">updateDisabledControlsEvent</event>
                                                 </object>
                                             </object>
-                                            <object class="sizeritem" expanded="0">
+                                            <object class="sizeritem" expanded="1">
                                                 <property name="border">2</property>
                                                 <property name="flag">wxALL</property>
                                                 <property name="proportion">0</property>
-                                                <object class="wxRadioButton" expanded="0">
+                                                <object class="wxRadioButton" expanded="1">
                                                     <property name="BottomDockable">1</property>
                                                     <property name="LeftDockable">1</property>
                                                     <property name="RightDockable">1</property>
@@ -1775,11 +1775,11 @@
                                             <property name="orient">wxHORIZONTAL</property>
                                             <property name="parent">1</property>
                                             <property name="permission">none</property>
-                                            <object class="sizeritem" expanded="0">
+                                            <object class="sizeritem" expanded="1">
                                                 <property name="border">2</property>
                                                 <property name="flag">wxALL</property>
                                                 <property name="proportion">0</property>
-                                                <object class="wxCheckBox" expanded="0">
+                                                <object class="wxCheckBox" expanded="1">
                                                     <property name="BottomDockable">1</property>
                                                     <property name="LeftDockable">1</property>
                                                     <property name="RightDockable">1</property>
@@ -1917,11 +1917,11 @@
                                             <property name="orient">wxVERTICAL</property>
                                             <property name="parent">1</property>
                                             <property name="permission">none</property>
-                                            <object class="sizeritem" expanded="0">
+                                            <object class="sizeritem" expanded="1">
                                                 <property name="border">2</property>
                                                 <property name="flag">wxALL</property>
                                                 <property name="proportion">0</property>
-                                                <object class="wxCheckBox" expanded="0">
+                                                <object class="wxCheckBox" expanded="1">
                                                     <property name="BottomDockable">1</property>
                                                     <property name="LeftDockable">1</property>
                                                     <property name="RightDockable">1</property>
@@ -1991,11 +1991,11 @@
                                                     <property name="name">bSizer15</property>
                                                     <property name="orient">wxHORIZONTAL</property>
                                                     <property name="permission">none</property>
-                                                    <object class="sizeritem" expanded="0">
+                                                    <object class="sizeritem" expanded="1">
                                                         <property name="border">5</property>
                                                         <property name="flag">wxALL|wxALIGN_CENTER_VERTICAL</property>
                                                         <property name="proportion">0</property>
-                                                        <object class="wxStaticText" expanded="0">
+                                                        <object class="wxStaticText" expanded="1">
                                                             <property name="BottomDockable">1</property>
                                                             <property name="LeftDockable">1</property>
                                                             <property name="RightDockable">1</property>
@@ -2052,11 +2052,11 @@
                                                             <property name="wrap">-1</property>
                                                         </object>
                                                     </object>
-                                                    <object class="sizeritem" expanded="0">
+                                                    <object class="sizeritem" expanded="1">
                                                         <property name="border">5</property>
                                                         <property name="flag">wxALL|wxALIGN_CENTER_VERTICAL</property>
                                                         <property name="proportion">1</property>
-                                                        <object class="wxSlider" expanded="0">
+                                                        <object class="wxSlider" expanded="1">
                                                             <property name="BottomDockable">1</property>
                                                             <property name="LeftDockable">1</property>
                                                             <property name="RightDockable">1</property>
@@ -2118,11 +2118,11 @@
                                                             <event name="OnScroll">OnsldConstantGainCmdSliderUpdated</event>
                                                         </object>
                                                     </object>
-                                                    <object class="sizeritem" expanded="0">
+                                                    <object class="sizeritem" expanded="1">
                                                         <property name="border">5</property>
                                                         <property name="flag">wxALL|wxALIGN_CENTER_VERTICAL</property>
                                                         <property name="proportion">1</property>
-                                                        <object class="wxStaticText" expanded="0">
+                                                        <object class="wxStaticText" expanded="1">
                                                             <property name="BottomDockable">1</property>
                                                             <property name="LeftDockable">1</property>
                                                             <property name="RightDockable">1</property>
@@ -2183,11 +2183,11 @@
                                             </object>
                                         </object>
                                     </object>
-                                    <object class="sizeritem" expanded="0">
+                                    <object class="sizeritem" expanded="1">
                                         <property name="border">5</property>
                                         <property name="flag">wxEXPAND</property>
                                         <property name="proportion">0</property>
-                                        <object class="wxStaticBoxSizer" expanded="0">
+                                        <object class="wxStaticBoxSizer" expanded="1">
                                             <property name="id">wxID_ANY</property>
                                             <property name="label">Channel</property>
                                             <property name="minimum_size"></property>
@@ -2195,11 +2195,11 @@
                                             <property name="orient">wxVERTICAL</property>
                                             <property name="parent">1</property>
                                             <property name="permission">none</property>
-                                            <object class="sizeritem" expanded="0">
+                                            <object class="sizeritem" expanded="1">
                                                 <property name="border">2</property>
                                                 <property name="flag">wxALL</property>
                                                 <property name="proportion">0</property>
-                                                <object class="wxRadioButton" expanded="0">
+                                                <object class="wxRadioButton" expanded="1">
                                                     <property name="BottomDockable">1</property>
                                                     <property name="LeftDockable">1</property>
                                                     <property name="RightDockable">1</property>
@@ -2259,11 +2259,11 @@
                                                     <property name="window_style"></property>
                                                 </object>
                                             </object>
-                                            <object class="sizeritem" expanded="0">
+                                            <object class="sizeritem" expanded="1">
                                                 <property name="border">2</property>
                                                 <property name="flag">wxALL</property>
                                                 <property name="proportion">0</property>
-                                                <object class="wxRadioButton" expanded="0">
+                                                <object class="wxRadioButton" expanded="1">
                                                     <property name="BottomDockable">1</property>
                                                     <property name="LeftDockable">1</property>
                                                     <property name="RightDockable">1</property>
@@ -2323,11 +2323,11 @@
                                                     <property name="window_style"></property>
                                                 </object>
                                             </object>
-                                            <object class="sizeritem" expanded="0">
+                                            <object class="sizeritem" expanded="1">
                                                 <property name="border">2</property>
                                                 <property name="flag">wxALL</property>
                                                 <property name="proportion">0</property>
-                                                <object class="wxRadioButton" expanded="0">
+                                                <object class="wxRadioButton" expanded="1">
                                                     <property name="BottomDockable">1</property>
                                                     <property name="LeftDockable">1</property>
                                                     <property name="RightDockable">1</property>
@@ -2403,11 +2403,11 @@
                         <property name="name">bSizer3</property>
                         <property name="orient">wxHORIZONTAL</property>
                         <property name="permission">none</property>
-                        <object class="sizeritem" expanded="0">
+                        <object class="sizeritem" expanded="1">
                             <property name="border">5</property>
                             <property name="flag">wxALL</property>
                             <property name="proportion">1</property>
-                            <object class="wxButton" expanded="0">
+                            <object class="wxButton" expanded="1">
                                 <property name="BottomDockable">1</property>
                                 <property name="LeftDockable">1</property>
                                 <property name="RightDockable">1</property>
@@ -2476,11 +2476,11 @@
                                 <event name="OnButtonClick">OnbtnDefaultClick</event>
                             </object>
                         </object>
-                        <object class="sizeritem" expanded="0">
+                        <object class="sizeritem" expanded="1">
                             <property name="border">5</property>
                             <property name="flag">wxALL</property>
                             <property name="proportion">1</property>
-                            <object class="wxButton" expanded="0">
+                            <object class="wxButton" expanded="1">
                                 <property name="BottomDockable">1</property>
                                 <property name="LeftDockable">1</property>
                                 <property name="RightDockable">1</property>
@@ -2549,11 +2549,11 @@
                                 <event name="OnButtonClick">OnbtnOKClick</event>
                             </object>
                         </object>
-                        <object class="sizeritem" expanded="0">
+                        <object class="sizeritem" expanded="1">
                             <property name="border">5</property>
                             <property name="flag">wxALL</property>
                             <property name="proportion">1</property>
-                            <object class="wxButton" expanded="0">
+                            <object class="wxButton" expanded="1">
                                 <property name="BottomDockable">1</property>
                                 <property name="LeftDockable">1</property>
                                 <property name="RightDockable">1</property>
