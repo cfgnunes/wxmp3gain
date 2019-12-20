@@ -98,3 +98,4 @@ This program is licensed under the terms of the GNU General Public License versi
 * Sergey Basalaev - *Russian translations*
 * Yaşar Çiv - *Turkish translations*
 * Dominko Aždajić - *Croatian translations*
+* Maboroshin - *Japanese translations*
