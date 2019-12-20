@@ -7,6 +7,8 @@ matrix:
       addons:
         apt:
           packages:
+            - devscripts
+            - debhelper
             - build-essential
             - cmake
             - libwxgtk3.0-dev
@@ -16,6 +18,8 @@ matrix:
       addons:
         apt:
           packages:
+            - devscripts
+            - debhelper
             - build-essential
             - cmake
             - libwxgtk3.0-dev
