@@ -23,6 +23,17 @@ matrix:
             - build-essential
             - cmake
             - libwxgtk3.0-dev
+    # Tests on Ubuntu 18.04
+    - os: linux
+      dist: bionic
+      addons:
+        apt:
+          packages:
+            - devscripts
+            - debhelper
+            - build-essential
+            - cmake
+            - libwxgtk3.0-gtk3-dev
 script:
   - mkdir build
   - cd build
