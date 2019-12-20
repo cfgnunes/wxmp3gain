@@ -25,7 +25,7 @@ sudo apt -y install wxmp3gain
 
 ### Install from sources
 
-This section assumes Ubuntu 14.04 (also tested on Ubuntu 16.04 and Ubuntu 18.04), but the procedure is similar for other Linux distributions. The prerequisites to build the source is to install the following packages:
+This section assumes Ubuntu 16.04 (also tested on Ubuntu 18.04), but the procedure is similar for other Linux distributions. The prerequisites to build the source is to install the following packages:
 
 ```sh
 sudo apt -y install build-essential cmake
