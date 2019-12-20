@@ -40,4 +40,4 @@ script:
   - cmake -DCMAKE_BUILD_TYPE=Coverage ..
   - make
   - sudo make install
-  - debuild -us -uc
+  - sudo debuild -us -uc
