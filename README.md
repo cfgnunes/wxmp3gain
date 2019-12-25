@@ -43,20 +43,6 @@ make
 sudo make install
 ```
 
-### Generate Debian package for Linux systems
-
-Install the prerequisites:
-
-```sh
-sudo apt -y install devscripts debhelper
-```
-
-Run the following command on source directory:
-
-```sh
-debuild -us -uc
-```
-
 ## Built With
 
 Code written completely in C++ using:
