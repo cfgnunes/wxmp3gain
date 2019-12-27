@@ -28,17 +28,17 @@ else ()
 endif ()
 
 # Compile the main executable
-add_executable(wxmp3gain ${SRC_FILES})
-target_link_libraries(wxmp3gain ${wxWidgets_LIBRARIES})
+add_executable(${CMAKE_PROJECT_NAME} ${SRC_FILES})
+target_link_libraries(${CMAKE_PROJECT_NAME} ${wxWidgets_LIBRARIES})
 
 # Define the files location during install process
 if (UNIX)
-    install(TARGETS "wxmp3gain" DESTINATION "bin")
+    install(TARGETS ${CMAKE_PROJECT_NAME} DESTINATION "bin")
     install(DIRECTORY "resource/" DESTINATION "share/${PROJECT_NAME}/resource/")
     install(DIRECTORY "docs/" DESTINATION "share/doc/${PROJECT_NAME}/")
     install(FILES "debian/menu/icon32x32.png" DESTINATION "share/icons/hicolor/32x32/apps/" RENAME "${PROJECT_NAME}.png")
     install(FILES "debian/menu/icon48x48.png" DESTINATION "share/icons/hicolor/48x48/apps/" RENAME "${PROJECT_NAME}.png")
     install(FILES "debian/menu/icon64x64.png" DESTINATION "share/icons/hicolor/64x64/apps/" RENAME "${PROJECT_NAME}.png")
     install(FILES "debian/menu/icon128x128.png" DESTINATION "share/icons/hicolor/128x128/apps/" RENAME "${PROJECT_NAME}.png")
-    install(FILES "debian/menu/${PROJECT_NAME}.desktop" DESTINATION "share/applications/")
+    install(FILES "debian/menu/${CMAKE_PROJECT_NAME}.desktop" DESTINATION "share/applications/")
 endif ()
