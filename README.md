@@ -45,8 +45,6 @@ sudo make install
 
 ## Built With
 
-Code written completely in C++ using:
-
 * [GCC](https://gcc.gnu.org/) - The GNU Compiler Collection
 * [wxWidgets](https://www.wxwidgets.org/) - Open-Source GUI framework
 * [wxFormBuilder](https://github.com/wxFormBuilder/) - wxWidgets GUI-builder
