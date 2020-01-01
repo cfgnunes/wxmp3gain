@@ -15,9 +15,14 @@ This section assumes Windows 10, but the procedure is similar for other Windows 
 ### Build the binaries
 
 ```sh
-build-binaries.cmd
+mkdir build
+cd build
+cmake -G "MinGW Makefiles" ..
+cmake -G "MinGW Makefiles" ..
+mingw32-make
+mingw32-make install DESTDIR=.
 ```
 
 ### Build the installer
 
-To generate the installer setup, use file 'build-installer.iss' in the Inno Setup after build the binaries.
+To generate the installer setup, use file 'installer.iss' in the Inno Setup after build the binaries.
