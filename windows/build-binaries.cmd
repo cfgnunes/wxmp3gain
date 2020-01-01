@@ -1,7 +1,7 @@
 @echo off
 cls
 
-set APP_NAME=wxmp3val
+set APP_NAME=wxmp3gain
 set OUTPUT_DIR=build
 set PATH=%PATH%;C:\mingw32\bin
 
@@ -49,7 +49,7 @@ echo Done!
 echo.
 
 echo Compiling translation files...
-for %%L in (cs,de,es,pt_BR,ru) do (
+for %%L in (cs,de,es,hr_HR,ja,pt_BR,ru,tr) do (
 	mkdir build\resource\msg\%%L\
 	msgfmt ..\msg\%%L.po -o build\resource\msg\%%L\%APP_NAME%.mo
 	)
