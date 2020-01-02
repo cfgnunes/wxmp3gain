@@ -4,6 +4,8 @@
 
 wxMP3gain is a free front-end for the MP3gain.
 
+![screenshot](doc/screenshot.png)
+
 ## Getting Started
 
 ### Install from binaries
