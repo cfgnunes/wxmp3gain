@@ -1,6 +1,6 @@
-# wxMP3gain
+# wxMP3gain [![Build Status](https://travis-ci.org/cfgnunes/wxmp3gain.svg?branch=master)](https://travis-ci.org/cfgnunes/wxmp3gain)
 
-[![Build Status](https://travis-ci.org/cfgnunes/wxmp3gain.svg?branch=master)](https://travis-ci.org/cfgnunes/wxmp3gain)
+If you like this project, please consider making a donation to support the developer. [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2EDNU6LPSCH6S)
 
 wxMP3gain is a free front-end for the MP3gain.
 
