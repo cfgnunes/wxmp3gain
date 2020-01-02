@@ -23,7 +23,7 @@ echo Done!
 echo.
 
 echo Compiling resource file...
-windres -IC:\TDM-GCC-32\include -IC:\wxWidgets-3.1.3-headers\include -IC:\wxMSW-3.1.3_gcc810_Dev\lib\gcc810_dll\mswu -J rc -O coff -i resource.rc -o resource.res
+windres -IC:\wxWidgets-3.1.3-headers\include -IC:\wxMSW-3.1.3_gcc810_Dev\lib\gcc810_dll\mswu -J rc -O coff -i resource.rc -o resource.res
 echo Done!
 echo.
 
