@@ -17,10 +17,9 @@ This section assumes Windows 10, but the procedure is similar for other Windows 
 ```sh
 mkdir build
 cd build
-cmake -G "MinGW Makefiles" ..
-cmake -G "MinGW Makefiles" ..
-mingw32-make
-mingw32-make install DESTDIR=.
+cmake -G "MinGW Makefiles" -DCMAKE_INSTALL_PREFIX:PATH=dist ..
+cmake -G "MinGW Makefiles" -DCMAKE_INSTALL_PREFIX:PATH=dist ..
+cmake --build . --target install --config Release
 ```
 
 ### Build the installer
