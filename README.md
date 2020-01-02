@@ -39,7 +39,7 @@ Compile the sources and install with following commands in the terminal:
 mkdir build
 cd build
 cmake ..
-make
+cmake --build .
 sudo make install
 ```
 
