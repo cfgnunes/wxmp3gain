@@ -10,6 +10,7 @@ This section assumes Windows 10, but the procedure is similar for other Windows 
 * [wxWidgets 3.1.3](https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.3/wxWidgets-3.1.3-headers.7z) - header files ('include' folder)
 * [wxWidgets 3.1.3](https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.3/wxMSW-3.1.3_gcc810_Dev.7z) - development files for MinGW GCC 8.1.0 ('lib' folder)
 * [Gettext](https://mlocati.github.io/articles/gettext-iconv-windows.html) - 32 bit, static
+* [CMake](https://cmake.org/download/)
 * [Inno Setup](http://www.jrsoftware.org/download.php/is.exe)
 
 ### Build the binaries
