@@ -13,7 +13,9 @@ This section assumes Windows 10, but the procedure is similar for other Windows 
 * [CMake](https://cmake.org/download/)
 * [Inno Setup](http://www.jrsoftware.org/download.php/is.exe)
 
-### Build the binaries
+### Build the project
+
+Compile the sources and install with following commands in the terminal:
 
 ```sh
 mkdir build
