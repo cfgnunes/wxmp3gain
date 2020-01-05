@@ -14,8 +14,8 @@ Link to download the binary files: <https://sourceforge.net/projects/wxmp3gain/>
 
 This program has been tested on the following platforms:
 
-* Windows XP, Vista, 7, 8, 10
-* Several major Linux distributions
+- Windows XP, Vista, 7, 8, 10
+- Several major Linux distributions
 
 ### Install from Personal Package Archives (Ubuntu)
 
@@ -47,21 +47,21 @@ sudo make install
 
 ## Built With
 
-* [GCC](https://gcc.gnu.org/) - The GNU Compiler Collection
-* [wxWidgets](https://www.wxwidgets.org/) - Open-Source GUI framework
-* [wxFormBuilder](https://github.com/wxFormBuilder/) - wxWidgets GUI-builder
+- [GCC](https://gcc.gnu.org/) - The GNU Compiler Collection
+- [wxWidgets](https://www.wxwidgets.org/) - Open-Source GUI framework
+- [wxFormBuilder](https://github.com/wxFormBuilder/) - wxWidgets GUI-builder
 
 Other tools:
 
-* [CMake](https://cmake.org/) - Build, test and package software
-* [Inno Setup](http://www.jrsoftware.org/isinfo.php) - Installer for Windows programs
+- [CMake](https://cmake.org/) - Build, test and package software
+- [Inno Setup](http://www.jrsoftware.org/isinfo.php) - Installer for Windows programs
 
 ## Contributing
 
 If you spot a bug, or want to improve the code, or even make the content better, you can do the following:
 
-* [Open an issue](https://github.com/cfgnunes/wxlame/issues/new) describing the bug or feature idea;
-* Fork the project, make changes, and submit a pull request.
+- [Open an issue](https://github.com/cfgnunes/wxlame/issues/new) describing the bug or feature idea;
+- Fork the project, make changes, and submit a pull request.
 
 ## Versioning
 
@@ -69,7 +69,7 @@ This project uses [SemVer](http://semver.org/) for versioning. For the versions 
 
 ## Authors
 
-* Cristiano Nunes - *Developer*
+- Cristiano Nunes - _Developer_
 
 ## License
 
@@ -78,10 +78,10 @@ This program is licensed under the terms of the GNU General Public License versi
 
 ## Acknowledgments
 
-* Carlos Sánchez - *Spanish translations*
-* Jan Rimmek - *German translations*
-* Pavel Fric - *Czech translations*
-* Sergey Basalaev - *Russian translations*
-* Yaşar Çiv - *Turkish translations*
-* Dominko Aždajić - *Croatian translations*
-* Maboroshin - *Japanese translations*
+- Carlos Sánchez - _Spanish translations_
+- Jan Rimmek - _German translations_
+- Pavel Fric - _Czech translations_
+- Sergey Basalaev - _Russian translations_
+- Yaşar Çiv - _Turkish translations_
+- Dominko Aždajić - _Croatian translations_
+- Maboroshin - _Japanese translations_
