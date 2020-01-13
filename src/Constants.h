@@ -96,19 +96,11 @@ inline wxString GetResourceDir() {
     wxDir dir;
     wxString resourceDir;
 
-    resourceDir = _T("/usr/share/wxmp3gain") + resourceDirName;
-    if (dir.Open(resourceDir))
-        return resourceDir;
-
-    resourceDir = _T("/usr/local/share/wxmp3gain") + resourceDirName;
+    resourceDir = _T("/usr/share/wxlame") + resourceDirName;
     if (dir.Open(resourceDir))
         return resourceDir;
 
     resourceDir = _T(".") + resourceDirName;
-    if (dir.Open(resourceDir))
-        return resourceDir;
-
-    resourceDir = _T("..") + resourceDirName;
     if (dir.Open(resourceDir))
         return resourceDir;
 #endif
