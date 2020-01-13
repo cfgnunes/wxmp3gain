@@ -16,28 +16,28 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "Application.h"
-#include "GuiMain.h"
+#include "Main.h"
+#include "GuiFrameMain.h"
 #include "Constants.h"
 
-IMPLEMENT_APP(Application)
+IMPLEMENT_APP(Main)
 
-bool Application::OnInit() {
+bool Main::OnInit() {
     // Load language translation
     mp_locale = new wxLocale(wxLocale::GetSystemLanguage());
     mp_locale->AddCatalogLookupPathPrefix(GetResourceDir() + _T("msg"));
     mp_locale->AddCatalog(_T("wxmp3gain"));
 
     wxInitAllImageHandlers();
-    GuiMain *guiMain = new GuiMain(0);
+    GuiFrameMain *guiFrameMain = new GuiFrameMain(0);
 
     // Read command line files
     mp_filesCmdLine = new wxArrayString();
     for (int i = 1; i < argc; i++)
         mp_filesCmdLine->Add(wxString(argv[i]));
-    guiMain->setFilesCmdLine(*mp_filesCmdLine);
+    guiFrameMain->setFilesCmdLine(*mp_filesCmdLine);
 
-    guiMain->Show();
-    SetTopWindow(guiMain);
+    guiFrameMain->Show();
+    SetTopWindow(guiFrameMain);
     return true;
 }

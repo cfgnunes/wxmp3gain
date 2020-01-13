@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////
-// C++ code generated with wxFormBuilder (version Oct 26 2018)
+// C++ code generated with wxFormBuilder (version 3.9.0 Jan  3 2020)
 // http://www.wxformbuilder.org/
 //
 // PLEASE DO *NOT* EDIT THIS FILE!
@@ -20,10 +20,10 @@
 #include <wx/sizer.h>
 #include <wx/listctrl.h>
 #include <wx/gauge.h>
+#include <wx/button.h>
 #include <wx/bitmap.h>
 #include <wx/image.h>
 #include <wx/icon.h>
-#include <wx/button.h>
 #include <wx/panel.h>
 #include <wx/menu.h>
 #include <wx/statusbr.h>
@@ -55,9 +55,9 @@
 #define ID_ABOUT 1013
 
 ///////////////////////////////////////////////////////////////////////////////
-/// Class Main
+/// Class FrameMain
 ///////////////////////////////////////////////////////////////////////////////
-class Main : public wxFrame
+class FrameMain : public wxFrame
 {
 	private:
 
@@ -116,21 +116,21 @@ class Main : public wxFrame
 
 	public:
 
-		Main( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 790,450 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
+		FrameMain( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 790,450 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
 
-		~Main();
+		~FrameMain();
 
-		void MainOnContextMenu( wxMouseEvent &event )
+		void FrameMainOnContextMenu( wxMouseEvent &event )
 		{
-			this->PopupMenu( g_mainMenu, event.GetPosition() );
+		this->PopupMenu( g_mainMenu, event.GetPosition() );
 		}
 
 };
 
 ///////////////////////////////////////////////////////////////////////////////
-/// Class Settings
+/// Class DialogSettings
 ///////////////////////////////////////////////////////////////////////////////
-class Settings : public wxDialog
+class DialogSettings : public wxDialog
 {
 	private:
 
@@ -161,8 +161,8 @@ class Settings : public wxDialog
 
 	public:
 
-		Settings( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Settings"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxDEFAULT_DIALOG_STYLE );
-		~Settings();
+		DialogSettings( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Settings"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxDEFAULT_DIALOG_STYLE );
+		~DialogSettings();
 
 };
 

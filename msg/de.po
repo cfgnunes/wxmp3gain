@@ -80,7 +80,7 @@ msgstr "Analyse-Daten löschen"
 msgid "Clear list"
 msgstr "Liste löschen"
 
-#: GuiMain.cpp:32
+#: GuiFrameMain.cpp:32
 msgid "Clipping"
 msgstr "Clipping"
 
@@ -96,7 +96,7 @@ msgstr "Konstante Eingangsverstärkung:"
 msgid "Delete stored tag info"
 msgstr "Enthaltene Tag-Infos löschen"
 
-#: GuiMain.cpp:418
+#: GuiFrameMain.cpp:418
 msgid "Do you want to stop process now?"
 msgstr "Möchten Sie den Vorgang jetzt abbrechen?"
 
@@ -104,7 +104,7 @@ msgstr "Möchten Sie den Vorgang jetzt abbrechen?"
 msgid "Exit"
 msgstr "Beenden"
 
-#: GuiMain.cpp:29
+#: GuiFrameMain.cpp:29
 msgid "File"
 msgstr "Datei"
 
@@ -112,7 +112,7 @@ msgstr "Datei"
 msgid "File options"
 msgstr "Dateioptionen"
 
-#: GuiMain.cpp:30
+#: GuiFrameMain.cpp:30
 msgid "Folder"
 msgstr "Hinzufügen"
 
@@ -125,7 +125,7 @@ msgstr ""
 msgid "Force to assume input is an MPEG 2 Layer III file"
 msgstr "Behandlung von Quelldateien als MPEG 2 Layer III erzwingen"
 
-#: GuiMain.cpp:296
+#: GuiFrameMain.cpp:296
 msgid "Free front-end for the MP3gain"
 msgstr "Freies Frontend für MP3gain"
 
@@ -133,11 +133,11 @@ msgstr "Freies Frontend für MP3gain"
 msgid "Gain"
 msgstr "Eingangsverstärkung (Gain)"
 
-#: GuiMain.cpp:33
+#: GuiFrameMain.cpp:33
 msgid "Gain (dB)"
 msgstr "Eingangsverstärkung (dB)"
 
-#: GuiMain.cpp:34
+#: GuiFrameMain.cpp:34
 msgid "Gain (mp3)"
 msgstr "Eingangsverstärkung (mp3)"
 
@@ -172,7 +172,7 @@ msgstr "Dateizeitstempel erhalten"
 msgid "MP3gain Website"
 msgstr "MP3gain Webseite"
 
-#: GuiMain.cpp:321
+#: GuiFrameMain.cpp:321
 msgid "MP3gain not found!"
 msgstr "MP3gain nicht gefunden!"
 
@@ -184,7 +184,7 @@ msgstr "Normale Lautstärke (dB):"
 msgid "OK"
 msgstr "OK"
 
-#: GuiMain.cpp:424 GuiMain.cpp:489
+#: GuiFrameMain.cpp:424 GuiFrameMain.cpp:489
 #, c-format
 msgid "Processed %lu files of %lu."
 msgstr "%lu von %lu Dateien bearbeitet."
@@ -197,11 +197,11 @@ msgstr "Dateien entfernen"
 msgid "Restore defaults"
 msgstr "Standardeinstellungen wiederherstellen"
 
-#: GuiMain.cpp:143
+#: GuiFrameMain.cpp:143
 msgid "Select directory"
 msgstr "Ordner wählen"
 
-#: GuiMain.cpp:159
+#: GuiFrameMain.cpp:159
 msgid "Select file"
 msgstr "Datei wählen"
 
@@ -215,7 +215,7 @@ msgstr ""
 "In Datei gespeicherte Tag-Informationen überspringen (kein Lesen oder "
 "Schreiben von Tags)"
 
-#: GuiMain.cpp:35
+#: GuiFrameMain.cpp:35
 msgid "Tag info"
 msgstr "Tag-Informationen"
 
@@ -249,7 +249,7 @@ msgstr "ID3v2 für Gain-Informationen benutzen (Standard)"
 msgid "Use constant gain without doing any analysis"
 msgstr "Konstante Eingangsverstärkung ohne Analyse verwenden"
 
-#: GuiMain.cpp:319
+#: GuiFrameMain.cpp:319
 msgid "Using MP3gain version: "
 msgstr "Benutze MP3gain version: "
 
@@ -257,7 +257,7 @@ msgstr "Benutze MP3gain version: "
 msgid "Using constant gain: "
 msgstr "Konstante Eingangsverstärkung verwenden:"
 
-#: GuiMain.cpp:31
+#: GuiFrameMain.cpp:31
 msgid "Volume"
 msgstr "Lautstärke"
 
@@ -265,7 +265,7 @@ msgstr "Lautstärke"
 msgid "Work on temporary file"
 msgstr "Temporäre Datei verwenden"
 
-#: GuiMain.cpp:325
+#: GuiFrameMain.cpp:325
 msgid "files"
 msgstr "dateien"
 
@@ -273,7 +273,7 @@ msgstr "dateien"
 msgid "wxMP3gain Website"
 msgstr "wxMP3gain Webseite"
 
-#: GuiMain.cpp:441 GuiMain.cpp:468 GuiMain.cpp:521
+#: GuiFrameMain.cpp:441 GuiFrameMain.cpp:468 GuiFrameMain.cpp:521
 msgid "yes"
 msgstr "ja"
 

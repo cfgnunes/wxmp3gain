@@ -81,7 +81,7 @@ msgstr "Очистить анализ"
 msgid "Clear list"
 msgstr "Очистить список"
 
-#: GuiMain.cpp:32
+#: GuiFrameMain.cpp:32
 msgid "Clipping"
 msgstr "Обрезка"
 
@@ -97,7 +97,7 @@ msgstr "Постоянная нормализация:"
 msgid "Delete stored tag info"
 msgstr "Удалить информацию о тегах"
 
-#: GuiMain.cpp:418
+#: GuiFrameMain.cpp:418
 msgid "Do you want to stop process now?"
 msgstr "Хотите остановить процесс сейчас?"
 
@@ -105,7 +105,7 @@ msgstr "Хотите остановить процесс сейчас?"
 msgid "Exit"
 msgstr "Выход"
 
-#: GuiMain.cpp:29
+#: GuiFrameMain.cpp:29
 msgid "File"
 msgstr "Файл"
 
@@ -113,7 +113,7 @@ msgstr "Файл"
 msgid "File options"
 msgstr "Опции файла"
 
-#: GuiMain.cpp:30
+#: GuiFrameMain.cpp:30
 msgid "Folder"
 msgstr "папка"
 
@@ -125,7 +125,7 @@ msgstr "Принудительно пересчитать (не читая ин�
 msgid "Force to assume input is an MPEG 2 Layer III file"
 msgstr "Принудительно полагать, что на входе файл MPEG 2 Layer III"
 
-#: GuiMain.cpp:296
+#: GuiFrameMain.cpp:296
 msgid "Free front-end for the MP3gain"
 msgstr "Свободный интерфейс к MP3gain"
 
@@ -133,11 +133,11 @@ msgstr "Свободный интерфейс к MP3gain"
 msgid "Gain"
 msgstr "Нормализация"
 
-#: GuiMain.cpp:33
+#: GuiFrameMain.cpp:33
 msgid "Gain (dB)"
 msgstr "Нормализация (дБ)"
 
-#: GuiMain.cpp:34
+#: GuiFrameMain.cpp:34
 msgid "Gain (mp3)"
 msgstr "Нормализация (mp3)"
 
@@ -169,7 +169,7 @@ msgstr "Сохранять метки времени файлов"
 msgid "MP3gain Website"
 msgstr "Веб-сайт MP3gain"
 
-#: GuiMain.cpp:321
+#: GuiFrameMain.cpp:321
 msgid "MP3gain not found!"
 msgstr "MP3gain не найден!"
 
@@ -181,7 +181,7 @@ msgstr "Нормальная громкость (дБ):"
 msgid "OK"
 msgstr "Ок"
 
-#: GuiMain.cpp:424 GuiMain.cpp:489
+#: GuiFrameMain.cpp:424 GuiFrameMain.cpp:489
 #, c-format
 msgid "Processed %lu files of %lu."
 msgstr "Обработано %lu файлов из %lu."
@@ -194,11 +194,11 @@ msgstr "Удалить файлы"
 msgid "Restore defaults"
 msgstr "Восстановить значения по умолчанию"
 
-#: GuiMain.cpp:143
+#: GuiFrameMain.cpp:143
 msgid "Select directory"
 msgstr "Выбор директории"
 
-#: GuiMain.cpp:159
+#: GuiFrameMain.cpp:159
 msgid "Select file"
 msgstr "Выбор файла"
 
@@ -210,7 +210,7 @@ msgstr "Настройки"
 msgid "Skip stored tag info (do not read or write tags)"
 msgstr "Пропустить информацию о тегах (не читать и не записывать теги)"
 
-#: GuiMain.cpp:35
+#: GuiFrameMain.cpp:35
 msgid "Tag info"
 msgstr "Информация о тегах"
 
@@ -242,7 +242,7 @@ msgstr "Использовать теги ID3v2 для информации но
 msgid "Use constant gain without doing any analysis"
 msgstr "Использовать постоянную нормализацию без какого-либо анализа"
 
-#: GuiMain.cpp:319
+#: GuiFrameMain.cpp:319
 msgid "Using MP3gain version: "
 msgstr "Используется MP3gain версии:"
 
@@ -250,7 +250,7 @@ msgstr "Используется MP3gain версии:"
 msgid "Using constant gain: "
 msgstr "Используется постоянная нормализация:"
 
-#: GuiMain.cpp:31
+#: GuiFrameMain.cpp:31
 msgid "Volume"
 msgstr "Громкость"
 
@@ -258,7 +258,7 @@ msgstr "Громкость"
 msgid "Work on temporary file"
 msgstr "Pабота над временным файлом"
 
-#: GuiMain.cpp:325
+#: GuiFrameMain.cpp:325
 msgid "files"
 msgstr "файлы"
 
@@ -266,7 +266,7 @@ msgstr "файлы"
 msgid "wxMP3gain Website"
 msgstr "Веб-сайт wxMP3gain"
 
-#: GuiMain.cpp:441 GuiMain.cpp:468 GuiMain.cpp:521
+#: GuiFrameMain.cpp:441 GuiFrameMain.cpp:468 GuiFrameMain.cpp:521
 msgid "yes"
 msgstr "да"
 

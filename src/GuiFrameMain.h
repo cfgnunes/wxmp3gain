@@ -3,19 +3,19 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-#ifndef GUIMAIN_H
-#define GUIMAIN_H
+#ifndef GUIFRAMEMAIN_H
+#define GUIFRAMEMAIN_H
 
 #include "Gui.h"
 #include "ConfigBase.h"
 #include "FileListManager.h"
 #include "DndFile.h"
 
-class GuiMain : public Main {
+class GuiFrameMain : public FrameMain {
 public:
-    GuiMain(wxWindow *parent);
+    GuiFrameMain(wxWindow *parent);
 
-    virtual ~GuiMain();
+    virtual ~GuiFrameMain();
 
     void setFilesCmdLine(const wxArrayString &filenames);
 
@@ -88,4 +88,4 @@ private:
     bool m_processRunning;
 };
 
-#endif // GUIMAIN_H
+#endif // GUIFRAMEMAIN_H

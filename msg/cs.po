@@ -80,7 +80,7 @@ msgstr "Smazat rozbor"
 msgid "Clear list"
 msgstr "Vyprázdnit seznam"
 
-#: GuiMain.cpp:32
+#: GuiFrameMain.cpp:32
 msgid "Clipping"
 msgstr "Přebuzení (clipping)"
 
@@ -96,7 +96,7 @@ msgstr "Stálé zesílení:"
 msgid "Delete stored tag info"
 msgstr "Smazat uložené značky"
 
-#: GuiMain.cpp:418
+#: GuiFrameMain.cpp:418
 msgid "Do you want to stop process now?"
 msgstr "Chcete nyní proces zastavit?"
 
@@ -104,7 +104,7 @@ msgstr "Chcete nyní proces zastavit?"
 msgid "Exit"
 msgstr "Ukončit"
 
-#: GuiMain.cpp:29
+#: GuiFrameMain.cpp:29
 msgid "File"
 msgstr "Soubor"
 
@@ -112,7 +112,7 @@ msgstr "Soubor"
 msgid "File options"
 msgstr "Volby pro soubory"
 
-#: GuiMain.cpp:30
+#: GuiFrameMain.cpp:30
 msgid "Folder"
 msgstr "Složka"
 
@@ -124,7 +124,7 @@ msgstr "Vynutit přepočítání (nečíst značky"
 msgid "Force to assume input is an MPEG 2 Layer III file"
 msgstr "Vynutit předpoklad, že vstup je soubor MPEG 2 Layer III"
 
-#: GuiMain.cpp:296
+#: GuiFrameMain.cpp:296
 msgid "Free front-end for the MP3gain"
 msgstr "Rozhraní pro MP3gGain"
 
@@ -132,11 +132,11 @@ msgstr "Rozhraní pro MP3gGain"
 msgid "Gain"
 msgstr "Zesílení"
 
-#: GuiMain.cpp:33
+#: GuiFrameMain.cpp:33
 msgid "Gain (dB)"
 msgstr "Zesílení (dB)"
 
-#: GuiMain.cpp:34
+#: GuiFrameMain.cpp:34
 msgid "Gain (mp3)"
 msgstr "Zesílení (mp3)"
 
@@ -168,7 +168,7 @@ msgstr "Zachovat časová razítka souborů"
 msgid "MP3gain Website"
 msgstr "Stránky MP3gain"
 
-#: GuiMain.cpp:321
+#: GuiFrameMain.cpp:321
 msgid "MP3gain not found!"
 msgstr "MP3gain nenalezen!"
 
@@ -180,7 +180,7 @@ msgstr "Normální hlasitost (dB):"
 msgid "OK"
 msgstr "OK"
 
-#: GuiMain.cpp:424 GuiMain.cpp:489
+#: GuiFrameMain.cpp:424 GuiFrameMain.cpp:489
 #, c-format
 msgid "Processed %lu files of %lu."
 msgstr "Zpracováno %lu souborů z %lu."
@@ -193,11 +193,11 @@ msgstr "Odstranit soubory"
 msgid "Restore defaults"
 msgstr "Obnovit výchozí nastavení"
 
-#: GuiMain.cpp:143
+#: GuiFrameMain.cpp:143
 msgid "Select directory"
 msgstr "Vybrat adresář"
 
-#: GuiMain.cpp:159
+#: GuiFrameMain.cpp:159
 msgid "Select file"
 msgstr "Vybrat soubor"
 
@@ -209,7 +209,7 @@ msgstr "Nastavení"
 msgid "Skip stored tag info (do not read or write tags)"
 msgstr "Přeskočit uložené informace o značkách (nečíst při zápisu značek)"
 
-#: GuiMain.cpp:35
+#: GuiFrameMain.cpp:35
 msgid "Tag info"
 msgstr "Informace o značkách"
 
@@ -243,7 +243,7 @@ msgstr "Použít značku ID3v2 pro informace o zesílení"
 msgid "Use constant gain without doing any analysis"
 msgstr "Použít stálé zesílení, aniž by se prováděl jakýkoli rozbor"
 
-#: GuiMain.cpp:319
+#: GuiFrameMain.cpp:319
 msgid "Using MP3gain version: "
 msgstr "Verze MP3gain: "
 
@@ -251,7 +251,7 @@ msgstr "Verze MP3gain: "
 msgid "Using constant gain: "
 msgstr "Stálé zesílení: "
 
-#: GuiMain.cpp:31
+#: GuiFrameMain.cpp:31
 msgid "Volume"
 msgstr "Hlasitost"
 
@@ -259,7 +259,7 @@ msgstr "Hlasitost"
 msgid "Work on temporary file"
 msgstr "Pracuje se na dočasném souboru"
 
-#: GuiMain.cpp:325
+#: GuiFrameMain.cpp:325
 msgid "files"
 msgstr "soubory"
 
@@ -267,7 +267,7 @@ msgstr "soubory"
 msgid "wxMP3gain Website"
 msgstr "Stránky wxMP3MP3gain"
 
-#: GuiMain.cpp:441 GuiMain.cpp:468 GuiMain.cpp:521
+#: GuiFrameMain.cpp:441 GuiFrameMain.cpp:468 GuiFrameMain.cpp:521
 msgid "yes"
 msgstr "ano"
 
