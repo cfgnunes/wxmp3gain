@@ -363,9 +363,7 @@ void GuiFrameMain::loadResources() {
     wxString resourceDir = GetResourceDir();
 
     // Window icon
-    wxIcon frameIcon;
-    frameIcon.CopyFromBitmap(wxBitmap(wxImage(resourceDir + _T("icon-frame.ico"))));
-    SetIcon(frameIcon);
+    SetIcon(wxIcon(resourceDir + _T("icon-app.ico")));
 
     // Toolbar bitmaps
     g_mainToolBar->SetToolNormalBitmap(ID_ADD_FILES, wxBitmap(wxImage(resourceDir + _T("toolbar/add-file.png"))));
