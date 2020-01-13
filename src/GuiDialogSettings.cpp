@@ -3,11 +3,11 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-#include "GuiSettings.h"
+#include "GuiDialogSettings.h"
 #include "Constants.h"
 
-GuiSettings::GuiSettings(wxWindow *parent, ConfigBase *configBase)
-        : Settings(parent), mp_configBase(configBase) {
+GuiDialogSettings::GuiDialogSettings(wxWindow *parent, ConfigBase *configBase)
+        : DialogSettings(parent), mp_configBase(configBase) {
     // Updates the values controls according to the configuration file
     updateValueControls();
 
@@ -15,15 +15,15 @@ GuiSettings::GuiSettings(wxWindow *parent, ConfigBase *configBase)
     updateDisabledControls();
 }
 
-GuiSettings::~GuiSettings() {
+GuiDialogSettings::~GuiDialogSettings() {
 }
 
-void GuiSettings::updateDisabledControlsEvent(wxCommandEvent &event) {
+void GuiDialogSettings::updateDisabledControlsEvent(wxCommandEvent &event) {
     updateDisabledControls();
     event.Skip(false);
 }
 
-void GuiSettings::OnsldConstantGainCmdSliderUpdated(wxScrollEvent &event) {
+void GuiDialogSettings::OnsldConstantGainCmdSliderUpdated(wxScrollEvent &event) {
     int intGain = g_sldConstantGain->GetValue();
     g_lblConstantGain->SetLabel(
             wxString::Format(_T("%+i"), intGain) + _T(" (") + wxString::Format(_T("%+.1f"), intGain * VALUE_5LOG2) +
@@ -31,24 +31,24 @@ void GuiSettings::OnsldConstantGainCmdSliderUpdated(wxScrollEvent &event) {
     event.Skip(false);
 }
 
-void GuiSettings::OnbtnDefaultClick(wxCommandEvent &event) {
+void GuiDialogSettings::OnbtnDefaultClick(wxCommandEvent &event) {
     defaultValueControls();
     updateDisabledControls();
     event.Skip(false);
 }
 
-void GuiSettings::OnbtnOKClick(wxCommandEvent &event) {
+void GuiDialogSettings::OnbtnOKClick(wxCommandEvent &event) {
     saveValuesConfig();
     Close();
     event.Skip(false);
 }
 
-void GuiSettings::OnbtnCancelClick(wxCommandEvent &event) {
+void GuiDialogSettings::OnbtnCancelClick(wxCommandEvent &event) {
     Close();
     event.Skip(false);
 }
 
-void GuiSettings::updateValueControls() {
+void GuiDialogSettings::updateValueControls() {
     wxScrollEvent evt;
 
     // General controls
@@ -70,7 +70,7 @@ void GuiSettings::updateValueControls() {
     g_optRightChannel->SetValue(mp_configBase->getChannelGainMode() == CHANNEL_RIGHT);
 }
 
-void GuiSettings::updateDisabledControls() {
+void GuiDialogSettings::updateDisabledControls() {
     // Tag options
     g_chkTagFORCE->Enable(!g_optTagSKIP->GetValue());
 
@@ -81,7 +81,7 @@ void GuiSettings::updateDisabledControls() {
     g_optRightChannel->Enable(g_chkConstantGain->GetValue());
 }
 
-void GuiSettings::saveValuesConfig() {
+void GuiDialogSettings::saveValuesConfig() {
     // General controls
     mp_configBase->setAutoLowerEnabled(g_chkAutoLower->GetValue());
     mp_configBase->setForceInputEnabled(g_chkForceInput->GetValue());
@@ -109,7 +109,7 @@ void GuiSettings::saveValuesConfig() {
     mp_configBase->setConfigFlush();
 }
 
-void GuiSettings::defaultValueControls() {
+void GuiDialogSettings::defaultValueControls() {
     wxScrollEvent evt;
 
     // System controls

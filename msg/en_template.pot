@@ -79,7 +79,7 @@ msgstr ""
 msgid "Clear list"
 msgstr ""
 
-#: GuiMain.cpp:32
+#: GuiFrameMain.cpp:32
 msgid "Clipping"
 msgstr ""
 
@@ -95,7 +95,7 @@ msgstr ""
 msgid "Delete stored tag info"
 msgstr ""
 
-#: GuiMain.cpp:418
+#: GuiFrameMain.cpp:418
 msgid "Do you want to stop process now?"
 msgstr ""
 
@@ -103,7 +103,7 @@ msgstr ""
 msgid "Exit"
 msgstr ""
 
-#: GuiMain.cpp:29
+#: GuiFrameMain.cpp:29
 msgid "File"
 msgstr ""
 
@@ -111,7 +111,7 @@ msgstr ""
 msgid "File options"
 msgstr ""
 
-#: GuiMain.cpp:30
+#: GuiFrameMain.cpp:30
 msgid "Folder"
 msgstr ""
 
@@ -123,7 +123,7 @@ msgstr ""
 msgid "Force to assume input is an MPEG 2 Layer III file"
 msgstr ""
 
-#: GuiMain.cpp:296
+#: GuiFrameMain.cpp:296
 msgid "Free front-end for the MP3gain"
 msgstr ""
 
@@ -131,11 +131,11 @@ msgstr ""
 msgid "Gain"
 msgstr ""
 
-#: GuiMain.cpp:33
+#: GuiFrameMain.cpp:33
 msgid "Gain (dB)"
 msgstr ""
 
-#: GuiMain.cpp:34
+#: GuiFrameMain.cpp:34
 msgid "Gain (mp3)"
 msgstr ""
 
@@ -163,7 +163,7 @@ msgstr ""
 msgid "MP3gain Website"
 msgstr ""
 
-#: GuiMain.cpp:321
+#: GuiFrameMain.cpp:321
 msgid "MP3gain not found!"
 msgstr ""
 
@@ -175,7 +175,7 @@ msgstr ""
 msgid "OK"
 msgstr ""
 
-#: GuiMain.cpp:424 GuiMain.cpp:489
+#: GuiFrameMain.cpp:424 GuiFrameMain.cpp:489
 #, c-format
 msgid "Processed %lu files of %lu."
 msgstr ""
@@ -188,11 +188,11 @@ msgstr ""
 msgid "Restore defaults"
 msgstr ""
 
-#: GuiMain.cpp:143
+#: GuiFrameMain.cpp:143
 msgid "Select directory"
 msgstr ""
 
-#: GuiMain.cpp:159
+#: GuiFrameMain.cpp:159
 msgid "Select file"
 msgstr ""
 
@@ -204,7 +204,7 @@ msgstr ""
 msgid "Skip stored tag info (do not read or write tags)"
 msgstr ""
 
-#: GuiMain.cpp:35
+#: GuiFrameMain.cpp:35
 msgid "Tag info"
 msgstr ""
 
@@ -236,7 +236,7 @@ msgstr ""
 msgid "Use constant gain without doing any analysis"
 msgstr ""
 
-#: GuiMain.cpp:319
+#: GuiFrameMain.cpp:319
 msgid "Using MP3gain version: "
 msgstr ""
 
@@ -244,11 +244,11 @@ msgstr ""
 msgid "Using constant gain: "
 msgstr ""
 
-#: GuiMain.cpp:31
+#: GuiFrameMain.cpp:31
 msgid "Volume"
 msgstr ""
 
-#: GuiMain.cpp:325
+#: GuiFrameMain.cpp:325
 msgid "files"
 msgstr ""
 
@@ -256,7 +256,7 @@ msgstr ""
 msgid "wxMP3gain Website"
 msgstr ""
 
-#: GuiMain.cpp:441 GuiMain.cpp:468 GuiMain.cpp:521
+#: GuiFrameMain.cpp:441 GuiFrameMain.cpp:468 GuiFrameMain.cpp:521
 msgid "yes"
 msgstr ""
 

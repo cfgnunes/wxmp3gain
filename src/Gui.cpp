@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////
-// C++ code generated with wxFormBuilder (version Oct 26 2018)
+// C++ code generated with wxFormBuilder (version 3.9.0 Jan  3 2020)
 // http://www.wxformbuilder.org/
 //
 // PLEASE DO *NOT* EDIT THIS FILE!
@@ -9,7 +9,7 @@
 
 ///////////////////////////////////////////////////////////////////////////
 
-Main::Main( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxFrame( parent, id, title, pos, size, style )
+FrameMain::FrameMain( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxFrame( parent, id, title, pos, size, style )
 {
 	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
 
@@ -204,75 +204,75 @@ Main::Main( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoin
 	g_mnuClearList = new wxMenuItem( g_mainMenu, ID_CLEAR_LIST, wxString( _("Clear list") ) , wxEmptyString, wxITEM_NORMAL );
 	g_mainMenu->Append( g_mnuClearList );
 
-	this->Connect( wxEVT_RIGHT_DOWN, wxMouseEventHandler( Main::MainOnContextMenu ), NULL, this );
+	this->Connect( wxEVT_RIGHT_DOWN, wxMouseEventHandler( FrameMain::FrameMainOnContextMenu ), NULL, this );
 
 	m_timer1.SetOwner( this, wxID_ANY );
 
 	this->Centre( wxBOTH );
 
 	// Connect Events
-	g_txtNormalVolume->Connect( wxEVT_KILL_FOCUS, wxFocusEventHandler( Main::OntxtNormalVolumeTextKillFocus ), NULL, this );
-	g_lstFiles->Connect( wxEVT_COMMAND_LIST_DELETE_ITEM, wxListEventHandler( Main::OnlstFilesDeleteItem ), NULL, this );
-	g_lstFiles->Connect( wxEVT_COMMAND_LIST_INSERT_ITEM, wxListEventHandler( Main::OnlstFilesInsertItem ), NULL, this );
-	g_lstFiles->Connect( wxEVT_COMMAND_LIST_ITEM_DESELECTED, wxListEventHandler( Main::OnlstFilesItemSelect ), NULL, this );
-	g_lstFiles->Connect( wxEVT_COMMAND_LIST_ITEM_RIGHT_CLICK, wxListEventHandler( Main::OnlstFilesItemRClick ), NULL, this );
-	g_lstFiles->Connect( wxEVT_COMMAND_LIST_ITEM_SELECTED, wxListEventHandler( Main::OnlstFilesItemSelect ), NULL, this );
-	g_lstFiles->Connect( wxEVT_COMMAND_LIST_KEY_DOWN, wxListEventHandler( Main::OnlstFilesKeyDown ), NULL, this );
-	g_btnStop->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Main::btnProcessStop ), NULL, this );
-	g_mnbFile->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( Main::mnuAddDirectory ), this, g_mnbAddFolder->GetId());
-	g_mnbFile->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( Main::mnuAddFiles ), this, g_mnbAddFiles->GetId());
-	g_mnbFile->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( Main::mnuExit ), this, g_mnbExit->GetId());
-	g_mnbEdit->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( Main::mnuRemoveFiles ), this, g_mnbRemoveFiles->GetId());
-	g_mnbEdit->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( Main::mnuClearList ), this, g_mnbClearList->GetId());
-	g_mnbEdit->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( Main::mnuSettings ), this, g_mnbSettings->GetId());
-	g_mnbAnalysis->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( Main::mnuAnalyze ), this, g_mnbAnalyze->GetId());
-	g_mnbAnalysis->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( Main::mnuClearAnalysis ), this, g_mnbClearAnalysis->GetId());
-	g_mnuGain->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( Main::mnuGain ), this, g_mnbGain->GetId());
-	g_mnuGain->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( Main::mnuUndoGain ), this, g_mnbUndoGain->GetId());
-	g_mnuGain->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( Main::mnuDeleteTag ), this, g_mnbDeleteTag->GetId());
-	g_mnbHelp->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( Main::mnuToolWebsite ), this, g_mnbToolWebsite->GetId());
-	g_mnbHelp->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( Main::mnuWebsite ), this, g_mnbWebsite->GetId());
-	g_mnbHelp->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( Main::mnuAbout ), this, g_mnbAbout->GetId());
-	this->Connect( g_tbAddFolder->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( Main::mnuAddDirectory ) );
-	this->Connect( g_tbAddFiles->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( Main::mnuAddFiles ) );
-	this->Connect( g_tbRemoveFiles->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( Main::mnuRemoveFiles ) );
-	this->Connect( g_tbClearList->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( Main::mnuClearList ) );
-	this->Connect( g_tbAnalyze->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( Main::mnuAnalyze ) );
-	this->Connect( g_tbGain->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( Main::mnuGain ) );
-	this->Connect( g_tbSettings->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( Main::mnuSettings ) );
-	this->Connect( g_tbAbout->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( Main::mnuAbout ) );
-	g_mainMenu->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( Main::mnuAddDirectory ), this, g_mnuAddFolder->GetId());
-	g_mainMenu->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( Main::mnuAddFiles ), this, g_mnuAddFiles->GetId());
-	g_mainMenu->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( Main::mnuRemoveFiles ), this, g_mnuRemoveFiles->GetId());
-	g_mainMenu->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( Main::mnuClearList ), this, g_mnuClearList->GetId());
-	this->Connect( wxID_ANY, wxEVT_TIMER, wxTimerEventHandler( Main::OnTimer1Trigger ) );
+	g_txtNormalVolume->Connect( wxEVT_KILL_FOCUS, wxFocusEventHandler( FrameMain::OntxtNormalVolumeTextKillFocus ), NULL, this );
+	g_lstFiles->Connect( wxEVT_COMMAND_LIST_DELETE_ITEM, wxListEventHandler( FrameMain::OnlstFilesDeleteItem ), NULL, this );
+	g_lstFiles->Connect( wxEVT_COMMAND_LIST_INSERT_ITEM, wxListEventHandler( FrameMain::OnlstFilesInsertItem ), NULL, this );
+	g_lstFiles->Connect( wxEVT_COMMAND_LIST_ITEM_DESELECTED, wxListEventHandler( FrameMain::OnlstFilesItemSelect ), NULL, this );
+	g_lstFiles->Connect( wxEVT_COMMAND_LIST_ITEM_RIGHT_CLICK, wxListEventHandler( FrameMain::OnlstFilesItemRClick ), NULL, this );
+	g_lstFiles->Connect( wxEVT_COMMAND_LIST_ITEM_SELECTED, wxListEventHandler( FrameMain::OnlstFilesItemSelect ), NULL, this );
+	g_lstFiles->Connect( wxEVT_COMMAND_LIST_KEY_DOWN, wxListEventHandler( FrameMain::OnlstFilesKeyDown ), NULL, this );
+	g_btnStop->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( FrameMain::btnProcessStop ), NULL, this );
+	g_mnbFile->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( FrameMain::mnuAddDirectory ), this, g_mnbAddFolder->GetId());
+	g_mnbFile->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( FrameMain::mnuAddFiles ), this, g_mnbAddFiles->GetId());
+	g_mnbFile->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( FrameMain::mnuExit ), this, g_mnbExit->GetId());
+	g_mnbEdit->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( FrameMain::mnuRemoveFiles ), this, g_mnbRemoveFiles->GetId());
+	g_mnbEdit->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( FrameMain::mnuClearList ), this, g_mnbClearList->GetId());
+	g_mnbEdit->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( FrameMain::mnuSettings ), this, g_mnbSettings->GetId());
+	g_mnbAnalysis->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( FrameMain::mnuAnalyze ), this, g_mnbAnalyze->GetId());
+	g_mnbAnalysis->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( FrameMain::mnuClearAnalysis ), this, g_mnbClearAnalysis->GetId());
+	g_mnuGain->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( FrameMain::mnuGain ), this, g_mnbGain->GetId());
+	g_mnuGain->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( FrameMain::mnuUndoGain ), this, g_mnbUndoGain->GetId());
+	g_mnuGain->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( FrameMain::mnuDeleteTag ), this, g_mnbDeleteTag->GetId());
+	g_mnbHelp->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( FrameMain::mnuToolWebsite ), this, g_mnbToolWebsite->GetId());
+	g_mnbHelp->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( FrameMain::mnuWebsite ), this, g_mnbWebsite->GetId());
+	g_mnbHelp->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( FrameMain::mnuAbout ), this, g_mnbAbout->GetId());
+	this->Connect( g_tbAddFolder->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( FrameMain::mnuAddDirectory ) );
+	this->Connect( g_tbAddFiles->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( FrameMain::mnuAddFiles ) );
+	this->Connect( g_tbRemoveFiles->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( FrameMain::mnuRemoveFiles ) );
+	this->Connect( g_tbClearList->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( FrameMain::mnuClearList ) );
+	this->Connect( g_tbAnalyze->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( FrameMain::mnuAnalyze ) );
+	this->Connect( g_tbGain->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( FrameMain::mnuGain ) );
+	this->Connect( g_tbSettings->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( FrameMain::mnuSettings ) );
+	this->Connect( g_tbAbout->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( FrameMain::mnuAbout ) );
+	g_mainMenu->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( FrameMain::mnuAddDirectory ), this, g_mnuAddFolder->GetId());
+	g_mainMenu->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( FrameMain::mnuAddFiles ), this, g_mnuAddFiles->GetId());
+	g_mainMenu->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( FrameMain::mnuRemoveFiles ), this, g_mnuRemoveFiles->GetId());
+	g_mainMenu->Bind(wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( FrameMain::mnuClearList ), this, g_mnuClearList->GetId());
+	this->Connect( wxID_ANY, wxEVT_TIMER, wxTimerEventHandler( FrameMain::OnTimer1Trigger ) );
 }
 
-Main::~Main()
+FrameMain::~FrameMain()
 {
 	// Disconnect Events
-	g_txtNormalVolume->Disconnect( wxEVT_KILL_FOCUS, wxFocusEventHandler( Main::OntxtNormalVolumeTextKillFocus ), NULL, this );
-	g_lstFiles->Disconnect( wxEVT_COMMAND_LIST_DELETE_ITEM, wxListEventHandler( Main::OnlstFilesDeleteItem ), NULL, this );
-	g_lstFiles->Disconnect( wxEVT_COMMAND_LIST_INSERT_ITEM, wxListEventHandler( Main::OnlstFilesInsertItem ), NULL, this );
-	g_lstFiles->Disconnect( wxEVT_COMMAND_LIST_ITEM_DESELECTED, wxListEventHandler( Main::OnlstFilesItemSelect ), NULL, this );
-	g_lstFiles->Disconnect( wxEVT_COMMAND_LIST_ITEM_RIGHT_CLICK, wxListEventHandler( Main::OnlstFilesItemRClick ), NULL, this );
-	g_lstFiles->Disconnect( wxEVT_COMMAND_LIST_ITEM_SELECTED, wxListEventHandler( Main::OnlstFilesItemSelect ), NULL, this );
-	g_lstFiles->Disconnect( wxEVT_COMMAND_LIST_KEY_DOWN, wxListEventHandler( Main::OnlstFilesKeyDown ), NULL, this );
-	g_btnStop->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Main::btnProcessStop ), NULL, this );
-	this->Disconnect( g_tbAddFolder->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( Main::mnuAddDirectory ) );
-	this->Disconnect( g_tbAddFiles->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( Main::mnuAddFiles ) );
-	this->Disconnect( g_tbRemoveFiles->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( Main::mnuRemoveFiles ) );
-	this->Disconnect( g_tbClearList->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( Main::mnuClearList ) );
-	this->Disconnect( g_tbAnalyze->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( Main::mnuAnalyze ) );
-	this->Disconnect( g_tbGain->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( Main::mnuGain ) );
-	this->Disconnect( g_tbSettings->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( Main::mnuSettings ) );
-	this->Disconnect( g_tbAbout->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( Main::mnuAbout ) );
-	this->Disconnect( wxID_ANY, wxEVT_TIMER, wxTimerEventHandler( Main::OnTimer1Trigger ) );
+	g_txtNormalVolume->Disconnect( wxEVT_KILL_FOCUS, wxFocusEventHandler( FrameMain::OntxtNormalVolumeTextKillFocus ), NULL, this );
+	g_lstFiles->Disconnect( wxEVT_COMMAND_LIST_DELETE_ITEM, wxListEventHandler( FrameMain::OnlstFilesDeleteItem ), NULL, this );
+	g_lstFiles->Disconnect( wxEVT_COMMAND_LIST_INSERT_ITEM, wxListEventHandler( FrameMain::OnlstFilesInsertItem ), NULL, this );
+	g_lstFiles->Disconnect( wxEVT_COMMAND_LIST_ITEM_DESELECTED, wxListEventHandler( FrameMain::OnlstFilesItemSelect ), NULL, this );
+	g_lstFiles->Disconnect( wxEVT_COMMAND_LIST_ITEM_RIGHT_CLICK, wxListEventHandler( FrameMain::OnlstFilesItemRClick ), NULL, this );
+	g_lstFiles->Disconnect( wxEVT_COMMAND_LIST_ITEM_SELECTED, wxListEventHandler( FrameMain::OnlstFilesItemSelect ), NULL, this );
+	g_lstFiles->Disconnect( wxEVT_COMMAND_LIST_KEY_DOWN, wxListEventHandler( FrameMain::OnlstFilesKeyDown ), NULL, this );
+	g_btnStop->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( FrameMain::btnProcessStop ), NULL, this );
+	this->Disconnect( g_tbAddFolder->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( FrameMain::mnuAddDirectory ) );
+	this->Disconnect( g_tbAddFiles->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( FrameMain::mnuAddFiles ) );
+	this->Disconnect( g_tbRemoveFiles->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( FrameMain::mnuRemoveFiles ) );
+	this->Disconnect( g_tbClearList->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( FrameMain::mnuClearList ) );
+	this->Disconnect( g_tbAnalyze->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( FrameMain::mnuAnalyze ) );
+	this->Disconnect( g_tbGain->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( FrameMain::mnuGain ) );
+	this->Disconnect( g_tbSettings->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( FrameMain::mnuSettings ) );
+	this->Disconnect( g_tbAbout->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( FrameMain::mnuAbout ) );
+	this->Disconnect( wxID_ANY, wxEVT_TIMER, wxTimerEventHandler( FrameMain::OnTimer1Trigger ) );
 
 	delete g_mainMenu;
 }
 
-Settings::Settings( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
+DialogSettings::DialogSettings( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
 {
 	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
 
@@ -421,44 +421,44 @@ Settings::Settings( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	this->Centre( wxBOTH );
 
 	// Connect Events
-	g_optTagAPE->Connect( wxEVT_COMMAND_RADIOBUTTON_SELECTED, wxCommandEventHandler( Settings::updateDisabledControlsEvent ), NULL, this );
-	g_optTagID3->Connect( wxEVT_COMMAND_RADIOBUTTON_SELECTED, wxCommandEventHandler( Settings::updateDisabledControlsEvent ), NULL, this );
-	g_optTagSKIP->Connect( wxEVT_COMMAND_RADIOBUTTON_SELECTED, wxCommandEventHandler( Settings::updateDisabledControlsEvent ), NULL, this );
-	g_chkTagFORCE->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( Settings::updateDisabledControlsEvent ), NULL, this );
-	g_chkConstantGain->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( Settings::updateDisabledControlsEvent ), NULL, this );
-	g_sldConstantGain->Connect( wxEVT_SCROLL_TOP, wxScrollEventHandler( Settings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
-	g_sldConstantGain->Connect( wxEVT_SCROLL_BOTTOM, wxScrollEventHandler( Settings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
-	g_sldConstantGain->Connect( wxEVT_SCROLL_LINEUP, wxScrollEventHandler( Settings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
-	g_sldConstantGain->Connect( wxEVT_SCROLL_LINEDOWN, wxScrollEventHandler( Settings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
-	g_sldConstantGain->Connect( wxEVT_SCROLL_PAGEUP, wxScrollEventHandler( Settings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
-	g_sldConstantGain->Connect( wxEVT_SCROLL_PAGEDOWN, wxScrollEventHandler( Settings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
-	g_sldConstantGain->Connect( wxEVT_SCROLL_THUMBTRACK, wxScrollEventHandler( Settings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
-	g_sldConstantGain->Connect( wxEVT_SCROLL_THUMBRELEASE, wxScrollEventHandler( Settings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
-	g_sldConstantGain->Connect( wxEVT_SCROLL_CHANGED, wxScrollEventHandler( Settings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
-	g_btnDefault->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Settings::OnbtnDefaultClick ), NULL, this );
-	g_btnOK->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Settings::OnbtnOKClick ), NULL, this );
-	g_btnCancel->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Settings::OnbtnCancelClick ), NULL, this );
+	g_optTagAPE->Connect( wxEVT_COMMAND_RADIOBUTTON_SELECTED, wxCommandEventHandler( DialogSettings::updateDisabledControlsEvent ), NULL, this );
+	g_optTagID3->Connect( wxEVT_COMMAND_RADIOBUTTON_SELECTED, wxCommandEventHandler( DialogSettings::updateDisabledControlsEvent ), NULL, this );
+	g_optTagSKIP->Connect( wxEVT_COMMAND_RADIOBUTTON_SELECTED, wxCommandEventHandler( DialogSettings::updateDisabledControlsEvent ), NULL, this );
+	g_chkTagFORCE->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( DialogSettings::updateDisabledControlsEvent ), NULL, this );
+	g_chkConstantGain->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( DialogSettings::updateDisabledControlsEvent ), NULL, this );
+	g_sldConstantGain->Connect( wxEVT_SCROLL_TOP, wxScrollEventHandler( DialogSettings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
+	g_sldConstantGain->Connect( wxEVT_SCROLL_BOTTOM, wxScrollEventHandler( DialogSettings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
+	g_sldConstantGain->Connect( wxEVT_SCROLL_LINEUP, wxScrollEventHandler( DialogSettings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
+	g_sldConstantGain->Connect( wxEVT_SCROLL_LINEDOWN, wxScrollEventHandler( DialogSettings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
+	g_sldConstantGain->Connect( wxEVT_SCROLL_PAGEUP, wxScrollEventHandler( DialogSettings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
+	g_sldConstantGain->Connect( wxEVT_SCROLL_PAGEDOWN, wxScrollEventHandler( DialogSettings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
+	g_sldConstantGain->Connect( wxEVT_SCROLL_THUMBTRACK, wxScrollEventHandler( DialogSettings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
+	g_sldConstantGain->Connect( wxEVT_SCROLL_THUMBRELEASE, wxScrollEventHandler( DialogSettings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
+	g_sldConstantGain->Connect( wxEVT_SCROLL_CHANGED, wxScrollEventHandler( DialogSettings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
+	g_btnDefault->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( DialogSettings::OnbtnDefaultClick ), NULL, this );
+	g_btnOK->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( DialogSettings::OnbtnOKClick ), NULL, this );
+	g_btnCancel->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( DialogSettings::OnbtnCancelClick ), NULL, this );
 }
 
-Settings::~Settings()
+DialogSettings::~DialogSettings()
 {
 	// Disconnect Events
-	g_optTagAPE->Disconnect( wxEVT_COMMAND_RADIOBUTTON_SELECTED, wxCommandEventHandler( Settings::updateDisabledControlsEvent ), NULL, this );
-	g_optTagID3->Disconnect( wxEVT_COMMAND_RADIOBUTTON_SELECTED, wxCommandEventHandler( Settings::updateDisabledControlsEvent ), NULL, this );
-	g_optTagSKIP->Disconnect( wxEVT_COMMAND_RADIOBUTTON_SELECTED, wxCommandEventHandler( Settings::updateDisabledControlsEvent ), NULL, this );
-	g_chkTagFORCE->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( Settings::updateDisabledControlsEvent ), NULL, this );
-	g_chkConstantGain->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( Settings::updateDisabledControlsEvent ), NULL, this );
-	g_sldConstantGain->Disconnect( wxEVT_SCROLL_TOP, wxScrollEventHandler( Settings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
-	g_sldConstantGain->Disconnect( wxEVT_SCROLL_BOTTOM, wxScrollEventHandler( Settings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
-	g_sldConstantGain->Disconnect( wxEVT_SCROLL_LINEUP, wxScrollEventHandler( Settings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
-	g_sldConstantGain->Disconnect( wxEVT_SCROLL_LINEDOWN, wxScrollEventHandler( Settings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
-	g_sldConstantGain->Disconnect( wxEVT_SCROLL_PAGEUP, wxScrollEventHandler( Settings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
-	g_sldConstantGain->Disconnect( wxEVT_SCROLL_PAGEDOWN, wxScrollEventHandler( Settings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
-	g_sldConstantGain->Disconnect( wxEVT_SCROLL_THUMBTRACK, wxScrollEventHandler( Settings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
-	g_sldConstantGain->Disconnect( wxEVT_SCROLL_THUMBRELEASE, wxScrollEventHandler( Settings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
-	g_sldConstantGain->Disconnect( wxEVT_SCROLL_CHANGED, wxScrollEventHandler( Settings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
-	g_btnDefault->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Settings::OnbtnDefaultClick ), NULL, this );
-	g_btnOK->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Settings::OnbtnOKClick ), NULL, this );
-	g_btnCancel->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Settings::OnbtnCancelClick ), NULL, this );
+	g_optTagAPE->Disconnect( wxEVT_COMMAND_RADIOBUTTON_SELECTED, wxCommandEventHandler( DialogSettings::updateDisabledControlsEvent ), NULL, this );
+	g_optTagID3->Disconnect( wxEVT_COMMAND_RADIOBUTTON_SELECTED, wxCommandEventHandler( DialogSettings::updateDisabledControlsEvent ), NULL, this );
+	g_optTagSKIP->Disconnect( wxEVT_COMMAND_RADIOBUTTON_SELECTED, wxCommandEventHandler( DialogSettings::updateDisabledControlsEvent ), NULL, this );
+	g_chkTagFORCE->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( DialogSettings::updateDisabledControlsEvent ), NULL, this );
+	g_chkConstantGain->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( DialogSettings::updateDisabledControlsEvent ), NULL, this );
+	g_sldConstantGain->Disconnect( wxEVT_SCROLL_TOP, wxScrollEventHandler( DialogSettings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
+	g_sldConstantGain->Disconnect( wxEVT_SCROLL_BOTTOM, wxScrollEventHandler( DialogSettings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
+	g_sldConstantGain->Disconnect( wxEVT_SCROLL_LINEUP, wxScrollEventHandler( DialogSettings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
+	g_sldConstantGain->Disconnect( wxEVT_SCROLL_LINEDOWN, wxScrollEventHandler( DialogSettings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
+	g_sldConstantGain->Disconnect( wxEVT_SCROLL_PAGEUP, wxScrollEventHandler( DialogSettings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
+	g_sldConstantGain->Disconnect( wxEVT_SCROLL_PAGEDOWN, wxScrollEventHandler( DialogSettings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
+	g_sldConstantGain->Disconnect( wxEVT_SCROLL_THUMBTRACK, wxScrollEventHandler( DialogSettings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
+	g_sldConstantGain->Disconnect( wxEVT_SCROLL_THUMBRELEASE, wxScrollEventHandler( DialogSettings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
+	g_sldConstantGain->Disconnect( wxEVT_SCROLL_CHANGED, wxScrollEventHandler( DialogSettings::OnsldConstantGainCmdSliderUpdated ), NULL, this );
+	g_btnDefault->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( DialogSettings::OnbtnDefaultClick ), NULL, this );
+	g_btnOK->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( DialogSettings::OnbtnOKClick ), NULL, this );
+	g_btnCancel->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( DialogSettings::OnbtnCancelClick ), NULL, this );
 
 }

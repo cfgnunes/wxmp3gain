@@ -3,12 +3,12 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-#ifndef APPLICATION_H
-#define APPLICATION_H
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <wx/app.h>
 
-class Application : public wxApp {
+class Main : public wxApp {
 public:
     virtual bool OnInit();
 
@@ -17,4 +17,4 @@ private:
     wxArrayString *mp_filesCmdLine;
 };
 
-#endif // APPLICATION_H
+#endif // MAIN_H

@@ -90,7 +90,7 @@ msgstr "分析結果を消去"
 msgid "Clear list"
 msgstr "一覧を消去"
 
-#: GuiMain.cpp:32
+#: GuiFrameMain.cpp:32
 msgid "Clipping"
 msgstr "クリッピング"
 
@@ -107,7 +107,7 @@ msgstr "一定のゲイン:"
 msgid "Delete stored tag info"
 msgstr "保存されたタグ情報を削除"
 
-#: GuiMain.cpp:418
+#: GuiFrameMain.cpp:418
 msgid "Do you want to stop process now?"
 msgstr "現在の処理を中止しますか？"
 
@@ -115,7 +115,7 @@ msgstr "現在の処理を中止しますか？"
 msgid "Exit"
 msgstr "終了(&E)"
 
-#: GuiMain.cpp:29
+#: GuiFrameMain.cpp:29
 msgid "File"
 msgstr "ファイル"
 
@@ -123,7 +123,7 @@ msgstr "ファイル"
 msgid "File options"
 msgstr "ファイルのオプション"
 
-#: GuiMain.cpp:30
+#: GuiFrameMain.cpp:30
 msgid "Folder"
 msgstr "フォルダー"
 
@@ -135,7 +135,7 @@ msgstr "強制的な再計算(タグ情報を使わない)"
 msgid "Force to assume input is an MPEG 2 Layer III file"
 msgstr "強制的に MPEG 2 Layer III ファイルとして扱う"
 
-#: GuiMain.cpp:296
+#: GuiFrameMain.cpp:296
 msgid "Free front-end for the MP3gain"
 msgstr "Free front-end for the MP3gain"
 
@@ -144,11 +144,11 @@ msgstr "Free front-end for the MP3gain"
 msgid "Gain"
 msgstr "ゲイン"
 
-#: GuiMain.cpp:33
+#: GuiFrameMain.cpp:33
 msgid "Gain (dB)"
 msgstr "ゲイン (db)"
 
-#: GuiMain.cpp:34
+#: GuiFrameMain.cpp:34
 msgid "Gain (mp3)"
 msgstr "ゲイン (mp3)"
 
@@ -176,7 +176,7 @@ msgstr "一般"
 msgid "MP3gain Website"
 msgstr "MP3gain サイト"
 
-#: GuiMain.cpp:321
+#: GuiFrameMain.cpp:321
 msgid "MP3gain not found!"
 msgstr "MP3gain が見つかりません。"
 
@@ -188,8 +188,8 @@ msgstr "標準の音量 (db):"
 msgid "OK"
 msgstr "OK"
 
-#: GuiMain.cpp:424
-#: GuiMain.cpp:489
+#: GuiFrameMain.cpp:424
+#: GuiFrameMain.cpp:489
 #, c-format
 msgid "Processed %lu files of %lu."
 msgstr "処理済み %lu / 全 %luファイル"
@@ -204,11 +204,11 @@ msgstr "ファイルを一覧から除去"
 msgid "Restore defaults"
 msgstr "標準設定に戻す"
 
-#: GuiMain.cpp:143
+#: GuiFrameMain.cpp:143
 msgid "Select directory"
 msgstr "フォルダの選択"
 
-#: GuiMain.cpp:159
+#: GuiFrameMain.cpp:159
 msgid "Select file"
 msgstr "ファイルの選択"
 
@@ -222,7 +222,7 @@ msgstr "設定"
 msgid "Skip stored tag info (do not read or write tags)"
 msgstr "タグ情報を無視する(タグを読み書きしない)"
 
-#: GuiMain.cpp:35
+#: GuiFrameMain.cpp:35
 msgid "Tag info"
 msgstr "タグ情報"
 
@@ -254,7 +254,7 @@ msgstr "ゲインの情報に ID3v2 タグを使う(デフォルト)"
 msgid "Use constant gain without doing any analysis"
 msgstr "分析せずに一定のゲインを行う"
 
-#: GuiMain.cpp:319
+#: GuiFrameMain.cpp:319
 msgid "Using MP3gain version: "
 msgstr "使用する MP3gain のバージョン:"
 
@@ -262,11 +262,11 @@ msgstr "使用する MP3gain のバージョン:"
 msgid "Using constant gain: "
 msgstr "一定のゲインを使用"
 
-#: GuiMain.cpp:31
+#: GuiFrameMain.cpp:31
 msgid "Volume"
 msgstr "音量"
 
-#: GuiMain.cpp:325
+#: GuiFrameMain.cpp:325
 msgid "files"
 msgstr "ファイル"
 
@@ -274,9 +274,9 @@ msgstr "ファイル"
 msgid "wxMP3gain Website"
 msgstr "wxMP3gain サイト"
 
-#: GuiMain.cpp:441
-#: GuiMain.cpp:468
-#: GuiMain.cpp:521
+#: GuiFrameMain.cpp:441
+#: GuiFrameMain.cpp:468
+#: GuiFrameMain.cpp:521
 msgid "yes"
 msgstr "はい"
 
