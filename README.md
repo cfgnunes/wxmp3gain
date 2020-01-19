@@ -22,7 +22,7 @@ This program has been tested on the following platforms:
 ```sh
 sudo add-apt-repository -y ppa:cfgnunes/ppa
 sudo apt update
-sudo apt -y install wxmp3gain
+sudo apt install wxmp3gain
 ```
 
 ### Install from sources
