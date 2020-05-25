@@ -179,7 +179,7 @@ msgstr "OK"
 #: GuiFrameMain.cpp:424 GuiFrameMain.cpp:489
 #, c-format
 msgid "Processed %lu files of %lu."
-msgstr "%lu von %lu Dateien bearbeitet."
+msgstr "%lu von %lu Dateien verarbeitet."
 
 #: Gui.cpp:96 Gui.cpp:166 Gui.cpp:194
 msgid "Remove files"
