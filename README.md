@@ -67,7 +67,7 @@ This project uses [SemVer](http://semver.org/) for versioning. For the versions 
 
 ## Authors
 
-- Cristiano Nunes - _Developer_
+- Cristiano Nunes
 
 ## License
 
