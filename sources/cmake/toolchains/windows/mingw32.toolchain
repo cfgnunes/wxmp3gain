@@ -1,0 +1,52 @@
+# Check if MSYS2_HOME is set.
+if(DEFINED ENV{MSYS2_HOME})
+	set(MSYS2_HOME $ENV{MSYS2_HOME})
+endif()
+if(NOT DEFINED MSYS2_HOME)
+	set(MSYS2_HOME "$ENV{SYSTEMDRIVE}/msys64")
+endif()
+
+# Set the path to the mingw32 binaries.
+set(MINGW_BIN_PATH "${MSYS2_HOME}/mingw32/bin")
+
+# Make sure to replace all backslashes with slashes.
+file(TO_CMAKE_PATH ${MINGW_BIN_PATH} MINGW_BIN_PATH)
+
+# Set the C and C++ compilers to use.
+if(NOT DEFINED CMAKE_C_COMPILER)
+    set(CMAKE_C_COMPILER ${MINGW_BIN_PATH}/gcc.exe)
+endif()
+if(NOT DEFINED CMAKE_CXX_COMPILER)
+    set(CMAKE_CXX_COMPILER ${MINGW_BIN_PATH}/g++.exe)
+endif()
+if(NOT DEFINED CMAKE_RC_COMPILER)
+    set(CMAKE_RC_COMPILER ${MINGW_BIN_PATH}/windres.exe)
+endif()
+
+# Set the flags to compile in 32bit
+set(CMAKE_C_FLAGS "-m32")
+# Check if custom cflags are passed to the cmake executable.
+if(DEFINED C_FLAGS_DEBUG)
+	# Use these passed flags.
+	set(CMAKE_C_FLAGS_DEBUG "${C_FLAGS_DEBUG}")
+else()
+	# Else override the default '-g' flag to the following.
+	set(CMAKE_C_FLAGS_DEBUG "-g0 -Og")
+endif()
+
+set(CMAKE_CXX_FLAGS "-m32")
+# Check if custom cxxflags are passed to the cmake executable.
+if(DEFINED CXX_FLAGS_DEBUG)
+	# Use these passed flags.
+	set(CMAKE_CXX_FLAGS_DEBUG "${CXX_FLAGS_DEBUG}")
+else()
+	# Else override the default '-g' flag to the following.
+	set(CMAKE_CXX_FLAGS_DEBUG "-g0 -Og")
+endif()
+
+# Set the target architecture.
+set (TARGET_ARCHITECTURE "x86")
+
+# Export settings.
+set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+set(CMAKE_VISIBILITY_INLINES_HIDDEN 1)

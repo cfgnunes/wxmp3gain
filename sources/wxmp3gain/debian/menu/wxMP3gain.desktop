@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=wxMP3gain
+Comment=A free front-end for the MP3gain.
+Comment[de]=Eine freie grafische Benutzeroberfläche für MP3gain.
+Exec=${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_BINDIR}/${TARGET_NAME}
+Icon=${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/${TARGET_NAME}/${CMAKE_RESOURCES_FOLDER}/icon-app.ico
+Categories=AudioVideo;Audio;
+Terminal=false
+Type=Application

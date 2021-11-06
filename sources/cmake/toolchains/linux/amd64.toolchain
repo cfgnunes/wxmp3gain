@@ -1,0 +1,10 @@
+# Set the flags to compile in 64bit
+set(CMAKE_C_FLAGS "-m64")
+set(CMAKE_CXX_FLAGS "-m64")
+
+# Set the target architecture.
+set (TARGET_ARCHITECTURE "amd64")
+
+# Export settings.
+set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+set(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
