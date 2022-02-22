@@ -3,7 +3,7 @@ Section: sound
 Priority: optional
 Maintainer: Cristiano Nunes <cfgnunes@gmail.com>
 Build-Depends: debhelper (>= 9), libwxgtk3.0-gtk3-dev | libwxgtk3.0-dev | libwxgtk2.8-dev, cmake
-Standards-Version: 3.9.5
+Standards-Version: 4.5.0
 Homepage: https://github.com/cfgnunes/wxmp3gain
 
 Package: wxmp3gain
