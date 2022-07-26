@@ -67,7 +67,7 @@ This project uses [SemVer](http://semver.org/) for versioning. For the versions 
 
 ## Authors
 
-- Cristiano Nunes
+- Cristiano Fraga G. Nunes
 
 ## License
 

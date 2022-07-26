@@ -1,5 +1,5 @@
 # This file is part of the wxMP3gain and licensed under the GNU General Public License, version 3
-# Cristiano Nunes <cfgnunes@gmail.com>, 2013.
+# Cristiano Fraga G. Nunes <cfgnunes@gmail.com>, 2013.
 # Carlos Sánchez <carlos1994sanchez@gmail.com>, 2013.
 msgid ""
 msgstr ""
