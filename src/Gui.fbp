@@ -58,7 +58,7 @@
             <property name="xrc_skip_sizer">1</property>
             <object class="wxBoxSizer" expanded="1">
                 <property name="minimum_size"></property>
-                <property name="name">g_boxMain</property>
+                <property name="name">gui_boxMain</property>
                 <property name="orient">wxVERTICAL</property>
                 <property name="permission">protected</property>
                 <object class="sizeritem" expanded="1">
@@ -127,7 +127,7 @@
                                 <property name="proportion">0</property>
                                 <object class="wxBoxSizer" expanded="1">
                                     <property name="minimum_size"></property>
-                                    <property name="name">g_boxNormalVolume</property>
+                                    <property name="name">gui_boxNormalVolume</property>
                                     <property name="orient">wxHORIZONTAL</property>
                                     <property name="permission">protected</property>
                                     <object class="sizeritem" expanded="1">
@@ -231,7 +231,7 @@
                                             <property name="minimize_button">0</property>
                                             <property name="minimum_size"></property>
                                             <property name="moveable">1</property>
-                                            <property name="name">g_txtNormalVolume</property>
+                                            <property name="name">gui_txtNormalVolume</property>
                                             <property name="pane_border">1</property>
                                             <property name="pane_position"></property>
                                             <property name="pane_size"></property>
@@ -325,7 +325,7 @@
                                 <property name="proportion">0</property>
                                 <object class="wxBoxSizer" expanded="1">
                                     <property name="minimum_size"></property>
-                                    <property name="name">g_boxConstantGain</property>
+                                    <property name="name">gui_boxConstantGain</property>
                                     <property name="orient">wxHORIZONTAL</property>
                                     <property name="permission">protected</property>
                                     <object class="sizeritem" expanded="1">
@@ -430,7 +430,7 @@
                                             <property name="minimize_button">0</property>
                                             <property name="minimum_size"></property>
                                             <property name="moveable">1</property>
-                                            <property name="name">g_lblConstantGain</property>
+                                            <property name="name">gui_lblConstantGain</property>
                                             <property name="pane_border">1</property>
                                             <property name="pane_position"></property>
                                             <property name="pane_size"></property>
@@ -491,7 +491,7 @@
                                     <property name="minimize_button">0</property>
                                     <property name="minimum_size"></property>
                                     <property name="moveable">1</property>
-                                    <property name="name">g_lstFiles</property>
+                                    <property name="name">gui_lstFiles</property>
                                     <property name="pane_border">1</property>
                                     <property name="pane_position"></property>
                                     <property name="pane_size"></property>
@@ -568,7 +568,7 @@
                                             <property name="minimize_button">0</property>
                                             <property name="minimum_size"></property>
                                             <property name="moveable">1</property>
-                                            <property name="name">g_gugProgress</property>
+                                            <property name="name">gui_gugProgress</property>
                                             <property name="pane_border">1</property>
                                             <property name="pane_position"></property>
                                             <property name="pane_size"></property>
@@ -641,7 +641,7 @@
                                             <property name="minimize_button">0</property>
                                             <property name="minimum_size"></property>
                                             <property name="moveable">1</property>
-                                            <property name="name">g_btnStop</property>
+                                            <property name="name">gui_btnStop</property>
                                             <property name="pane_border">1</property>
                                             <property name="pane_position"></property>
                                             <property name="pane_size"></property>
@@ -685,7 +685,7 @@
                 <property name="label">MyMenuBar</property>
                 <property name="maximum_size"></property>
                 <property name="minimum_size"></property>
-                <property name="name">g_mainMenuBar</property>
+                <property name="name">gui_mainMenuBar</property>
                 <property name="permission">protected</property>
                 <property name="pos"></property>
                 <property name="size"></property>
@@ -697,7 +697,7 @@
                 <property name="window_style"></property>
                 <object class="wxMenu" expanded="1">
                     <property name="label">&amp;File</property>
-                    <property name="name">g_mnbFile</property>
+                    <property name="name">gui_mnbFile</property>
                     <property name="permission">protected</property>
                     <object class="wxMenuItem" expanded="1">
                         <property name="bitmap"></property>
@@ -707,7 +707,7 @@
                         <property name="id">ID_ADD_FOLDER</property>
                         <property name="kind">wxITEM_NORMAL</property>
                         <property name="label">Add folder</property>
-                        <property name="name">g_mnbAddFolder</property>
+                        <property name="name">gui_mnbAddFolder</property>
                         <property name="permission">none</property>
                         <property name="shortcut"></property>
                         <property name="unchecked_bitmap"></property>
@@ -721,7 +721,7 @@
                         <property name="id">ID_ADD_FILES</property>
                         <property name="kind">wxITEM_NORMAL</property>
                         <property name="label">Add files</property>
-                        <property name="name">g_mnbAddFiles</property>
+                        <property name="name">gui_mnbAddFiles</property>
                         <property name="permission">none</property>
                         <property name="shortcut"></property>
                         <property name="unchecked_bitmap"></property>
@@ -739,7 +739,7 @@
                         <property name="id">ID_EXIT</property>
                         <property name="kind">wxITEM_NORMAL</property>
                         <property name="label">Exit</property>
-                        <property name="name">g_mnbExit</property>
+                        <property name="name">gui_mnbExit</property>
                         <property name="permission">none</property>
                         <property name="shortcut"></property>
                         <property name="unchecked_bitmap"></property>
@@ -748,7 +748,7 @@
                 </object>
                 <object class="wxMenu" expanded="1">
                     <property name="label">&amp;Edit</property>
-                    <property name="name">g_mnbEdit</property>
+                    <property name="name">gui_mnbEdit</property>
                     <property name="permission">protected</property>
                     <object class="wxMenuItem" expanded="1">
                         <property name="bitmap"></property>
@@ -758,7 +758,7 @@
                         <property name="id">ID_REMOVE_FILES</property>
                         <property name="kind">wxITEM_NORMAL</property>
                         <property name="label">Remove files</property>
-                        <property name="name">g_mnbRemoveFiles</property>
+                        <property name="name">gui_mnbRemoveFiles</property>
                         <property name="permission">none</property>
                         <property name="shortcut"></property>
                         <property name="unchecked_bitmap"></property>
@@ -772,7 +772,7 @@
                         <property name="id">ID_CLEAR_LIST</property>
                         <property name="kind">wxITEM_NORMAL</property>
                         <property name="label">Clear list</property>
-                        <property name="name">g_mnbClearList</property>
+                        <property name="name">gui_mnbClearList</property>
                         <property name="permission">none</property>
                         <property name="shortcut"></property>
                         <property name="unchecked_bitmap"></property>
@@ -790,7 +790,7 @@
                         <property name="id">ID_SETTINGS</property>
                         <property name="kind">wxITEM_NORMAL</property>
                         <property name="label">Settings</property>
-                        <property name="name">g_mnbSettings</property>
+                        <property name="name">gui_mnbSettings</property>
                         <property name="permission">none</property>
                         <property name="shortcut"></property>
                         <property name="unchecked_bitmap"></property>
@@ -799,7 +799,7 @@
                 </object>
                 <object class="wxMenu" expanded="1">
                     <property name="label">&amp;Analysis</property>
-                    <property name="name">g_mnbAnalysis</property>
+                    <property name="name">gui_mnbAnalysis</property>
                     <property name="permission">protected</property>
                     <object class="wxMenuItem" expanded="1">
                         <property name="bitmap"></property>
@@ -809,7 +809,7 @@
                         <property name="id">ID_ANALYZE</property>
                         <property name="kind">wxITEM_NORMAL</property>
                         <property name="label">Analyze</property>
-                        <property name="name">g_mnbAnalyze</property>
+                        <property name="name">gui_mnbAnalyze</property>
                         <property name="permission">none</property>
                         <property name="shortcut"></property>
                         <property name="unchecked_bitmap"></property>
@@ -827,7 +827,7 @@
                         <property name="id">ID_CLEAR_ANALYSIS</property>
                         <property name="kind">wxITEM_NORMAL</property>
                         <property name="label">Clear analysis</property>
-                        <property name="name">g_mnbClearAnalysis</property>
+                        <property name="name">gui_mnbClearAnalysis</property>
                         <property name="permission">none</property>
                         <property name="shortcut"></property>
                         <property name="unchecked_bitmap"></property>
@@ -836,7 +836,7 @@
                 </object>
                 <object class="wxMenu" expanded="1">
                     <property name="label">&amp;Gain</property>
-                    <property name="name">g_mnuGain</property>
+                    <property name="name">gui_mnuGain</property>
                     <property name="permission">protected</property>
                     <object class="wxMenuItem" expanded="1">
                         <property name="bitmap"></property>
@@ -846,7 +846,7 @@
                         <property name="id">ID_GAIN</property>
                         <property name="kind">wxITEM_NORMAL</property>
                         <property name="label">Gain</property>
-                        <property name="name">g_mnbGain</property>
+                        <property name="name">gui_mnbGain</property>
                         <property name="permission">none</property>
                         <property name="shortcut"></property>
                         <property name="unchecked_bitmap"></property>
@@ -864,7 +864,7 @@
                         <property name="id">ID_UNDO_GAIN</property>
                         <property name="kind">wxITEM_NORMAL</property>
                         <property name="label">Undo gain changes (based on stored tag info)&#x09;Ctrl+Z</property>
-                        <property name="name">g_mnbUndoGain</property>
+                        <property name="name">gui_mnbUndoGain</property>
                         <property name="permission">none</property>
                         <property name="shortcut"></property>
                         <property name="unchecked_bitmap"></property>
@@ -878,7 +878,7 @@
                         <property name="id">ID_DELETE_TAG</property>
                         <property name="kind">wxITEM_NORMAL</property>
                         <property name="label">Delete stored tag info</property>
-                        <property name="name">g_mnbDeleteTag</property>
+                        <property name="name">gui_mnbDeleteTag</property>
                         <property name="permission">none</property>
                         <property name="shortcut"></property>
                         <property name="unchecked_bitmap"></property>
@@ -887,7 +887,7 @@
                 </object>
                 <object class="wxMenu" expanded="1">
                     <property name="label">&amp;Help</property>
-                    <property name="name">g_mnbHelp</property>
+                    <property name="name">gui_mnbHelp</property>
                     <property name="permission">protected</property>
                     <object class="wxMenuItem" expanded="1">
                         <property name="bitmap"></property>
@@ -897,7 +897,7 @@
                         <property name="id">ID_WEBSITE</property>
                         <property name="kind">wxITEM_NORMAL</property>
                         <property name="label">MP3gain Website</property>
-                        <property name="name">g_mnbToolWebsite</property>
+                        <property name="name">gui_mnbToolWebsite</property>
                         <property name="permission">none</property>
                         <property name="shortcut"></property>
                         <property name="unchecked_bitmap"></property>
@@ -911,7 +911,7 @@
                         <property name="id">ID_TOOL_WEBSITE</property>
                         <property name="kind">wxITEM_NORMAL</property>
                         <property name="label">wxMP3gain Website</property>
-                        <property name="name">g_mnbWebsite</property>
+                        <property name="name">gui_mnbWebsite</property>
                         <property name="permission">none</property>
                         <property name="shortcut"></property>
                         <property name="unchecked_bitmap"></property>
@@ -929,7 +929,7 @@
                         <property name="id">ID_ABOUT</property>
                         <property name="kind">wxITEM_NORMAL</property>
                         <property name="label">About</property>
-                        <property name="name">g_mnbAbout</property>
+                        <property name="name">gui_mnbAbout</property>
                         <property name="permission">none</property>
                         <property name="shortcut"></property>
                         <property name="unchecked_bitmap"></property>
@@ -949,7 +949,7 @@
                 <property name="id">wxID_ANY</property>
                 <property name="maximum_size"></property>
                 <property name="minimum_size"></property>
-                <property name="name">g_mainStatusBar</property>
+                <property name="name">gui_mainStatusBar</property>
                 <property name="permission">protected</property>
                 <property name="pos"></property>
                 <property name="size"></property>
@@ -997,7 +997,7 @@
                 <property name="minimize_button">0</property>
                 <property name="minimum_size"></property>
                 <property name="moveable">1</property>
-                <property name="name">g_mainToolBar</property>
+                <property name="name">gui_mainToolBar</property>
                 <property name="packing">1</property>
                 <property name="pane_border">1</property>
                 <property name="pane_position"></property>
@@ -1022,7 +1022,7 @@
                     <property name="id">ID_ADD_FOLDER</property>
                     <property name="kind">wxITEM_NORMAL</property>
                     <property name="label"></property>
-                    <property name="name">g_tbAddFolder</property>
+                    <property name="name">gui_tbAddFolder</property>
                     <property name="permission">protected</property>
                     <property name="statusbar"></property>
                     <property name="tooltip">Add folder</property>
@@ -1034,7 +1034,7 @@
                     <property name="id">ID_ADD_FILES</property>
                     <property name="kind">wxITEM_NORMAL</property>
                     <property name="label"></property>
-                    <property name="name">g_tbAddFiles</property>
+                    <property name="name">gui_tbAddFiles</property>
                     <property name="permission">protected</property>
                     <property name="statusbar"></property>
                     <property name="tooltip">Add files</property>
@@ -1046,7 +1046,7 @@
                     <property name="id">ID_REMOVE_FILES</property>
                     <property name="kind">wxITEM_NORMAL</property>
                     <property name="label"></property>
-                    <property name="name">g_tbRemoveFiles</property>
+                    <property name="name">gui_tbRemoveFiles</property>
                     <property name="permission">protected</property>
                     <property name="statusbar"></property>
                     <property name="tooltip">Remove files</property>
@@ -1058,7 +1058,7 @@
                     <property name="id">ID_CLEAR_LIST</property>
                     <property name="kind">wxITEM_NORMAL</property>
                     <property name="label"></property>
-                    <property name="name">g_tbClearList</property>
+                    <property name="name">gui_tbClearList</property>
                     <property name="permission">protected</property>
                     <property name="statusbar"></property>
                     <property name="tooltip">Clear list</property>
@@ -1073,7 +1073,7 @@
                     <property name="id">ID_ANALYZE</property>
                     <property name="kind">wxITEM_NORMAL</property>
                     <property name="label"></property>
-                    <property name="name">g_tbAnalyze</property>
+                    <property name="name">gui_tbAnalyze</property>
                     <property name="permission">protected</property>
                     <property name="statusbar"></property>
                     <property name="tooltip">Analyze</property>
@@ -1085,7 +1085,7 @@
                     <property name="id">ID_GAIN</property>
                     <property name="kind">wxITEM_NORMAL</property>
                     <property name="label"></property>
-                    <property name="name">g_tbGain</property>
+                    <property name="name">gui_tbGain</property>
                     <property name="permission">protected</property>
                     <property name="statusbar"></property>
                     <property name="tooltip">Gain</property>
@@ -1100,7 +1100,7 @@
                     <property name="id">ID_SETTINGS</property>
                     <property name="kind">wxITEM_NORMAL</property>
                     <property name="label"></property>
-                    <property name="name">g_tbSettings</property>
+                    <property name="name">gui_tbSettings</property>
                     <property name="permission">protected</property>
                     <property name="statusbar"></property>
                     <property name="tooltip">Settings</property>
@@ -1112,7 +1112,7 @@
                     <property name="id">ID_ABOUT</property>
                     <property name="kind">wxITEM_NORMAL</property>
                     <property name="label"></property>
-                    <property name="name">g_tbAbout</property>
+                    <property name="name">gui_tbAbout</property>
                     <property name="permission">protected</property>
                     <property name="statusbar"></property>
                     <property name="tooltip">About</property>
@@ -1121,7 +1121,7 @@
             </object>
             <object class="wxMenu" expanded="1">
                 <property name="label">MyMenu</property>
-                <property name="name">g_mainMenu</property>
+                <property name="name">gui_mainMenu</property>
                 <property name="permission">protected</property>
                 <object class="wxMenuItem" expanded="1">
                     <property name="bitmap"></property>
@@ -1131,7 +1131,7 @@
                     <property name="id">ID_ADD_FOLDER</property>
                     <property name="kind">wxITEM_NORMAL</property>
                     <property name="label">Add folder</property>
-                    <property name="name">g_mnuAddFolder</property>
+                    <property name="name">gui_mnuAddFolder</property>
                     <property name="permission">none</property>
                     <property name="shortcut"></property>
                     <property name="unchecked_bitmap"></property>
@@ -1145,7 +1145,7 @@
                     <property name="id">ID_ADD_FILES</property>
                     <property name="kind">wxITEM_NORMAL</property>
                     <property name="label">Add files</property>
-                    <property name="name">g_mnuAddFiles</property>
+                    <property name="name">gui_mnuAddFiles</property>
                     <property name="permission">none</property>
                     <property name="shortcut"></property>
                     <property name="unchecked_bitmap"></property>
@@ -1159,7 +1159,7 @@
                     <property name="id">ID_REMOVE_FILES</property>
                     <property name="kind">wxITEM_NORMAL</property>
                     <property name="label">Remove files</property>
-                    <property name="name">g_mnuRemoveFiles</property>
+                    <property name="name">gui_mnuRemoveFiles</property>
                     <property name="permission">none</property>
                     <property name="shortcut"></property>
                     <property name="unchecked_bitmap"></property>
@@ -1173,7 +1173,7 @@
                     <property name="id">ID_CLEAR_LIST</property>
                     <property name="kind">wxITEM_NORMAL</property>
                     <property name="label">Clear list</property>
-                    <property name="name">g_mnuClearList</property>
+                    <property name="name">gui_mnuClearList</property>
                     <property name="permission">none</property>
                     <property name="shortcut"></property>
                     <property name="unchecked_bitmap"></property>
@@ -1391,7 +1391,7 @@
                                                     <property name="minimize_button">0</property>
                                                     <property name="minimum_size"></property>
                                                     <property name="moveable">1</property>
-                                                    <property name="name">g_chkAutoLower</property>
+                                                    <property name="name">gui_chkAutoLower</property>
                                                     <property name="pane_border">1</property>
                                                     <property name="pane_position"></property>
                                                     <property name="pane_size"></property>
@@ -1469,7 +1469,7 @@
                                                     <property name="minimize_button">0</property>
                                                     <property name="minimum_size"></property>
                                                     <property name="moveable">1</property>
-                                                    <property name="name">g_chkForceInput</property>
+                                                    <property name="name">gui_chkForceInput</property>
                                                     <property name="pane_border">1</property>
                                                     <property name="pane_position"></property>
                                                     <property name="pane_size"></property>
@@ -1609,7 +1609,7 @@
                                                     <property name="minimize_button">0</property>
                                                     <property name="minimum_size"></property>
                                                     <property name="moveable">1</property>
-                                                    <property name="name">g_optTagAPE</property>
+                                                    <property name="name">gui_optTagAPE</property>
                                                     <property name="pane_border">1</property>
                                                     <property name="pane_position"></property>
                                                     <property name="pane_size"></property>
@@ -1674,7 +1674,7 @@
                                                     <property name="minimize_button">0</property>
                                                     <property name="minimum_size"></property>
                                                     <property name="moveable">1</property>
-                                                    <property name="name">g_optTagID3</property>
+                                                    <property name="name">gui_optTagID3</property>
                                                     <property name="pane_border">1</property>
                                                     <property name="pane_position"></property>
                                                     <property name="pane_size"></property>
@@ -1739,7 +1739,7 @@
                                                     <property name="minimize_button">0</property>
                                                     <property name="minimum_size"></property>
                                                     <property name="moveable">1</property>
-                                                    <property name="name">g_optTagSKIP</property>
+                                                    <property name="name">gui_optTagSKIP</property>
                                                     <property name="pane_border">1</property>
                                                     <property name="pane_position"></property>
                                                     <property name="pane_size"></property>
@@ -1819,7 +1819,7 @@
                                                     <property name="minimize_button">0</property>
                                                     <property name="minimum_size"></property>
                                                     <property name="moveable">1</property>
-                                                    <property name="name">g_chkTagFORCE</property>
+                                                    <property name="name">gui_chkTagFORCE</property>
                                                     <property name="pane_border">1</property>
                                                     <property name="pane_position"></property>
                                                     <property name="pane_size"></property>
@@ -1961,7 +1961,7 @@
                                                     <property name="minimize_button">0</property>
                                                     <property name="minimum_size"></property>
                                                     <property name="moveable">1</property>
-                                                    <property name="name">g_chkConstantGain</property>
+                                                    <property name="name">gui_chkConstantGain</property>
                                                     <property name="pane_border">1</property>
                                                     <property name="pane_position"></property>
                                                     <property name="pane_size"></property>
@@ -2096,7 +2096,7 @@
                                                             <property name="minimize_button">0</property>
                                                             <property name="minimum_size"></property>
                                                             <property name="moveable">1</property>
-                                                            <property name="name">g_sldConstantGain</property>
+                                                            <property name="name">gui_sldConstantGain</property>
                                                             <property name="pane_border">1</property>
                                                             <property name="pane_position"></property>
                                                             <property name="pane_size"></property>
@@ -2162,7 +2162,7 @@
                                                             <property name="minimize_button">0</property>
                                                             <property name="minimum_size"></property>
                                                             <property name="moveable">1</property>
-                                                            <property name="name">g_lblConstantGain</property>
+                                                            <property name="name">gui_lblConstantGain</property>
                                                             <property name="pane_border">1</property>
                                                             <property name="pane_position"></property>
                                                             <property name="pane_size"></property>
@@ -2238,7 +2238,7 @@
                                                     <property name="minimize_button">0</property>
                                                     <property name="minimum_size"></property>
                                                     <property name="moveable">1</property>
-                                                    <property name="name">g_optBothChannel</property>
+                                                    <property name="name">gui_optBothChannel</property>
                                                     <property name="pane_border">1</property>
                                                     <property name="pane_position"></property>
                                                     <property name="pane_size"></property>
@@ -2302,7 +2302,7 @@
                                                     <property name="minimize_button">0</property>
                                                     <property name="minimum_size"></property>
                                                     <property name="moveable">1</property>
-                                                    <property name="name">g_optLeftChannel</property>
+                                                    <property name="name">gui_optLeftChannel</property>
                                                     <property name="pane_border">1</property>
                                                     <property name="pane_position"></property>
                                                     <property name="pane_size"></property>
@@ -2366,7 +2366,7 @@
                                                     <property name="minimize_button">0</property>
                                                     <property name="minimum_size"></property>
                                                     <property name="moveable">1</property>
-                                                    <property name="name">g_optRightChannel</property>
+                                                    <property name="name">gui_optRightChannel</property>
                                                     <property name="pane_border">1</property>
                                                     <property name="pane_position"></property>
                                                     <property name="pane_size"></property>
@@ -2454,7 +2454,7 @@
                                 <property name="minimize_button">0</property>
                                 <property name="minimum_size"></property>
                                 <property name="moveable">1</property>
-                                <property name="name">g_btnDefault</property>
+                                <property name="name">gui_btnDefault</property>
                                 <property name="pane_border">1</property>
                                 <property name="pane_position"></property>
                                 <property name="pane_size"></property>
@@ -2528,7 +2528,7 @@
                                 <property name="minimize_button">0</property>
                                 <property name="minimum_size"></property>
                                 <property name="moveable">1</property>
-                                <property name="name">g_btnOK</property>
+                                <property name="name">gui_btnOK</property>
                                 <property name="pane_border">1</property>
                                 <property name="pane_position"></property>
                                 <property name="pane_size"></property>
@@ -2602,7 +2602,7 @@
                                 <property name="minimize_button">0</property>
                                 <property name="minimum_size"></property>
                                 <property name="moveable">1</property>
-                                <property name="name">g_btnCancel</property>
+                                <property name="name">gui_btnCancel</property>
                                 <property name="pane_border">1</property>
                                 <property name="pane_position"></property>
                                 <property name="pane_size"></property>

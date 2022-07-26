@@ -62,31 +62,31 @@ class FrameMain : public wxFrame
 	private:
 
 	protected:
-		wxBoxSizer* g_boxMain;
-		wxBoxSizer* g_boxNormalVolume;
-		wxTextCtrl* g_txtNormalVolume;
-		wxBoxSizer* g_boxConstantGain;
-		wxStaticText* g_lblConstantGain;
-		wxListCtrl* g_lstFiles;
-		wxGauge* g_gugProgress;
-		wxButton* g_btnStop;
-		wxMenuBar* g_mainMenuBar;
-		wxMenu* g_mnbFile;
-		wxMenu* g_mnbEdit;
-		wxMenu* g_mnbAnalysis;
-		wxMenu* g_mnuGain;
-		wxMenu* g_mnbHelp;
-		wxStatusBar* g_mainStatusBar;
-		wxToolBar* g_mainToolBar;
-		wxToolBarToolBase* g_tbAddFolder;
-		wxToolBarToolBase* g_tbAddFiles;
-		wxToolBarToolBase* g_tbRemoveFiles;
-		wxToolBarToolBase* g_tbClearList;
-		wxToolBarToolBase* g_tbAnalyze;
-		wxToolBarToolBase* g_tbGain;
-		wxToolBarToolBase* g_tbSettings;
-		wxToolBarToolBase* g_tbAbout;
-		wxMenu* g_mainMenu;
+		wxBoxSizer* gui_boxMain;
+		wxBoxSizer* gui_boxNormalVolume;
+		wxTextCtrl* gui_txtNormalVolume;
+		wxBoxSizer* gui_boxConstantGain;
+		wxStaticText* gui_lblConstantGain;
+		wxListCtrl* gui_lstFiles;
+		wxGauge* gui_gugProgress;
+		wxButton* gui_btnStop;
+		wxMenuBar* gui_mainMenuBar;
+		wxMenu* gui_mnbFile;
+		wxMenu* gui_mnbEdit;
+		wxMenu* gui_mnbAnalysis;
+		wxMenu* gui_mnuGain;
+		wxMenu* gui_mnbHelp;
+		wxStatusBar* gui_mainStatusBar;
+		wxToolBar* gui_mainToolBar;
+		wxToolBarToolBase* gui_tbAddFolder;
+		wxToolBarToolBase* gui_tbAddFiles;
+		wxToolBarToolBase* gui_tbRemoveFiles;
+		wxToolBarToolBase* gui_tbClearList;
+		wxToolBarToolBase* gui_tbAnalyze;
+		wxToolBarToolBase* gui_tbGain;
+		wxToolBarToolBase* gui_tbSettings;
+		wxToolBarToolBase* gui_tbAbout;
+		wxMenu* gui_mainMenu;
 		wxTimer m_timer1;
 
 		// Virtual event handlers, overide them in your derived class
@@ -122,7 +122,7 @@ class FrameMain : public wxFrame
 
 		void FrameMainOnContextMenu( wxMouseEvent &event )
 		{
-		this->PopupMenu( g_mainMenu, event.GetPosition() );
+		this->PopupMenu( gui_mainMenu, event.GetPosition() );
 		}
 
 };
@@ -135,21 +135,21 @@ class DialogSettings : public wxDialog
 	private:
 
 	protected:
-		wxCheckBox* g_chkAutoLower;
-		wxCheckBox* g_chkForceInput;
-		wxRadioButton* g_optTagAPE;
-		wxRadioButton* g_optTagID3;
-		wxRadioButton* g_optTagSKIP;
-		wxCheckBox* g_chkTagFORCE;
-		wxCheckBox* g_chkConstantGain;
-		wxSlider* g_sldConstantGain;
-		wxStaticText* g_lblConstantGain;
-		wxRadioButton* g_optBothChannel;
-		wxRadioButton* g_optLeftChannel;
-		wxRadioButton* g_optRightChannel;
-		wxButton* g_btnDefault;
-		wxButton* g_btnOK;
-		wxButton* g_btnCancel;
+		wxCheckBox* gui_chkAutoLower;
+		wxCheckBox* gui_chkForceInput;
+		wxRadioButton* gui_optTagAPE;
+		wxRadioButton* gui_optTagID3;
+		wxRadioButton* gui_optTagSKIP;
+		wxCheckBox* gui_chkTagFORCE;
+		wxCheckBox* gui_chkConstantGain;
+		wxSlider* gui_sldConstantGain;
+		wxStaticText* gui_lblConstantGain;
+		wxRadioButton* gui_optBothChannel;
+		wxRadioButton* gui_optLeftChannel;
+		wxRadioButton* gui_optRightChannel;
+		wxButton* gui_btnDefault;
+		wxButton* gui_btnOK;
+		wxButton* gui_btnCancel;
 
 		// Virtual event handlers, overide them in your derived class
 		virtual void updateDisabledControlsEvent( wxCommandEvent& event ) { event.Skip(); }

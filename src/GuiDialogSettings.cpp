@@ -24,8 +24,8 @@ void GuiDialogSettings::updateDisabledControlsEvent(wxCommandEvent &event) {
 }
 
 void GuiDialogSettings::OnsldConstantGainCmdSliderUpdated(wxScrollEvent &event) {
-    int intGain = g_sldConstantGain->GetValue();
-    g_lblConstantGain->SetLabel(
+    int intGain = gui_sldConstantGain->GetValue();
+    gui_lblConstantGain->SetLabel(
         wxString::Format(_T("%+i"), intGain) + _T(" (") + wxString::Format(_T("%+.1f"), intGain * VALUE_5LOG2) +
         _T(" dB)"));
     event.Skip(false);
@@ -52,58 +52,58 @@ void GuiDialogSettings::updateValueControls() {
     wxScrollEvent evt;
 
     // General controls
-    g_chkAutoLower->SetValue(mp_configBase->getAutoLowerEnabled());
-    g_chkForceInput->SetValue(mp_configBase->getForceInputEnabled());
+    gui_chkAutoLower->SetValue(mp_configBase->getAutoLowerEnabled());
+    gui_chkForceInput->SetValue(mp_configBase->getForceInputEnabled());
 
     // Tags options
-    g_optTagAPE->SetValue(mp_configBase->getTagOptions() == TAG_APE);
-    g_optTagID3->SetValue(mp_configBase->getTagOptions() == TAG_ID3);
-    g_optTagSKIP->SetValue(mp_configBase->getTagOptions() == TAG_SKIP);
-    g_chkTagFORCE->SetValue(mp_configBase->getTagForceEnabled());
+    gui_optTagAPE->SetValue(mp_configBase->getTagOptions() == TAG_APE);
+    gui_optTagID3->SetValue(mp_configBase->getTagOptions() == TAG_ID3);
+    gui_optTagSKIP->SetValue(mp_configBase->getTagOptions() == TAG_SKIP);
+    gui_chkTagFORCE->SetValue(mp_configBase->getTagForceEnabled());
 
     // Constant gain
-    g_chkConstantGain->SetValue(mp_configBase->getConstantGainEnabled());
-    g_sldConstantGain->SetValue(mp_configBase->getConstantGainValue());
+    gui_chkConstantGain->SetValue(mp_configBase->getConstantGainEnabled());
+    gui_sldConstantGain->SetValue(mp_configBase->getConstantGainValue());
     OnsldConstantGainCmdSliderUpdated(evt);
-    g_optBothChannel->SetValue(mp_configBase->getChannelGainMode() == CHANNEL_BOTH);
-    g_optLeftChannel->SetValue(mp_configBase->getChannelGainMode() == CHANNEL_LEFT);
-    g_optRightChannel->SetValue(mp_configBase->getChannelGainMode() == CHANNEL_RIGHT);
+    gui_optBothChannel->SetValue(mp_configBase->getChannelGainMode() == CHANNEL_BOTH);
+    gui_optLeftChannel->SetValue(mp_configBase->getChannelGainMode() == CHANNEL_LEFT);
+    gui_optRightChannel->SetValue(mp_configBase->getChannelGainMode() == CHANNEL_RIGHT);
 }
 
 void GuiDialogSettings::updateDisabledControls() {
     // Tag options
-    g_chkTagFORCE->Enable(!g_optTagSKIP->GetValue());
+    gui_chkTagFORCE->Enable(!gui_optTagSKIP->GetValue());
 
     // Constant gain
-    g_sldConstantGain->Enable(g_chkConstantGain->GetValue());
-    g_optBothChannel->Enable(g_chkConstantGain->GetValue());
-    g_optLeftChannel->Enable(g_chkConstantGain->GetValue());
-    g_optRightChannel->Enable(g_chkConstantGain->GetValue());
+    gui_sldConstantGain->Enable(gui_chkConstantGain->GetValue());
+    gui_optBothChannel->Enable(gui_chkConstantGain->GetValue());
+    gui_optLeftChannel->Enable(gui_chkConstantGain->GetValue());
+    gui_optRightChannel->Enable(gui_chkConstantGain->GetValue());
 }
 
 void GuiDialogSettings::saveValuesConfig() {
     // General controls
-    mp_configBase->setAutoLowerEnabled(g_chkAutoLower->GetValue());
-    mp_configBase->setForceInputEnabled(g_chkForceInput->GetValue());
+    mp_configBase->setAutoLowerEnabled(gui_chkAutoLower->GetValue());
+    mp_configBase->setForceInputEnabled(gui_chkForceInput->GetValue());
 
     // Tags options
-    if (g_optTagAPE->GetValue())
+    if (gui_optTagAPE->GetValue())
         mp_configBase->setTagOptions(TAG_APE);
-    else if (g_optTagID3->GetValue())
+    else if (gui_optTagID3->GetValue())
         mp_configBase->setTagOptions(TAG_ID3);
-    else if (g_optTagSKIP->GetValue())
+    else if (gui_optTagSKIP->GetValue())
         mp_configBase->setTagOptions(TAG_SKIP);
 
-    mp_configBase->setTagForceEnabled(g_chkTagFORCE->GetValue());
+    mp_configBase->setTagForceEnabled(gui_chkTagFORCE->GetValue());
 
     // Constant gain
-    mp_configBase->setConstantGainEnabled(g_chkConstantGain->GetValue());
-    mp_configBase->setConstantGainValue(g_sldConstantGain->GetValue());
-    if (g_optBothChannel->GetValue())
+    mp_configBase->setConstantGainEnabled(gui_chkConstantGain->GetValue());
+    mp_configBase->setConstantGainValue(gui_sldConstantGain->GetValue());
+    if (gui_optBothChannel->GetValue())
         mp_configBase->setChannelGainMode(CHANNEL_BOTH);
-    else if (g_optLeftChannel->GetValue())
+    else if (gui_optLeftChannel->GetValue())
         mp_configBase->setChannelGainMode(CHANNEL_LEFT);
-    else if (g_optRightChannel->GetValue())
+    else if (gui_optRightChannel->GetValue())
         mp_configBase->setChannelGainMode(CHANNEL_RIGHT);
 
     mp_configBase->setConfigFlush();
@@ -116,20 +116,20 @@ void GuiDialogSettings::defaultValueControls() {
     mp_configBase->setNormalVolumeDb(DEFAULT_VALUE_NormalVolumeDb);
 
     // General controls
-    g_chkAutoLower->SetValue(DEFAULT_VALUE_AutoLowerEnabled);
-    g_chkForceInput->SetValue(DEFAULT_VALUE_ForceInputEnabled);
+    gui_chkAutoLower->SetValue(DEFAULT_VALUE_AutoLowerEnabled);
+    gui_chkForceInput->SetValue(DEFAULT_VALUE_ForceInputEnabled);
 
     // Tags options
-    g_optTagAPE->SetValue(true);
-    g_optTagID3->SetValue(false);
-    g_optTagSKIP->SetValue(false);
-    g_chkTagFORCE->SetValue(DEFAULT_VALUE_TagForceEnabled);
+    gui_optTagAPE->SetValue(true);
+    gui_optTagID3->SetValue(false);
+    gui_optTagSKIP->SetValue(false);
+    gui_chkTagFORCE->SetValue(DEFAULT_VALUE_TagForceEnabled);
 
     // Constant gain
-    g_chkConstantGain->SetValue(DEFAULT_VALUE_ConstantGainEnabled);
-    g_sldConstantGain->SetValue(DEFAULT_VALUE_ConstantGainValue);
+    gui_chkConstantGain->SetValue(DEFAULT_VALUE_ConstantGainEnabled);
+    gui_sldConstantGain->SetValue(DEFAULT_VALUE_ConstantGainValue);
     OnsldConstantGainCmdSliderUpdated(evt);
-    g_optBothChannel->SetValue(true);
-    g_optLeftChannel->SetValue(false);
-    g_optRightChannel->SetValue(false);
+    gui_optBothChannel->SetValue(true);
+    gui_optLeftChannel->SetValue(false);
+    gui_optRightChannel->SetValue(false);
 }
