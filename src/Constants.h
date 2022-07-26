@@ -91,19 +91,23 @@ inline wxString GetResourceDir() {
     wxString executablePath = wxStandardPaths::Get().GetExecutablePath();
     wxFileName executableFilename(executablePath);
     wxString resourceDirName = _T("/resource/");
-
-#ifdef __LINUX__
     wxDir dir;
     wxString resourceDir;
 
+#ifdef __LINUX__
     resourceDir = _T("/usr/share/wxlame") + resourceDirName;
-    if (dir.Open(resourceDir))
-        return resourceDir;
-
-    resourceDir = _T(".") + resourceDirName;
-    if (dir.Open(resourceDir))
+    if (dir.Exists(resourceDir))
         return resourceDir;
 #endif
+
+    resourceDir = _T(".") + resourceDirName;
+    if (dir.Exists(resourceDir))
+        return resourceDir;
+
+    resourceDir = _T("..") + resourceDirName;
+    if (dir.Exists(resourceDir))
+        return resourceDir;
+
     return executableFilename.GetPath() + resourceDirName;
 }
 
