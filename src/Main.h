@@ -9,10 +9,10 @@
 #include <wx/app.h>
 
 class Main : public wxApp {
-public:
+  public:
     virtual bool OnInit();
 
-private:
+  private:
     wxLocale *mp_locale;
     wxArrayString *mp_filesCmdLine;
 };

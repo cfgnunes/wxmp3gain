@@ -6,10 +6,10 @@
 #ifndef CONSTANTS_HPP
 #define CONSTANTS_HPP
 
-#include <wx/string.h>
-#include <wx/stdpaths.h>
-#include <wx/filename.h>
 #include <wx/dir.h>
+#include <wx/filename.h>
+#include <wx/stdpaths.h>
+#include <wx/string.h>
 
 const wxString APP_NAME = _T("wxMP3gain");
 const wxString APP_VERSION = _T("4.1");

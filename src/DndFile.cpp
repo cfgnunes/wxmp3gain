@@ -5,7 +5,8 @@
 
 #include "DndFile.h"
 
-DndFile::DndFile(FileListManager *fileListManager) : mp_fileListManager(fileListManager) {
+DndFile::DndFile(FileListManager *fileListManager)
+    : mp_fileListManager(fileListManager) {
 }
 
 DndFile::~DndFile() {

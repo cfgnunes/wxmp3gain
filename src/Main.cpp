@@ -17,8 +17,8 @@
  */
 
 #include "Main.h"
-#include "GuiFrameMain.h"
 #include "Constants.h"
+#include "GuiFrameMain.h"
 
 IMPLEMENT_APP(Main)
 

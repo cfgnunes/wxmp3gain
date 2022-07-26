@@ -7,10 +7,11 @@
 #include "Constants.h"
 #include "Conversion.h"
 
-#include <wx/tokenzr.h>
 #include <wx/dir.h>
+#include <wx/tokenzr.h>
 
-FileListManager::FileListManager(wxListCtrl *owner) : mp_owner(owner) {
+FileListManager::FileListManager(wxListCtrl *owner)
+    : mp_owner(owner) {
     mp_lstFilesData = new std::list<FileInfo>();
 }
 
@@ -129,6 +130,5 @@ void FileListManager::updateGainLabels(const double &dblNormalVolumeUpdate, Conf
         // Update the list itens
         mp_owner->SetItem(i, ID_LIST_GAIN_MP3, wxString::Format(_T("%i"), fileInfo.getGainChange()));
         mp_owner->SetItem(i, ID_LIST_GAIN_DB, wxString::Format(_T("%.1f"), fileInfo.getGainChange() * VALUE_5LOG2));
-
     }
 }

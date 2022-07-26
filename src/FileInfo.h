@@ -6,36 +6,28 @@
 #ifndef FILE_INFO_HPP
 #define FILE_INFO_HPP
 
-#include <wx/string.h>
 #include <wx/filename.h>
+#include <wx/string.h>
 
 class FileInfo {
-public:
+  public:
     FileInfo(const wxString &fileName);
-
     virtual ~FileInfo();
 
     // Gets
     wxFileName getFileName() const;
-
     double getVolume() const;
-
     double getMaxPcmSample() const;
-
     bool isVolumeSet() const;
-
     int getGainChange() const;
 
     // Sets
     void setVolume(const double &value);
-
     void setMaxPcmSample(const double &value);
-
     void setGainChange(const int &value);
-
     void volumeReset();
 
-private:
+  private:
     wxFileName m_fileName;
     double m_volume;
     double m_maxPcmSample;

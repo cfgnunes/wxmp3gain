@@ -5,7 +5,8 @@
 
 #include "FileInfo.h"
 
-FileInfo::FileInfo(const wxString &fileName) : m_fileName(fileName), m_volumeSet(false) {
+FileInfo::FileInfo(const wxString &fileName)
+    : m_fileName(fileName), m_volumeSet(false) {
 }
 
 FileInfo::~FileInfo() {

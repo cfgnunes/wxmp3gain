@@ -54,16 +54,16 @@ wxString ConfigBase::getStringToolOptionsTag() const {
 
     // TagsOptions
     switch (getTagOptions()) {
-        case TAG_APE:
-            toolOptions.append(_T("-s a "));
-            break;
-        case TAG_ID3:
-            toolOptions.append(_T("-s i "));
-            break;
-        default:
-        case TAG_SKIP:
-            toolOptions.append(_T("-s s "));
-            break;
+    case TAG_APE:
+        toolOptions.append(_T("-s a "));
+        break;
+    case TAG_ID3:
+        toolOptions.append(_T("-s i "));
+        break;
+    default:
+    case TAG_SKIP:
+        toolOptions.append(_T("-s s "));
+        break;
     }
 
     toolOptions.Trim();
@@ -79,16 +79,16 @@ wxString ConfigBase::getStringToolOptionsGain() const {
     // Constant Gain
     if (getConstantGainEnabled()) {
         switch (getChannelGainMode()) {
-            default:
-            case CHANNEL_BOTH:
-                toolOptions.append(_T("-g ") + wxString::Format(_T("%i "), getConstantGainValue()));
-                break;
-            case CHANNEL_LEFT:
-                toolOptions.append(_T("-l 0 ") + wxString::Format(_T("%i "), getConstantGainValue()));
-                break;
-            case CHANNEL_RIGHT:
-                toolOptions.append(_T("-l 1 ") + wxString::Format(_T("%i "), getConstantGainValue()));
-                break;
+        default:
+        case CHANNEL_BOTH:
+            toolOptions.append(_T("-g ") + wxString::Format(_T("%i "), getConstantGainValue()));
+            break;
+        case CHANNEL_LEFT:
+            toolOptions.append(_T("-l 0 ") + wxString::Format(_T("%i "), getConstantGainValue()));
+            break;
+        case CHANNEL_RIGHT:
+            toolOptions.append(_T("-l 1 ") + wxString::Format(_T("%i "), getConstantGainValue()));
+            break;
         }
     }
 

@@ -4,18 +4,18 @@
  */
 
 #include "GuiFrameMain.h"
-#include "GuiDialogSettings.h"
-#include "Conversion.h"
 #include "Constants.h"
+#include "Conversion.h"
+#include "GuiDialogSettings.h"
 
-#include <wx/msgdlg.h>
 #include <wx/aboutdlg.h>
+#include <wx/dirdlg.h>
 #include <wx/filedlg.h>
 #include <wx/filefn.h>
-#include <wx/dirdlg.h>
+#include <wx/msgdlg.h>
 
 GuiFrameMain::GuiFrameMain(wxWindow *parent)
-        : FrameMain(parent), m_processRunning(false) {
+    : FrameMain(parent), m_processRunning(false) {
     // Disable status bar pane used to display menu and toolbar help
     SetStatusBarPane(-1);
 
@@ -76,7 +76,7 @@ void GuiFrameMain::OntxtNormalVolumeTextKillFocus(wxFocusEvent &event) {
     mp_fileListManager->updateGainLabels(m_dblNormalVolume, mp_configBase);
 
     // Save the NormalVolumeDb
-    mp_configBase->setNormalVolumeDb((int) (float) (m_dblNormalVolume * 10.0));
+    mp_configBase->setNormalVolumeDb((int)(float)(m_dblNormalVolume * 10.0));
     updateTxtNormalVolumeDb();
 
     event.Skip();
@@ -89,7 +89,7 @@ GuiFrameMain::~GuiFrameMain() {
 
 void GuiFrameMain::OnlstFilesDeleteItem(wxListEvent &event) {
     if (!m_processRunning) {
-        mp_fileListManager->deleteItem((unsigned long) event.GetIndex());
+        mp_fileListManager->deleteItem((unsigned long)event.GetIndex());
         updateControls();
     }
     event.Skip();
@@ -402,10 +402,10 @@ void GuiFrameMain::processExecute() {
     unsigned long int maxValue = mp_fileListManager->size();
     unsigned long int i;
 
-    g_gugProgress->SetRange((int) maxValue);
+    g_gugProgress->SetRange((int)maxValue);
     for (i = 0; i < maxValue; i++) {
         processFile(i);
-        g_gugProgress->SetValue((int) i + 1);
+        g_gugProgress->SetValue((int)i + 1);
 
         if (!m_processRunning) {
             if (wxMessageBox(_("Do you want to stop process now?"), APP_NAME, wxYES_NO | wxICON_QUESTION) == wxYES) {
@@ -466,14 +466,14 @@ void GuiFrameMain::processFile(unsigned long int fileIterator) {
         runCommand = fullCommand + _T(" \"") + filenameTemp + _T("\"");
         wxExecute(runCommand, m_exeInputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
         switch (mp_configBase->getTagOptions()) {
-            default:
-            case 0:
-            case 1:
-                mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_TAG_INFO, _("yes"));
-                break;
-            case 2:
-                mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_TAG_INFO, _T(""));
-                break;
+        default:
+        case 0:
+        case 1:
+            mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_TAG_INFO, _("yes"));
+            break;
+        case 2:
+            mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_TAG_INFO, _T(""));
+            break;
         }
 
         // Updates the list
@@ -497,7 +497,7 @@ void GuiFrameMain::processFile(unsigned long int fileIterator) {
         wxRenameFile(filenameTemp, filenameInput.GetFullPath(), true);
 
     g_mainStatusBar->SetStatusText(
-            wxString::Format(_("Processed %lu files of %lu."), fileIterator + 1, mp_fileListManager->size()), 1);
+        wxString::Format(_("Processed %lu files of %lu."), fileIterator + 1, mp_fileListManager->size()), 1);
 }
 
 void GuiFrameMain::processOutputString(unsigned long int fileIterator) {
@@ -521,7 +521,7 @@ void GuiFrameMain::processOutputString(unsigned long int fileIterator) {
 
                 mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_VOLUME,
                                                        wxString::Format(_T("%.1f"), volume));
-            }// Clipping means that some value in some frame of the song is greater than +/- 32767
+            } // Clipping means that some value in some frame of the song is greater than +/- 32767
             else if (tempString.Lower().Contains(_T("max pcm"))) {
                 double dblMaxPcmSample;
                 wxString valueString = tempString.AfterFirst(':').Trim();

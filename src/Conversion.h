@@ -9,11 +9,9 @@
 #include <wx/string.h>
 
 class Conversion {
-public:
+  public:
     static void convertDotComma(wxString &str);
-
     static int convertDoubleToIntGain(const double &dblGainChange);
-
     static int getMaxNoclipMp3Gain(const double &mvarCurrMaxAmp);
 };
 

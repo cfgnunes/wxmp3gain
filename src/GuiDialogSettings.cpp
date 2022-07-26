@@ -7,7 +7,7 @@
 #include "Constants.h"
 
 GuiDialogSettings::GuiDialogSettings(wxWindow *parent, ConfigBase *configBase)
-        : DialogSettings(parent), mp_configBase(configBase) {
+    : DialogSettings(parent), mp_configBase(configBase) {
     // Updates the values controls according to the configuration file
     updateValueControls();
 
@@ -26,8 +26,8 @@ void GuiDialogSettings::updateDisabledControlsEvent(wxCommandEvent &event) {
 void GuiDialogSettings::OnsldConstantGainCmdSliderUpdated(wxScrollEvent &event) {
     int intGain = g_sldConstantGain->GetValue();
     g_lblConstantGain->SetLabel(
-            wxString::Format(_T("%+i"), intGain) + _T(" (") + wxString::Format(_T("%+.1f"), intGain * VALUE_5LOG2) +
-            _T(" dB)"));
+        wxString::Format(_T("%+i"), intGain) + _T(" (") + wxString::Format(_T("%+.1f"), intGain * VALUE_5LOG2) +
+        _T(" dB)"));
     event.Skip(false);
 }
 

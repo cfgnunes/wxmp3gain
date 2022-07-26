@@ -12,14 +12,13 @@
 #include <wx/dnd.h>
 
 class DndFile : public wxFileDropTarget {
-public:
+  public:
     DndFile(FileListManager *fileListManager);
-
     virtual ~DndFile();
 
     virtual bool OnDropFiles(wxCoord, wxCoord, const wxArrayString &filenames);
 
-private:
+  private:
     FileListManager *mp_fileListManager;
 };
 

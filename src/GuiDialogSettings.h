@@ -6,33 +6,25 @@
 #ifndef GUI_DIALOG_SETTINGS_HPP
 #define GUI_DIALOG_SETTINGS_HPP
 
-#include "Gui.h"
 #include "ConfigBase.h"
+#include "Gui.h"
 
 class GuiDialogSettings : public DialogSettings {
-public:
+  public:
     GuiDialogSettings(wxWindow *parent, ConfigBase *configBase);
-
     virtual ~GuiDialogSettings();
 
-protected:
+  protected:
     void updateDisabledControlsEvent(wxCommandEvent &event);
-
     void OnsldConstantGainCmdSliderUpdated(wxScrollEvent &event);
-
     void OnbtnDefaultClick(wxCommandEvent &event);
-
     void OnbtnOKClick(wxCommandEvent &event);
-
     void OnbtnCancelClick(wxCommandEvent &event);
 
-private:
-    void updateDisabledControls();
-
+  private:
+   void updateDisabledControls();
     void updateValueControls();
-
     void defaultValueControls();
-
     void saveValuesConfig();
 
     ConfigBase *mp_configBase;
