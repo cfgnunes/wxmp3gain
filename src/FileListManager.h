@@ -3,8 +3,8 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-#ifndef FILELISTMANAGER_H
-#define FILELISTMANAGER_H
+#ifndef FILE_LIST_MANAGER_HPP
+#define FILE_LIST_MANAGER_HPP
 
 #include "FileInfo.h"
 #include "ConfigBase.h"
@@ -45,4 +45,4 @@ private:
     std::list<FileInfo> *mp_lstFilesData;
 };
 
-#endif // FILELISTMANAGER_H
+#endif // FILE_LIST_MANAGER_HPP

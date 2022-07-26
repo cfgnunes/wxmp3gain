@@ -3,8 +3,8 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-#ifndef CONFIGBASE_H
-#define CONFIGBASE_H
+#ifndef CONFIG_BASE_HPP
+#define CONFIG_BASE_HPP
 
 #include <wx/string.h>
 #include <wx/config.h>
@@ -71,4 +71,4 @@ private:
     wxConfig *mp_config;
 };
 
-#endif // CONFIGBASE_H
+#endif // CONFIG_BASE_HPP

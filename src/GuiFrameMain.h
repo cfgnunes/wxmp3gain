@@ -3,8 +3,8 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-#ifndef GUIFRAMEMAIN_H
-#define GUIFRAMEMAIN_H
+#ifndef GUI_FRAME_MAIN_HPP
+#define GUI_FRAME_MAIN_HPP
 
 #include "Gui.h"
 #include "ConfigBase.h"
@@ -88,4 +88,4 @@ private:
     bool m_processRunning;
 };
 
-#endif // GUIFRAMEMAIN_H
+#endif // GUI_FRAME_MAIN_HPP

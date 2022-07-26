@@ -3,8 +3,8 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-#ifndef CONVERSION_H
-#define CONVERSION_H
+#ifndef CONVERSION_HPP
+#define CONVERSION_HPP
 
 #include <wx/string.h>
 
@@ -17,4 +17,4 @@ public:
     static int getMaxNoclipMp3Gain(const double &mvarCurrMaxAmp);
 };
 
-#endif // CONVERSION_H
+#endif // CONVERSION_HPP

@@ -3,8 +3,8 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-#ifndef DNDFILE_H
-#define DNDFILE_H
+#ifndef DND_FILE_HPP
+#define DND_FILE_HPP
 
 #include "FileInfo.h"
 #include "FileListManager.h"
@@ -23,4 +23,4 @@ private:
     FileListManager *mp_fileListManager;
 };
 
-#endif // DNDFILE_H
+#endif // DND_FILE_HPP

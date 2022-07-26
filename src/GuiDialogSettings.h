@@ -3,8 +3,8 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-#ifndef GUIDIALOGSETTINGS_H
-#define GUIDIALOGSETTINGS_H
+#ifndef GUI_DIALOG_SETTINGS_HPP
+#define GUI_DIALOG_SETTINGS_HPP
 
 #include "Gui.h"
 #include "ConfigBase.h"
@@ -38,4 +38,4 @@ private:
     ConfigBase *mp_configBase;
 };
 
-#endif // GUIDIALOGSETTINGS_H
+#endif // GUI_DIALOG_SETTINGS_HPP

@@ -3,8 +3,8 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-#ifndef CONSTANTS_H
-#define CONSTANTS_H
+#ifndef CONSTANTS_HPP
+#define CONSTANTS_HPP
 
 #include <wx/string.h>
 #include <wx/stdpaths.h>
@@ -111,4 +111,4 @@ inline wxString GetResourceDir() {
     return executableFilename.GetPath() + resourceDirName;
 }
 
-#endif // CONSTANTS_H
+#endif // CONSTANTS_HPP
