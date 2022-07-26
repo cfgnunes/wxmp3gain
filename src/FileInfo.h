@@ -15,7 +15,7 @@ public:
 
     virtual ~FileInfo();
 
-    // Gets...
+    // Gets
     wxFileName getFileName() const;
 
     double getVolume() const;
@@ -26,7 +26,7 @@ public:
 
     int getGainChange() const;
 
-    // Sets...
+    // Sets
     void setVolume(const double &value);
 
     void setMaxPcmSample(const double &value);

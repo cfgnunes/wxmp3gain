@@ -25,7 +25,7 @@ public:
 
     wxString getStringToolOptionsGain() const;
 
-    // Gets...
+    // Gets
     wxString getAppVersion() const;
 
     wxString getLastOpenDir() const;
@@ -46,7 +46,7 @@ public:
 
     int getChannelGainMode() const;
 
-    // Sets...
+    // Sets
     void setAppVersion(wxString value);
 
     void setLastOpenDir(wxString value);
