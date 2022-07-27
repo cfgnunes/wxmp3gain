@@ -322,7 +322,6 @@ void GuiFrameMain::OnTimer1Trigger(wxTimerEvent &event) {
         if (!m_exeInputErrorString.IsEmpty()) {
             version = _("Using MP3gain version: ");
             version += m_exeInputErrorString.Item(0).AfterLast(' ');
-
         } else {
             version = _("MP3gain not found!");
         }
