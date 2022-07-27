@@ -6,8 +6,8 @@
 #include "GuiDialogSettings.hpp"
 #include "Constants.hpp"
 
-GuiDialogSettings::GuiDialogSettings(wxWindow *parent, ConfigBase *configBase)
-    : DialogSettings(parent), mp_configBase(configBase) {
+GuiDialogSettings::GuiDialogSettings(wxWindow *parent, AppSettings *appSettings)
+    : DialogSettings(parent), mp_appSettings(appSettings) {
     // Updates the values controls according to the configuration file
     updateValueControls();
 
@@ -52,22 +52,22 @@ void GuiDialogSettings::updateValueControls() {
     wxScrollEvent evt;
 
     // General controls
-    gui_chkAutoLower->SetValue(mp_configBase->getAutoLowerEnabled());
-    gui_chkForceInput->SetValue(mp_configBase->getForceInputEnabled());
+    gui_chkAutoLower->SetValue(mp_appSettings->getAutoLowerEnabled());
+    gui_chkForceInput->SetValue(mp_appSettings->getForceInputEnabled());
 
     // Tags options
-    gui_optTagAPE->SetValue(mp_configBase->getTagOptions() == TAG_APE);
-    gui_optTagID3->SetValue(mp_configBase->getTagOptions() == TAG_ID3);
-    gui_optTagSKIP->SetValue(mp_configBase->getTagOptions() == TAG_SKIP);
-    gui_chkTagFORCE->SetValue(mp_configBase->getTagForceEnabled());
+    gui_optTagAPE->SetValue(mp_appSettings->getTagOptions() == TAG_APE);
+    gui_optTagID3->SetValue(mp_appSettings->getTagOptions() == TAG_ID3);
+    gui_optTagSKIP->SetValue(mp_appSettings->getTagOptions() == TAG_SKIP);
+    gui_chkTagFORCE->SetValue(mp_appSettings->getTagForceEnabled());
 
     // Constant gain
-    gui_chkConstantGain->SetValue(mp_configBase->getConstantGainEnabled());
-    gui_sldConstantGain->SetValue(mp_configBase->getConstantGainValue());
+    gui_chkConstantGain->SetValue(mp_appSettings->getConstantGainEnabled());
+    gui_sldConstantGain->SetValue(mp_appSettings->getConstantGainValue());
     OnsldConstantGainCmdSliderUpdated(evt);
-    gui_optBothChannel->SetValue(mp_configBase->getChannelGainMode() == CHANNEL_BOTH);
-    gui_optLeftChannel->SetValue(mp_configBase->getChannelGainMode() == CHANNEL_LEFT);
-    gui_optRightChannel->SetValue(mp_configBase->getChannelGainMode() == CHANNEL_RIGHT);
+    gui_optBothChannel->SetValue(mp_appSettings->getChannelGainMode() == CHANNEL_BOTH);
+    gui_optLeftChannel->SetValue(mp_appSettings->getChannelGainMode() == CHANNEL_LEFT);
+    gui_optRightChannel->SetValue(mp_appSettings->getChannelGainMode() == CHANNEL_RIGHT);
 }
 
 void GuiDialogSettings::updateDisabledControls() {
@@ -83,37 +83,37 @@ void GuiDialogSettings::updateDisabledControls() {
 
 void GuiDialogSettings::saveValuesConfig() {
     // General controls
-    mp_configBase->setAutoLowerEnabled(gui_chkAutoLower->GetValue());
-    mp_configBase->setForceInputEnabled(gui_chkForceInput->GetValue());
+    mp_appSettings->setAutoLowerEnabled(gui_chkAutoLower->GetValue());
+    mp_appSettings->setForceInputEnabled(gui_chkForceInput->GetValue());
 
     // Tags options
     if (gui_optTagAPE->GetValue())
-        mp_configBase->setTagOptions(TAG_APE);
+        mp_appSettings->setTagOptions(TAG_APE);
     else if (gui_optTagID3->GetValue())
-        mp_configBase->setTagOptions(TAG_ID3);
+        mp_appSettings->setTagOptions(TAG_ID3);
     else if (gui_optTagSKIP->GetValue())
-        mp_configBase->setTagOptions(TAG_SKIP);
+        mp_appSettings->setTagOptions(TAG_SKIP);
 
-    mp_configBase->setTagForceEnabled(gui_chkTagFORCE->GetValue());
+    mp_appSettings->setTagForceEnabled(gui_chkTagFORCE->GetValue());
 
     // Constant gain
-    mp_configBase->setConstantGainEnabled(gui_chkConstantGain->GetValue());
-    mp_configBase->setConstantGainValue(gui_sldConstantGain->GetValue());
+    mp_appSettings->setConstantGainEnabled(gui_chkConstantGain->GetValue());
+    mp_appSettings->setConstantGainValue(gui_sldConstantGain->GetValue());
     if (gui_optBothChannel->GetValue())
-        mp_configBase->setChannelGainMode(CHANNEL_BOTH);
+        mp_appSettings->setChannelGainMode(CHANNEL_BOTH);
     else if (gui_optLeftChannel->GetValue())
-        mp_configBase->setChannelGainMode(CHANNEL_LEFT);
+        mp_appSettings->setChannelGainMode(CHANNEL_LEFT);
     else if (gui_optRightChannel->GetValue())
-        mp_configBase->setChannelGainMode(CHANNEL_RIGHT);
+        mp_appSettings->setChannelGainMode(CHANNEL_RIGHT);
 
-    mp_configBase->setConfigFlush();
+    mp_appSettings->setConfigFlush();
 }
 
 void GuiDialogSettings::defaultValueControls() {
     wxScrollEvent evt;
 
     // System controls
-    mp_configBase->setNormalVolumeDb(DEFAULT_VALUE_NormalVolumeDb);
+    mp_appSettings->setNormalVolumeDb(DEFAULT_VALUE_NormalVolumeDb);
 
     // General controls
     gui_chkAutoLower->SetValue(DEFAULT_VALUE_AutoLowerEnabled);

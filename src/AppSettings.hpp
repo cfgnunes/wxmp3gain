@@ -9,10 +9,10 @@
 #include <wx/config.h>
 #include <wx/string.h>
 
-class ConfigBase {
+class AppSettings {
   public:
-    ConfigBase(const wxString &appName = wxEmptyString);
-    ~ConfigBase();
+    AppSettings(const wxString &appName = wxEmptyString);
+    ~AppSettings();
 
     void setDefaultConfig();
     void setConfigFlush();

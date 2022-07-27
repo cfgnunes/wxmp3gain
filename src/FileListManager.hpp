@@ -6,7 +6,7 @@
 #ifndef FILE_LIST_MANAGER_HPP
 #define FILE_LIST_MANAGER_HPP
 
-#include "ConfigBase.hpp"
+#include "AppSettings.hpp"
 #include "FileInfo.hpp"
 
 #include <list>
@@ -27,7 +27,7 @@ class FileListManager {
     long unsigned int size();
     FileInfo &getItem(unsigned long int index);
     wxListCtrl &getOwner();
-    void updateGainLabels(const double &dblNormalVolumeUpdate, ConfigBase *configBase);
+    void updateGainLabels(const double &dblNormalVolumeUpdate, AppSettings *appSettings);
 
   private:
     bool checkValidExtension(const wxFileName &file) const;

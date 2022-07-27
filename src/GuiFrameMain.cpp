@@ -40,7 +40,7 @@ GuiFrameMain::GuiFrameMain(wxWindow *parent)
     gui_mainStatusBar->SetStatusWidths(3, wxStatusBarWidths);
 
     // Configuration file
-    mp_configBase = new ConfigBase(APP_NAME);
+    mp_appSettings = new AppSettings(APP_NAME);
 
     // Window title
     SetTitle(APP_NAME_WITH_VERSION);
@@ -55,7 +55,7 @@ GuiFrameMain::GuiFrameMain(wxWindow *parent)
     updateTxtNormalVolumeDb();
 
     // Box visible: Normal Volume OR Constant gain
-    if (mp_configBase->getConstantGainEnabled())
+    if (mp_appSettings->getConstantGainEnabled())
         gui_boxNormalVolume->Show(false);
     else
         gui_boxConstantGain->Show(false);
@@ -73,10 +73,10 @@ void GuiFrameMain::OntxtNormalVolumeTextKillFocus(wxFocusEvent &event) {
     else if (m_dblNormalVolume > 105)
         m_dblNormalVolume = 105.0;
 
-    mp_fileListManager->updateGainLabels(m_dblNormalVolume, mp_configBase);
+    mp_fileListManager->updateGainLabels(m_dblNormalVolume, mp_appSettings);
 
     // Save the NormalVolumeDb
-    mp_configBase->setNormalVolumeDb((int)(float)(m_dblNormalVolume * 10.0));
+    mp_appSettings->setNormalVolumeDb((int)(float)(m_dblNormalVolume * 10.0));
     updateTxtNormalVolumeDb();
 
     event.Skip();
@@ -84,7 +84,7 @@ void GuiFrameMain::OntxtNormalVolumeTextKillFocus(wxFocusEvent &event) {
 
 GuiFrameMain::~GuiFrameMain() {
     delete mp_fileListManager;
-    delete mp_configBase;
+    delete mp_appSettings;
 }
 
 void GuiFrameMain::OnlstFilesDeleteItem(wxListEvent &event) {
@@ -138,13 +138,13 @@ void GuiFrameMain::mnuAddDirectory(wxCommandEvent &event) {
     wxDirDialog dirDialog(this, _("Select directory"), wxEmptyString, wxDD_DEFAULT_STYLE);
 
     // Read the last directory used
-    dirDialog.SetPath(mp_configBase->getLastOpenDir());
+    dirDialog.SetPath(mp_appSettings->getLastOpenDir());
     if (dirDialog.ShowModal() == wxID_OK) {
         SetCursor(wxCURSOR_WAIT);
         mp_fileListManager->insertDir(dirDialog.GetPath());
 
         // Remembers the last used directory
-        mp_configBase->setLastOpenDir(dirDialog.GetPath());
+        mp_appSettings->setLastOpenDir(dirDialog.GetPath());
         SetCursor(wxCURSOR_ARROW);
     }
     event.Skip(false);
@@ -156,7 +156,7 @@ void GuiFrameMain::mnuAddFiles(wxCommandEvent &event) {
                             wxFD_OPEN | wxFD_MULTIPLE);
 
     // Read the last directory used
-    fileDialog.SetDirectory(mp_configBase->getLastOpenDir());
+    fileDialog.SetDirectory(mp_appSettings->getLastOpenDir());
 
     if (fileDialog.ShowModal() == wxID_OK) {
         SetCursor(wxCURSOR_WAIT);
@@ -166,7 +166,7 @@ void GuiFrameMain::mnuAddFiles(wxCommandEvent &event) {
         mp_fileListManager->insertFiles(files);
 
         // Remembers the last used directory
-        mp_configBase->setLastOpenDir(fileDialog.GetDirectory());
+        mp_appSettings->setLastOpenDir(fileDialog.GetDirectory());
         SetCursor(wxCURSOR_ARROW);
     }
     event.Skip(false);
@@ -198,15 +198,15 @@ void GuiFrameMain::mnuClearList(wxCommandEvent &event) {
 }
 
 void GuiFrameMain::mnuSettings(wxCommandEvent &event) {
-    int oldTagOptions = mp_configBase->getTagOptions();
-    bool oldTagForceEnabled = mp_configBase->getTagForceEnabled();
+    int oldTagOptions = mp_appSettings->getTagOptions();
+    bool oldTagForceEnabled = mp_appSettings->getTagForceEnabled();
 
     // Displays the "Settings" window
-    GuiDialogSettings guiSettings(this, mp_configBase);
+    GuiDialogSettings guiSettings(this, mp_appSettings);
     guiSettings.ShowModal();
 
     // Updates the box bar after closing the window "Settings"
-    if (mp_configBase->getConstantGainEnabled()) {
+    if (mp_appSettings->getConstantGainEnabled()) {
         gui_boxNormalVolume->Show(false);
         gui_boxConstantGain->Show(true);
     } else {
@@ -215,13 +215,13 @@ void GuiFrameMain::mnuSettings(wxCommandEvent &event) {
     }
     gui_boxMain->Layout();
 
-    if (oldTagOptions != mp_configBase->getTagOptions() || oldTagForceEnabled != mp_configBase->getTagForceEnabled())
+    if (oldTagOptions != mp_appSettings->getTagOptions() || oldTagForceEnabled != mp_appSettings->getTagForceEnabled())
         mnuClearAnalysis(event);
 
     // Updates after closing the window "Settings"
     updateControls();
     updateTxtNormalVolumeDb();
-    mp_fileListManager->updateGainLabels(m_dblNormalVolume, mp_configBase);
+    mp_fileListManager->updateGainLabels(m_dblNormalVolume, mp_appSettings);
     event.Skip(false);
 }
 
@@ -327,8 +327,8 @@ void GuiFrameMain::OnTimer1Trigger(wxTimerEvent &event) {
     gui_mainStatusBar->SetStatusText(wxString::Format(_T("%i "), gui_lstFiles->GetItemCount()) + _("files"), 1);
 
     // Constant gain box
-    gui_lblConstantGain->SetLabel(wxString::Format(_T("%+i"), mp_configBase->getConstantGainValue()) + _T(" (") +
-                                wxString::Format(_T("%+.1f"), mp_configBase->getConstantGainValue() * VALUE_5LOG2) +
+    gui_lblConstantGain->SetLabel(wxString::Format(_T("%+i"), mp_appSettings->getConstantGainValue()) + _T(" (") +
+                                wxString::Format(_T("%+.1f"), mp_appSettings->getConstantGainValue() * VALUE_5LOG2) +
                                 _T(" dB)"));
 
     for (size_t i = 0; i < gui_mainMenuBar->GetMenuCount(); i++)
@@ -353,9 +353,9 @@ void GuiFrameMain::OnTimer1Trigger(wxTimerEvent &event) {
 
     gui_mainMenuBar->Enable(ID_CLEAR_ANALYSIS, gui_lstFiles->GetItemCount() > 0 && !m_processRunning);
     gui_mainMenuBar->Enable(ID_UNDO_GAIN,
-                          gui_lstFiles->GetItemCount() > 0 && mp_configBase->getTagOptions() != 2 && !m_processRunning);
+                          gui_lstFiles->GetItemCount() > 0 && mp_appSettings->getTagOptions() != 2 && !m_processRunning);
     gui_mainMenuBar->Enable(ID_DELETE_TAG,
-                          gui_lstFiles->GetItemCount() > 0 && mp_configBase->getTagOptions() != 2 && !m_processRunning);
+                          gui_lstFiles->GetItemCount() > 0 && mp_appSettings->getTagOptions() != 2 && !m_processRunning);
 
     gui_btnStop->Enable(m_processRunning);
     event.Skip(false);
@@ -379,7 +379,7 @@ void GuiFrameMain::loadResources() {
 }
 
 void GuiFrameMain::updateTxtNormalVolumeDb() {
-    m_dblNormalVolume = mp_configBase->getNormalVolumeDb() / 10.0;
+    m_dblNormalVolume = mp_appSettings->getNormalVolumeDb() / 10.0;
     gui_txtNormalVolume->Clear();
     gui_txtNormalVolume->WriteText(wxString::Format(_T("%.1f"), m_dblNormalVolume));
 }
@@ -421,8 +421,8 @@ void GuiFrameMain::processExecute() {
 }
 
 void GuiFrameMain::processFile(unsigned long int fileIterator) {
-    wxString fullCommand = APP_TOOL_EXECUTABLE + _T(" ") + mp_configBase->getStringToolOptions() + _T(" ") +
-                           mp_configBase->getStringToolOptionsTag();
+    wxString fullCommand = APP_TOOL_EXECUTABLE + _T(" ") + mp_appSettings->getStringToolOptions() + _T(" ") +
+                           mp_appSettings->getStringToolOptionsTag();
     wxString runCommand;
     FileInfo &fileInfo = mp_fileListManager->getItem(fileIterator);
     wxFileName filenameInput = fileInfo.getFileName();
@@ -433,7 +433,7 @@ void GuiFrameMain::processFile(unsigned long int fileIterator) {
 
     if (m_processType == TOOL_GAIN || m_processType == TOOL_ANALYSIS) {
         // Get old volume values (try read tag info first [if enabled tag read] )
-        if (!fileInfo.isVolumeSet() && mp_configBase->getTagOptions() != 2 && !mp_configBase->getTagForceEnabled()) {
+        if (!fileInfo.isVolumeSet() && mp_appSettings->getTagOptions() != 2 && !mp_appSettings->getTagForceEnabled()) {
             runCommand = fullCommand + _T(" -s c \"") + filenameTemp + _T("\"");
             wxExecute(runCommand, m_exeInputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
             processOutputString(fileIterator);
@@ -451,11 +451,11 @@ void GuiFrameMain::processFile(unsigned long int fileIterator) {
     // Set gain volume
     if (m_processType == TOOL_GAIN && fileInfo.getGainChange() != 0) {
         // Execute Gain
-        if (mp_configBase->getConstantGainEnabled())
-            runCommand = fullCommand + _T(" ") + mp_configBase->getStringToolOptionsGain() + _T(" \"") +
+        if (mp_appSettings->getConstantGainEnabled())
+            runCommand = fullCommand + _T(" ") + mp_appSettings->getStringToolOptionsGain() + _T(" \"") +
                          filenameTemp + _T("\"");
         else
-            runCommand = fullCommand + _T(" ") + mp_configBase->getStringToolOptionsGain() + _T(" -g ") +
+            runCommand = fullCommand + _T(" ") + mp_appSettings->getStringToolOptionsGain() + _T(" -g ") +
                          wxString::Format(_T("%i "), fileInfo.getGainChange()) + _T(" \"") +
                          filenameTemp + _T("\"");
 
@@ -465,7 +465,7 @@ void GuiFrameMain::processFile(unsigned long int fileIterator) {
         // Read file info after gain / Write tag gain (bug found on mp3gain linux)
         runCommand = fullCommand + _T(" \"") + filenameTemp + _T("\"");
         wxExecute(runCommand, m_exeInputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
-        switch (mp_configBase->getTagOptions()) {
+        switch (mp_appSettings->getTagOptions()) {
         default:
         case 0:
         case 1:
@@ -536,7 +536,7 @@ void GuiFrameMain::processOutputString(unsigned long int fileIterator) {
                     mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_CLIPPING, _T(""));
                     mp_fileListManager->getOwner().SetItemTextColour(fileIterator, *wxBLACK);
                 }
-                mp_fileListManager->updateGainLabels(m_dblNormalVolume, mp_configBase);
+                mp_fileListManager->updateGainLabels(m_dblNormalVolume, mp_appSettings);
             }
         }
 

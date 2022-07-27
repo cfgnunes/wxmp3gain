@@ -104,7 +104,7 @@ wxListCtrl &FileListManager::getOwner() {
     return *mp_owner;
 }
 
-void FileListManager::updateGainLabels(const double &dblNormalVolumeUpdate, ConfigBase *configBase) {
+void FileListManager::updateGainLabels(const double &dblNormalVolumeUpdate, AppSettings *appSettings) {
     for (unsigned long int i = 0; i < mp_lstFilesData->size(); i++) {
         FileInfo &fileInfo = getItem(i);
 
@@ -112,8 +112,8 @@ void FileListManager::updateGainLabels(const double &dblNormalVolumeUpdate, Conf
             continue;
 
         // Update GainChange
-        if (configBase->getConstantGainEnabled()) {
-            fileInfo.setGainChange(configBase->getConstantGainValue());
+        if (appSettings->getConstantGainEnabled()) {
+            fileInfo.setGainChange(appSettings->getConstantGainValue());
         } else {
             double dblGainChange = (dblNormalVolumeUpdate - fileInfo.getVolume()) / VALUE_5LOG2;
             int intGainChange = Conversion::convertDoubleToIntGain(dblGainChange);
@@ -121,7 +121,7 @@ void FileListManager::updateGainLabels(const double &dblNormalVolumeUpdate, Conf
         }
 
         // Correct gain if has clipping
-        if (configBase->getAutoLowerEnabled()) {
+        if (appSettings->getAutoLowerEnabled()) {
             int maxNoclipMp3Gain = Conversion::getMaxNoclipMp3Gain(fileInfo.getMaxPcmSample());
             if (fileInfo.getGainChange() > maxNoclipMp3Gain)
                 fileInfo.setGainChange(maxNoclipMp3Gain);

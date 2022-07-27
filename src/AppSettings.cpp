@@ -3,10 +3,10 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-#include "ConfigBase.hpp"
+#include "AppSettings.hpp"
 #include "Constants.hpp"
 
-ConfigBase::ConfigBase(const wxString &appName) {
+AppSettings::AppSettings(const wxString &appName) {
     mp_config = new wxConfig(appName);
 
     // If there isn't a setting, writes a new one with default values
@@ -14,11 +14,11 @@ ConfigBase::ConfigBase(const wxString &appName) {
         setDefaultConfig();
 }
 
-ConfigBase::~ConfigBase() {
+AppSettings::~AppSettings() {
     delete mp_config;
 }
 
-void ConfigBase::setDefaultConfig() {
+void AppSettings::setDefaultConfig() {
     setAppVersion(APP_VERSION);
     setLastOpenDir(DEFAULT_VALUE_LastOpenDir);
 
@@ -34,11 +34,11 @@ void ConfigBase::setDefaultConfig() {
     setChannelGainMode(DEFAULT_VALUE_ChannelGainMode);
 }
 
-void ConfigBase::setConfigFlush() {
+void AppSettings::setConfigFlush() {
     mp_config->Flush();
 }
 
-wxString ConfigBase::getStringToolOptions() const {
+wxString AppSettings::getStringToolOptions() const {
     wxString toolOptions;
 
     // ForceInput
@@ -49,7 +49,7 @@ wxString ConfigBase::getStringToolOptions() const {
     return toolOptions;
 }
 
-wxString ConfigBase::getStringToolOptionsTag() const {
+wxString AppSettings::getStringToolOptionsTag() const {
     wxString toolOptions;
 
     // TagsOptions
@@ -70,7 +70,7 @@ wxString ConfigBase::getStringToolOptionsTag() const {
     return toolOptions;
 }
 
-wxString ConfigBase::getStringToolOptionsGain() const {
+wxString AppSettings::getStringToolOptionsGain() const {
     wxString toolOptions;
 
     // Ignore clipping warning when applying gain
@@ -98,61 +98,61 @@ wxString ConfigBase::getStringToolOptionsGain() const {
 
 // Gets
 
-wxString ConfigBase::getAppVersion() const {
+wxString AppSettings::getAppVersion() const {
     wxString value = wxEmptyString;
     mp_config->Read(CONFIG_GROUP_SYSTEM + CONFIG_STR_AppVersion, &value);
     return value;
 }
 
-wxString ConfigBase::getLastOpenDir() const {
+wxString AppSettings::getLastOpenDir() const {
     wxString value = wxEmptyString;
     mp_config->Read(CONFIG_GROUP_SYSTEM + CONFIG_STR_LastOpenDir, &value);
     return value;
 }
 
-int ConfigBase::getNormalVolumeDb() const {
+int AppSettings::getNormalVolumeDb() const {
     int value;
     mp_config->Read(CONFIG_GROUP_GENERAL + CONFIG_STR_NormalVolumeDb, &value);
     return value;
 }
 
-bool ConfigBase::getAutoLowerEnabled() const {
+bool AppSettings::getAutoLowerEnabled() const {
     bool value;
     mp_config->Read(CONFIG_GROUP_GENERAL + CONFIG_STR_AutoLowerEnabled, &value);
     return value;
 }
 
-bool ConfigBase::getForceInputEnabled() const {
+bool AppSettings::getForceInputEnabled() const {
     bool value;
     mp_config->Read(CONFIG_GROUP_GENERAL + CONFIG_STR_ForceInputEnabled, &value);
     return value;
 }
 
-int ConfigBase::getTagOptions() const {
+int AppSettings::getTagOptions() const {
     int value;
     mp_config->Read(CONFIG_GROUP_TAGS + CONFIG_STR_TagOptions, &value);
     return value;
 }
 
-bool ConfigBase::getTagForceEnabled() const {
+bool AppSettings::getTagForceEnabled() const {
     bool value;
     mp_config->Read(CONFIG_GROUP_TAGS + CONFIG_STR_TagForceEnabled, &value);
     return value;
 }
 
-bool ConfigBase::getConstantGainEnabled() const {
+bool AppSettings::getConstantGainEnabled() const {
     bool value;
     mp_config->Read(CONFIG_GROUP_CTGAIN + CONFIG_STR_ConstantGainEnabled, &value);
     return value;
 }
 
-int ConfigBase::getConstantGainValue() const {
+int AppSettings::getConstantGainValue() const {
     int value;
     mp_config->Read(CONFIG_GROUP_CTGAIN + CONFIG_STR_ConstantGainValue, &value);
     return value;
 }
 
-int ConfigBase::getChannelGainMode() const {
+int AppSettings::getChannelGainMode() const {
     int value;
     mp_config->Read(CONFIG_GROUP_CTGAIN + CONFIG_STR_ChannelGainMode, &value);
     return value;
@@ -160,42 +160,42 @@ int ConfigBase::getChannelGainMode() const {
 
 // Sets
 
-void ConfigBase::setAppVersion(wxString value) {
+void AppSettings::setAppVersion(wxString value) {
     mp_config->Write(CONFIG_GROUP_SYSTEM + CONFIG_STR_AppVersion, value);
 }
 
-void ConfigBase::setLastOpenDir(wxString value) {
+void AppSettings::setLastOpenDir(wxString value) {
     mp_config->Write(CONFIG_GROUP_SYSTEM + CONFIG_STR_LastOpenDir, value);
 }
 
-void ConfigBase::setNormalVolumeDb(int value) {
+void AppSettings::setNormalVolumeDb(int value) {
     mp_config->Write(CONFIG_GROUP_GENERAL + CONFIG_STR_NormalVolumeDb, value);
 }
 
-void ConfigBase::setAutoLowerEnabled(bool value) {
+void AppSettings::setAutoLowerEnabled(bool value) {
     mp_config->Write(CONFIG_GROUP_GENERAL + CONFIG_STR_AutoLowerEnabled, value);
 }
 
-void ConfigBase::setForceInputEnabled(bool value) {
+void AppSettings::setForceInputEnabled(bool value) {
     mp_config->Write(CONFIG_GROUP_GENERAL + CONFIG_STR_ForceInputEnabled, value);
 }
 
-void ConfigBase::setTagOptions(int value) {
+void AppSettings::setTagOptions(int value) {
     mp_config->Write(CONFIG_GROUP_TAGS + CONFIG_STR_TagOptions, value);
 }
 
-void ConfigBase::setTagForceEnabled(bool value) {
+void AppSettings::setTagForceEnabled(bool value) {
     mp_config->Write(CONFIG_GROUP_TAGS + CONFIG_STR_TagForceEnabled, value);
 }
 
-void ConfigBase::setConstantGainEnabled(bool value) {
+void AppSettings::setConstantGainEnabled(bool value) {
     mp_config->Write(CONFIG_GROUP_CTGAIN + CONFIG_STR_ConstantGainEnabled, value);
 }
 
-void ConfigBase::setConstantGainValue(int value) {
+void AppSettings::setConstantGainValue(int value) {
     mp_config->Write(CONFIG_GROUP_CTGAIN + CONFIG_STR_ConstantGainValue, value);
 }
 
-void ConfigBase::setChannelGainMode(int value) {
+void AppSettings::setChannelGainMode(int value) {
     mp_config->Write(CONFIG_GROUP_CTGAIN + CONFIG_STR_ChannelGainMode, value);
 }
