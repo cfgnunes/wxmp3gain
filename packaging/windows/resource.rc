@@ -1,3 +1,3 @@
-ICO_APP ICON DISCARDABLE "../data/icons/icon-app.ico"
+ICO_APP ICON DISCARDABLE "../../data/icons/app.ico"
 
 #include "wx/msw/wx.rc"
