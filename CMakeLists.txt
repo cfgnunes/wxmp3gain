@@ -18,7 +18,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ansi -s -Wall -Wextra -Wpedantic")
 
 # Sources
 file(GLOB SRC_FILES src/*.cpp src/*.h)
-file(GLOB MSG_FILES msg/*.po)
+file(GLOB MSG_FILES po/*.po)
 
 # Translation files
 if(GETTEXT_FOUND)
@@ -26,12 +26,12 @@ if(GETTEXT_FOUND)
         # Remove path and extension of 'MSG_FILE'
         get_filename_component(MSG_NAME ${MSG_FILE} NAME_WE)
         # Compile each '.po' file to '.gmo' file
-        GETTEXT_PROCESS_PO_FILES(${MSG_NAME} ALL PO_FILES "msg/${MSG_NAME}.po")
+        GETTEXT_PROCESS_PO_FILES(${MSG_NAME} ALL PO_FILES "po/${MSG_NAME}.po")
         # Define the files location during install process
         if(WIN32)
-            install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${MSG_NAME}.gmo" DESTINATION "data/msg/${MSG_NAME}/" RENAME "${CMAKE_PROJECT_NAME}.mo")
+            install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${MSG_NAME}.gmo" DESTINATION "data/po/${MSG_NAME}/" RENAME "${CMAKE_PROJECT_NAME}.mo")
         else()
-            install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${MSG_NAME}.gmo" DESTINATION "share/${CMAKE_PROJECT_NAME}/data/msg/${MSG_NAME}/" RENAME "${CMAKE_PROJECT_NAME}.mo")
+            install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${MSG_NAME}.gmo" DESTINATION "share/${CMAKE_PROJECT_NAME}/data/po/${MSG_NAME}/" RENAME "${CMAKE_PROJECT_NAME}.mo")
         endif()
     endforeach()
 else()
