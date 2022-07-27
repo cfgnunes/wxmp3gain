@@ -6,8 +6,8 @@
 #ifndef FILE_LIST_MANAGER_HPP
 #define FILE_LIST_MANAGER_HPP
 
-#include "ConfigBase.h"
-#include "FileInfo.h"
+#include "ConfigBase.hpp"
+#include "FileInfo.hpp"
 
 #include <list>
 #include <wx/arrstr.h>

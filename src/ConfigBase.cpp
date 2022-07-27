@@ -3,8 +3,8 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-#include "ConfigBase.h"
-#include "Constants.h"
+#include "ConfigBase.hpp"
+#include "Constants.hpp"
 
 ConfigBase::ConfigBase(const wxString &appName) {
     mp_config = new wxConfig(appName);

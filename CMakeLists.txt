@@ -17,7 +17,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ansi -s -Wall -Wextra -Wpedantic")
 
 # Sources
-file(GLOB SRC_FILES src/*.cpp src/*.h)
+file(GLOB SRC_FILES src/*.cpp src/*.hpp src/ui/*.cpp src/ui/*.hpp src/ui/*.h)
 file(GLOB MSG_FILES po/*.po)
 
 # Translation files

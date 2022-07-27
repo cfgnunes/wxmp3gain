@@ -16,9 +16,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "Main.h"
-#include "Constants.h"
-#include "GuiFrameMain.h"
+#include "Main.hpp"
+#include "Constants.hpp"
+#include "GuiFrameMain.hpp"
 
 IMPLEMENT_APP(Main)
 

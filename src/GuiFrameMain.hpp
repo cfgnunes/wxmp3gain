@@ -6,9 +6,9 @@
 #ifndef GUI_FRAME_MAIN_HPP
 #define GUI_FRAME_MAIN_HPP
 
-#include "ConfigBase.h"
-#include "DndFile.h"
-#include "FileListManager.h"
+#include "ConfigBase.hpp"
+#include "DndFile.hpp"
+#include "FileListManager.hpp"
 #include "Gui.h"
 
 class GuiFrameMain : public FrameMain {

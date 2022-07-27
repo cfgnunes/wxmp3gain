@@ -3,7 +3,7 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-#include "DndFile.h"
+#include "DndFile.hpp"
 
 DndFile::DndFile(FileListManager *fileListManager)
     : mp_fileListManager(fileListManager) {

@@ -3,9 +3,9 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-#include "FileListManager.h"
-#include "Constants.h"
-#include "Conversion.h"
+#include "FileListManager.hpp"
+#include "Constants.hpp"
+#include "Conversion.hpp"
 
 #include <wx/dir.h>
 #include <wx/tokenzr.h>

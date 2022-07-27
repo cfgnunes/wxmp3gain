@@ -3,7 +3,7 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-#include "Conversion.h"
+#include "Conversion.hpp"
 
 #include <cmath>
 

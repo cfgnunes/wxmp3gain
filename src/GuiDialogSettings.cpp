@@ -3,8 +3,8 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-#include "GuiDialogSettings.h"
-#include "Constants.h"
+#include "GuiDialogSettings.hpp"
+#include "Constants.hpp"
 
 GuiDialogSettings::GuiDialogSettings(wxWindow *parent, ConfigBase *configBase)
     : DialogSettings(parent), mp_configBase(configBase) {
