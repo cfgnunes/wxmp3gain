@@ -3,9 +3,9 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
+#include "../Constants.hpp"
+#include "../Conversion.hpp"
 #include "GuiFrameMain.hpp"
-#include "Constants.hpp"
-#include "Conversion.hpp"
 #include "GuiDialogSettings.hpp"
 
 #include <wx/aboutdlg.h>

@@ -18,7 +18,7 @@
 
 #include "Main.hpp"
 #include "Constants.hpp"
-#include "GuiFrameMain.hpp"
+#include "ui/GuiFrameMain.hpp"
 
 IMPLEMENT_APP(Main)
 

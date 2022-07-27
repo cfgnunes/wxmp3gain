@@ -6,7 +6,7 @@
 #ifndef GUI_DIALOG_SETTINGS_HPP
 #define GUI_DIALOG_SETTINGS_HPP
 
-#include "AppSettings.hpp"
+#include "../AppSettings.hpp"
 #include "Gui.h"
 
 class GuiDialogSettings : public DialogSettings {
