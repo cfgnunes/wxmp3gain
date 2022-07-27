@@ -19,7 +19,7 @@ GuiFrameMain::GuiFrameMain(wxWindow *parent) : FrameMain(parent), m_processRunni
     SetStatusBarPane(-1);
 
     // File list manager
-    mp_listManager = new ListCtrlManager(gui_lstFiles);
+    mp_listManager = new ListManager(gui_lstFiles);
 
     // List Drag & Drop
     mp_fileDrop = new FileDrop(mp_listManager);

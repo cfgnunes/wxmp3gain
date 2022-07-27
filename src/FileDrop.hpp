@@ -7,19 +7,19 @@
 #define FILE_DROP_HPP
 
 #include "FileData.hpp"
-#include "ListCtrlManager.hpp"
+#include "ListManager.hpp"
 
 #include <wx/dnd.h>
 
 class FileDrop : public wxFileDropTarget {
   public:
-    FileDrop(ListCtrlManager *listManager);
+    FileDrop(ListManager *listManager);
     virtual ~FileDrop();
 
     virtual bool OnDropFiles(wxCoord, wxCoord, const wxArrayString &filenames);
 
   private:
-    ListCtrlManager *mp_listManager;
+    ListManager *mp_listManager;
 };
 
 #endif // FILE_DROP_HPP
