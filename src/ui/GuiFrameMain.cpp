@@ -300,7 +300,7 @@ void GuiFrameMain::mnuAbout(wxCommandEvent &event) {
     aboutInfo.SetDescription(_("Free front-end for the MP3gain"));
     aboutInfo.SetCopyright(APP_COPYRIGHT);
     aboutInfo.SetWebSite(APP_WEBSITE);
-    wxString resourceDir = GetResourceDir();
+    wxString resourceDir = getResourceDir();
     aboutInfo.SetIcon(wxIcon(resourceDir + _T("icons/app.ico"), wxBITMAP_TYPE_ICO));
     wxAboutBox(aboutInfo);
     event.Skip(false);
@@ -362,7 +362,7 @@ void GuiFrameMain::OnTimer1Trigger(wxTimerEvent &event) {
 }
 
 void GuiFrameMain::loadResources() {
-    wxString resourceDir = GetResourceDir();
+    wxString resourceDir = getResourceDir();
 
     // Window icon
     SetIcon(wxIcon(resourceDir + _T("icons/app.ico"), wxBITMAP_TYPE_ICO));

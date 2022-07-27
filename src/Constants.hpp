@@ -87,7 +87,7 @@ int const ID_LIST_TAG_INFO = 6;
 
 double const VALUE_5LOG2 = 1.505149978; // 5.0 * log10(2.0)
 
-inline wxString GetResourceDir() {
+inline wxString getResourceDir() {
     wxString executablePath = wxStandardPaths::Get().GetExecutablePath();
     wxFileName executableFilename(executablePath);
     wxString resourceDirName = _T("/data/");
