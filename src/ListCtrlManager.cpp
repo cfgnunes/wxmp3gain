@@ -12,11 +12,11 @@
 
 ListCtrlManager::ListCtrlManager(wxListCtrl *listCtrl)
     : mp_listCtrl(listCtrl) {
-    mp_lstFilesData = new std::list<FileData>();
+    mp_filesData = new std::list<FileData>();
 }
 
 ListCtrlManager::~ListCtrlManager() {
-    delete mp_lstFilesData;
+    delete mp_filesData;
 }
 
 void ListCtrlManager::insertFilesAndDir(const wxArrayString &filenames) {
@@ -45,8 +45,8 @@ void ListCtrlManager::insertFiles(const wxArrayString &filenames) {
             bool repeated = false;
 
             unsigned long int i = 0;
-            for (std::list<FileData>::iterator fileData = mp_lstFilesData->begin();
-                 fileData != mp_lstFilesData->end(); fileData++, i++) {
+            for (std::list<FileData>::iterator fileData = mp_filesData->begin();
+                 fileData != mp_filesData->end(); fileData++, i++) {
                 wxFileName filenameInput = (*fileData).getFileName();
                 if (filenameInput.GetFullPath() == filenames[n]) {
                     repeated = true;
@@ -55,7 +55,7 @@ void ListCtrlManager::insertFiles(const wxArrayString &filenames) {
             if (!repeated) {
                 mp_listCtrl->InsertItem(mp_listCtrl->GetItemCount(), file.GetFullName());
                 mp_listCtrl->SetItem(i, 1, file.GetPath());
-                mp_lstFilesData->push_back(FileData(filenames[n]));
+                mp_filesData->push_back(FileData(filenames[n]));
             }
         }
     }
@@ -80,22 +80,22 @@ bool ListCtrlManager::checkValidExtension(const wxFileName &file) const {
 }
 
 void ListCtrlManager::deleteItem(unsigned long int index) {
-    std::list<FileData>::iterator fileData = mp_lstFilesData->begin();
+    std::list<FileData>::iterator fileData = mp_filesData->begin();
     std::advance(fileData, index);
-    mp_lstFilesData->erase(fileData);
+    mp_filesData->erase(fileData);
 }
 
 void ListCtrlManager::clear() {
     mp_listCtrl->DeleteAllItems();
-    mp_lstFilesData->clear();
+    mp_filesData->clear();
 }
 
 long unsigned int ListCtrlManager::size() {
-    return mp_lstFilesData->size();
+    return mp_filesData->size();
 }
 
 FileData &ListCtrlManager::getItem(unsigned long int index) {
-    std::list<FileData>::iterator fileData = mp_lstFilesData->begin();
+    std::list<FileData>::iterator fileData = mp_filesData->begin();
     std::advance(fileData, index);
     return *fileData;
 }
@@ -105,7 +105,7 @@ wxListCtrl &ListCtrlManager::getListCtrl() {
 }
 
 void ListCtrlManager::updateGainLabels(const double &dblNormalVolumeUpdate, AppSettings *appSettings) {
-    for (unsigned long int i = 0; i < mp_lstFilesData->size(); i++) {
+    for (unsigned long int i = 0; i < mp_filesData->size(); i++) {
         FileData &fileData = getItem(i);
 
         if (!fileData.isVolumeSet())
