@@ -31,4 +31,8 @@ jobs:
           cmake -DCMAKE_BUILD_TYPE=Coverage ..
           make
           sudo make install
-          sudo debuild -us -uc
+
+      - name: Test the 'Debian' packaging
+        run: |
+          ln -s packaging/debian debian
+          debuild -us -uc
