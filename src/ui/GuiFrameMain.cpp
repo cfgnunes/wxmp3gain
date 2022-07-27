@@ -409,19 +409,19 @@ void GuiFrameMain::setFilesCmdLine(const wxArrayString &filenames) {
 }
 
 void GuiFrameMain::processExecute() {
-    unsigned long int maxValue = mp_listManager->size();
-    unsigned long int i;
+    unsigned long int total = mp_listManager->size();
+    unsigned long int fileIdx;
     wxString msg;
 
-    gui_gugProgress->SetRange((int)maxValue);
-    for (i = 0; i < maxValue; i++) {
-        processFile(i);
-        gui_gugProgress->SetValue((int)i + 1);
+    gui_gugProgress->SetRange((int)total);
+    for (fileIdx = 0; fileIdx < total; fileIdx++) {
+        processFile(fileIdx);
+        gui_gugProgress->SetValue((int)fileIdx + 1);
 
         if (!m_processRunning) {
             msg = _("Do you want to stop process now?");
             if (wxMessageBox(msg, APP_NAME, wxYES_NO | wxICON_QUESTION) == wxYES) {
-                i++;
+                fileIdx++;
                 break;
             }
             m_processRunning = true;
@@ -429,7 +429,7 @@ void GuiFrameMain::processExecute() {
         }
     }
 
-    msg = wxString::Format(_("Processed %lu files of %lu."), i, maxValue);
+    msg = wxString::Format(_("Processed %lu files of %lu."), fileIdx, total);
     wxMessageBox(msg, APP_NAME, wxOK | wxICON_INFORMATION);
 
     gui_gugProgress->SetValue(0);
