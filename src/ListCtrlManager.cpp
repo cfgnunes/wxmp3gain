@@ -111,7 +111,7 @@ void ListCtrlManager::updateGainLabels(const double &dblNormalVolumeUpdate, AppS
 
         // Update GainChange
         if (appSettings->getConstantGainEnabled()) {
-            fileData.setGainChange(appSettings->getConstantGainValue());
+            fileData.setGainChange(appSettings->getCtGainValue());
         } else {
             double dblGainChange = (dblNormalVolumeUpdate - fileData.getVolume()) / VALUE_5LOG2;
             int intGainChange = Conversion::convertDoubleToIntGain(dblGainChange);

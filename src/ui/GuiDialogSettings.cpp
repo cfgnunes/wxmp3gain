@@ -22,9 +22,16 @@ void GuiDialogSettings::updateDisabledControlsEvent(wxCommandEvent &event) {
     event.Skip(false);
 }
 
-void GuiDialogSettings::OnsldConstantGainCmdSliderUpdated(wxScrollEvent &event) {
+void GuiDialogSettings::OnsldConstantGainSliderUpdated(wxScrollEvent &event) {
     int intGain = gui_sldConstantGain->GetValue();
-    gui_lblConstantGain->SetLabel(wxString::Format(_T("%+i"), intGain) + _T(" (") + wxString::Format(_T("%+.1f"), intGain * VALUE_5LOG2) + _T(" dB)"));
+
+    wxString strGain;
+    strGain += wxString::Format(_T("%+i"), intGain);
+    strGain += _T(" (");
+    strGain += wxString::Format(_T("%+.1f"), intGain * VALUE_5LOG2);
+    strGain += _T(" dB)");
+
+    gui_lblConstantGain->SetLabel(strGain);
     event.Skip(false);
 }
 
@@ -60,8 +67,8 @@ void GuiDialogSettings::updateValueControls() {
 
     // Constant gain
     gui_chkConstantGain->SetValue(mp_appSettings->getConstantGainEnabled());
-    gui_sldConstantGain->SetValue(mp_appSettings->getConstantGainValue());
-    OnsldConstantGainCmdSliderUpdated(evt);
+    gui_sldConstantGain->SetValue(mp_appSettings->getCtGainValue());
+    OnsldConstantGainSliderUpdated(evt);
     gui_optBothChannel->SetValue(mp_appSettings->getChannelGainMode() == CHANNEL_BOTH);
     gui_optLeftChannel->SetValue(mp_appSettings->getChannelGainMode() == CHANNEL_LEFT);
     gui_optRightChannel->SetValue(mp_appSettings->getChannelGainMode() == CHANNEL_RIGHT);
@@ -95,7 +102,7 @@ void GuiDialogSettings::saveValuesConfig() {
 
     // Constant gain
     mp_appSettings->setConstantGainEnabled(gui_chkConstantGain->GetValue());
-    mp_appSettings->setConstantGainValue(gui_sldConstantGain->GetValue());
+    mp_appSettings->setCtGainValue(gui_sldConstantGain->GetValue());
     if (gui_optBothChannel->GetValue())
         mp_appSettings->setChannelGainMode(CHANNEL_BOTH);
     else if (gui_optLeftChannel->GetValue())
@@ -124,8 +131,8 @@ void GuiDialogSettings::defaultValueControls() {
 
     // Constant gain
     gui_chkConstantGain->SetValue(DEFAULT_VALUE_ConstantGainEnabled);
-    gui_sldConstantGain->SetValue(DEFAULT_VALUE_ConstantGainValue);
-    OnsldConstantGainCmdSliderUpdated(evt);
+    gui_sldConstantGain->SetValue(DEFAULT_VALUE_CtGainValue);
+    OnsldConstantGainSliderUpdated(evt);
     gui_optBothChannel->SetValue(true);
     gui_optLeftChannel->SetValue(false);
     gui_optRightChannel->SetValue(false);

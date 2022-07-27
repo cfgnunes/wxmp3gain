@@ -13,13 +13,13 @@
 
 class FileDrop : public wxFileDropTarget {
   public:
-    FileDrop(ListCtrlManager *listCtrlManager);
+    FileDrop(ListCtrlManager *listManager);
     virtual ~FileDrop();
 
     virtual bool OnDropFiles(wxCoord, wxCoord, const wxArrayString &filenames);
 
   private:
-    ListCtrlManager *mp_listCtrlManager;
+    ListCtrlManager *mp_listManager;
 };
 
 #endif // FILE_DROP_HPP

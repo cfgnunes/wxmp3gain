@@ -59,7 +59,7 @@ const wxString CONFIG_STR_TagOptions = _T("TagOptions");
 const wxString CONFIG_STR_TagForceEnabled = _T("TagForceEnabled");
 
 const wxString CONFIG_STR_ConstantGainEnabled = _T("ConstantGainEnabled");
-const wxString CONFIG_STR_ConstantGainValue = _T("ConstantGainValue");
+const wxString CONFIG_STR_CtGainValue = _T("ConstantGainValue");
 const wxString CONFIG_STR_ChannelGainMode = _T("ChannelGainMode");
 
 // Default Values
@@ -73,7 +73,7 @@ const int DEFAULT_VALUE_TagOptions = TAG_APE;
 const bool DEFAULT_VALUE_TagForceEnabled = false;
 
 const bool DEFAULT_VALUE_ConstantGainEnabled = false;
-const int DEFAULT_VALUE_ConstantGainValue = 0;
+const int DEFAULT_VALUE_CtGainValue = 0;
 const int DEFAULT_VALUE_ChannelGainMode = CHANNEL_BOTH;
 
 // ID for title in wxListCtrl

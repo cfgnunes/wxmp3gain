@@ -47,11 +47,11 @@ class GuiFrameMain : public FrameMain {
     void updateControls();
     void loadResources();
     void processExecute();
-    void processFile(unsigned long int fileIterator);
-    void processOutputString(unsigned long int fileIterator);
+    void processFile(unsigned long int fileIdx);
+    void processOutputString(unsigned long int fileIdx);
 
     AppSettings *mp_appSettings;
-    ListCtrlManager *mp_listCtrlManager;
+    ListCtrlManager *mp_listManager;
     FileDrop *mp_fileDrop;
     double m_dblNormalVolume;
     wxString m_exeTool;

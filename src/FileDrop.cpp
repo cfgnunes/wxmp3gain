@@ -5,13 +5,13 @@
 
 #include "FileDrop.hpp"
 
-FileDrop::FileDrop(ListCtrlManager *listCtrlManager) : mp_listCtrlManager(listCtrlManager) {
+FileDrop::FileDrop(ListCtrlManager *listManager) : mp_listManager(listManager) {
 }
 
 FileDrop::~FileDrop() {
 }
 
 bool FileDrop::OnDropFiles(wxCoord, wxCoord, const wxArrayString &filenames) {
-    mp_listCtrlManager->insertFilesAndDir(filenames);
+    mp_listManager->insertFilesAndDir(filenames);
     return true;
 }

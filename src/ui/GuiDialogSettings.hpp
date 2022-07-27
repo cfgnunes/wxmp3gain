@@ -16,7 +16,7 @@ class GuiDialogSettings : public DialogSettings {
 
   protected:
     void updateDisabledControlsEvent(wxCommandEvent &event);
-    void OnsldConstantGainCmdSliderUpdated(wxScrollEvent &event);
+    void OnsldConstantGainSliderUpdated(wxScrollEvent &event);
     void OnbtnDefaultClick(wxCommandEvent &event);
     void OnbtnOKClick(wxCommandEvent &event);
     void OnbtnCancelClick(wxCommandEvent &event);

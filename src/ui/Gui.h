@@ -153,7 +153,7 @@ class DialogSettings : public wxDialog
 
 		// Virtual event handlers, overide them in your derived class
 		virtual void updateDisabledControlsEvent( wxCommandEvent& event ) { event.Skip(); }
-		virtual void OnsldConstantGainCmdSliderUpdated( wxScrollEvent& event ) { event.Skip(); }
+		virtual void OnsldConstantGainSliderUpdated( wxScrollEvent& event ) { event.Skip(); }
 		virtual void OnbtnDefaultClick( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnbtnOKClick( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnbtnCancelClick( wxCommandEvent& event ) { event.Skip(); }

@@ -29,20 +29,20 @@ int Conversion::convertDoubleToIntGain(const double &dblGainChange) {
 }
 
 int Conversion::getMaxNoclipMp3Gain(const double &mvarCurrMaxAmp) {
-    int MaxNoclipMp3Gain;
+    int maxNoclipMp3Gain;
     double dblAdjust;
 
     // From mp3gain GUI vb6 code...
     if ((mvarCurrMaxAmp < 1000000.0) && (mvarCurrMaxAmp > 0)) {
         dblAdjust = 4.0 * log10(32767.0 / mvarCurrMaxAmp) / log10(2);
         if ((double)((int)(dblAdjust)) > dblAdjust)
-            MaxNoclipMp3Gain = (int)(dblAdjust)-1;
+            maxNoclipMp3Gain = (int)(dblAdjust)-1;
         else
-            MaxNoclipMp3Gain = (int)(dblAdjust);
+            maxNoclipMp3Gain = (int)(dblAdjust);
     } else {
-        MaxNoclipMp3Gain = 0;
+        maxNoclipMp3Gain = 0;
     }
     // ...end
 
-    return MaxNoclipMp3Gain;
+    return maxNoclipMp3Gain;
 }

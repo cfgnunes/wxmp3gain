@@ -29,7 +29,7 @@ class AppSettings {
     int getTagOptions() const;
     bool getTagForceEnabled() const;
     bool getConstantGainEnabled() const;
-    int getConstantGainValue() const;
+    int getCtGainValue() const;
     int getChannelGainMode() const;
 
     // Sets
@@ -41,7 +41,7 @@ class AppSettings {
     void setTagOptions(int value);
     void setTagForceEnabled(bool value);
     void setConstantGainEnabled(bool value);
-    void setConstantGainValue(int value);
+    void setCtGainValue(int value);
     void setChannelGainMode(int value);
 
   private:

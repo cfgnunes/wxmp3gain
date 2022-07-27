@@ -30,7 +30,7 @@ void AppSettings::setDefaultValues() {
     setTagOptions(DEFAULT_VALUE_TagOptions);
 
     setConstantGainEnabled(DEFAULT_VALUE_ConstantGainEnabled);
-    setConstantGainValue(DEFAULT_VALUE_ConstantGainValue);
+    setCtGainValue(DEFAULT_VALUE_CtGainValue);
     setChannelGainMode(DEFAULT_VALUE_ChannelGainMode);
 }
 
@@ -81,13 +81,13 @@ wxString AppSettings::getStringToolOptionsGain() const {
         switch (getChannelGainMode()) {
         default:
         case CHANNEL_BOTH:
-            toolOptions.append(_T("-g ") + wxString::Format(_T("%i "), getConstantGainValue()));
+            toolOptions.append(_T("-g ") + wxString::Format(_T("%i "), getCtGainValue()));
             break;
         case CHANNEL_LEFT:
-            toolOptions.append(_T("-l 0 ") + wxString::Format(_T("%i "), getConstantGainValue()));
+            toolOptions.append(_T("-l 0 ") + wxString::Format(_T("%i "), getCtGainValue()));
             break;
         case CHANNEL_RIGHT:
-            toolOptions.append(_T("-l 1 ") + wxString::Format(_T("%i "), getConstantGainValue()));
+            toolOptions.append(_T("-l 1 ") + wxString::Format(_T("%i "), getCtGainValue()));
             break;
         }
     }
@@ -146,9 +146,9 @@ bool AppSettings::getConstantGainEnabled() const {
     return value;
 }
 
-int AppSettings::getConstantGainValue() const {
+int AppSettings::getCtGainValue() const {
     int value;
-    mp_config->Read(CONFIG_GROUP_CTGAIN + CONFIG_STR_ConstantGainValue, &value);
+    mp_config->Read(CONFIG_GROUP_CTGAIN + CONFIG_STR_CtGainValue, &value);
     return value;
 }
 
@@ -192,8 +192,8 @@ void AppSettings::setConstantGainEnabled(bool value) {
     mp_config->Write(CONFIG_GROUP_CTGAIN + CONFIG_STR_ConstantGainEnabled, value);
 }
 
-void AppSettings::setConstantGainValue(int value) {
-    mp_config->Write(CONFIG_GROUP_CTGAIN + CONFIG_STR_ConstantGainValue, value);
+void AppSettings::setCtGainValue(int value) {
+    mp_config->Write(CONFIG_GROUP_CTGAIN + CONFIG_STR_CtGainValue, value);
 }
 
 void AppSettings::setChannelGainMode(int value) {
