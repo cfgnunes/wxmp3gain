@@ -90,7 +90,7 @@ double const VALUE_5LOG2 = 1.505149978; // 5.0 * log10(2.0)
 inline wxString GetResourceDir() {
     wxString executablePath = wxStandardPaths::Get().GetExecutablePath();
     wxFileName executableFilename(executablePath);
-    wxString resourceDirName = _T("/resource/");
+    wxString resourceDirName = _T("/data/");
     wxDir dir;
     wxString resourceDir;
 
