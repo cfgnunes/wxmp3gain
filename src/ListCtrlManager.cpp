@@ -3,23 +3,23 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-#include "FileListManager.hpp"
+#include "ListCtrlManager.hpp"
 #include "Constants.hpp"
 #include "Conversion.hpp"
 
 #include <wx/dir.h>
 #include <wx/tokenzr.h>
 
-FileListManager::FileListManager(wxListCtrl *owner)
+ListCtrlManager::ListCtrlManager(wxListCtrl *owner)
     : mp_owner(owner) {
     mp_lstFilesData = new std::list<FileInfo>();
 }
 
-FileListManager::~FileListManager() {
+ListCtrlManager::~ListCtrlManager() {
     delete mp_lstFilesData;
 }
 
-void FileListManager::insertFilesAndDir(const wxArrayString &filenames) {
+void ListCtrlManager::insertFilesAndDir(const wxArrayString &filenames) {
     wxArrayString files;
 
     // Check if is a directory or a file
@@ -33,7 +33,7 @@ void FileListManager::insertFilesAndDir(const wxArrayString &filenames) {
     insertFiles(files);
 }
 
-void FileListManager::insertFiles(const wxArrayString &filenames) {
+void ListCtrlManager::insertFiles(const wxArrayString &filenames) {
     unsigned long int nFiles = filenames.GetCount();
 
     // Add files in wxListCtrl
@@ -61,14 +61,14 @@ void FileListManager::insertFiles(const wxArrayString &filenames) {
     }
 }
 
-void FileListManager::insertDir(const wxString &dirname) {
+void ListCtrlManager::insertDir(const wxString &dirname) {
     wxArrayString files;
     wxDir::GetAllFiles(dirname, &files);
 
     insertFiles(files);
 }
 
-bool FileListManager::checkValidExtension(const wxFileName &file) const {
+bool ListCtrlManager::checkValidExtension(const wxFileName &file) const {
     wxStringTokenizer strToken(APP_OPEN_EXT, _T(";"));
     while (strToken.HasMoreTokens()) {
         wxString token = strToken.GetNextToken();
@@ -79,32 +79,32 @@ bool FileListManager::checkValidExtension(const wxFileName &file) const {
     return false;
 }
 
-void FileListManager::deleteItem(unsigned long int index) {
+void ListCtrlManager::deleteItem(unsigned long int index) {
     std::list<FileInfo>::iterator fileInfo = mp_lstFilesData->begin();
     std::advance(fileInfo, index);
     mp_lstFilesData->erase(fileInfo);
 }
 
-void FileListManager::clear() {
+void ListCtrlManager::clear() {
     mp_owner->DeleteAllItems();
     mp_lstFilesData->clear();
 }
 
-long unsigned int FileListManager::size() {
+long unsigned int ListCtrlManager::size() {
     return mp_lstFilesData->size();
 }
 
-FileInfo &FileListManager::getItem(unsigned long int index) {
+FileInfo &ListCtrlManager::getItem(unsigned long int index) {
     std::list<FileInfo>::iterator fileInfo = mp_lstFilesData->begin();
     std::advance(fileInfo, index);
     return *fileInfo;
 }
 
-wxListCtrl &FileListManager::getOwner() {
+wxListCtrl &ListCtrlManager::getOwner() {
     return *mp_owner;
 }
 
-void FileListManager::updateGainLabels(const double &dblNormalVolumeUpdate, AppSettings *appSettings) {
+void ListCtrlManager::updateGainLabels(const double &dblNormalVolumeUpdate, AppSettings *appSettings) {
     for (unsigned long int i = 0; i < mp_lstFilesData->size(); i++) {
         FileInfo &fileInfo = getItem(i);
 

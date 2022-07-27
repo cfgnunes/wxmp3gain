@@ -7,8 +7,8 @@
 #define GUI_FRAME_MAIN_HPP
 
 #include "../AppSettings.hpp"
-#include "../DndFile.hpp"
-#include "../FileListManager.hpp"
+#include "../FileDrop.hpp"
+#include "../ListCtrlManager.hpp"
 #include "Gui.h"
 
 class GuiFrameMain : public FrameMain {
@@ -51,8 +51,8 @@ class GuiFrameMain : public FrameMain {
     void processOutputString(unsigned long int fileIterator);
 
     AppSettings *mp_appSettings;
-    FileListManager *mp_fileListManager;
-    DndFile *mp_dndFile;
+    ListCtrlManager *mp_listCtrlManager;
+    FileDrop *mp_fileDrop;
     double m_dblNormalVolume;
     wxString m_exeTool;
     wxArrayString m_exeInputString;

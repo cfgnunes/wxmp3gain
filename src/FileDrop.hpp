@@ -3,23 +3,23 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-#ifndef DND_FILE_HPP
-#define DND_FILE_HPP
+#ifndef FILE_DROP_HPP
+#define FILE_DROP_HPP
 
 #include "FileInfo.hpp"
-#include "FileListManager.hpp"
+#include "ListCtrlManager.hpp"
 
 #include <wx/dnd.h>
 
-class DndFile : public wxFileDropTarget {
+class FileDrop : public wxFileDropTarget {
   public:
-    DndFile(FileListManager *fileListManager);
-    virtual ~DndFile();
+    FileDrop(ListCtrlManager *listCtrlManager);
+    virtual ~FileDrop();
 
     virtual bool OnDropFiles(wxCoord, wxCoord, const wxArrayString &filenames);
 
   private:
-    FileListManager *mp_fileListManager;
+    ListCtrlManager *mp_listCtrlManager;
 };
 
-#endif // DND_FILE_HPP
+#endif // FILE_DROP_HPP

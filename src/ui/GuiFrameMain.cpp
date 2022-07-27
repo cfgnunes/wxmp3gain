@@ -20,11 +20,11 @@ GuiFrameMain::GuiFrameMain(wxWindow *parent)
     SetStatusBarPane(-1);
 
     // File list manager
-    mp_fileListManager = new FileListManager(gui_lstFiles);
+    mp_listCtrlManager = new ListCtrlManager(gui_lstFiles);
 
     // List Drag & Drop
-    mp_dndFile = new DndFile(mp_fileListManager);
-    gui_lstFiles->SetDropTarget(mp_dndFile);
+    mp_fileDrop = new FileDrop(mp_listCtrlManager);
+    gui_lstFiles->SetDropTarget(mp_fileDrop);
 
     // Title List
     gui_lstFiles->InsertColumn(ID_LIST_FILE, _("File"), wxLIST_FORMAT_LEFT, 200);
@@ -73,7 +73,7 @@ void GuiFrameMain::OntxtNormalVolumeTextKillFocus(wxFocusEvent &event) {
     else if (m_dblNormalVolume > 105)
         m_dblNormalVolume = 105.0;
 
-    mp_fileListManager->updateGainLabels(m_dblNormalVolume, mp_appSettings);
+    mp_listCtrlManager->updateGainLabels(m_dblNormalVolume, mp_appSettings);
 
     // Save the NormalVolumeDb
     mp_appSettings->setNormalVolumeDb((int)(float)(m_dblNormalVolume * 10.0));
@@ -83,13 +83,13 @@ void GuiFrameMain::OntxtNormalVolumeTextKillFocus(wxFocusEvent &event) {
 }
 
 GuiFrameMain::~GuiFrameMain() {
-    delete mp_fileListManager;
+    delete mp_listCtrlManager;
     delete mp_appSettings;
 }
 
 void GuiFrameMain::OnlstFilesDeleteItem(wxListEvent &event) {
     if (!m_processRunning) {
-        mp_fileListManager->deleteItem((unsigned long)event.GetIndex());
+        mp_listCtrlManager->deleteItem((unsigned long)event.GetIndex());
         updateControls();
     }
     event.Skip();
@@ -141,7 +141,7 @@ void GuiFrameMain::mnuAddDirectory(wxCommandEvent &event) {
     dirDialog.SetPath(mp_appSettings->getLastOpenDir());
     if (dirDialog.ShowModal() == wxID_OK) {
         SetCursor(wxCURSOR_WAIT);
-        mp_fileListManager->insertDir(dirDialog.GetPath());
+        mp_listCtrlManager->insertDir(dirDialog.GetPath());
 
         // Remembers the last used directory
         mp_appSettings->setLastOpenDir(dirDialog.GetPath());
@@ -163,7 +163,7 @@ void GuiFrameMain::mnuAddFiles(wxCommandEvent &event) {
 
         // Get the file(s) the user selected
         fileDialog.GetPaths(files);
-        mp_fileListManager->insertFiles(files);
+        mp_listCtrlManager->insertFiles(files);
 
         // Remembers the last used directory
         mp_appSettings->setLastOpenDir(fileDialog.GetDirectory());
@@ -191,7 +191,7 @@ void GuiFrameMain::mnuRemoveFiles(wxCommandEvent &event) {
 
 void GuiFrameMain::mnuClearList(wxCommandEvent &event) {
     // Deletes all items from the list
-    mp_fileListManager->clear();
+    mp_listCtrlManager->clear();
 
     updateControls();
     event.Skip(false);
@@ -221,13 +221,13 @@ void GuiFrameMain::mnuSettings(wxCommandEvent &event) {
     // Updates after closing the window "Settings"
     updateControls();
     updateTxtNormalVolumeDb();
-    mp_fileListManager->updateGainLabels(m_dblNormalVolume, mp_appSettings);
+    mp_listCtrlManager->updateGainLabels(m_dblNormalVolume, mp_appSettings);
     event.Skip(false);
 }
 
 void GuiFrameMain::mnuClearAnalysis(wxCommandEvent &event) {
-    for (unsigned long int i = 0; i < mp_fileListManager->size(); i++) {
-        FileInfo &fileInfo = mp_fileListManager->getItem(i);
+    for (unsigned long int i = 0; i < mp_listCtrlManager->size(); i++) {
+        FileInfo &fileInfo = mp_listCtrlManager->getItem(i);
         fileInfo.volumeReset();
         gui_lstFiles->SetItem(i, 2, _T(""));
         gui_lstFiles->SetItem(i, 3, _T(""));
@@ -395,11 +395,11 @@ void GuiFrameMain::updateControls() {
 }
 
 void GuiFrameMain::setFilesCmdLine(const wxArrayString &filenames) {
-    mp_fileListManager->insertFilesAndDir(filenames);
+    mp_listCtrlManager->insertFilesAndDir(filenames);
 }
 
 void GuiFrameMain::processExecute() {
-    unsigned long int maxValue = mp_fileListManager->size();
+    unsigned long int maxValue = mp_listCtrlManager->size();
     unsigned long int i;
 
     gui_gugProgress->SetRange((int)maxValue);
@@ -424,7 +424,7 @@ void GuiFrameMain::processFile(unsigned long int fileIterator) {
     wxString fullCommand = APP_TOOL_EXECUTABLE + _T(" ") + mp_appSettings->getStringToolOptions() + _T(" ") +
                            mp_appSettings->getStringToolOptionsTag();
     wxString runCommand;
-    FileInfo &fileInfo = mp_fileListManager->getItem(fileIterator);
+    FileInfo &fileInfo = mp_listCtrlManager->getItem(fileIterator);
     wxFileName filenameInput = fileInfo.getFileName();
 
     // Works on a temp file
@@ -438,13 +438,13 @@ void GuiFrameMain::processFile(unsigned long int fileIterator) {
             wxExecute(runCommand, m_exeInputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
             processOutputString(fileIterator);
             if (fileInfo.isVolumeSet())
-                mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_TAG_INFO, _("yes"));
+                mp_listCtrlManager->getOwner().SetItem(fileIterator, ID_LIST_TAG_INFO, _("yes"));
         }
         if (!fileInfo.isVolumeSet()) {
             runCommand = APP_TOOL_EXECUTABLE + _T(" -s s \"") + filenameTemp + _T("\"");
             wxExecute(runCommand, m_exeInputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
             processOutputString(fileIterator);
-            mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_TAG_INFO, _T(""));
+            mp_listCtrlManager->getOwner().SetItem(fileIterator, ID_LIST_TAG_INFO, _T(""));
         }
     }
 
@@ -469,10 +469,10 @@ void GuiFrameMain::processFile(unsigned long int fileIterator) {
         default:
         case 0:
         case 1:
-            mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_TAG_INFO, _("yes"));
+            mp_listCtrlManager->getOwner().SetItem(fileIterator, ID_LIST_TAG_INFO, _("yes"));
             break;
         case 2:
-            mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_TAG_INFO, _T(""));
+            mp_listCtrlManager->getOwner().SetItem(fileIterator, ID_LIST_TAG_INFO, _T(""));
             break;
         }
 
@@ -497,11 +497,11 @@ void GuiFrameMain::processFile(unsigned long int fileIterator) {
         wxRenameFile(filenameTemp, filenameInput.GetFullPath(), true);
 
     gui_mainStatusBar->SetStatusText(
-        wxString::Format(_("Processed %lu files of %lu."), fileIterator + 1, mp_fileListManager->size()), 1);
+        wxString::Format(_("Processed %lu files of %lu."), fileIterator + 1, mp_listCtrlManager->size()), 1);
 }
 
 void GuiFrameMain::processOutputString(unsigned long int fileIterator) {
-    FileInfo &fileInfo = mp_fileListManager->getItem(fileIterator);
+    FileInfo &fileInfo = mp_listCtrlManager->getItem(fileIterator);
     wxString tempString;
 
     if (!m_exeInputString.IsEmpty()) {
@@ -519,7 +519,7 @@ void GuiFrameMain::processOutputString(unsigned long int fileIterator) {
 
                 fileInfo.setVolume(volume);
 
-                mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_VOLUME,
+                mp_listCtrlManager->getOwner().SetItem(fileIterator, ID_LIST_VOLUME,
                                                        wxString::Format(_T("%.1f"), volume));
             } // Clipping means that some value in some frame of the song is greater than +/- 32767
             else if (tempString.Lower().Contains(_T("max pcm"))) {
@@ -530,13 +530,13 @@ void GuiFrameMain::processOutputString(unsigned long int fileIterator) {
                 fileInfo.setMaxPcmSample(dblMaxPcmSample);
 
                 if (dblMaxPcmSample > 32767) {
-                    mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_CLIPPING, _("yes"));
-                    mp_fileListManager->getOwner().SetItemTextColour(fileIterator, *wxRED);
+                    mp_listCtrlManager->getOwner().SetItem(fileIterator, ID_LIST_CLIPPING, _("yes"));
+                    mp_listCtrlManager->getOwner().SetItemTextColour(fileIterator, *wxRED);
                 } else {
-                    mp_fileListManager->getOwner().SetItem(fileIterator, ID_LIST_CLIPPING, _T(""));
-                    mp_fileListManager->getOwner().SetItemTextColour(fileIterator, *wxBLACK);
+                    mp_listCtrlManager->getOwner().SetItem(fileIterator, ID_LIST_CLIPPING, _T(""));
+                    mp_listCtrlManager->getOwner().SetItemTextColour(fileIterator, *wxBLACK);
                 }
-                mp_fileListManager->updateGainLabels(m_dblNormalVolume, mp_appSettings);
+                mp_listCtrlManager->updateGainLabels(m_dblNormalVolume, mp_appSettings);
             }
         }
 

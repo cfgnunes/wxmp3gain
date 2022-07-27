@@ -3,8 +3,8 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-#ifndef CONFIG_BASE_HPP
-#define CONFIG_BASE_HPP
+#ifndef APP_SETTINGS_HPP
+#define APP_SETTINGS_HPP
 
 #include <wx/config.h>
 #include <wx/string.h>
@@ -48,4 +48,4 @@ class AppSettings {
     wxConfig *mp_config;
 };
 
-#endif // CONFIG_BASE_HPP
+#endif // APP_SETTINGS_HPP
