@@ -106,7 +106,7 @@ void GuiDialogSettings::saveValuesConfig() {
     else if (gui_optRightChannel->GetValue())
         mp_appSettings->setChannelGainMode(CHANNEL_RIGHT);
 
-    mp_appSettings->setConfigFlush();
+    mp_appSettings->flush();
 }
 
 void GuiDialogSettings::defaultValueControls() {

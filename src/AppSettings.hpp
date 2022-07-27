@@ -14,8 +14,8 @@ class AppSettings {
     AppSettings(const wxString &appName = wxEmptyString);
     ~AppSettings();
 
-    void setDefaultConfig();
-    void setConfigFlush();
+    void setDefaultValues();
+    void flush();
     wxString getStringToolOptions() const;
     wxString getStringToolOptionsTag() const;
     wxString getStringToolOptionsGain() const;
