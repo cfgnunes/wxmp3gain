@@ -300,8 +300,8 @@ void GuiFrameMain::mnuAbout(wxCommandEvent &event) {
     aboutInfo.SetDescription(_("Free front-end for the MP3gain"));
     aboutInfo.SetCopyright(APP_COPYRIGHT);
     aboutInfo.SetWebSite(APP_WEBSITE);
-    wxString resourceDir = getResourceDir();
-    aboutInfo.SetIcon(wxIcon(resourceDir + _T("icons/app.ico"), wxBITMAP_TYPE_ICO));
+    wxString dataDir = getDataDir();
+    aboutInfo.SetIcon(wxIcon(dataDir + _T("icons/app.ico"), wxBITMAP_TYPE_ICO));
     wxAboutBox(aboutInfo);
     event.Skip(false);
 }
@@ -362,20 +362,20 @@ void GuiFrameMain::OnTimer1Trigger(wxTimerEvent &event) {
 }
 
 void GuiFrameMain::loadResources() {
-    wxString resourceDir = getResourceDir();
+    wxString dataDir = getDataDir();
 
     // Window icon
-    SetIcon(wxIcon(resourceDir + _T("icons/app.ico"), wxBITMAP_TYPE_ICO));
+    SetIcon(wxIcon(dataDir + _T("icons/app.ico"), wxBITMAP_TYPE_ICO));
 
     // Toolbar bitmaps
-    gui_mainToolBar->SetToolNormalBitmap(ID_ADD_FILES, wxBitmap(wxImage(resourceDir + _T("toolbar/add-file.png"))));
-    gui_mainToolBar->SetToolNormalBitmap(ID_ADD_FOLDER, wxBitmap(wxImage(resourceDir + _T("toolbar/add-folder.png"))));
-    gui_mainToolBar->SetToolNormalBitmap(ID_REMOVE_FILES, wxBitmap(wxImage(resourceDir + _T("toolbar/remove.png"))));
-    gui_mainToolBar->SetToolNormalBitmap(ID_CLEAR_LIST, wxBitmap(wxImage(resourceDir + _T("toolbar/clear.png"))));
-    gui_mainToolBar->SetToolNormalBitmap(ID_ANALYZE, wxBitmap(wxImage(resourceDir + _T("toolbar/analysis.png"))));
-    gui_mainToolBar->SetToolNormalBitmap(ID_GAIN, wxBitmap(wxImage(resourceDir + _T("toolbar/gain.png"))));
-    gui_mainToolBar->SetToolNormalBitmap(ID_SETTINGS, wxBitmap(wxImage(resourceDir + _T("toolbar/settings.png"))));
-    gui_mainToolBar->SetToolNormalBitmap(ID_ABOUT, wxBitmap(wxImage(resourceDir + _T("toolbar/about.png"))));
+    gui_mainToolBar->SetToolNormalBitmap(ID_ADD_FILES, wxBitmap(wxImage(dataDir + _T("toolbar/add-file.png"))));
+    gui_mainToolBar->SetToolNormalBitmap(ID_ADD_FOLDER, wxBitmap(wxImage(dataDir + _T("toolbar/add-folder.png"))));
+    gui_mainToolBar->SetToolNormalBitmap(ID_REMOVE_FILES, wxBitmap(wxImage(dataDir + _T("toolbar/remove.png"))));
+    gui_mainToolBar->SetToolNormalBitmap(ID_CLEAR_LIST, wxBitmap(wxImage(dataDir + _T("toolbar/clear.png"))));
+    gui_mainToolBar->SetToolNormalBitmap(ID_ANALYZE, wxBitmap(wxImage(dataDir + _T("toolbar/analysis.png"))));
+    gui_mainToolBar->SetToolNormalBitmap(ID_GAIN, wxBitmap(wxImage(dataDir + _T("toolbar/gain.png"))));
+    gui_mainToolBar->SetToolNormalBitmap(ID_SETTINGS, wxBitmap(wxImage(dataDir + _T("toolbar/settings.png"))));
+    gui_mainToolBar->SetToolNormalBitmap(ID_ABOUT, wxBitmap(wxImage(dataDir + _T("toolbar/about.png"))));
 }
 
 void GuiFrameMain::updateTxtNormalVolumeDb() {

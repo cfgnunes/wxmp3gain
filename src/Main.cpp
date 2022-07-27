@@ -25,7 +25,7 @@ IMPLEMENT_APP(Main)
 bool Main::OnInit() {
     // Load language translation
     mp_locale = new wxLocale(wxLocale::GetSystemLanguage());
-    mp_locale->AddCatalogLookupPathPrefix(getResourceDir() + _T("po"));
+    mp_locale->AddCatalogLookupPathPrefix(getDataDir() + _T("po"));
     mp_locale->AddCatalog(_T("wxmp3gain"));
 
     wxInitAllImageHandlers();

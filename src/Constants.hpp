@@ -87,28 +87,28 @@ int const ID_LIST_TAG_INFO = 6;
 
 double const VALUE_5LOG2 = 1.505149978; // 5.0 * log10(2.0)
 
-inline wxString getResourceDir() {
+inline wxString getDataDir() {
     wxString executablePath = wxStandardPaths::Get().GetExecutablePath();
     wxFileName executableFilename(executablePath);
-    wxString resourceDirName = _T("/data/");
+    wxString dataDirName = _T("/data/");
     wxDir dir;
-    wxString resourceDir;
+    wxString dataDir;
 
 #ifdef __LINUX__
-    resourceDir = _T("/usr/share/wxlame") + resourceDirName;
-    if (dir.Exists(resourceDir))
-        return resourceDir;
+    dataDir = _T("/usr/share/wxlame") + dataDirName;
+    if (dir.Exists(dataDir))
+        return dataDir;
 #endif
 
-    resourceDir = _T(".") + resourceDirName;
-    if (dir.Exists(resourceDir))
-        return resourceDir;
+    dataDir = _T(".") + dataDirName;
+    if (dir.Exists(dataDir))
+        return dataDir;
 
-    resourceDir = _T("..") + resourceDirName;
-    if (dir.Exists(resourceDir))
-        return resourceDir;
+    dataDir = _T("..") + dataDirName;
+    if (dir.Exists(dataDir))
+        return dataDir;
 
-    return executableFilename.GetPath() + resourceDirName;
+    return executableFilename.GetPath() + dataDirName;
 }
 
 #endif // CONSTANTS_HPP
