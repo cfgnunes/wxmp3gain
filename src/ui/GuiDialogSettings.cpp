@@ -3,11 +3,10 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-#include "../Constants.hpp"
 #include "GuiDialogSettings.hpp"
+#include "../Constants.hpp"
 
-GuiDialogSettings::GuiDialogSettings(wxWindow *parent, AppSettings *appSettings)
-    : DialogSettings(parent), mp_appSettings(appSettings) {
+GuiDialogSettings::GuiDialogSettings(wxWindow *parent, AppSettings *appSettings) : DialogSettings(parent), mp_appSettings(appSettings) {
     // Updates the values controls according to the configuration file
     updateValueControls();
 
@@ -25,9 +24,7 @@ void GuiDialogSettings::updateDisabledControlsEvent(wxCommandEvent &event) {
 
 void GuiDialogSettings::OnsldConstantGainCmdSliderUpdated(wxScrollEvent &event) {
     int intGain = gui_sldConstantGain->GetValue();
-    gui_lblConstantGain->SetLabel(
-        wxString::Format(_T("%+i"), intGain) + _T(" (") + wxString::Format(_T("%+.1f"), intGain * VALUE_5LOG2) +
-        _T(" dB)"));
+    gui_lblConstantGain->SetLabel(wxString::Format(_T("%+i"), intGain) + _T(" (") + wxString::Format(_T("%+.1f"), intGain * VALUE_5LOG2) + _T(" dB)"));
     event.Skip(false);
 }
 

@@ -22,7 +22,7 @@ class GuiDialogSettings : public DialogSettings {
     void OnbtnCancelClick(wxCommandEvent &event);
 
   private:
-   void updateDisabledControls();
+    void updateDisabledControls();
     void updateValueControls();
     void defaultValueControls();
     void saveValuesConfig();

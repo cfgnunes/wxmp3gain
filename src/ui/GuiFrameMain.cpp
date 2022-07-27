@@ -3,9 +3,9 @@
  * http://www.gnu.org/licenses/gpl-3.0.html
  */
 
+#include "GuiFrameMain.hpp"
 #include "../Constants.hpp"
 #include "../Conversion.hpp"
-#include "GuiFrameMain.hpp"
 #include "GuiDialogSettings.hpp"
 
 #include <wx/aboutdlg.h>
@@ -14,8 +14,7 @@
 #include <wx/filefn.h>
 #include <wx/msgdlg.h>
 
-GuiFrameMain::GuiFrameMain(wxWindow *parent)
-    : FrameMain(parent), m_processRunning(false) {
+GuiFrameMain::GuiFrameMain(wxWindow *parent) : FrameMain(parent), m_processRunning(false) {
     // Disable status bar pane used to display menu and toolbar help
     SetStatusBarPane(-1);
 
@@ -152,8 +151,7 @@ void GuiFrameMain::mnuAddDirectory(wxCommandEvent &event) {
 
 void GuiFrameMain::mnuAddFiles(wxCommandEvent &event) {
     wxArrayString files;
-    wxFileDialog fileDialog(this, _("Select file"), wxEmptyString, wxEmptyString, APP_WILDCARD_EXT,
-                            wxFD_OPEN | wxFD_MULTIPLE);
+    wxFileDialog fileDialog(this, _("Select file"), wxEmptyString, wxEmptyString, APP_WILDCARD_EXT, wxFD_OPEN | wxFD_MULTIPLE);
 
     // Read the last directory used
     fileDialog.SetDirectory(mp_appSettings->getLastOpenDir());
@@ -317,8 +315,7 @@ void GuiFrameMain::OnTimer1Trigger(wxTimerEvent &event) {
 
         // Show the version of tool
         if (!m_exeInputErrorString.IsEmpty())
-            gui_mainStatusBar->SetStatusText(_("Using MP3gain version: ") + m_exeInputErrorString.Item(0).AfterLast(' '),
-                                           0);
+            gui_mainStatusBar->SetStatusText(_("Using MP3gain version: ") + m_exeInputErrorString.Item(0).AfterLast(' '), 0);
         else
             gui_mainStatusBar->SetStatusText(_("MP3gain not found!"), 0);
     }
@@ -327,9 +324,7 @@ void GuiFrameMain::OnTimer1Trigger(wxTimerEvent &event) {
     gui_mainStatusBar->SetStatusText(wxString::Format(_T("%i "), gui_lstFiles->GetItemCount()) + _("files"), 1);
 
     // Constant gain box
-    gui_lblConstantGain->SetLabel(wxString::Format(_T("%+i"), mp_appSettings->getConstantGainValue()) + _T(" (") +
-                                wxString::Format(_T("%+.1f"), mp_appSettings->getConstantGainValue() * VALUE_5LOG2) +
-                                _T(" dB)"));
+    gui_lblConstantGain->SetLabel(wxString::Format(_T("%+i"), mp_appSettings->getConstantGainValue()) + _T(" (") + wxString::Format(_T("%+.1f"), mp_appSettings->getConstantGainValue() * VALUE_5LOG2) + _T(" dB)"));
 
     for (size_t i = 0; i < gui_mainMenuBar->GetMenuCount(); i++)
         gui_mainMenuBar->EnableTop(i, !m_processRunning);
@@ -352,10 +347,8 @@ void GuiFrameMain::OnTimer1Trigger(wxTimerEvent &event) {
     gui_mainToolBar->EnableTool(ID_GAIN, gui_lstFiles->GetItemCount() > 0 && !m_processRunning);
 
     gui_mainMenuBar->Enable(ID_CLEAR_ANALYSIS, gui_lstFiles->GetItemCount() > 0 && !m_processRunning);
-    gui_mainMenuBar->Enable(ID_UNDO_GAIN,
-                          gui_lstFiles->GetItemCount() > 0 && mp_appSettings->getTagOptions() != 2 && !m_processRunning);
-    gui_mainMenuBar->Enable(ID_DELETE_TAG,
-                          gui_lstFiles->GetItemCount() > 0 && mp_appSettings->getTagOptions() != 2 && !m_processRunning);
+    gui_mainMenuBar->Enable(ID_UNDO_GAIN, gui_lstFiles->GetItemCount() > 0 && mp_appSettings->getTagOptions() != 2 && !m_processRunning);
+    gui_mainMenuBar->Enable(ID_DELETE_TAG, gui_lstFiles->GetItemCount() > 0 && mp_appSettings->getTagOptions() != 2 && !m_processRunning);
 
     gui_btnStop->Enable(m_processRunning);
     event.Skip(false);
@@ -421,8 +414,7 @@ void GuiFrameMain::processExecute() {
 }
 
 void GuiFrameMain::processFile(unsigned long int fileIterator) {
-    wxString fullCommand = APP_TOOL_EXECUTABLE + _T(" ") + mp_appSettings->getStringToolOptions() + _T(" ") +
-                           mp_appSettings->getStringToolOptionsTag();
+    wxString fullCommand = APP_TOOL_EXECUTABLE + _T(" ") + mp_appSettings->getStringToolOptions() + _T(" ") + mp_appSettings->getStringToolOptionsTag();
     wxString runCommand;
     FileData &fileData = mp_listCtrlManager->getFileData(fileIterator);
     wxFileName filenameInput = fileData.getFileName();
@@ -452,12 +444,9 @@ void GuiFrameMain::processFile(unsigned long int fileIterator) {
     if (m_processType == TOOL_GAIN && fileData.getGainChange() != 0) {
         // Execute Gain
         if (mp_appSettings->getConstantGainEnabled())
-            runCommand = fullCommand + _T(" ") + mp_appSettings->getStringToolOptionsGain() + _T(" \"") +
-                         filenameTemp + _T("\"");
+            runCommand = fullCommand + _T(" ") + mp_appSettings->getStringToolOptionsGain() + _T(" \"") + filenameTemp + _T("\"");
         else
-            runCommand = fullCommand + _T(" ") + mp_appSettings->getStringToolOptionsGain() + _T(" -g ") +
-                         wxString::Format(_T("%i "), fileData.getGainChange()) + _T(" \"") +
-                         filenameTemp + _T("\"");
+            runCommand = fullCommand + _T(" ") + mp_appSettings->getStringToolOptionsGain() + _T(" -g ") + wxString::Format(_T("%i "), fileData.getGainChange()) + _T(" \"") + filenameTemp + _T("\"");
 
         wxExecute(runCommand, m_exeInputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
         m_exeInputString.Clear();
@@ -496,8 +485,7 @@ void GuiFrameMain::processFile(unsigned long int fileIterator) {
     else
         wxRenameFile(filenameTemp, filenameInput.GetFullPath(), true);
 
-    gui_mainStatusBar->SetStatusText(
-        wxString::Format(_("Processed %lu files of %lu."), fileIterator + 1, mp_listCtrlManager->size()), 1);
+    gui_mainStatusBar->SetStatusText(wxString::Format(_("Processed %lu files of %lu."), fileIterator + 1, mp_listCtrlManager->size()), 1);
 }
 
 void GuiFrameMain::processOutputString(unsigned long int fileIterator) {
@@ -519,8 +507,7 @@ void GuiFrameMain::processOutputString(unsigned long int fileIterator) {
 
                 fileData.setVolume(volume);
 
-                mp_listCtrlManager->getListCtrl().SetItem(fileIterator, ID_LIST_VOLUME,
-                                                       wxString::Format(_T("%.1f"), volume));
+                mp_listCtrlManager->getListCtrl().SetItem(fileIterator, ID_LIST_VOLUME, wxString::Format(_T("%.1f"), volume));
             } // Clipping means that some value in some frame of the song is greater than +/- 32767
             else if (tempString.Lower().Contains(_T("max pcm"))) {
                 double dblMaxPcmSample;

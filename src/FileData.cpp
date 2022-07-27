@@ -5,8 +5,7 @@
 
 #include "FileData.hpp"
 
-FileData::FileData(const wxString &fileName)
-    : m_fileName(fileName), m_volumeSet(false) {
+FileData::FileData(const wxString &fileName) : m_fileName(fileName), m_isVolumeSet(false) {
 }
 
 FileData::~FileData() {
@@ -16,7 +15,7 @@ FileData::~FileData() {
 
 void FileData::setVolume(const double &value) {
     m_volume = value;
-    m_volumeSet = true;
+    m_isVolumeSet = true;
 }
 
 void FileData::setMaxPcmSample(const double &value) {
@@ -28,7 +27,7 @@ void FileData::setGainChange(const int &value) {
 }
 
 void FileData::volumeReset() {
-    m_volumeSet = false;
+    m_isVolumeSet = false;
 }
 
 // Gets..
@@ -50,5 +49,5 @@ int FileData::getGainChange() const {
 }
 
 bool FileData::isVolumeSet() const {
-    return m_volumeSet;
+    return m_isVolumeSet;
 }

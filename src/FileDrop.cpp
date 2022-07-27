@@ -5,8 +5,7 @@
 
 #include "FileDrop.hpp"
 
-FileDrop::FileDrop(ListCtrlManager *listCtrlManager)
-    : mp_listCtrlManager(listCtrlManager) {
+FileDrop::FileDrop(ListCtrlManager *listCtrlManager) : mp_listCtrlManager(listCtrlManager) {
 }
 
 FileDrop::~FileDrop() {

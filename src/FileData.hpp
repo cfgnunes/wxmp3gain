@@ -31,7 +31,7 @@ class FileData {
     wxFileName m_fileName;
     double m_volume;
     double m_maxPcmSample;
-    bool m_volumeSet;
+    bool m_isVolumeSet;
     int m_gainChange;
 };
 

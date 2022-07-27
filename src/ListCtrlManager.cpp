@@ -10,8 +10,7 @@
 #include <wx/dir.h>
 #include <wx/tokenzr.h>
 
-ListCtrlManager::ListCtrlManager(wxListCtrl *listCtrl)
-    : mp_listCtrl(listCtrl) {
+ListCtrlManager::ListCtrlManager(wxListCtrl *listCtrl) : mp_listCtrl(listCtrl) {
     mp_filesData = new std::list<FileData>();
 }
 
@@ -45,8 +44,7 @@ void ListCtrlManager::insertFiles(const wxArrayString &filenames) {
             bool repeated = false;
 
             unsigned long int i = 0;
-            for (std::list<FileData>::iterator fileData = mp_filesData->begin();
-                 fileData != mp_filesData->end(); fileData++, i++) {
+            for (std::list<FileData>::iterator fileData = mp_filesData->begin(); fileData != mp_filesData->end(); fileData++, i++) {
                 wxFileName filenameInput = (*fileData).getFileName();
                 if (filenameInput.GetFullPath() == filenames[n]) {
                     repeated = true;
