@@ -70,14 +70,14 @@ class FrameMain : public wxFrame
 		wxListCtrl* gui_lstFiles;
 		wxGauge* gui_gugProgress;
 		wxButton* gui_btnStop;
-		wxMenuBar* gui_mainMenuBar;
+		wxMenuBar* gui_menuBar;
 		wxMenu* gui_mnbFile;
 		wxMenu* gui_mnbEdit;
 		wxMenu* gui_mnbAnalysis;
 		wxMenu* gui_mnuGain;
 		wxMenu* gui_mnbHelp;
 		wxStatusBar* gui_mainStatusBar;
-		wxToolBar* gui_mainToolBar;
+		wxToolBar* gui_toolBar;
 		wxToolBarToolBase* gui_tbAddFolder;
 		wxToolBarToolBase* gui_tbAddFiles;
 		wxToolBarToolBase* gui_tbRemoveFiles;
@@ -86,7 +86,7 @@ class FrameMain : public wxFrame
 		wxToolBarToolBase* gui_tbGain;
 		wxToolBarToolBase* gui_tbSettings;
 		wxToolBarToolBase* gui_tbAbout;
-		wxMenu* gui_mainMenu;
+		wxMenu* gui_menu;
 		wxTimer m_timer1;
 
 		// Virtual event handlers, overide them in your derived class
@@ -122,7 +122,7 @@ class FrameMain : public wxFrame
 
 		void FrameMainOnContextMenu( wxMouseEvent &event )
 		{
-		this->PopupMenu( gui_mainMenu, event.GetPosition() );
+		this->PopupMenu( gui_menu, event.GetPosition() );
 		}
 
 };
