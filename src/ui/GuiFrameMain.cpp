@@ -227,7 +227,7 @@ void GuiFrameMain::mnuSettings(wxCommandEvent &event) {
 
 void GuiFrameMain::mnuClearAnalysis(wxCommandEvent &event) {
     for (unsigned long int i = 0; i < mp_listCtrlManager->size(); i++) {
-        FileData &fileData = mp_listCtrlManager->getItem(i);
+        FileData &fileData = mp_listCtrlManager->getFileData(i);
         fileData.volumeReset();
         gui_lstFiles->SetItem(i, 2, _T(""));
         gui_lstFiles->SetItem(i, 3, _T(""));
@@ -424,7 +424,7 @@ void GuiFrameMain::processFile(unsigned long int fileIterator) {
     wxString fullCommand = APP_TOOL_EXECUTABLE + _T(" ") + mp_appSettings->getStringToolOptions() + _T(" ") +
                            mp_appSettings->getStringToolOptionsTag();
     wxString runCommand;
-    FileData &fileData = mp_listCtrlManager->getItem(fileIterator);
+    FileData &fileData = mp_listCtrlManager->getFileData(fileIterator);
     wxFileName filenameInput = fileData.getFileName();
 
     // Works on a temp file
@@ -501,7 +501,7 @@ void GuiFrameMain::processFile(unsigned long int fileIterator) {
 }
 
 void GuiFrameMain::processOutputString(unsigned long int fileIterator) {
-    FileData &fileData = mp_listCtrlManager->getItem(fileIterator);
+    FileData &fileData = mp_listCtrlManager->getFileData(fileIterator);
     wxString tempString;
 
     if (!m_exeInputString.IsEmpty()) {

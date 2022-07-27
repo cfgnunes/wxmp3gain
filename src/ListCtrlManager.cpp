@@ -94,7 +94,7 @@ long unsigned int ListCtrlManager::size() {
     return mp_filesData->size();
 }
 
-FileData &ListCtrlManager::getItem(unsigned long int index) {
+FileData &ListCtrlManager::getFileData(unsigned long int index) {
     std::list<FileData>::iterator fileData = mp_filesData->begin();
     std::advance(fileData, index);
     return *fileData;
@@ -106,7 +106,7 @@ wxListCtrl &ListCtrlManager::getListCtrl() {
 
 void ListCtrlManager::updateGainLabels(const double &dblNormalVolumeUpdate, AppSettings *appSettings) {
     for (unsigned long int i = 0; i < mp_filesData->size(); i++) {
-        FileData &fileData = getItem(i);
+        FileData &fileData = getFileData(i);
 
         if (!fileData.isVolumeSet())
             continue;

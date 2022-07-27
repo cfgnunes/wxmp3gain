@@ -25,7 +25,7 @@ class ListCtrlManager {
     void deleteItem(unsigned long int index);
     void clear();
     long unsigned int size();
-    FileData &getItem(unsigned long int index);
+    FileData &getFileData(unsigned long int index);
     wxListCtrl &getListCtrl();
     void updateGainLabels(const double &dblNormalVolumeUpdate, AppSettings *appSettings);
 
