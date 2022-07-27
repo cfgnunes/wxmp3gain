@@ -6,7 +6,7 @@
 #ifndef FILE_DROP_HPP
 #define FILE_DROP_HPP
 
-#include "FileInfo.hpp"
+#include "FileData.hpp"
 #include "ListCtrlManager.hpp"
 
 #include <wx/dnd.h>

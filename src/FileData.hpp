@@ -9,10 +9,10 @@
 #include <wx/filename.h>
 #include <wx/string.h>
 
-class FileInfo {
+class FileData {
   public:
-    FileInfo(const wxString &fileName);
-    virtual ~FileInfo();
+    FileData(const wxString &fileName);
+    virtual ~FileData();
 
     // Gets
     wxFileName getFileName() const;

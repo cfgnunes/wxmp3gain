@@ -10,9 +10,9 @@
 #include <wx/dir.h>
 #include <wx/tokenzr.h>
 
-ListCtrlManager::ListCtrlManager(wxListCtrl *owner)
-    : mp_owner(owner) {
-    mp_lstFilesData = new std::list<FileInfo>();
+ListCtrlManager::ListCtrlManager(wxListCtrl *listCtrl)
+    : mp_listCtrl(listCtrl) {
+    mp_lstFilesData = new std::list<FileData>();
 }
 
 ListCtrlManager::~ListCtrlManager() {
@@ -45,17 +45,17 @@ void ListCtrlManager::insertFiles(const wxArrayString &filenames) {
             bool repeated = false;
 
             unsigned long int i = 0;
-            for (std::list<FileInfo>::iterator fileInfo = mp_lstFilesData->begin();
-                 fileInfo != mp_lstFilesData->end(); fileInfo++, i++) {
-                wxFileName filenameInput = (*fileInfo).getFileName();
+            for (std::list<FileData>::iterator fileData = mp_lstFilesData->begin();
+                 fileData != mp_lstFilesData->end(); fileData++, i++) {
+                wxFileName filenameInput = (*fileData).getFileName();
                 if (filenameInput.GetFullPath() == filenames[n]) {
                     repeated = true;
                 }
             }
             if (!repeated) {
-                mp_owner->InsertItem(mp_owner->GetItemCount(), file.GetFullName());
-                mp_owner->SetItem(i, 1, file.GetPath());
-                mp_lstFilesData->push_back(FileInfo(filenames[n]));
+                mp_listCtrl->InsertItem(mp_listCtrl->GetItemCount(), file.GetFullName());
+                mp_listCtrl->SetItem(i, 1, file.GetPath());
+                mp_lstFilesData->push_back(FileData(filenames[n]));
             }
         }
     }
@@ -80,13 +80,13 @@ bool ListCtrlManager::checkValidExtension(const wxFileName &file) const {
 }
 
 void ListCtrlManager::deleteItem(unsigned long int index) {
-    std::list<FileInfo>::iterator fileInfo = mp_lstFilesData->begin();
-    std::advance(fileInfo, index);
-    mp_lstFilesData->erase(fileInfo);
+    std::list<FileData>::iterator fileData = mp_lstFilesData->begin();
+    std::advance(fileData, index);
+    mp_lstFilesData->erase(fileData);
 }
 
 void ListCtrlManager::clear() {
-    mp_owner->DeleteAllItems();
+    mp_listCtrl->DeleteAllItems();
     mp_lstFilesData->clear();
 }
 
@@ -94,41 +94,41 @@ long unsigned int ListCtrlManager::size() {
     return mp_lstFilesData->size();
 }
 
-FileInfo &ListCtrlManager::getItem(unsigned long int index) {
-    std::list<FileInfo>::iterator fileInfo = mp_lstFilesData->begin();
-    std::advance(fileInfo, index);
-    return *fileInfo;
+FileData &ListCtrlManager::getItem(unsigned long int index) {
+    std::list<FileData>::iterator fileData = mp_lstFilesData->begin();
+    std::advance(fileData, index);
+    return *fileData;
 }
 
-wxListCtrl &ListCtrlManager::getOwner() {
-    return *mp_owner;
+wxListCtrl &ListCtrlManager::getListCtrl() {
+    return *mp_listCtrl;
 }
 
 void ListCtrlManager::updateGainLabels(const double &dblNormalVolumeUpdate, AppSettings *appSettings) {
     for (unsigned long int i = 0; i < mp_lstFilesData->size(); i++) {
-        FileInfo &fileInfo = getItem(i);
+        FileData &fileData = getItem(i);
 
-        if (!fileInfo.isVolumeSet())
+        if (!fileData.isVolumeSet())
             continue;
 
         // Update GainChange
         if (appSettings->getConstantGainEnabled()) {
-            fileInfo.setGainChange(appSettings->getConstantGainValue());
+            fileData.setGainChange(appSettings->getConstantGainValue());
         } else {
-            double dblGainChange = (dblNormalVolumeUpdate - fileInfo.getVolume()) / VALUE_5LOG2;
+            double dblGainChange = (dblNormalVolumeUpdate - fileData.getVolume()) / VALUE_5LOG2;
             int intGainChange = Conversion::convertDoubleToIntGain(dblGainChange);
-            fileInfo.setGainChange(intGainChange);
+            fileData.setGainChange(intGainChange);
         }
 
         // Correct gain if has clipping
         if (appSettings->getAutoLowerEnabled()) {
-            int maxNoclipMp3Gain = Conversion::getMaxNoclipMp3Gain(fileInfo.getMaxPcmSample());
-            if (fileInfo.getGainChange() > maxNoclipMp3Gain)
-                fileInfo.setGainChange(maxNoclipMp3Gain);
+            int maxNoclipMp3Gain = Conversion::getMaxNoclipMp3Gain(fileData.getMaxPcmSample());
+            if (fileData.getGainChange() > maxNoclipMp3Gain)
+                fileData.setGainChange(maxNoclipMp3Gain);
         }
 
         // Update the list itens
-        mp_owner->SetItem(i, ID_LIST_GAIN_MP3, wxString::Format(_T("%i"), fileInfo.getGainChange()));
-        mp_owner->SetItem(i, ID_LIST_GAIN_DB, wxString::Format(_T("%.1f"), fileInfo.getGainChange() * VALUE_5LOG2));
+        mp_listCtrl->SetItem(i, ID_LIST_GAIN_MP3, wxString::Format(_T("%i"), fileData.getGainChange()));
+        mp_listCtrl->SetItem(i, ID_LIST_GAIN_DB, wxString::Format(_T("%.1f"), fileData.getGainChange() * VALUE_5LOG2));
     }
 }

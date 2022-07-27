@@ -7,7 +7,7 @@
 #define LIST_CTRL_MANAGER_HPP
 
 #include "AppSettings.hpp"
-#include "FileInfo.hpp"
+#include "FileData.hpp"
 
 #include <list>
 #include <wx/arrstr.h>
@@ -16,7 +16,7 @@
 
 class ListCtrlManager {
   public:
-    ListCtrlManager(wxListCtrl *owner);
+    ListCtrlManager(wxListCtrl *listCtrl);
     virtual ~ListCtrlManager();
 
     void insertFilesAndDir(const wxArrayString &filenames);
@@ -25,15 +25,15 @@ class ListCtrlManager {
     void deleteItem(unsigned long int index);
     void clear();
     long unsigned int size();
-    FileInfo &getItem(unsigned long int index);
-    wxListCtrl &getOwner();
+    FileData &getItem(unsigned long int index);
+    wxListCtrl &getListCtrl();
     void updateGainLabels(const double &dblNormalVolumeUpdate, AppSettings *appSettings);
 
   private:
     bool checkValidExtension(const wxFileName &file) const;
 
-    wxListCtrl *mp_owner;
-    std::list<FileInfo> *mp_lstFilesData;
+    wxListCtrl *mp_listCtrl;
+    std::list<FileData> *mp_lstFilesData;
 };
 
 #endif // LIST_CTRL_MANAGER_HPP

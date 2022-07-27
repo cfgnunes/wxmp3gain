@@ -227,8 +227,8 @@ void GuiFrameMain::mnuSettings(wxCommandEvent &event) {
 
 void GuiFrameMain::mnuClearAnalysis(wxCommandEvent &event) {
     for (unsigned long int i = 0; i < mp_listCtrlManager->size(); i++) {
-        FileInfo &fileInfo = mp_listCtrlManager->getItem(i);
-        fileInfo.volumeReset();
+        FileData &fileData = mp_listCtrlManager->getItem(i);
+        fileData.volumeReset();
         gui_lstFiles->SetItem(i, 2, _T(""));
         gui_lstFiles->SetItem(i, 3, _T(""));
         gui_lstFiles->SetItem(i, 4, _T(""));
@@ -424,8 +424,8 @@ void GuiFrameMain::processFile(unsigned long int fileIterator) {
     wxString fullCommand = APP_TOOL_EXECUTABLE + _T(" ") + mp_appSettings->getStringToolOptions() + _T(" ") +
                            mp_appSettings->getStringToolOptionsTag();
     wxString runCommand;
-    FileInfo &fileInfo = mp_listCtrlManager->getItem(fileIterator);
-    wxFileName filenameInput = fileInfo.getFileName();
+    FileData &fileData = mp_listCtrlManager->getItem(fileIterator);
+    wxFileName filenameInput = fileData.getFileName();
 
     // Works on a temp file
     wxString filenameTemp = wxFileName::CreateTempFileName(_T("temp-")) + _T(".mp3");
@@ -433,30 +433,30 @@ void GuiFrameMain::processFile(unsigned long int fileIterator) {
 
     if (m_processType == TOOL_GAIN || m_processType == TOOL_ANALYSIS) {
         // Get old volume values (try read tag info first [if enabled tag read] )
-        if (!fileInfo.isVolumeSet() && mp_appSettings->getTagOptions() != 2 && !mp_appSettings->getTagForceEnabled()) {
+        if (!fileData.isVolumeSet() && mp_appSettings->getTagOptions() != 2 && !mp_appSettings->getTagForceEnabled()) {
             runCommand = fullCommand + _T(" -s c \"") + filenameTemp + _T("\"");
             wxExecute(runCommand, m_exeInputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
             processOutputString(fileIterator);
-            if (fileInfo.isVolumeSet())
-                mp_listCtrlManager->getOwner().SetItem(fileIterator, ID_LIST_TAG_INFO, _("yes"));
+            if (fileData.isVolumeSet())
+                mp_listCtrlManager->getListCtrl().SetItem(fileIterator, ID_LIST_TAG_INFO, _("yes"));
         }
-        if (!fileInfo.isVolumeSet()) {
+        if (!fileData.isVolumeSet()) {
             runCommand = APP_TOOL_EXECUTABLE + _T(" -s s \"") + filenameTemp + _T("\"");
             wxExecute(runCommand, m_exeInputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
             processOutputString(fileIterator);
-            mp_listCtrlManager->getOwner().SetItem(fileIterator, ID_LIST_TAG_INFO, _T(""));
+            mp_listCtrlManager->getListCtrl().SetItem(fileIterator, ID_LIST_TAG_INFO, _T(""));
         }
     }
 
     // Set gain volume
-    if (m_processType == TOOL_GAIN && fileInfo.getGainChange() != 0) {
+    if (m_processType == TOOL_GAIN && fileData.getGainChange() != 0) {
         // Execute Gain
         if (mp_appSettings->getConstantGainEnabled())
             runCommand = fullCommand + _T(" ") + mp_appSettings->getStringToolOptionsGain() + _T(" \"") +
                          filenameTemp + _T("\"");
         else
             runCommand = fullCommand + _T(" ") + mp_appSettings->getStringToolOptionsGain() + _T(" -g ") +
-                         wxString::Format(_T("%i "), fileInfo.getGainChange()) + _T(" \"") +
+                         wxString::Format(_T("%i "), fileData.getGainChange()) + _T(" \"") +
                          filenameTemp + _T("\"");
 
         wxExecute(runCommand, m_exeInputString, wxEXEC_NODISABLE | wxEXEC_SYNC);
@@ -469,10 +469,10 @@ void GuiFrameMain::processFile(unsigned long int fileIterator) {
         default:
         case 0:
         case 1:
-            mp_listCtrlManager->getOwner().SetItem(fileIterator, ID_LIST_TAG_INFO, _("yes"));
+            mp_listCtrlManager->getListCtrl().SetItem(fileIterator, ID_LIST_TAG_INFO, _("yes"));
             break;
         case 2:
-            mp_listCtrlManager->getOwner().SetItem(fileIterator, ID_LIST_TAG_INFO, _T(""));
+            mp_listCtrlManager->getListCtrl().SetItem(fileIterator, ID_LIST_TAG_INFO, _T(""));
             break;
         }
 
@@ -501,7 +501,7 @@ void GuiFrameMain::processFile(unsigned long int fileIterator) {
 }
 
 void GuiFrameMain::processOutputString(unsigned long int fileIterator) {
-    FileInfo &fileInfo = mp_listCtrlManager->getItem(fileIterator);
+    FileData &fileData = mp_listCtrlManager->getItem(fileIterator);
     wxString tempString;
 
     if (!m_exeInputString.IsEmpty()) {
@@ -517,9 +517,9 @@ void GuiFrameMain::processOutputString(unsigned long int fileIterator) {
                 valueString.ToDouble(&dbGainValue);
                 volume = DEFAULT_VALUE_NormalVolumeDb / 10 - dbGainValue;
 
-                fileInfo.setVolume(volume);
+                fileData.setVolume(volume);
 
-                mp_listCtrlManager->getOwner().SetItem(fileIterator, ID_LIST_VOLUME,
+                mp_listCtrlManager->getListCtrl().SetItem(fileIterator, ID_LIST_VOLUME,
                                                        wxString::Format(_T("%.1f"), volume));
             } // Clipping means that some value in some frame of the song is greater than +/- 32767
             else if (tempString.Lower().Contains(_T("max pcm"))) {
@@ -527,14 +527,14 @@ void GuiFrameMain::processOutputString(unsigned long int fileIterator) {
                 wxString valueString = tempString.AfterFirst(':').Trim();
                 Conversion::convertDotComma(valueString);
                 valueString.ToDouble(&dblMaxPcmSample);
-                fileInfo.setMaxPcmSample(dblMaxPcmSample);
+                fileData.setMaxPcmSample(dblMaxPcmSample);
 
                 if (dblMaxPcmSample > 32767) {
-                    mp_listCtrlManager->getOwner().SetItem(fileIterator, ID_LIST_CLIPPING, _("yes"));
-                    mp_listCtrlManager->getOwner().SetItemTextColour(fileIterator, *wxRED);
+                    mp_listCtrlManager->getListCtrl().SetItem(fileIterator, ID_LIST_CLIPPING, _("yes"));
+                    mp_listCtrlManager->getListCtrl().SetItemTextColour(fileIterator, *wxRED);
                 } else {
-                    mp_listCtrlManager->getOwner().SetItem(fileIterator, ID_LIST_CLIPPING, _T(""));
-                    mp_listCtrlManager->getOwner().SetItemTextColour(fileIterator, *wxBLACK);
+                    mp_listCtrlManager->getListCtrl().SetItem(fileIterator, ID_LIST_CLIPPING, _T(""));
+                    mp_listCtrlManager->getListCtrl().SetItemTextColour(fileIterator, *wxBLACK);
                 }
                 mp_listCtrlManager->updateGainLabels(m_dblNormalVolume, mp_appSettings);
             }
