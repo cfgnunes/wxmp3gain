@@ -9,7 +9,7 @@
 ## v4.0 (2019-04-01)
 
 - New Windows binaries
-- Bug fix for unicode filenames
+- Bug fix for Unicode filenames
 - Added Turkish translation
 - Added Croatian translation
 - Code refactor in make/build process
