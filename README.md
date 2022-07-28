@@ -28,16 +28,6 @@ sudo apt -y install wxmp3gain
 
 Alternatively to downloading the pre-compiled binaries, you can build the application using the source code.
 
-#### Dependencies
-
-The project depends on the following tools:
-
-- [CMake](https://cmake.org) - Build, test and package software
-- [wxWidgets](http://wxwidgets.org) - Open-Source GUI framework
-- [gettext](https://www.gnu.org/software/gettext) - Internationalization and localization (i18n and l10n) system
-
-which you need to download and install before being able to build the project.
-
 #### Linux
 
 This section assumes you are using Ubuntu 20.04 (Focal Fossa), but the procedure is similar for other Linux distributions.
@@ -90,10 +80,7 @@ cmake -G "MinGW Makefiles" -DCMAKE_INSTALL_PREFIX:PATH=dist ..
 cmake --build . --tar
 ```
 
-To create an installer on Windows, which is optional, the following application to be downloaded and installed:
-
-- [Inno Setup](http://www.jrsoftware.org/isinfo.php) - Installer for Windows programs
-
+To create an installer on Windows, which is optional, the [Inno Setup](http://www.jrsoftware.org/isinfo.php) must to be downloaded and installed.
 To generate the installer setup, use file `installer.iss` in the Inno Setup after build the binaries.
 
 ## Contributing
