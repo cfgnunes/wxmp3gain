@@ -106,6 +106,11 @@ configure_file(
     "${PROJECT_SOURCE_DIR}/debian/menu/app.desktop"
 )
 
+configure_file(
+    "${PROJECT_SOURCE_DIR}/packaging/windows/installer.iss.in"
+    "${PROJECT_SOURCE_DIR}/packaging/windows/installer.iss"
+)
+
 # =============================================================================
 # Build process
 # =============================================================================
