@@ -1,0 +1,8 @@
+tar-ignore = ".git"
+tar-ignore = ".github"
+tar-ignore = ".gitignore"
+tar-ignore = ".vscode"
+tar-ignore = "build"
+tar-ignore = "dist"
+tar-ignore = "obj-*"
+tar-ignore = "packaging"

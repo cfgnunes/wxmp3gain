@@ -51,7 +51,16 @@ _deps
 .vscode/
 
 # Output dirs
-*build*/
+build/
+dist/
+
+# Debuild transient files and folders
+debian/*.substvars
+debian/debhelper-build-stamp
+debian/files
+debian/.debhelper/
+debian/wx*/
+obj-*/
 
 # Windows resource files
 *.res

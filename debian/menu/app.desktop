@@ -1,8 +1,10 @@
 [Desktop Entry]
+Encoding=UTF-8
 Name=wxMP3gain
-Comment=A free front-end for the MP3gain.
+Comment=Free front-end for the MP3gain.
 Exec=wxmp3gain
 Icon=wxmp3gain
 Categories=AudioVideo;Audio;
 Terminal=false
 Type=Application
+Version=1.0

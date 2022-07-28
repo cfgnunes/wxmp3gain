@@ -1,16 +1,13 @@
-wxMP3gain
---------
+# wxMP3gain
 
 Copyright (C) 2012-2019 Cristiano Fraga G. Nunes
 https://github.com/cfgnunes/wxmp3gain/
 
-Overview
---------
+## Overview
 
 wxMP3gain is a free front-end for the MP3gain.
 
-License
--------
+## License
 
 This program is licensed under the terms
 of the GNU General Public License version 3.

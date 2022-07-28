@@ -2,12 +2,12 @@ Source: wxmp3gain
 Section: sound
 Priority: optional
 Maintainer: Cristiano Fraga G. Nunes <cfgnunes@gmail.com>
-Build-Depends: debhelper (>= 9), libwxgtk3.0-gtk3-dev | libwxgtk3.0-dev | libwxgtk2.8-dev, cmake
+Build-Depends: debhelper (>= 10), libwxgtk3.0-gtk3-dev | libwxgtk3.0-dev | libwxgtk2.8-dev, cmake
 Standards-Version: 4.5.0
 Homepage: https://github.com/cfgnunes/wxmp3gain
 
 Package: wxmp3gain
 Architecture: any
-Depends:  ${shlibs:Depends}, ${misc:Depends}, mp3gain (>= 1.5.1)
-Description: Free front-end for the MP3gain
+Depends: ${shlibs:Depends}, ${misc:Depends}, mp3gain (>= 1.5.1)
+Description: Free front-end for the MP3gain.
  wxMP3gain is a free front-end for the MP3gain.

@@ -1,0 +1,13 @@
+Source: ${CMAKE_BIN_NAME}
+Section: sound
+Priority: optional
+Maintainer: ${CMAKE_PROJECT_AUTHOR} <${CMAKE_PROJECT_EMAIL}>
+Build-Depends: ${CMAKE_DEBIAN_BUILD_DEPENDS}
+Standards-Version: 4.5.0
+Homepage: ${CMAKE_PROJECT_HOMEPAGE_URL}
+
+Package: ${CMAKE_BIN_NAME}
+Architecture: any
+Depends: ${CMAKE_DEBIAN_DEPENDS}
+Description: ${CMAKE_PROJECT_S_DESCRIPTION}
+ ${CMAKE_PROJECT_DESCRIPTION}
