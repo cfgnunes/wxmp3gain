@@ -34,5 +34,4 @@ jobs:
 
       - name: Test the 'Debian' packaging
         run: |
-          ln -s packaging/debian debian
           debuild -us -uc
