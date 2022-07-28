@@ -8,7 +8,7 @@ wxMP3gain is a free front-end for the MP3gain.
 
 ### Install from binaries
 
-Link to download the binary files: <https://sourceforge.net/projects/wxmp3gain/>
+Link to download the binary files: <https://sourceforge.net/projects/wxmp3gain>
 
 This program has been tested on the following platforms:
 
