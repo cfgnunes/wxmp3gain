@@ -4,6 +4,9 @@
 
 - Minor improvements
 - Updated to GTK3 port of the wxWidgets
+- Fixed build for Ubuntu 20.04, Ubuntu 22.04 and Linux Mint 20
+- Updated CMake project structure
+- Updated documentation
 - Added Japanese translation
 
 ## v4.0 (2019-04-01)
