@@ -45,9 +45,6 @@ find_package(Gettext)
 # Set some default paths
 # =============================================================================
 
-# Set the root folder, where all sources are located in
-set(CMAKE_SOURCES_ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
-
 # Set a folder for the data
 set(CMAKE_DATA_DIR "data")
 
