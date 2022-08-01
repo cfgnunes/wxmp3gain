@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////
-// C++ code generated with wxFormBuilder (version 3.9.0 Jan  3 2020)
+// C++ code generated with wxFormBuilder (version 3.10.1-0-g8feb16b)
 // http://www.wxformbuilder.org/
 //
 // PLEASE DO *NOT* EDIT THIS FILE!
@@ -89,7 +89,7 @@ class FrameMain : public wxFrame
 		wxMenu* gui_menu;
 		wxTimer m_timer1;
 
-		// Virtual event handlers, overide them in your derived class
+		// Virtual event handlers, override them in your derived class
 		virtual void OntxtNormalVolumeTextKillFocus( wxFocusEvent& event ) { event.Skip(); }
 		virtual void OnlstFilesDeleteItem( wxListEvent& event ) { event.Skip(); }
 		virtual void OnlstFilesInsertItem( wxListEvent& event ) { event.Skip(); }
@@ -122,7 +122,7 @@ class FrameMain : public wxFrame
 
 		void FrameMainOnContextMenu( wxMouseEvent &event )
 		{
-		this->PopupMenu( gui_menu, event.GetPosition() );
+			this->PopupMenu( gui_menu, event.GetPosition() );
 		}
 
 };
@@ -151,7 +151,7 @@ class DialogSettings : public wxDialog
 		wxButton* gui_btnOK;
 		wxButton* gui_btnCancel;
 
-		// Virtual event handlers, overide them in your derived class
+		// Virtual event handlers, override them in your derived class
 		virtual void updateDisabledControlsEvent( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnsldConstantGainSliderUpdated( wxScrollEvent& event ) { event.Skip(); }
 		virtual void OnbtnDefaultClick( wxCommandEvent& event ) { event.Skip(); }
@@ -162,6 +162,7 @@ class DialogSettings : public wxDialog
 	public:
 
 		DialogSettings( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Settings"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxDEFAULT_DIALOG_STYLE );
+
 		~DialogSettings();
 
 };
