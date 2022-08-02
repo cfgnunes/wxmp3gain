@@ -18,11 +18,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo apt -y install devscripts
-          sudo apt -y install debhelper
-          sudo apt -y install build-essential
-          sudo apt -y install cmake
-          sudo apt -y install libwxgtk3.0-gtk3-dev
+          sudo apt-get -y install devscripts
+          sudo apt-get -y install debhelper
+          sudo apt-get -y install build-essential
+          sudo apt-get -y install cmake
+          sudo apt-get -y install libwxgtk3.0-gtk3-dev
 
       - name: Build the project
         run: |
