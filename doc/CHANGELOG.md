@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.2 (2024-05-01)
+
+- Debian package fix
+
 ## v4.1 (2023-04-01)
 
 - Minor improvements
