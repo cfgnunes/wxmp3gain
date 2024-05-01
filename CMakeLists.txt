@@ -48,7 +48,7 @@ find_package(Gettext)
 # Set a folder for the data
 set(CMAKE_DATA_DIR "data")
 
-# Set a folder for the dcoumentation
+# Set a folder for the documentation
 set(CMAKE_DOC_DIR "doc")
 
 # =============================================================================
@@ -64,8 +64,14 @@ set(CMAKE_PROJECT_EMAIL "cfgnunes@gmail.com")
 # Set some strings for the templates: PPA distro
 set(CMAKE_PROJECT_S_DESCRIPTION "Free front-end for the MP3gain.")
 
-# Get the current year
+# Get the current timestamp
 string(TIMESTAMP CMAKE_CURRENT_YEAR "%Y")
+string(TIMESTAMP CMAKE_CURRENT_MONTH "%b")
+string(TIMESTAMP CMAKE_CURRENT_DAY "%d")
+string(TIMESTAMP CMAKE_CURRENT_WEEKDAY "%a")
+string(TIMESTAMP CMAKE_CURRENT_HOUR "%H")
+string(TIMESTAMP CMAKE_CURRENT_MINUTE "%M")
+string(TIMESTAMP CMAKE_CURRENT_SECOND "%S")
 
 # Strings for Debian packaging
 if(UNIX)
