@@ -3,7 +3,7 @@
 
 #define ApplicationName "wxMP3gain"
 #define ApplicationSite "https://github.com/cfgnunes/wxmp3gain"
-#define ApplicationVersion "4.1"
+#define ApplicationVersion "4.2"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.

@@ -7,7 +7,7 @@ cmake_minimum_required(VERSION 3.10)
 # Set the project name and version
 project(
     wxMP3gain
-    VERSION 4.1.0.0
+    VERSION 4.2.0.0
     DESCRIPTION "wxMP3gain is a free front-end for the MP3gain."
     HOMEPAGE_URL "https://github.com/cfgnunes/wxmp3gain"
 )
