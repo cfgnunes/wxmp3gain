@@ -1,6 +1,6 @@
 # Changelog
 
-## v4.1 (20??-??-??)
+## v4.1 (2023-04-01)
 
 - Minor improvements
 - Updated to GTK3 port of the wxWidgets
