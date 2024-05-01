@@ -15,7 +15,7 @@ const wxString APP_NAME = _T("wxMP3gain");
 const wxString APP_VERSION = _T("4.1");
 const wxString APP_NAME_WITH_VERSION = APP_NAME + _T(" v") + APP_VERSION;
 
-const wxString APP_COPYRIGHT = _T("(C) 2012-2022 Cristiano Fraga G. Nunes <cfgnunes@gmail.com>");
+const wxString APP_COPYRIGHT = _T("(C) 2012-2024 Cristiano Fraga G. Nunes <cfgnunes@gmail.com>");
 const wxString APP_WEBSITE = _T("https://github.com/cfgnunes/wxmp3gain");
 
 const wxString APP_TOOL_EXECUTABLE = _T("mp3gain");
