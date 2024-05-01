@@ -1,6 +1,6 @@
 # wxMP3gain [![Actions Status](https://github.com/cfgnunes/wxmp3gain/workflows/build/badge.svg)](https://github.com/cfgnunes/wxmp3gain/actions)
 
-wxMP3gain is a free front-end for the [MP3gain](http://mp3gain.sourceforge.net).
+wxMP3gain is a free front-end for the [MP3gain](https://mp3gain.sourceforge.net).
 
 ![screenshot](doc/screenshot.png)
 
@@ -10,7 +10,7 @@ wxMP3gain is a free front-end for the [MP3gain](http://mp3gain.sourceforge.net).
 
 The pre-compiled binaries have been tested to work on the following platforms:
 
-- Windows XP, Vista, 7, 8, 10
+- Windows Vista, 7, 8, 10
 - Ubuntu 16.04, 18.04, 20.04, 22.04
 - Mint 20.2, 20.4
 
@@ -20,8 +20,8 @@ On Linux, you can also install them via *Personal Package Archive (PPA)*:
 
 ```sh
 sudo add-apt-repository -y ppa:cfgnunes/ppa
-sudo apt update
-sudo apt -y install wxmp3gain
+sudo apt-get update
+sudo apt-get -y install wxmp3gain
 ```
 
 ### Install from sources
@@ -35,19 +35,7 @@ This section assumes you are using Ubuntu 20.04 (Focal Fossa), but the procedure
 The prerequisites to build the source is to install the following packages:
 
 ```sh
-sudo apt -y install build-essential cmake
-sudo apt -y install libwxgtk3.0-gtk3-dev
-```
-
-For old Linux distributions, the package `libwxgtk3.0-dev` (instead of `libwxgtk3.0-gtk3-dev`) needs to be installed.
-
-The MP3gain executable can not be available in the distro repositories.
-You can download the `.deb` file for Ubuntu 20.04 (Focal Fossa) though, as it works also for Ubuntu 22.04 (Jammy Jellyfish):
-
-```sh
-sudo apt -y install wget
-wget https://launchpad.net/~cfgnunes/+archive/ubuntu/ppa/+files/mp3gain_1.6.2-2ubuntu0~ppa1_amd64.deb
-sudo apt -y install ./mp3gain_1.6.2-2ubuntu0~ppa1_amd64.deb
+sudo apt-get -y install build-essential cmake gettext libwxgtk3.0-gtk3-dev mp3gain
 ```
 
 Compile the sources and install the binaries, entering the following commands in the terminal:
@@ -75,7 +63,6 @@ Compile the sources and install with following commands in the terminal:
 ```sh
 mkdir build
 cd build
-cmake -G "MinGW Makefiles" -DCMAKE_INSTALL_PREFIX:PATH=dist ..
 cmake -G "MinGW Makefiles" -DCMAKE_INSTALL_PREFIX:PATH=dist ..
 cmake --build . --tar
 ```
