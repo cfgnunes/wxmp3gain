@@ -1,6 +1,6 @@
 /*
  * wxMP3gain - A free front-end for MP3gain.
- * Copyright (C) 2012-2019 Cristiano Fraga G. Nunes
+ * Copyright (C) 2012-2024 Cristiano Fraga G. Nunes
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

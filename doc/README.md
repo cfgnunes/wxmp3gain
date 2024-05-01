@@ -1,6 +1,6 @@
 # wxMP3gain
 
-Copyright (C) 2012-2019 Cristiano Fraga G. Nunes
+Copyright (C) 2012-2024 Cristiano Fraga G. Nunes
 
 <https://github.com/cfgnunes/wxmp3gain>
 
