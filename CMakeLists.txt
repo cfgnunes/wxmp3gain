@@ -73,10 +73,10 @@ if(UNIX)
     string(TIMESTAMP CMAKE_CURRENT_TIMESTAMP "%a, %d %b %Y %H:%M:%S" UTC)
 
     # Set 'distro'
-    set(CMAKE_DEBIAN_NAME "jammy")
+    set(CMAKE_DEBIAN_NAME "noble")
 
     # Set 'build depends'
-    set(CMAKE_DEBIAN_BUILD_DEPENDS "debhelper (>= 10), libwxgtk3.0-gtk3-dev | libwxgtk3.0-dev | libwxgtk2.8-dev, cmake")
+    set(CMAKE_DEBIAN_BUILD_DEPENDS "debhelper (>= 10), libwxgtk3.2-dev | libwxgtk3.0-gtk3-dev | libwxgtk3.0-dev | libwxgtk2.8-dev, cmake")
 
     # Set 'depends'
     set(CMAKE_DEBIAN_DEPENDS "\${shlibs:Depends}, \${misc:Depends}, mp3gain (>= 1.5.1)")

@@ -34,7 +34,7 @@ This section assumes you are using Ubuntu 20.04 (Focal Fossa), but the procedure
 The prerequisites to build the source is to install the following packages:
 
 ```sh
-sudo apt-get -y install build-essential cmake gettext libwxgtk3.0-gtk3-dev mp3gain
+sudo apt-get -y install build-essential cmake gettext libwxgtk3.2-dev mp3gain
 ```
 
 Compile the sources and install the binaries, entering the following commands in the terminal:
