@@ -95,7 +95,7 @@ inline wxString getDataDir() {
     wxString dataDir;
 
 #ifdef __LINUX__
-    dataDir = _T("/usr/share/wxlame") + dataDirName;
+    dataDir = _T("/usr/share/${CMAKE_BIN_NAME}") + dataDirName;
     if (dir.Exists(dataDir))
         return dataDir;
 #endif
