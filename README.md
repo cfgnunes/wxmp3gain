@@ -29,7 +29,7 @@ Alternatively to downloading the pre-compiled binaries, you can build the applic
 
 #### Linux
 
-This section assumes you are using Ubuntu 20.04 (Focal Fossa), but the procedure is similar for other Linux distributions.
+This section assumes you are using Ubuntu 24.04, but the procedure is similar for other Linux distributions.
 
 The prerequisites to build the source is to install the following packages:
 
@@ -52,8 +52,8 @@ sudo make install
 This section assumes Windows 10, but the procedure is similar for other Windows versions. The prerequisites to build the source is to install the following dependencies:
 
 - [MinGW-W64 GCC-8.1.0](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/8.1.0/threads-posix/sjlj/i686-8.1.0-release-posix-sjlj-rt_v6-rev0.7z) - i686-posix-sjlj
-- [wxWidgets 3.1.3](https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.3/wxWidgets-3.1.3-headers.7z) - header files ('include' folder)
-- [wxWidgets 3.1.3](https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.3/wxMSW-3.1.3_gcc810_Dev.7z) - development files for MinGW GCC 8.1.0 ('lib' folder)
+- [wxWidgets 3.2.4](https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.4/wxWidgets-3.2.4-headers.7z) - header files ('include' folder)
+- [wxWidgets 3.2.4](https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.4/wxMSW-3.2.4_gcc810_Dev.7z) - development files for MinGW GCC 8.1.0 ('lib' folder)
 - [Gettext](https://mlocati.github.io/articles/gettext-iconv-windows.html) - 32 bit, static
 - [CMake](https://cmake.org/download/)
 
@@ -63,7 +63,8 @@ Compile the sources and install with following commands in the terminal:
 mkdir build
 cd build
 cmake -G "MinGW Makefiles" -DCMAKE_INSTALL_PREFIX:PATH=dist ..
-cmake --build . --tar
+cmake --build .
+cmake --install .
 ```
 
 To create an installer on Windows, which is optional, the [Inno Setup](http://www.jrsoftware.org/isinfo.php) must to be downloaded and installed.

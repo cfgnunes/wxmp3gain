@@ -26,13 +26,13 @@ string(TOLOWER ${CMAKE_PROJECT_NAME} CMAKE_BIN_NAME)
 # -----------------------------------------------------------------------------
 # wxWidgets
 # -----------------------------------------------------------------------------
-find_package(wxWidgets REQUIRED)
-
 if(WIN32)
-    set(wxWidgets_ROOT_DIR "C:/wxWidgets-3.1.1")
-    set(wxWidgets_LIB_DIR "C:/wxWidgets-3.1.1/lib/gcc810_dll")
+    set(wxWidgets_ROOT_DIR "C:/wxMSW-3.2.4_gcc810_Dev")
+    set(wxWidgets_LIB_DIR "C:/wxMSW-3.2.4_gcc810_Dev/lib/gcc810_dll")
     set(wxWidgets_CONFIGURATION mwsu)
 endif()
+
+find_package(wxWidgets REQUIRED)
 
 include(${wxWidgets_USE_FILE})
 
@@ -166,7 +166,7 @@ file(GLOB SRC_FILES
 
 # Compile the main executable
 if(WIN32)
-    set(SRC_FILES ${SRC_FILES} windows/resource.rc)
+    set(SRC_FILES ${SRC_FILES} packaging/windows/resource.rc)
 
     # Add the executable with a WinMain entry point on Windows.
     # See https://cmake.org/cmake/help/latest/prop_tgt/WIN32_EXECUTABLE.html
@@ -184,12 +184,12 @@ target_link_libraries(${CMAKE_BIN_NAME} ${wxWidgets_LIBRARIES})
 # Define the file locations during install process
 if(WIN32)
     install(TARGETS ${CMAKE_BIN_NAME} DESTINATION "/")
-    install(DIRECTORY "${CMAKE_DATA_DIR}" DESTINATION "${CMAKE_DATA_DIR}")
+    install(DIRECTORY "${CMAKE_DATA_DIR}" DESTINATION "/")
     install(FILES "${CMAKE_DOC_DIR}/CHANGELOG.md" DESTINATION "/" RENAME "Changelog.txt")
     install(FILES "${CMAKE_DOC_DIR}/COPYING" DESTINATION "/" RENAME "License.txt")
     install(FILES "${CMAKE_DOC_DIR}/README.md" DESTINATION "/" RENAME "Readme.txt")
-    install(FILES "C:/wxWidgets-3.1.1/lib/gcc810_dll/wxmsw313u_core_gcc810.dll" DESTINATION "/")
-    install(FILES "C:/wxWidgets-3.1.1/lib/gcc810_dll/wxbase313u_gcc810.dll" DESTINATION "/")
+    install(FILES "C:/wxMSW-3.2.4_gcc810_Dev/lib/gcc810_dll/wxmsw32u_core_gcc810.dll" DESTINATION "/")
+    install(FILES "C:/wxMSW-3.2.4_gcc810_Dev/lib/gcc810_dll/wxbase32u_gcc810.dll" DESTINATION "/")
 else()
     install(TARGETS ${CMAKE_BIN_NAME} DESTINATION "bin")
     install(DIRECTORY "${CMAKE_DATA_DIR}/" DESTINATION "share/${CMAKE_BIN_NAME}/${CMAKE_DATA_DIR}")

@@ -19,28 +19,27 @@ AppSupportURL={#ApplicationSite}
 AppUpdatesURL={#ApplicationSite}
 DefaultDirName={pf}\{#ApplicationName}
 DefaultGroupName={#ApplicationName}
-LicenseFile=build\License.txt
+LicenseFile=..\..\build\dist\License.txt
 OutputBaseFilename=${CMAKE_BIN_NAME}-{#ApplicationVersion}-win32-setup
 Compression=lzma
 SolidCompression=yes
 OutputDir=.
 
 [Languages]
-Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "brazilianportuguese"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 Name: "czech"; MessagesFile: "compiler:Languages\Czech.isl"
+Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "german"; MessagesFile: "compiler:Languages\German.isl"
 Name: "japanese"; MessagesFile: "compiler:Languages\Japanese.isl"
 Name: "russian"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "spanish"; MessagesFile: "compiler:Languages\Spanish.isl"
-Name: "russian"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "turkish"; MessagesFile: "compiler:Languages\Turkish.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}";
 
 [Files]
-Source: "build\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "..\..\build\dist\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
 Name: "{group}\${CMAKE_PROJECT_NAME}"; Filename: "{app}\${CMAKE_BIN_NAME}.exe"
