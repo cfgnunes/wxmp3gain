@@ -1,4 +1,4 @@
-# wxMP3gain [![Actions Status](https://github.com/cfgnunes/wxmp3gain/workflows/build/badge.svg)](https://github.com/cfgnunes/wxmp3gain/actions)
+# wxMP3gain - MP3 Volume Normalizer [![Actions Status](https://github.com/cfgnunes/wxmp3gain/workflows/build/badge.svg)](https://github.com/cfgnunes/wxmp3gain/actions)
 
 wxMP3gain is a free front-end for the [MP3gain](https://mp3gain.sourceforge.net).
 
